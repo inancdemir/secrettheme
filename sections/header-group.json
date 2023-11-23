@@ -1,0 +1,1 @@
+{"name":"Header group","type":"header","sections":{"top-bar":{"type":"top-bar","blocks":{"tp-1":{"type":"announcement","settings":{}},"tp-2":{"type":"announcement","settings":{}}},"block_order":["tp-1","tp-2"],"settings":{}},"header":{"type":"header","settings":{}}},"order":["top-bar","header"]}

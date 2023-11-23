@@ -1,0 +1,198 @@
+{%- style -%}
+    .section-{{ section.id }} {
+        background-color: {{ section.settings.background_color }};
+        color: {{ section.settings.text_color }};
+        height: {{ section.settings.area_size }}px;
+        display: flex;
+        align-items: center;
+        text-align: center;
+        width: 100%;
+        justify-content: space-around;
+        overflow: hidden;
+        white-space: nowrap;
+    }
+    .section-{{ section.id }} a {
+      text-decoration: underline;
+    }
+    .moving-text span {
+      margin: 0px 20px;
+    }
+    @keyframes marquee{
+          0% {transform: translateX(100%); }
+          100% {transform: translateX(-100%); }
+      }
+
+      /* media query to enable animation for only those who want it */
+      @media (prefers-reduced-motion: no-preference) {
+          .moving-text{
+            animation: marquee {{ section.settings.animation_speed }}s linear infinite;
+            display: flex;
+            width: 100%;
+            align-items: center;
+            justify-content: space-around;
+            flex-direction: initial;
+          }
+      }
+      .section-{{ section.id }} .social-links {
+        background-color: {{ section.settings.background_color }};
+        position: absolute;
+        right: 0;
+        padding: 0 10px;
+        column-gap: 20px;
+        display: flex;
+        align-items: center;
+      }
+      .section-{{ section.id }} .social-links a {
+        height: 20px;
+        text-decoration: none;
+      }
+{%- endstyle -%}
+{%- if section.settings.show_announcement -%}
+  {%- if section.settings.home_page_only == false or template.name == 'index' -%}
+    <div class="top-bar section-{{ section.id }}">
+      {%- for block in section.blocks -%}
+        {% case block.type %}
+            {%- when 'announcement' -%}
+              <div class="moving-text">
+                <span class="callout" {{ block.shopify_attributes }}>{{ block.settings.area_text }}</span>
+              </div>
+        {%- endcase -%}
+      {%- endfor -%}
+      {%- if section.settings.social_icons -%}
+        <div class="social-links">
+          {%- if section.settings.instagram_link_show -%}<a href="{{ section.settings.instagram_link }}" aria-label="instagram">{%- render 'icon-instagram-link' -%}</a>{%- endif -%}
+          {%- if section.settings.facebook_link_show -%}<a href="{{ section.settings.facebook_link }}" aria-label="facebook">{%- render 'icon-facebook-link' -%}</a>{%- endif -%}
+          {%- if section.settings.x_link_show -%}<a href="{{ section.settings.x_link }}" aria-label="x">{%- render 'icon-x-link' -%}</a>{%- endif -%}
+          {%- if section.settings.tiktok_link_show -%}<a href="{{ section.settings.tiktok_link }}" aria-label="tiktok">{%- render 'icon-tiktok-link' -%}</a>{%- endif -%}
+        </div>
+      {%- endif -%}
+    </div>
+  {%- endif -%}
+{%- endif -%}
+
+
+{% schema %}
+{
+  "name": "t:sections.announcement.name",
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "show_announcement",
+      "label": "t:sections.announcement.settings.show_announcement",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "home_page_only",
+      "label": "t:sections.announcement.settings.home_page_only",
+      "default": true
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "t:sections.all.text",
+      "default": "#FFFFFF"
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "t:sections.all.background_color",
+      "default": "#000000"
+    },
+    {
+      "type": "range",
+      "id": "area_size",
+      "min": 12,
+      "max": 110,
+      "step": 1,
+      "unit": "px",
+      "label": "t:sections.all.section_height",
+      "default": 40
+    },
+    {
+      "type": "range",
+      "id": "animation_speed",
+      "min": 5,
+      "max": 60,
+      "step": 5,
+      "unit": "s",
+      "label": "t:sections.all.speed",
+      "default": 40
+    },
+    {
+      "type": "checkbox",
+      "id": "social_icons",
+      "label": "t:sections.announcement.settings.social_icons",
+      "default": true
+    },
+    {
+      "type": "url",
+      "id": "instagram_link",
+      "label": "Instagram"
+    },
+    {
+      "type": "checkbox",
+      "id": "instagram_link_show",
+      "label": "t:sections.announcement.settings.show",
+      "default": true
+    },
+    {
+      "type": "url",
+      "id": "facebook_link",
+      "label": "Facebook"
+    },
+    {
+      "type": "checkbox",
+      "id": "facebook_link_show",
+      "label": "t:sections.announcement.settings.show",
+      "default": true
+    },
+    {
+      "type": "url",
+      "id": "x_link",
+      "label": "X"
+    },
+    {
+      "type": "checkbox",
+      "id": "x_link_show",
+      "label": "t:sections.announcement.settings.show",
+      "default": true
+    },
+    {
+      "type": "url",
+      "id": "tiktok_link",
+      "label": "Tiktok"
+    },
+    {
+      "type": "checkbox",
+      "id": "tiktok_link_show",
+      "label": "t:sections.announcement.settings.show",
+      "default": true
+    }
+  ],
+  "blocks": [
+    {
+      "name": "t:sections.announcement.settings.campaign_text",
+      "type": "announcement",
+      "settings": [
+        {
+          "type": "richtext",
+          "id": "area_text",
+          "label": "t:sections.all.text",
+          "default": "<p>FREE SHIPPING ON <a href='#'>ORDERS</a> FROM $150</p>"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "t:sections.announcement.name",
+      "blocks": [
+        {
+          "type": "announcement"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

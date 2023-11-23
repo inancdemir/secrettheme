@@ -1,0 +1,253 @@
+{%- style -%}
+.section-{{ section.id }} {
+    background: {% if section.settings.background_image %}
+                    url("{{ section.settings.background_image | image_url }}"),
+                {% endif %}
+                {{ section.settings.background_color }};
+    background-repeat: no-repeat;
+    background-position: top center;
+    padding: {{ section.settings.section_padding }}px 0;
+                          
+}
+.section-{{ section.id }}.front-featured-product h2 {
+  letter-spacing: 0em;
+  margin: 0;
+  margin-left: 32px;
+  color: {{ section.settings.title_color }};
+}
+
+
+.section-{{ section.id }}.front-featured-product .product-list {
+  display: flex;
+  flex-direction: row;
+}
+
+.section-{{ section.id }}.front-featured-product p.subtitle {
+    color: {{ section.settings.sub_title_color }};
+}
+.front-featured-product .description-view-all > p {
+    color: {{ section.settings.sub_title_color }};
+}
+.front-featured-product .product-list {
+    display: flex;
+    flex-direction: row;
+    margin-top: 30px;
+}
+@media only screen and (min-width: 640px) {
+  .section-{{ section.id }} .product-list {
+    column-gap: {{ section.settings.product_gap }}px;
+  }
+  .section-{{ section.id }} .product-list .product-list-item {
+    position: relative;
+    flex: 0 0 calc(calc((100% - calc({{ section.settings.product_gap }}px * calc({{ section.settings.item_per_row }} - 1))) / {{ section.settings.item_per_row }}));
+  }
+  .section-{{ section.id }} .product-list .product-list-item.add {
+    position: relative;
+    flex: 0 0 calc(calc((100% - calc({{ section.settings.product_gap }}px * calc({{ section.settings.item_per_row }} - 1))) / {{ section.settings.item_per_row }}));
+  }
+
+  
+
+  .section-{{ section.id }} .product-list .product-list-item.add img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    object-fit: cover;
+    -webkit-transform: translateX(-50%) translateY(-50%); 
+    -moz-transform: translateX(-50%) translateY(-50%);
+    -o-transform: translateX(-50%) translateY(-50%);
+    transform: translateX(-50%) translateY(-50%);
+    width: 100%;
+    height: auto;
+  }
+  .section-{{ section.id }} .product-list .product-list-item.add.contain-image img {
+    object-fit: contain;
+  }
+
+  .add-size-2 {
+    flex: 0 0 calc((calc((100% - calc({{ section.settings.product_gap }}px * calc({{ section.settings.item_per_row }} - 2))) / {{ section.settings.item_per_row }})) * 2) !important;
+  }
+  .add-size-3 {
+    flex: 0 0 calc((calc((100% - calc({{ section.settings.product_gap }}px * calc({{ section.settings.item_per_row }} - 3))) / {{ section.settings.item_per_row }})) * 3) !important;
+  }
+  .add-size-4 {
+    flex: 0 0 calc((calc((100% - calc({{ section.settings.product_gap }}px * calc({{ section.settings.item_per_row }} - 4))) / {{ section.settings.item_per_row }})) * 4) !important;
+  }
+  .add-size-5 {
+    flex: 0 0 calc((calc((100% - calc({{ section.settings.product_gap }}px * calc({{ section.settings.item_per_row }} - 5))) / {{ section.settings.item_per_row }})) * 5) !important;
+  }
+}
+
+{%- endstyle -%}
+<div class="front-featured-product product-recommendations section-{{ section.id }}" data-url="{{ routes.product_recommendations_url }}?section_id={{ section.id }}&product_id={{ product.id }}&limit={{- section.settings.item_per_row -}}&intent=related">
+    {%- if recommendations.performed? and recommendations.products_count > 0 -%}
+        {% if recommendations.intent == 'related' %}
+          <h2>You may also like</h2>
+        {% elsif recommendations.intent == 'complementary' %}
+          <h2>Pair it with</h2>
+    {% endif %}
+    <div class="product-list full-on-mobile column-{{ section.settings.item_per_row }} column-mobile-{{ section.settings.item_per_row_mobile }} image-size-{{- section.settings.image_size }} image-fit-{{- section.settings.image_fit }} image-pos-{{- section.settings.image_pos -}}">
+        {%- for product in recommendations.products -%}
+            {% render 'product-item', product: product %}
+        {% endfor %}        
+    </div>
+    {%- endif -%}
+</div>
+
+
+  {% javascript %}
+    const handleIntersection = (entries, observer) => {
+      if (!entries[0].isIntersecting) return;  
+      observer.unobserve(productRecommendationsSection);
+      const url = productRecommendationsSection.dataset.url;
+      fetch(url)
+        .then(response => response.text())
+        .then(text => {
+          const html = document.createElement('div');
+          html.innerHTML = text;
+          const recommendations = html.querySelector('.product-recommendations');
+  
+          if (recommendations && recommendations.innerHTML.trim().length) {
+            productRecommendationsSection.innerHTML = recommendations.innerHTML;
+          }
+        })
+        .catch(e => {
+          console.error(e);
+        });
+    };
+    const productRecommendationsSection = document.querySelector('.product-recommendations');
+    const observer = new IntersectionObserver(handleIntersection, {rootMargin: '0px 0px 200px 0px'});
+    observer.observe(productRecommendationsSection);
+  {% endjavascript %}
+{% schema %}
+{
+  "name": "Product recommendations",
+  "settings": [
+    {
+      "type": "range",
+      "id": "item_per_row",
+      "min": 1,
+      "max": 5,
+      "step": 1,
+      "unit": "itm",
+      "label": "t:sections.product_grid.columns_desktop",
+      "default": 3
+    },
+    {
+      "type": "range",
+      "id": "product_gap",
+      "min": 0,
+      "max": 60,
+      "step": 1,
+      "unit": "px",
+      "label": "t:sections.product_grid.columns_spacing",
+      "default": 0
+    },
+    {
+      "type": "select",
+      "id": "image_size",
+      "label": "t:sections.all.img_size",
+      "default": "two-three",
+      "options": [
+        {
+          "value": "one-one",
+          "label": "1 / 1"
+        },
+        {
+          "value": "three-two",
+          "label": "3 / 2"
+        },
+        {
+          "value": "fout-three",
+          "label": "4 / 3"
+        },
+        {
+          "value": "sixteen-nine",
+          "label": "16 / 9"
+        },
+        {
+          "value": "two-three",
+          "label": "2 / 3"
+        },
+        {
+          "value": "three-four",
+          "label": "3 / 4"
+        },
+        {
+          "value": "nine-sixteen",
+          "label": "9 / 16"
+        }
+      ]
+    },
+    {
+      "type": "select",
+      "id": "image_fit",
+      "label": "t:sections.all.image_fit",
+      "default": "contain",
+      "options": [
+        {
+          "value": "contain",
+          "label": "t:sections.all.image_contain"
+        },
+        {
+          "value": "cover",
+          "label": "t:sections.all.image_cover"
+        }
+      ]
+    },
+    {
+      "type": "select",
+      "id": "image_pos",
+      "label": "t:sections.all.image_position",
+      "default": "center",
+      "info": "t:sections.all.image_position_info",
+      "options": [
+        {
+          "value": "top",
+          "label": "t:sections.all.image_pos_top"
+        },
+        {
+          "value": "center",
+          "label": "t:sections.all.image_pos_center"
+        },
+        {
+          "value": "bottom",
+          "label": "t:sections.all.image_pos_bot"
+        }
+      ]
+    },
+    {
+      "type": "color",
+      "id": "title_color",
+      "label": "t:sections.all.heading",
+      "default": "#000000"
+    },
+    {
+      "type": "color_background",
+      "id": "background_color",
+      "label": "t:sections.all.background_color",
+      "default": "linear-gradient(180deg, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0) 100%)"
+    },
+    {
+      "type": "image_picker",
+      "id": "background_image",
+      "label": "t:sections.all.background_image"
+    },
+    {
+      "type": "range",
+      "id": "section_padding",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "label": "t:sections.all.section_padding",
+      "default": 30
+    }
+  ],
+  "presets": [
+    {
+      "name": "Product recommendations"
+    }
+  ]
+}
+{% endschema %}

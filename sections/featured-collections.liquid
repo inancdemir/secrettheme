@@ -1,0 +1,250 @@
+{%- style -%}
+    .section-{{ section.id }} {
+        margin: {{ section.settings.section_margin }}px 0;
+        {% unless section.settings.full_width %}
+        max-width: 1440px;
+        margin-left: auto;
+        margin-right: auto;
+        {% endunless %}
+    }
+    .section-{{ section.id }} .collection-details h2 {
+      color: {{ section.settings.collection_header_color }};
+    }
+    .section-{{ section.id }} .collection-details .h4 {
+        color: {{ section.settings.collection_description_color }};
+        margin-bottom: 32px;
+    }
+    .section-{{ section.id }} .single-collection-large {
+        position: relative;
+        height: {{ section.settings.collection_height }}vh;
+    }
+    .section-{{ section.id }} .single-collection-large .collection-details {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        margin: 32px;
+    }
+    
+    .front-collection-wrap.columns-2,
+    .front-collection-wrap.columns-3 {
+        display: block;
+    }
+    
+    @media only screen and (min-width: 640px) {
+      .front-collection-wrap.columns-2,
+      .front-collection-wrap.columns-3 {
+          display: flex;
+          column-gap: {{ section.settings.spacings }}px;
+          flex-wrap: wrap;
+      }
+      .front-collection-wrap.columns-2 .single-collection-large {
+          width: calc((100% - {{ section.settings.spacings }}px) / 2);
+      }
+
+      .front-collection-wrap.columns-3 .single-collection-large {
+          width: calc((100% - ({{ section.settings.spacings }}px * 2)) / 3);
+      }
+    }
+    .front-collection-wrap.columns-2 .single-collection-large:nth-child(odd) .collection-details {
+        right: 0;
+        left: auto;
+        text-align: right;
+    }
+    
+    .front-collection-wrap.columns-3 .single-collection-large {
+        left: 0;
+        right: 0;
+        margin-left: auto;
+        margin-right: auto;
+        text-align: center;
+    }
+    .single-collection-large {
+        
+    }
+    .single-collection-large img {
+      position: absolute;
+      object-fit: cover;
+      min-width: 100%;
+      width: 100%;
+      height: 100%;
+      left: 0;
+      right: 0;
+    }
+    
+    
+{%- endstyle -%}
+
+
+<div class="front-collection-wrap section-{{ section.id }} columns-{{ section.settings.collection_per_line }}">
+    
+    {% if section.settings.collection_list != empty %}
+        {%- for collection in section.settings.collection_list -%}
+            <div class="single-collection-large">
+              {{ collection.featured_image | image_url: width: 2000 | image_tag: loading: 'lazy', class: 'product-image' }}
+                <div class="collection-details">
+                    <h2 class="{{ section.settings.heading_font_size }}">{{- collection.title | upcase | link_to: collection.url -}}</h2>
+                    {% if section.settings.enable_description == "enabled" %}
+                        <p class="h4 small">{{ collection.description | strip_html | truncate: section.settings.collection_description_lenght }}</p>
+                    {% endif %}
+                    <a class="button {{ section.settings.button_style }}" href="{{ collection.url }}">{{- section.settings.collection_button_text -}}</a>
+                </div>
+            </div>
+        {%- endfor -%}
+    {% else %}
+        {% for collection_number in (1..section.settings.collection_per_line) %}
+            <div class="single-collection-large">
+                {{ 'collection-' | append: collection_number | placeholder_svg_tag: 'demo-image slide-image' }}
+                <div class="collection-details">
+                    <h2 class="{{ section.settings.heading_font_size }}">Featured Collection Name</h2>
+                    {% if section.settings.enable_description == "enabled" %}
+                        <p class="h4 small">Collection Description</p>
+                    {% endif %}
+                    <a class="button {{ section.settings.button_style }}" href="{{ collection.url }}">{{- section.settings.collection_button_text -}}</a>
+                </div>
+            </div>
+        {% endfor %}
+    {% endif %}
+</div>
+
+
+{% schema %}
+{
+  "name": "t:sections.featured_collections.section_name",
+  "settings": [
+    {
+      "type": "range",
+      "id": "collection_height",
+      "min": 20,
+      "max": 100,
+      "step": 1,
+      "unit": "vh",
+      "label": "t:sections.all.section_height",
+      "default": 65
+    },
+    {
+      "type": "color",
+      "id": "collection_header_color",
+      "label": "t:sections.all.heading",
+      "default": "#FFFFFF"
+    },
+    {
+      "type": "select",
+      "id": "heading_font_size",
+      "options": [
+        {
+          "value": "small",
+          "label": "t:sections.all.small"
+        },
+        {
+          "value": "medium",
+          "label": "t:sections.all.medium"
+        },
+        {
+          "value": "large",
+          "label": "t:sections.all.large"
+        }
+      ],
+      "label": "t:sections.all.super_size",
+      "default": "medium"
+    },
+    {
+      "type": "select",
+      "label": "Description",
+      "info": "Use this toggle to show or hide the collection description information that comes from your Shopify dashboard",
+      "id": "enable_description",
+      "default": "enabled",
+      "options": [
+        {
+          "value": "enabled",
+          "label": "t:sections.all.on"
+        },
+        {
+          "value": "disabled",
+          "label": "t:sections.all.off"
+        }
+      ]
+    },
+    {
+      "type": "range",
+      "id": "collection_description_lenght",
+      "min": 10,
+      "max": 300,
+      "step": 10,
+      "unit": "x",
+      "label": "t:sections.featured_collections.description_lenght",
+      "default": 40
+    },
+    {
+      "type": "color",
+      "id": "collection_description_color",
+      "label": "t:sections.featured_collections.description_color",
+      "default": "#FFFFFF"
+    },
+    {
+      "type": "text",
+      "id": "collection_button_text",
+      "label": "t:sections.all.button_label",
+      "default": "t:sections.all.button_default"
+    },
+    {
+      "type": "range",
+      "id": "collection_per_line",
+      "min": 1,
+      "max": 3,
+      "step": 1,
+      "label": "t:sections.all.column_per_row",
+      "default": 1
+    },
+    {
+      "type": "collection_list",
+      "id": "collection_list",
+      "label": "t:sections.all.collections"
+    },
+    {
+      "type": "select",
+      "id": "button_style",
+      "options": [
+        {
+          "value": "model-1",
+          "label": "t:settings_schema.typography.settings.colors.button_1_color_1"
+        },
+        {
+          "value": "model-2",
+          "label": "t:settings_schema.typography.settings.colors.button_2_color_1"
+        },
+        {
+          "value": "model-3",
+          "label": "t:settings_schema.typography.settings.colors.button_3_color_1"
+        },
+        {
+          "value": "model-4",
+          "label": "t:settings_schema.typography.settings.colors.button_4_color_1"
+        }
+      ],
+      "label": "t:sections.all.button_style",
+      "default": "model-1"
+    },
+    {
+      "type": "range",
+      "id": "spacings",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "label": "t:sections.all.columns_spacings",
+      "default": 0
+    },
+    {
+      "type": "checkbox",
+      "id": "full_width",
+      "label": "t:sections.all.make_section_full",
+      "default": true
+    }
+  ],
+  "presets": [
+    {
+      "name": "t:sections.featured_collections.section_name"
+    }
+  ]
+}
+{% endschema %}

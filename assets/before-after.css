@@ -1,0 +1,58 @@
+#before-after-slider {
+    width:100%;
+    position:relative;
+    overflow:hidden;
+    border:3px solid white;
+  }
+  
+  #after-image {
+    display:block
+  }
+  
+  #before-image {
+    position:absolute;
+    height:100%;
+    width:50%;
+    top:0;
+    left:0;
+    overflow:hidden;
+    z-index:2;
+  }
+  
+  #resizer {
+    position:absolute;
+    display:flex;
+    align-items:center;
+    z-index:2;
+    top:0;
+    left:50%;
+    height:100%;
+    width:2px;
+    background: var(--body-color);
+    /*Stop vertical scrolling on touch*/
+    -ms-touch-action: pan-y;
+      touch-action: pan-y;
+  }
+#before-after-slider svg {
+    background-color: #fff;
+}
+.text-on-image {
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 2;
+}
+.text-on-image.right {
+    right: 0;
+    left: auto;
+}
+.text-on-image.bottom {
+    top: auto;
+    bottom: 0;
+}
+#resizer span {
+    margin-left: -14px;
+}
+#resizer span svg {
+    background-color: transparent;
+}

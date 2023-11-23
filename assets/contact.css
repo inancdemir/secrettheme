@@ -1,0 +1,23 @@
+.contact-form-container {
+    max-width: 680px;
+    margin: 0 auto;
+    display: flex;
+  }
+  .contact-form {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    row-gap: 16px;
+    margin-top: 16px;
+  }
+  
+  .contact-form.two-column {
+    display: flex;
+    flex-direction: row;
+    column-gap: 16px;
+  }
+  .contact-form.two-column div {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }

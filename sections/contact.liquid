@@ -1,0 +1,34 @@
+{{ 'contact.css' | asset_url | stylesheet_tag }}
+<div class="contact-form-container">
+    
+    {% form 'contact' %}
+      <div class="contact-form two-column">
+        <div>
+          <input placeholder="Name" type="text" id="ContactFormName" name="contact[name]" required>
+        </div>
+        <div>
+          <input placeholder="Email" type="email" id="ContactFormEmail" name="contact[email]" required>
+        </div>
+      </div>
+      <div class="contact-form">
+        <input placeholder="Phone Number" type="text" id="ContactFormPhone" name="contact[phone]">
+      </div>
+      <div class="contact-form">  
+        <textarea placeholder="Message..." id="ContactFormMessage" name="contact[body]" rows="4" required></textarea>
+      </div>
+      <div class="contact-form">
+        <input type="submit" class="button model-2 full" value="Submit">
+      </div>
+    {% endform %}
+  </div>
+  {% schema %}
+{
+  "name": "Contact form",
+  "presets": [
+    {
+      "name": "Contact form"
+    }
+  ]
+}
+{% endschema %}
+    

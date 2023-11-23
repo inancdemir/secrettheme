@@ -1,0 +1,45 @@
+{% style %}
+    
+
+{% endstyle %}
+{% if localization.available_languages.size > 1 %}
+    <localization-form>
+      {% form 'localization' %}
+        <div class="disclosure">
+          <button type="button" class="language-selector" aria-expanded="false" aria-controls="LanguageList">
+            {{ localization.language.iso_code | upcase }}
+            {% render 'icon-chevrown-down' %}
+          </button>
+  
+          <ul id="LanguageList" role="list" class="disclosure__list" hidden>
+            {% for language in localization.available_languages %}
+              <li class="disclosure__item" tabindex="-1">
+                <a href="#"{% if language.iso_code == localization.language.iso_code %} aria-current="true"{% endif %} hreflang="{{ language.iso_code }}" lang="{{ language.iso_code }}" data-value="{{ language.iso_code }}">
+                  {{ language.endonym_name | capitalize }}
+                </a>
+              </li>
+            {% endfor %}
+          </ul>
+  
+          <input type="hidden" name="language_code" value="{{ localization.language.iso_code }}">
+        </div>
+      {% endform %}
+    </localization-form>
+  {% endif %}
+<script>
+  const toggleButton = document.querySelector(".language-selector");
+  const disclosureDiv = document.querySelector(".disclosure");
+
+  if (toggleButton && disclosureDiv) {
+      toggleButton.addEventListener("click", function (event) {
+          disclosureDiv.classList.toggle("active");
+          event.stopPropagation();
+      });
+
+      document.addEventListener("click", function (event) {
+          if (!event.target.closest(".language-selector")) {
+              disclosureDiv.classList.remove("active");
+          }
+      });
+  }
+</script>

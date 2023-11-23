@@ -1,0 +1,340 @@
+{%- style -%}
+    .campain-wrap {
+      margin: -32px;
+      display: flex;
+      flex-wrap: wrap;
+      flex-direction: column;
+    }
+    .campain-wrap .campain-image {
+      flex: 0 0 100%;
+      background-color: lightgrey;
+      height: auto;
+      width: 100%;
+      position: relative; 
+    }
+    .campain-wrap .campain-image img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: 1;
+    }
+    .campain-wrap .campain-text {
+      flex: 1;
+      padding: 32px 16px 16px 16px;
+      display: flex;
+      flex-direction: column;
+      row-gap: 24px;
+    }
+    @media only screen and (min-width: 996px) {
+      .campain-wrap .campain-image {
+        flex: 0 0 200px;
+      }
+      .campain-wrap .campain-image {
+        flex: 0 0 200px;
+        height: 300px;
+        width: 200px;
+      
+      }
+      .campain-wrap {
+      flex-direction: row;
+    }
+    }
+
+{%- endstyle -%}
+
+{%- for block in section.blocks -%}
+  {% case block.type %}
+      {%- when 'campaing_pop' -%}
+        <div class="rise-pop {% if block.settings.show_pop %}active"{% endif %} {{ block.shopify_attributes }}>
+          <div class="rise-pop-wrap left-bottom campain">
+            <span class="pop-close">{%- render 'icon-close' -%}</span>
+            <div class="campain-wrap">
+              <div class="campain-image">
+                {% if block.settings.campaing_image %}
+                  {{ block.settings.campaing_image | image_url: width: 400 | image_tag: loading: 'lazy', class: 'campain-image' }}
+                {% else %}
+                  {{ 'product-2' | placeholder_svg_tag: 'campain-image' }}
+                {% endif %}
+              </div>
+              <div class="campain-text">
+                {% if block.settings.heading %}
+                  <h3 class="medium">{{- block.settings.heading -}}</h3>
+                {% else %}
+                  <h3 class="medium">Free Pencil Case</h3>
+                {% endif %}
+                {% if block.settings.text %}
+                  {{- block.settings.text -}}
+                {% else %}
+                  <p><strong>With any backpack</strong></p>
+                  <ol>
+                    <li>Add any backpack to cart.</li>
+                    <li>Add Pencil Case to cart.</li>
+                    <li>Use code at checkout: MIBLACK23</li>
+                  </ol>
+                {% endif %}
+                
+                <a href="{{- block.settings.button_url -}}" class="button model-2 full">{{- block.settings.button_text -}}</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      {%- when 'age_pop' -%}
+        <div class="rise-pop {% if block.settings.show_pop %}active"{% endif %} {{ block.shopify_attributes }}>
+          <div class="rise-pop-wrap age">
+            <span class="pop-close">{%- render 'icon-close' -%}</span>
+            <p class="text-link">{{ block.settings.small_text }}</p>
+            <h3 class="medium">{{ block.settings.heading }}</h3>
+            {{ block.settings.text }}
+            <a href="" class="button model-2 full">{{- block.settings.button_text -}}</a>
+            <a href="{{- block.settings.exit_url -}}" class="text-link exit">{{- block.settings.exit_text -}}</a>
+            <p class="text-link">{{ block.settings.pop_footer }}</p>
+          </div>
+        </div>
+      {%- when 'coockie_pop' -%}
+        <div class="rise-pop {% if block.settings.show_pop %}active"{% endif %} {{ block.shopify_attributes }}>
+          <div class="rise-pop-wrap left-bottom cookie">
+            <span class="pop-close">{%- render 'icon-close' -%}</span>
+            <div class="text-link">{{ block.settings.text }}</div>
+            <div class="button-group">
+              <a href="{{ block.settings.button_first_url }}" class="button model-3">{{ block.settings.button_first_text }}</a>
+              <a href="{{ block.settings.button_second_url }}" class="button model-2">{{ block.settings.button_second_text }}</a>
+            </div>
+            <div class="text-link text-center underline">{{ block.settings.bottom_text }}</div>
+          </div>
+        </div>
+      {%- when 'subscribe' -%}
+        <div class="rise-pop {% if block.settings.show_pop %}active"{% endif %} {{ block.shopify_attributes }}>
+          <div class="rise-pop-wrap subscribe">
+            {% if block.settings.subscribe_image %}
+              {{ block.settings.subscribe_image | image_url: width: 532 | image_tag: loading: 'lazy', class: 'subscribe-image' }}
+            {% else %}
+              {{ 'product-1' | placeholder_svg_tag: 'subscribe-image' }}
+            {% endif %}            
+            <div class="text-area">
+              <h4 class="medium">{{ block.settings.heading }}</h3>
+              {{ block.settings.text }}
+              {% form 'customer', id: 'footer-newsletter' %}
+                {% if form.posted_successfully? %}
+                  <p class="footer-column-news-message">You've been subscribed!</p>
+                {% endif %}
+  
+                {% if form.errors %}
+                  <p class="footer-column-news-message">{{ form.errors.messages.email }}</p>
+                {% endif %}
+  
+                <input type="hidden" name="contact[tags]" value="newsletter">
+                <input name="contact[email]" type="email" placeholder="Email address">
+                <button type="submit">Subscribe</button>
+              {% endform %}
+              <div class="text-center footnote pop-close-foot">
+                {{ block.settings.close_text }}
+              </div>
+            </div>
+          </div>
+        </div>
+  
+
+  {%- endcase -%}
+{%- endfor -%}
+
+{% schema %}
+{
+  "name": "t:sections.pop_ups.name",
+  "settings": [
+
+  ],
+  "blocks": [
+    {
+      "type": "campaing_pop",
+      "name": "t:sections.pop_ups.blocks.campaing_pop.name",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "campaing_image",
+          "label": "t:sections.pop_ups.blocks.campaing_pop.image_picker"
+        },
+        {
+          "type": "text",
+          "id": "heading",
+          "label": "t:sections.pop_ups.blocks.campaing_pop.heading",
+          "default": "Free Pencil Case"
+        },
+        {
+          "type": "richtext",
+          "id": "text",
+          "label": "t:sections.all.text",
+          "default": "<p><strong>With any backpack</strong></p><ol><li>Add any backpack to cart.</li><li>Add Pencil Case to cart.</li><li>Use code at checkout: MIBLACK23</li></ol>"
+        },
+        {
+          "type": "text",
+          "id": "button_text",
+          "label": "t:sections.all.button_label",
+          "default": "BUTTON"
+        },
+        {
+          "type": "url",
+          "id": "button_url",
+          "label": "t:sections.all.add_link"
+        },
+        {
+          "type": "checkbox",
+          "id": "show_pop",
+          "label": "t:sections.all.show_pop",
+          "default": false
+        }
+      ]
+    },
+    {
+      "type": "age_pop",
+      "name": "t:sections.pop_ups.blocks.age_pop.name",
+      "settings": [
+        {
+          "type": "text",
+          "id": "small_text",
+          "label": "t:sections.pop_ups.blocks.age_pop.small_text",
+          "default": "19+ ONLY"
+        },
+        {
+          "type": "text",
+          "id": "heading",
+          "label": "t:sections.pop_ups.blocks.age_pop.header",
+          "default": "PLEASE VERIFY YOUR AGE"
+        },
+        {
+          "type": "richtext",
+          "id": "text",
+          "label": "t:sections.all.text",
+          "default": "<p>You must be 19 years of age or older to enter.</p>"
+        },
+        {
+          "type": "text",
+          "id": "button_text",
+          "label": "t:sections.all.button_label",
+          "default": "ENTER"
+        },
+        {
+          "type": "text",
+          "id": "exit_text",
+          "label": "t:sections.pop_ups.blocks.age_pop.exit_text",
+          "default": "Exit"
+        },
+        {
+          "type": "url",
+          "id": "exit_url",
+          "label": "t:sections.pop_ups.blocks.age_pop.exit_url"
+        },
+        {
+          "type": "richtext",
+          "id": "pop_footer",
+          "label": "t:sections.pop_ups.blocks.age_pop.pop_footer",
+          "default": "<p>By entering you are agreeing that you are at least 19 years of age or older.</p>"
+        },
+        {
+          "type": "checkbox",
+          "id": "show_pop",
+          "label": "t:sections.all.show_pop",
+          "default": false
+        }
+      ]
+    },
+    {
+      "type": "coockie_pop",
+      "name": "t:sections.pop_ups.blocks.coockie_pop.name",
+      "settings": [
+        {
+          "type": "richtext",
+          "id": "text",
+          "label": "t:sections.pop_ups.blocks.coockie_pop.small_text",
+          "default": "<p>By clicking Accept and Continue, you agree to the storing of cookies on your device to enhance site navigation, analyze site usage, and assist in our marketing efforts. For more information on how we use cookies, please see our Cookie Policy.</p>"
+        },
+        {
+          "type": "text",
+          "id": "button_first_text",
+          "label": "t:sections.pop_ups.blocks.coockie_pop.button_first_text",
+          "default": "BUTTON"
+        },
+        {
+          "type": "url",
+          "id": "button_first_url",
+          "label": "t:sections.pop_ups.blocks.coockie_pop.button_first_url"
+        },
+        {
+          "type": "text",
+          "id": "button_second_text",
+          "label": "t:sections.pop_ups.blocks.coockie_pop.button_second_text",
+          "default": "ACCEPT AND CONTINUE"
+        },
+        {
+          "type": "url",
+          "id": "button_second_url",
+          "label": "t:sections.pop_ups.blocks.coockie_pop.button_second_url"
+        },
+        {
+          "type": "richtext",
+          "id": "bottom_text",
+          "label": "t:sections.pop_ups.blocks.coockie_pop.bottom_text",
+          "default": "<p>Text Link</p>"
+        },
+        {
+          "type": "checkbox",
+          "id": "show_pop",
+          "label": "t:sections.all.show_pop",
+          "default": false
+        }
+      ]
+    },
+    {
+      "type": "subscribe",
+      "name": "t:sections.pop_ups.blocks.subscribe.name",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "subscribe_image",
+          "label": "t:sections.all.image"
+        },
+        {
+          "type": "text",
+          "id": "heading",
+          "label": "t:sections.pop_ups.blocks.subscribe.header",
+          "default": "ENJOY 10% OFF YOUR FIRST ORDER."
+        },
+        {
+          "type": "richtext",
+          "id": "text",
+          "label": "t:sections.pop_ups.blocks.subscribe.small_text",
+          "default": "<p>Sign up to join the club and get 10% off your purchase! Our selection of products is vast and offers something for everyone. Shop now and save.</p>"
+        },
+        {
+          "type": "text",
+          "id": "close_text",
+          "label": "t:sections.pop_ups.blocks.subscribe.close_text",
+          "default": "No Thanks"
+        },
+        {
+          "type": "checkbox",
+          "id": "show_pop",
+          "label": "t:sections.all.show_pop",
+          "default": false
+        }
+      ]
+    }
+  ],
+  "disabled_on": {
+    "templates": [
+      "*"
+    ],
+    "groups": [
+      "header",
+      "footer"
+    ]
+  },
+  "presets": [
+    {
+      "name": "t:sections.pop_ups.name"
+    }
+  ]
+}
+{% endschema %}

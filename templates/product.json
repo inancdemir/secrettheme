@@ -1,0 +1,50 @@
+{
+    "sections": {
+        "product_first": {
+            "type": "product-layout",
+            "blocks": {
+                "product-inner-1": {
+                    "type": "title_text",
+                    "settings": {}
+                },
+                "product-inner-2": {
+                    "type": "prices",
+                    "settings": {}
+                },
+                "product-inner-3": {
+                    "type": "variants",
+                    "settings": {}
+                },
+                "product-inner-4": {
+                    "type": "button",
+                    "settings": {}
+                },
+                "product-inner-5": {
+                    "type": "socials",
+                    "settings": {}
+                },
+                "product-inner-6": {
+                    "type": "description",
+                    "settings": {}
+                },
+                "product-inner-7": {
+                    "type": "accordion",
+                    "settings": {}
+                }
+            },
+            "block_order": [
+                "product-inner-1",
+                "product-inner-2",
+                "product-inner-3",
+                "product-inner-4",
+                "product-inner-5",
+                "product-inner-6",
+                "product-inner-7"
+            ],
+            "settings": {}
+        }
+    },
+    "order": [
+        "product_first"
+    ]
+}

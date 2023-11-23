@@ -1,0 +1,19 @@
+{
+    "sections": {
+        "banner": {
+            "type": "banner",
+            "settings": {
+                "section_height": 50,
+                "background_image": "{{ article.image }}"
+            }
+        },
+        "article": {
+            "type": "article",
+            "settings": {}
+        }
+    },
+    "order": [
+        "banner",
+        "article"
+    ]
+}

@@ -1,0 +1,51 @@
+{%- style -%}
+.default-page {  
+    margin: 0 auto; 
+}
+.default-page > * {
+  margin-bottom: calc(var(--font-body-size) * 18px);
+}
+.default-page ul {
+  list-style: inside;
+}
+.default-page.small {   
+    max-width: 720px;
+}
+.default-page.medium {   
+    max-width: 960px;
+}
+.default-page.large {
+    max-width: 1200px;
+}
+
+{%- endstyle -%}
+<div class="section-{{ section.id }} default-page {{ section.settings.page_width }}">
+    {{ page.content }}    
+</div>
+{% schema %}
+{
+  "name": "Deafult Page",
+  "settings": [
+    {
+      "type": "select",
+      "id": "page_width",
+      "options": [
+        {
+          "value": "small",
+          "label": "t:sections.all.small"
+        },
+        {
+          "value": "medium",
+          "label": "t:sections.all.medium"
+        },
+        {
+          "value": "large",
+          "label": "t:sections.all.large"
+        }
+      ],
+      "label": "Page width",
+      "default": "medium"
+    }
+  ]
+}
+{% endschema %}

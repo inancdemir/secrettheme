@@ -1,0 +1,38 @@
+<div class="single-post">
+    <div class="image-wrap">
+      {{ article.image | image_url: width: 600 | image_tag: loading: 'lazy' }}
+    </div>
+    <div class="post-details">
+      <div class="header-tags callout space-between">
+        <span class="authore">By {{ article.author }}</span>
+        <span class="date">{{ article.published_at | date: '%B %d, %Y' }}</span>
+      </div>
+      <h3 class="subheadline">
+        <a href="{{ article.url }}">
+          {{ article.title | strip_html | truncate: 40 }}
+        </a>
+      </h3>
+      <p>
+        {%- if article.excerpt.size > 0 -%}
+          {{ article.excerpt | strip_html | truncate: 125 }}
+        {%- else -%}
+          {{ article.content | strip_html | truncate: 125 }}
+        {%- endif -%}                      
+      </p>
+      <a class="text-link underline" href="{{ article.url }}">Read More</a>
+      <div class="footer-tags callout space-between">
+        <span class="tags">
+          <ul class="inline">
+            {%- for tag in article.tags -%}
+              <li>
+                <a href="{{ blog.url }}/tagged/{{ tag | handle }}">
+                  #{{ tag }}
+                </a>
+              </li>
+            {%- endfor -%}
+          </ul>
+        </span>
+        <span class="views-comments">{{ article.comments_count }} Comment</span>
+      </div>
+    </div>
+</div>

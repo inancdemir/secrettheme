@@ -1,0 +1,205 @@
+
+{%- style -%}
+.section-{{ section.id }}.testimonial-slider {
+    background: {{ section.settings.background_color }};
+    color: {{ section.settings.text_color }};
+    text-align: center; 
+    padding: {{ section.settings.section_padding }}px 0;
+}
+
+.testimonial-item {
+    width: 100%;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    
+}
+.testimonial-item .wrap {
+    max-width: 960px;
+    margin: auto;
+}
+.testimonial-item .wrap div p {
+    padding-bottom: 24px;
+}
+.testimonial-slider h2 {
+    margin-bottom: calc(var(--font-title-size) * 36px);
+}
+@media only screen and (min-width: 640px) {
+    .testimonial-slider h2 {
+        margin-bottom: calc(var(--font-title-size) * 48px);
+    }
+}
+@media only screen and (min-width: 1024px) {
+    .testimonial-slider h2 {
+        margin-bottom: calc(var(--font-title-size) * 64px);
+    }
+}
+.section-{{ section.id }}.testimonial-slider .flickity-prev-next-button .flickity-button-icon {
+    position: absolute;
+    left: 0;
+    top: auto;
+    width: 100%;
+    height: 100%;
+    fill: var(--body-color);
+    bottom: -60px;
+}
+.section-{{ section.id }}.testimonial-slider .flickity-prev-next-button {
+    margin-right: 22px;
+    margin-left: 22px;
+}
+.section-{{ section.id }}.testimonial-slider .flickity-prev-next-button svg {
+  fill: {{ section.settings.text_color }} !important;
+}
+.carousel-nav {
+    color: {{ section.settings.text_color }};
+    margin-top: 24px;
+}
+
+
+
+{%- endstyle -%}
+{{ 'flickity.css' | asset_url | stylesheet_tag }}
+<script src="{{ 'flickity.js' | asset_url }}" defer></script>      
+
+
+<div class="section-{{ section.id }} testimonial-slider">
+    <h2 class="medium">{{ section.settings.heading }}</h2>
+    
+    <div class="quote-carousel-{{- section.id -}}">
+        {%- for block in section.blocks -%}
+            {% case block.type %}
+                {%- when 'quote' -%}
+                    <div class="testimonial-item" {{ block.shopify_attributes }}>                        
+                        <div class="wrap">
+                            <div class="subheadline subheading">
+                                {{ block.settings.description }}
+                            </div>
+                            <p>{{ block.settings.heading }}</p>
+                            <p class="callout">{{ block.settings.position }}</p>
+                        </div>                        
+                    </div>
+            {%- endcase -%}
+        {%- endfor -%}
+    </div>
+    <div class="carousel-nav footnote "></div>
+
+
+</div>
+    
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        var flkty = new Flickity('.quote-carousel-{{- section.id -}}', {
+            // Options
+            cellAlign: 'center',       // Align the first slide to the left
+            prevNextButtons: true,   // Show previous and next buttons
+            contain: true,
+            pageDots: false,
+            
+        });
+        function updateNavigation() {
+            var currentIndex = flkty.selectedIndex + 1;
+            var totalSlides = flkty.slides.length;
+            var navElement = document.querySelector('.carousel-nav');
+            navElement.textContent = currentIndex + '/' + totalSlides;
+          }
+          flkty.on('select', updateNavigation);
+          updateNavigation(); // Call the function initially
+
+    });
+    
+
+    {%- if request.design_mode -%}
+        document.addEventListener("shopify:section:load", function() {
+          var flkty = new Flickity('.quote-carousel-{{- section.id -}}', {
+            // Options
+            cellAlign: 'center',       // Align the first slide to the left
+            prevNextButtons: true,   // Show previous and next buttons
+            contain: true,
+            pageDots: false,
+            
+          });
+          function updateNavigation() {
+              var currentIndex = flkty.selectedIndex + 1;
+              var totalSlides = flkty.slides.length;
+              var navElement = document.querySelector('.carousel-nav');
+              navElement.textContent = currentIndex + '/' + totalSlides;
+            }
+            flkty.on('select', updateNavigation);
+            updateNavigation(); // Call the function initially
+        });
+    {%- endif -%}
+</script>
+{% schema %}
+{
+  "name": "t:sections.testimonial_slider.name",
+  "settings": [
+    {
+      "type": "text",
+      "label": "t:sections.all.heading",
+      "default": "What They’re Saying.",
+      "id": "heading"
+    },
+    {
+      "type": "range",
+      "id": "section_padding",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "label": "t:sections.all.section_padding",
+      "default": 64
+    },
+    {
+      "type": "color_background",
+      "id": "background_color",
+      "label": "t:sections.all.background_color",
+      "default": "linear-gradient(180deg, rgba(0, 0, 0, 1), rgba(0, 0, 0, 1) 100%)"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "t:sections.all.color",
+      "default": "#FFFFFF"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "quote",
+      "name": "t:sections.testimonial_slider.block_name",
+      "settings": [
+        {
+          "type": "richtext",
+          "id": "description",
+          "label": "t:sections.testimonial_slider.quote_text",
+          "default": "<p>“It was really fun getting to know the team during the project. They were all helpful in answering my questions and made me feel at ease. The design ended up being better than I could have envisioned!”</p>"
+        },
+        {
+          "type": "text",
+          "id": "heading",
+          "label": "t:sections.testimonial_slider.author",
+          "default": "Venus Gonul"
+        },
+        {
+          "type": "text",
+          "id": "position",
+          "label": "t:sections.testimonial_slider.author_pos",
+          "default": "Product Designer"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "t:sections.testimonial_slider.name",
+      "blocks": [
+        {
+          "type": "quote"
+        },
+        {
+          "type": "quote"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

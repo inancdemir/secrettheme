@@ -1,0 +1,168 @@
+{%- style -%}
+.section-{{ section.id }} {
+    padding: {{ section.settings.section_padding }}px 0;
+    color: {{ section.settings.color }};
+    background-color: {{ section.settings.bg_color }};
+}
+.section-{{ section.id }} .newsletter-wrap {
+    max-width: 1400px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    row-gap: {{ section.settings.select_spacing_between }}px;
+    padding: 0 16px;
+    text-align: left;
+}
+.section-{{ section.id }} .newsletter-wrap h2 {
+  max-width: 960px;
+  margin: auto;
+}
+.section-{{ section.id }} .newsletter-wrap .subheadline {
+  max-width: 820px;
+  margin: auto;
+}
+.section-{{ section.id }} .callout,
+.section-{{ section.id }} .subscribe-form {
+  max-width: 500px;
+  width: 100%;
+  margin: auto;
+}
+.section-{{ section.id }} .subscribe-form {
+  background-color: {{ section.settings.color }};
+  color: {{ section.settings.bg_color }};
+  display: flex;
+  justify-content: space-between;
+}
+.section-{{ section.id }} form .subscribe-form {
+  display: flex;
+  justify-content: space-between;
+  flex: 0 0 100%;
+}
+.section-{{ section.id }} form input .subscribe-form {
+  width: 100%;
+}
+.section-{{ section.id }} form .subscribe-form * {
+  border: none !important;
+}
+@media only screen and (min-width: 640px) {
+  .section-{{ section.id }} .newsletter-wrap {
+    text-align: center;
+  }
+}
+{%- endstyle -%}
+<div class="newsletter section-{{ section.id }}">
+  <div class="newsletter-wrap">
+    <h3 class="large">{{ section.settings.heading }}</h3>
+    <div class="subheadline">{{ section.settings.subheading }}</div>
+    
+      {% if form.posted_successfully? %}
+          <div class="footer-column-news-message">You've been subscribed!</div>
+        {% endif %}
+        {% if form.errors %}
+          <div class="footer-column-news-message">{{ form.errors.messages.email }}</div>
+        {% endif %}
+      {% form 'customer', id: 'footer-newsletter' %}  
+      <div class="subscribe-form">
+        <input type="hidden" name="contact[tags]" value="newsletter">
+        <input name="contact[email]" type="email" placeholder="Email address">
+        <button class="button {{ section.settings.button_style }}" type="submit">{{- section.settings.button -}}</button>
+      </div>    
+      {% endform %}
+    
+    <div class="callout">{{ section.settings.footnote }}</div>
+  </div>
+</div>
+{% schema %}
+{
+  "name": "t:sections.newsletter.name",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "t:sections.all.heading",
+      "default": "Subscribe to Our Newsletter"
+    },
+    {
+      "type": "richtext",
+      "id": "subheading",
+      "label": "t:sections.all.sub_heading",
+      "default": "<p>Sign-up for our monthly update on our latest products and be the first to know about upcoming sales and promotions.</p>"
+    },
+    {
+      "type": "text",
+      "id": "button",
+      "label": "t:sections.all.button_label",
+      "default": "Subscribe"
+    },
+    {
+      "type": "richtext",
+      "id": "footnote",
+      "label": "Footnote",
+      "default": "<p>Enter your email to receive our newsletter. You can unsubscribe at anytime.</p>"
+    },
+    {
+      "type": "range",
+      "id": "select_spacing_between",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "label": "t:sections.newsletter.select_spacing_between",
+      "default": 16
+    },
+    {
+      "type": "range",
+      "id": "section_padding",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "label": "t:sections.all.section_padding",
+      "default": 64
+    },
+    {
+      "type": "color",
+      "id": "color",
+      "label": "t:sections.all.color",
+      "default": "#FFFFFF"
+    },
+    {
+      "type": "select",
+      "id": "button_style",
+      "options": [
+        {
+          "value": "model-1",
+          "label": "t:settings_schema.typography.settings.colors.button_1_color_1"
+        },
+        {
+          "value": "model-2",
+          "label": "t:settings_schema.typography.settings.colors.button_2_color_1"
+        },
+        {
+          "value": "model-3",
+          "label": "t:settings_schema.typography.settings.colors.button_3_color_1"
+        },
+        {
+          "value": "model-4",
+          "label": "t:settings_schema.typography.settings.colors.button_4_color_1"
+        }
+      ],
+      "label": "t:sections.all.button_style",
+      "default": "model-1"
+    },
+    {
+      "type": "color",
+      "id": "bg_color",
+      "label": "t:sections.all.background_color",
+      "default": "#000000"
+    }
+  ],
+  "presets": [
+    {
+      "name": "t:sections.newsletter.name"
+    }
+  ]
+}
+{% endschema %}

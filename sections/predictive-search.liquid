@@ -1,0 +1,72 @@
+{%- if predictive_search.performed -%}
+  <div class="search-result-left">
+    {% comment %}
+    <div class="suggestion-box">
+      <span class="caption-2 search-section-title">Did you mean</span>
+      {%- for query in predictive_search.resources.queries -%}
+        <a href="{{ query.url }}" class="predictive-search__item link link--text" tabindex="-1">
+          {{ query.styled_text }}
+        </a>
+      {%- endfor -%}
+    </div>
+    {% endcomment %}
+
+    <span class="caption-2 search-section-title">Did you mean</span>
+    <ul>
+      {%- for query in predictive_search.resources.queries -%}
+        <li><a href="{{ query.url }}" class="predictive-search__item link link--text" tabindex="-1">
+          {{ query.styled_text }}
+        </a></li>
+      {%- endfor -%}
+    </ul>
+    {% if predictive_search.resources.collections != blank %}
+      <span class="caption-2 search-section-title">COLLECTIONS</span>
+      <ul>
+        {%- for collection in predictive_search.resources.collections -%}
+          <li><a href="{{ collection.url }}">{{ collection.title }}</a></li>
+        {%- endfor -%}
+      </ul>
+    {% endif %}
+    {% if predictive_search.resources.pages != blank %}
+      <span class="caption-2">PAGES</span>
+      <ul>
+        {%- for page in predictive_search.resources.pages -%}
+          <li><a href="{{ page.url }}">{{ page.title }}</a></li>
+        {%- endfor -%}
+      </ul>
+    {% endif %}
+      
+      
+    
+  </div>
+  <div class="search-result-right">
+    <div id="predictive-search-results">
+      {%- if predictive_search.resources.products.size > 0 -%}
+        <span class="caption-2 search-section-title">PRODUCTS</span>
+        <div class="hidden-mobile">
+          <ul role="listbox" aria-labelledby="predictive-search-products" class="search-products">
+          {%- for product in predictive_search.resources.products limit: 4 -%}
+            <li role="option" class="image-size-{{- settings.image_size }} image-fit-{{- settings.image_fit }} image-pos-{{- settings.image_pos -}}">
+              {% render 'product-item', product: product %}
+            </li>
+          {%- endfor -%}
+          </ul>
+        </div>
+        <div class="hidden-desktop">
+          <ul role="listbox" aria-labelledby="predictive-search-products" class="search-products">
+          {%- for product in predictive_search.resources.products limit: 4 -%}
+            <li role="option">
+              {{- product.title | link_to: product.url }}
+            </li>
+          {%- endfor -%}
+          </ul>
+        </div>
+        
+      {%- endif -%}
+      <button class="button full">
+        Search for “{{ predictive_search.terms }}”
+      </button>
+    </div>
+  </div>
+   {%- endif -%}
+  

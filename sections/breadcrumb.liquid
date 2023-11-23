@@ -1,0 +1,46 @@
+{%- style -%}
+.section-{{ section.id }} {
+  padding-top: {{ section.settings.section_padding }}px;
+  padding-bottom: {{ section.settings.section_padding }}px;
+  {% if section.settings.full_width %}
+    padding-left: 20px;
+    padding-right: 20px;
+  {% else %}
+  
+  max-width: 1440px;
+  margin-left: auto;
+  margin-right: auto;
+  {% endif %}      
+}
+{%- endstyle -%}
+<div class="section-{{ section.id }}">
+{%- render 'breadcrumb' -%}
+</div>
+{% schema %}
+{
+  "name": "t:sections.breadcrumb.name",
+  "settings": [
+    {
+      "type": "range",
+      "id": "section_padding",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "label": "t:sections.all.section_padding",
+      "default": 24
+    },
+    {
+      "type": "checkbox",
+      "id": "full_width",
+      "label": "t:sections.all.make_section_full",
+      "default": true
+    }
+  ],
+  "presets": [
+    {
+      "name": "t:sections.breadcrumb.name"
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,337 @@
+{%- style -%}
+.section-{{ section.id }} {
+    background: {% if section.settings.background_image %}
+                    url("{{ section.settings.background_image | image_url }}"),
+                {% endif %}
+                {{ section.settings.background_color }};
+    background-repeat: no-repeat;
+    background-position: top center;
+    padding-top: calc(({{- section.settings.section_padding_top }} / 100) * 128px);
+    padding-bottom: calc(({{- section.settings.section_padding_bottom }} / 100) * 128px);
+}
+@media only screen and (min-width: 640px) {
+  .section-{{ section.id }} {
+    padding-top: calc(({{- section.settings.section_padding_top }} / 100) * 256px);
+    padding-bottom: calc(({{- section.settings.section_padding_bottom }} / 100) * 256px);
+  }
+}
+.section-{{ section.id }}.front-collection-wrap  h2 {
+    color: {{ section.settings.heading_color }};
+
+}
+.section-{{ section.id }}.front-collection-wrap .subtitle {
+    color: {{ section.settings.sub_heading_color }};
+
+}
+.section-{{ section.id }} .collection-hor {
+    display: flex;
+    flex-direction: row;
+    column-gap: {{ section.settings.spacings }}px;
+    overflow-y: scroll;
+}
+@media only screen and (min-width: 640px) {
+  .section-{{ section.id }} .collection-hor {
+    flex-wrap: wrap;
+  }
+}
+.section-{{ section.id }} .collection-hor .single-collection {
+  flex: 0 0 80%;
+  max-width: 80%;
+  padding-top: {{ section.settings.spacings }}px;
+  position: relative;
+}
+@media only screen and (min-width: 640px) {
+  .section-{{ section.id }} .collection-hor .single-collection {
+    flex: 0 0 calc(calc((100% - calc({{ section.settings.spacings }}px * calc({{ section.settings.collection_per_line }} - 1))) / {{ section.settings.collection_per_line }}));
+  }
+}
+.section-{{ section.id }} .model-one {
+  margin: 0 8px 0 8px;
+}
+.section-{{ section.id }} .model-two {
+  margin: 0 16px 16px 16px;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+}
+.section-{{ section.id }} .single-collection h3 {
+    color: {{ section.settings.collection_item_title_color }};
+    margin: 16px 0 0 0;
+}
+
+.section-{{ section.id }} .single-collection a.shop-now {
+    color: {{ section.settings.shop_now_color }};
+    text-decoration: underline;
+    margin-top: 8px;
+    display: block;
+}
+
+{%- endstyle -%}
+
+
+<div class="front-collection-wrap section-{{ section.id }}">
+    {% unless section.settings.full_width %}
+    <div class="wide-width">
+    {% endunless %}
+    {% if section.settings.heading != blank %}
+      <h2 class="{{ section.settings.heading_font_size }} space-from-edges">{{ section.settings.heading }}</h2>
+    {% endif %}
+    {% if section.settings.sub_heading != blank %}
+        <div class="subtitle subheadline space-from-edges">{{ section.settings.sub_heading }}</div>
+    {% endif %}
+    
+    <div class="collection-hor">
+        {% if section.settings.collection_list != empty %}
+            {%- for collection in section.settings.collection_list -%}
+              <div class="single-collection image-size-{{ section.settings.image_size }} image-fit-{{- section.settings.image_fit }} image-pos-{{- section.settings.image_pos -}}">
+                <div class="image-wrap">  
+                  {{ collection.featured_image | image_url: width: 1000 | image_tag: loading: 'lazy', class: 'product-image' }}
+                </div>
+                <div class="{{ section.settings.collection_model }}">
+                  <h3 class="subheadline">
+                      {{- collection.title | upcase | link_to: collection.url -}}
+                  </h3>
+                  <a class="shop-now text-link" href="{{ collection.url }}">Shop Now</a>
+                </div>
+              </div>
+            {%- endfor -%}
+        {% else %}
+          {% for collection_number in (1..section.settings.collection_per_line) %}
+            <div class="single-collection">
+                {{ 'collection-' | append: collection_number | placeholder_svg_tag: 'demo-image' }}
+                <div class="{{ section.settings.collection_model }}">
+                  <h3 class="subheadline">Collection Title {{ collection_number }}</h3>
+                  <a class="shop-now text-link" href="#">Shop Now</a>
+                </div>
+            </div>
+          {% endfor %}
+        {% endif %}
+    </div>
+    {% unless section.settings.full_width %}
+    </div>
+    {% endunless %}
+</div>
+
+
+
+
+
+{% schema %}
+{
+  "name": "t:sections.collection_showcase.section_name",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "t:sections.all.heading",
+      "default": "t:sections.collection_showcase.section_name"
+    },
+    {
+      "type": "color",
+      "id": "heading_color",
+      "label": "t:sections.all.heading",
+      "default": "#000000"
+    },
+    {
+      "type": "select",
+      "id": "heading_font_size",
+      "options": [
+        {
+          "value": "small",
+          "label": "t:sections.all.small"
+        },
+        {
+          "value": "medium",
+          "label": "t:sections.all.medium"
+        },
+        {
+          "value": "large",
+          "label": "t:sections.all.large"
+        }
+      ],
+      "label": "t:sections.all.heading_font_size",
+      "default": "large"
+    },
+    {
+      "type": "richtext",
+      "id": "sub_heading",
+      "label": "t:sections.all.sub_heading",
+      "default": "t:sections.collection_showcase.subheading_default"
+    },
+    {
+      "type": "color",
+      "id": "sub_heading_color",
+      "label": "t:sections.all.sub_heading",
+      "default": "#000000"
+    },
+    {
+      "type": "range",
+      "id": "collection_per_line",
+      "min": 1,
+      "max": 6,
+      "step": 1,
+      "label": "t:sections.all.column_per_row",
+      "default": 3
+    },
+    {
+      "type": "collection_list",
+      "id": "collection_list",
+      "label": "t:sections.all.collections"
+    },
+    {
+      "type": "select",
+      "id": "image_size",
+      "label": "t:sections.all.img_size",
+      "default": "one-one",
+      "options": [
+        {
+          "value": "one-one",
+          "label": "1 / 1"
+        },
+        {
+          "value": "three-two",
+          "label": "3 / 2"
+        },
+        {
+          "value": "fout-three",
+          "label": "4 / 3"
+        },
+        {
+          "value": "sixteen-nine",
+          "label": "16 / 9"
+        },
+        {
+          "value": "two-three",
+          "label": "2 / 3"
+        },
+        {
+          "value": "three-four",
+          "label": "3 / 4"
+        },
+        {
+          "value": "nine-sixteen",
+          "label": "9 / 16"
+        }
+      ]
+    },
+    {
+      "type": "select",
+      "id": "image_fit",
+      "label": "t:sections.all.image_fit",
+      "default": "cover",
+      "options": [
+        {
+          "value": "contain",
+          "label": "t:sections.all.image_contain"
+        },
+        {
+          "value": "cover",
+          "label": "t:sections.all.image_cover"
+        }
+      ]
+    },
+    {
+      "type": "select",
+      "id": "image_pos",
+      "label": "t:sections.all.image_position",
+      "default": "center",
+      "info": "t:sections.all.image_position_info",
+      "options": [
+        {
+          "value": "top",
+          "label": "t:sections.all.image_pos_top"
+        },
+        {
+          "value": "center",
+          "label": "t:sections.all.image_pos_center"
+        },
+        {
+          "value": "bottom",
+          "label": "t:sections.all.image_pos_bot"
+        }
+      ]
+    },
+    {
+      "type": "select",
+      "id": "collection_model",
+      "label": "t:sections.collection_showcase.collection_model",
+      "default": "model-two",
+      "info": "Change model of the collection boxes",
+      "options": [
+        {
+          "value": "model-one",
+          "label": "t:sections.collection_showcase.collection_model_1"
+        },
+        {
+          "value": "model-two",
+          "label": "t:sections.collection_showcase.collection_model_2"
+        }
+      ]
+    },
+    {
+      "type": "range",
+      "id": "spacings",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "label": "t:sections.all.columns_spacings",
+      "default": 16
+    },
+    {
+      "type": "color",
+      "id": "collection_item_title_color",
+      "label": "t:sections.collection_showcase.single_collection_title.color",
+      "default": "#FFFFFF"
+    },
+    {
+      "type": "color",
+      "id": "shop_now_color",
+      "label": "t:sections.collection_showcase.shop_now.color",
+      "default": "#FFFFFF"
+    },
+    {
+      "type": "color_background",
+      "id": "background_color",
+      "label": "t:sections.all.background_color",
+      "default": "linear-gradient(180deg, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0) 100%)"
+    },
+    {
+      "type": "image_picker",
+      "id": "background_image",
+      "label": "t:sections.all.background_image"
+    },
+    {
+      "type": "range",
+      "id": "section_padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "%",
+      "label": "t:sections.all.section_padding_top",
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "section_padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "%",
+      "label": "t:sections.all.section_padding_bottom",
+      "default": 0
+    },
+    {
+      "type": "checkbox",
+      "id": "full_width",
+      "label": "t:sections.all.make_section_full",
+      "default": true
+    }
+  ],
+  "presets": [
+    {
+      "name": "t:sections.collection_showcase.section_name"
+    }
+  ]
+}
+{% endschema %}

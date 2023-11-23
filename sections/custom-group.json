@@ -1,0 +1,18 @@
+{
+    "name": "Overlay group",
+    "type": "custom.settings",
+    "sections": {
+        "quick-view": {
+            "type": "quick-view",
+            "settings": {}
+        },
+        "pop-ups": {
+            "type": "pop-ups",
+            "settings": {}
+        }
+    },
+    "order": [
+        "quick-view",
+        "pop-ups"
+    ]
+}

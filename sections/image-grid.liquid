@@ -1,0 +1,227 @@
+{%- style -%}
+.section-{{ section.id }} {
+  background: {{ section.settings.background_color }};
+  padding: {{ section.settings.section_padding }}px 0;
+}
+.image-grid figure {
+margin: 0;
+display: grid;
+grid-template-rows: 1fr auto;
+margin-bottom: 0;
+break-inside: avoid;
+}
+
+.image-grid figure > img {
+grid-row: 1 / -1;
+grid-column: 1;
+}
+
+.image-grid figure a {
+color: black;
+text-decoration: none;
+}
+.image-grid .container {
+column-count: 1;
+column-gap: 32px;
+}
+.image-auto img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+.image-grid .container svg {
+  background-color: lightgrey;
+}
+@media only screen and (min-width: 640px) {
+  .section-{{ section.id }}.image-grid .container {
+    column-count: {{ section.settings.grid_column_count }};
+  }
+  .image-grid figure {
+    margin-bottom: 32px;
+  }
+}
+{%- endstyle -%}
+<div class="image-grid section-{{ section.id }}">
+    {% unless section.settings.full_width %}
+    <div class="wide-width">
+    {% endunless %}
+        <div class="container">
+        {%- for block in section.blocks -%}
+            {% case block.type %}
+                {%- when 'image' -%}
+                    <figure>
+                        {% if block.settings.custom_size %}
+                            <div class="image-size-{{ block.settings.image_size }} image-fit-{{- block.settings.image_fit }} image-pos-{{- block.settings.image_pos -}}">
+                                <div class="image-wrap">
+                        {% else %}
+                            <div class="image-auto">
+                        {% endif %}
+                        
+                            {% if block.settings.image %}
+                                {{ block.settings.image | image_url: width: 1000 | image_tag: loading: 'lazy', class: 'slide-image' }}
+                            {% else %}
+                                {{ 'image' | placeholder_svg_tag: 'image-gallery' }}
+                            {% endif %}
+                            
+                        {% if block.settings.custom_size %}
+                                </div>
+                            </div>
+                        {% else %}
+                            </div>
+                        {% endif %}
+
+                    </figure>
+            {%- endcase -%}
+        {%- endfor -%}
+        </div>
+    {% unless section.settings.full_width %}
+    </div>
+    {% endunless %}
+</div>
+
+{% schema %}
+{
+  "name": "Image grid",
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "full_width",
+      "label": "t:sections.all.make_section_full",
+      "default": false
+    },
+    {
+      "type": "range",
+      "id": "grid_column_count",
+      "min": 1,
+      "max": 4,
+      "step": 1,
+      "unit": "itm",
+      "label": "t:sections.all.column_per_row",
+      "info": "gird masa üstünde yığılması kaç column içerisinde olacak",
+      "default": 2
+    },
+    {
+      "type": "color_background",
+      "id": "background_color",
+      "label": "t:sections.all.background_color",
+      "default": "linear-gradient(180deg, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0) 100%)"
+    },
+    {
+      "type": "range",
+      "id": "section_padding",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "label": "t:sections.all.section_padding",
+      "default": 30
+    }
+  ],
+  "blocks": [
+    {
+      "type": "image",
+      "name": "Image",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        },
+        {
+          "type": "checkbox",
+          "id": "custom_size",
+          "label": "Custom image size",
+          "info": "Turn this on in order to enable chosen custom image size.",
+          "default": true
+        },
+        {
+          "type": "select",
+          "id": "image_size",
+          "label": "t:sections.all.img_size",
+          "default": "one-one",
+          "options": [
+            {
+              "value": "one-one",
+              "label": "1 / 1"
+            },
+            {
+              "value": "three-two",
+              "label": "3 / 2"
+            },
+            {
+              "value": "fout-three",
+              "label": "4 / 3"
+            },
+            {
+              "value": "sixteen-nine",
+              "label": "16 / 9"
+            },
+            {
+              "value": "two-three",
+              "label": "2 / 3"
+            },
+            {
+              "value": "three-four",
+              "label": "3 / 4"
+            },
+            {
+              "value": "nine-sixteen",
+              "label": "9 / 16"
+            }
+          ]
+        },
+        {
+          "type": "select",
+          "id": "image_fit",
+          "label": "t:sections.all.image_fit",
+          "default": "cover",
+          "options": [
+            {
+              "value": "contain",
+              "label": "t:sections.all.image_contain"
+            },
+            {
+              "value": "cover",
+              "label": "t:sections.all.image_cover"
+            }
+          ]
+        },
+        {
+          "type": "select",
+          "id": "image_pos",
+          "label": "t:sections.all.image_position",
+          "default": "center",
+          "info": "t:sections.all.image_position_info",
+          "options": [
+            {
+              "value": "top",
+              "label": "t:sections.all.image_pos_top"
+            },
+            {
+              "value": "center",
+              "label": "t:sections.all.image_pos_center"
+            },
+            {
+              "value": "bottom",
+              "label": "t:sections.all.image_pos_bot"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Image grid",
+      "blocks": [
+        {
+          "type": "image"
+        },
+        {
+          "type": "image"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

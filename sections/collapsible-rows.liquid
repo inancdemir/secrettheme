@@ -1,0 +1,166 @@
+{%- style -%}
+.section-{{ section.id }}.collapsible-rows {
+    {% if section.settings.full_width %}
+    padding-left: 32px;
+    padding-right: 32px;
+    {% endif %}
+  padding-top: calc(({{- section.settings.section_padding_top }} / 100) * 128px);
+  padding-bottom: calc(({{- section.settings.section_padding_bottom }} / 100) * 128px);
+}
+@media only screen and (min-width: 640px) {
+  .section-{{ section.id }} {
+    padding-top: calc(({{- section.settings.section_padding_top }} / 100) * 256px);
+    padding-bottom: calc(({{- section.settings.section_padding_bottom }} / 100) * 256px);
+  }
+}
+
+.section-{{ section.id }} h2 {
+    margin-bottom: 32px;
+}
+
+{%- endstyle -%}
+{{ 'accordion.css' | asset_url | stylesheet_tag }}
+<script id="accordions" src="{{ 'accordion.js' | asset_url }}" defer></script>
+<div class="collapsible-rows section-{{ section.id }}">
+    {% unless section.settings.full_width %}
+    <div class="wide-width">
+    {% endunless %}
+    {% if section.settings.heading != blank %}
+    <h2 class="{{ section.settings.heading_font_size }}">{{ section.settings.heading }}</h2>
+    {% endif %}
+    <div class="accordions-wrap">
+        {%- for block in section.blocks -%}
+            {% case block.type %}
+                {%- when 'accordion' -%}
+                <div class="accordion" {{ block.shopify_attributes }} {{ block.shopify_attributes }}>
+                    <div class="accordion-title">
+                        <span class="h4 small">
+                            {{ block.settings.accorion_title }}
+                            <span class="plus">
+                                {% render 'icon-plus' %}
+                            </span>
+                            <span class="minus">
+                                {% render 'icon-minus' %}
+                            </span>
+                          </span>
+                    </div>
+                    <div class="accordion-content">
+                        {{ block.settings.accorion_contnet }}
+                    </div>
+                </div>        
+            {%- endcase -%}
+        {%- endfor -%}  
+    </div>
+    {% unless section.settings.full_width %}
+    </div>
+    {% endunless %}
+</div>
+
+<script>
+    {%- if request.design_mode -%}
+        document.addEventListener("shopify:section:load", function() {
+            initializeAccordion();
+        });
+      {%- endif -%}
+</script>
+
+
+{% schema %}
+{
+  "name": "t:sections.collapsible_rows.name",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "t:sections.all.heading",
+      "default": "F.A.Q."
+    },
+    {
+      "type": "color",
+      "id": "heading_color",
+      "label": "t:sections.all.heading",
+      "default": "#000000"
+    },
+    {
+      "type": "select",
+      "id": "heading_font_size",
+      "options": [
+        {
+          "value": "small",
+          "label": "t:sections.all.small"
+        },
+        {
+          "value": "medium",
+          "label": "t:sections.all.medium"
+        },
+        {
+          "value": "large",
+          "label": "t:sections.all.large"
+        }
+      ],
+      "label": "t:sections.all.heading_font_size",
+      "default": "medium"
+    },
+    {
+      "type": "range",
+      "id": "section_padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "%",
+      "label": "t:sections.all.section_padding_top",
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "section_padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "%",
+      "label": "t:sections.all.section_padding_bottom",
+      "default": 0
+    },
+    {
+      "type": "checkbox",
+      "id": "full_width",
+      "label": "t:sections.all.make_section_full",
+      "default": true
+    }
+  ],
+  "blocks": [
+    {
+      "type": "accordion",
+      "name": "t:sections.collapsible_rows.row",
+      "limit": 10,
+      "settings": [
+        {
+          "type": "text",
+          "id": "accorion_title",
+          "default": "How do I make a purchase?",
+          "label": "t:sections.all.heading"
+        },
+        {
+          "type": "richtext",
+          "id": "accorion_contnet",
+          "default": "<p>This is an example of a response that you might give. It's good to be as thorough as possible in responses as that has a tendency to improve trust overall.</p>",
+          "label": "t:sections.all.text"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "t:sections.collapsible_rows.name",
+      "blocks": [
+        {
+          "type": "accordion"
+        },
+        {
+          "type": "accordion"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

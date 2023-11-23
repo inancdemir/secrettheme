@@ -1,0 +1,50 @@
+{
+    "sections": {
+        "contact-header": {
+            "type": "banner",
+            "blocks": {
+                "main": {
+                    "type": "heading",
+                    "settings": {
+                        "heading": "Contact Us."
+                    }
+                }
+            },
+            "block_order": [
+                "main"
+            ],
+            "settings": {
+                "section_height": 30,
+                "text_position": "bottom-center",
+                "gap_from_sides": 0
+            }
+        },
+        "main": {
+            "type": "contact"   
+        },
+        "map": {
+            "type": "map"   
+        },
+        "spacer-1": {
+            "type": "spacer",
+            "settings": {
+                "desktop_space": 50,
+                "mobile_space": 30
+            }
+        },
+        "spacer-2": {
+            "type": "spacer",
+            "settings": {
+                "desktop_space": 50,
+                "mobile_space": 30
+            }
+        }
+    },
+    "order": [
+        "contact-header",
+        "main",
+        "spacer-1",
+        "map",
+        "spacer-2"
+    ]
+}

@@ -1,0 +1,345 @@
+
+{%- style -%}
+button.quick-view-button {
+    z-index: 2;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: inline-flex;
+    margin: auto;
+    width: 80%;
+    border: 1px solid #000;
+    font-weight: 700;
+    padding: 13px 0;
+    justify-content: center;
+    margin-bottom: 20px;
+    opacity: 0;
+    font-size: 12px;
+    font-weight: 700;
+    line-height: 18px;
+    letter-spacing: 0em;
+    text-transform: uppercase;
+    align-items: center;
+    column-gap: 10px;
+    {% unless section.settings.show_mobile %}
+      display: none;
+    {% endunless %}
+}
+@media only screen and (min-width: 768px) {
+  button.quick-view-button {
+    display: inline-flex;
+    margin-bottom: 150px;
+    {% unless section.settings.show_desktop %}
+      display: none;
+    {% endunless %}
+  }
+}
+
+.modal-content .item-details {
+    width: calc(100% - 32px);
+    padding: 16px;
+    gap: {{ section.settings.details_items_gap }}px;
+    display: flex;
+    flex-direction: column;
+    max-height: 100%;
+    position: relative;
+    box-sizing: content-box;    
+}
+.modal-content h2 {
+    font-size: {{ section.settings.title_size }}px;
+    font-weight: 700;
+}
+
+
+{%- endstyle -%}
+{% if section.settings.show_mobile == true or section.settings.show_mobile == true %}
+  {{ 'quicklook.css' | asset_url | stylesheet_tag }}
+  {{ 'add-to-cart.css' | asset_url | stylesheet_tag }}
+  <script id="format-money" src="{{ 'format-money.js' | asset_url }}" defer="defer"></script>
+  <script id="quantity-control" src="{{ 'quantity-control.js' | asset_url }}" defer="defer"></script>
+  <script id="quick-look" src="{{ 'quick-look.js' | asset_url }}" defer="defer"></script>
+{% endif %}
+
+<div id="quick-view-modal" class="modal quick-view-product section-{{ section.id }}">
+  <div class="modal-content">
+      <div class="quick-look-header">
+          <span class="h4 large">Quick View</span>
+          <button class="modal-close" id="quick-view-close" aria-label="model-close">{% render 'icon-filter-close' %}</button>
+      </div>
+      <div class="product-image-area" id="ql-product-image-area"></div>        
+      <div class="item-details">
+          <span class="h4 large" id="ql-product-title"></span>
+          <div class="product-price caption">
+              <span class="original-price">
+              </span>
+              <span class="discounted-price">
+              </span>
+              <span class="regular-price">
+              </span>
+          </div>
+          <div class="product-variant" id="options-container">
+          </div>
+          <div id="ql-add-cart">
+              <form method="post" action="/cart/add">
+                  <input type="hidden" name="id" id="product-id" value="" />
+                  <div class="add-to-cart quantitiy-top">
+                      <div class="quantity">
+                          <button class="q-down" aria-label="minus-quantity">{% render 'icon-minus' %}</button>
+                          <input min="1" id="quantity" aria-label="product-quantity" name="quantity" value="1"/>
+                          <button class="q-up" aria-label="plus-quantity">{% render 'icon-plus' %}</button> 
+                      </div>
+                      <input type="submit" value="Add to cart" class="button model-2" id="add-to-cart" />
+                  </div>
+              </form>
+          </div>
+          <div class="product-details-button">
+              <a href="" id="ql-product-link" href="{{ product.link }}">VIEW PRODUCT DETAILS <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M23 12L1 12" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M23 12L1 12" stroke="black" stroke-opacity="0.2" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M15.9512 5L22.9512 11.9994L15.9512 19" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M15.9512 5L22.9512 11.9994L15.9512 19" stroke="black" stroke-opacity="0.2" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>                
+              </a>
+          </div>
+      </div>
+  </div>
+</div>
+
+<script>
+    function showquickView(data) {
+        var productLink = document.getElementById("ql-product-link");
+        var dataUrl = data.url; // data.url değeri
+
+    
+        productLink.href = dataUrl;
+    
+        
+        let img_area = document.getElementById('ql-product-image-area');
+        let image_html = '<img src="' + data.featured_image + '" loading="lazy" width="500" height="500">';
+        img_area.innerHTML = image_html;
+
+        
+        
+      
+        let title_area = document.getElementById('ql-product-title');
+        title_area.innerHTML = data.title;
+        /*
+        let desc_area = document.getElementById('ql-description');
+        let desc_html = data.description;
+        desc_area.innerHTML = desc_html;
+        */
+        // Get the container element where you want to insert the options
+        let optionsContainer = document.getElementById('options-container');
+      
+        // Define the options data from your 'data' object
+      
+      
+        let optionsData = data.options;
+      
+        // Create a function to generate the options based on the data
+        function createOptions() {
+          // Check if optionsData is empty
+          if (!optionsData || optionsData.length === 0) {
+            return; // No options to create
+          }
+        
+          optionsData.forEach((option) => {
+            let optionName = option.name;
+        
+            // Skip creating the option group when name is "Title"
+            if (optionName === "Title") {
+              return;
+            }
+        
+            // Check if there are any values for this option
+            if (option.values.length === 0) {
+              return; // Skip creating the option group if there are no values
+            }
+        
+            // Create a div for the option header
+            let optionHeader = document.createElement('div');
+            optionHeader.classList.add('option-header');
+        
+            // Create an h3 element to display the option name
+            let optionHeading = document.createElement('p');
+            optionHeading.textContent = optionName + ' |';
+        
+            // Create a span element to display the selected option value
+            let optionSelectedValue = document.createElement('span');
+            optionSelectedValue.textContent = ''; // Initially empty
+        
+            optionHeading.appendChild(optionSelectedValue);
+            optionHeader.appendChild(optionHeading);
+            optionsContainer.appendChild(optionHeader);
+        
+            let optionDiv = document.createElement('div');
+            optionDiv.classList.add('product-option');
+        
+            if (optionName === 'Color' || optionName === 'Size') {
+              option.values.forEach((value, index) => {
+                let input = document.createElement('input');
+                input.type = 'radio';
+                input.name = optionName;
+                input.value = value;
+                input.id = `${optionName}-${value}`;
+        
+                let label = document.createElement('label');
+                label.setAttribute('for', `${optionName}-${value}`);
+                label.setAttribute('class', `${optionName}`);
+                label.textContent = value;
+        
+                // Add event listener to update the selected option value
+                input.addEventListener('change', () => {
+                  optionSelectedValue.textContent = value;
+                });
+        
+                // Set the first option as checked
+                if (index === 0) {
+                  input.checked = true;
+                  optionSelectedValue.textContent = value;
+                }
+        
+                optionDiv.appendChild(input);
+                optionDiv.appendChild(label);
+              });
+            } else {
+              // Create a select box for options other than "Size" or "Color"
+              let select = document.createElement('select');
+              select.name = optionName;
+              select.id = optionName;
+        
+              option.values.forEach((value, index) => {
+                let optionElement = document.createElement('option');
+                optionElement.value = value;
+                optionElement.textContent = value;
+        
+                // Set the first option as selected
+                if (index === 0) {
+                  optionElement.selected = true;
+                  optionSelectedValue.textContent = value;
+                }
+        
+                select.appendChild(optionElement);
+              });
+        
+              // Add event listener to update the selected option value
+              select.addEventListener('change', () => {
+                optionSelectedValue.textContent = select.value;
+              });
+        
+              optionDiv.appendChild(select);
+            }
+        
+            optionHeader.appendChild(optionDiv);
+          });
+        }
+        
+        createOptions();
+        // Call the function to generate the options
+        const originalSinglePrice = data.compare_at_price;
+        const discountedSinglePrice = data.price;
+      
+        const originalPriceSpan = document.querySelector('.original-price');
+        const discountedPriceSpan = document.querySelector('.discounted-price');
+      
+        if (discountedSinglePrice < originalSinglePrice) {
+          originalPriceSpan.textContent = formatMoney(originalSinglePrice, '{{ shop.money_format }}');
+          discountedPriceSpan.textContent = formatMoney(discountedSinglePrice, '{{ shop.money_format }}');
+          originalPriceSpan.style.display = 'inline';
+          discountedPriceSpan.style.display = 'inline';
+        } else {
+          originalPriceSpan.style.display = 'none';
+          discountedPriceSpan.textContent = formatMoney(discountedSinglePrice, '{{ shop.money_format }}');
+          discountedPriceSpan.style.display = 'inline';
+        }
+      
+        document.querySelectorAll('.product-option input[type="radio"], .product-option select').forEach((input) => {
+          input.addEventListener('change', () => {
+            var selectedOptions = [];
+      
+            document.querySelectorAll('.product-option input[type="radio"]:checked, .product-option select').forEach((input) => {
+              if (input.type === 'radio' && input.checked) {
+                selectedOptions.push(input.value);
+              } else if (input.type === 'select-one') {
+                selectedOptions.push(input.value);
+              }
+            });
+            var matchedVariant = data.variants.find((variant) => {
+              var pass = true;
+              for (var i = 0; i < selectedOptions.length; i++) {
+                if (selectedOptions.indexOf(variant.options[i]) === -1) {
+                  pass = false;
+                  break;
+                }
+              }
+              return pass;
+            });
+      
+            // variant id changer
+            document.querySelector('#product-id').value = matchedVariant.id;
+      
+            // Assuming you have already fetched and formatted the prices
+            const originalPrice = matchedVariant.compare_at_price;
+            const discountedPrice = matchedVariant.price;
+      
+            // Select the elements
+      
+            if (matchedVariant.available) {
+              if (discountedPrice < originalPrice) {
+                originalPriceSpan.textContent = formatMoney(originalPrice, '{{ shop.money_format }}');
+                discountedPriceSpan.textContent = formatMoney(discountedPrice, '{{ shop.money_format }}');
+                originalPriceSpan.style.display = 'inline';
+                discountedPriceSpan.style.display = 'inline';
+              } else {
+                originalPriceSpan.style.display = 'none';
+                discountedPriceSpan.textContent = formatMoney(discountedPrice, '{{ shop.money_format }}');
+                discountedPriceSpan.style.display = 'inline';
+              }
+            } else {
+              discountedPriceSpan.textContent = 'Out of stock';
+              originalPriceSpan.style.display = 'none';
+            }
+      
+            //button checker
+            const add = document.querySelector('#add-to-cart');
+            const addcarttext = 'Add To Cart';
+      
+            if (matchedVariant.available) {
+              document.querySelector('#add-to-cart').value = addcarttext;
+      
+              add.disabled = false;
+            } else {
+              document.querySelector('#add-to-cart').value = 'Out of stock';
+              add.disabled = true;
+            }
+          });
+        });
+        // variant id changer
+        document.querySelector('#product-id').value = data.variants[0].id;
+        document.getElementById('quick-view-modal').classList.toggle('active');
+      }
+      
+</script>
+
+
+{% schema %}
+{
+  "name": "t:sections.quick_view.name",
+  "class": "quick-view",
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "show_mobile",
+      "label": "t:sections.quick_view.show_mobile",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "show_desktop",
+      "label": "t:sections.quick_view.show_desktop",
+      "default": true
+    }
+  ]
+}
+{% endschema %}

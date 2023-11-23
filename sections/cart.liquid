@@ -1,0 +1,79 @@
+{{ 'cart-page.css' | asset_url | stylesheet_tag }}
+<script id="format-money" src="{{ 'format-money.js' | asset_url }}" defer></script>
+<script src="{{ 'cart.js' | asset_url }}" defer></script>
+
+<div class="cart-page" data-money-format = {{ shop.money_format }}>
+    <div class="cart-page-header text-center">
+        <h2 class="large">Cart.</h1>
+    </div>
+    {% if settings.free_shiping %}
+        {%- liquid 
+          assign shiping_val = settings.free_shiping_val
+          assign total_val = cart.total_price | divided_by: 100.0 
+          assign pers_val = total_val | divided_by: shiping_val
+          assign pers_val_bar = pers_val | times: 100.0
+          assign left_val = shiping_val | minus: total_val
+        -%}
+          {% if left_val > 0 %}
+          <div class="shipping-away">
+            <p>You are away from free shipping by only</p><span class="away-from-free">{{ shop.currency }}{{ left_val }}</span>
+          </div>
+          
+          {% endif %}
+        <div class="shipping-away-bar">
+            <div class="fill" style="width: {{ pers_val_bar }}%;">
+                {% render 'icon-truck' %}
+            </div>
+        </div>
+    {% endif %}
+    <div class="cart-page-main">
+        {% if cart.empty? %}
+            <h1>Need to add some text areas etc</h1>
+        {% else %}
+            {% form 'cart', cart %}    
+            <div class="cart-items-titles">
+                <div class="product-deatails-title">Product</div>
+                <div class="product-deatails-quantity hidden-mobile">Quantity</div>
+                <div class="product-deatails-price text-center hidden-mobile">Price</div>
+                <div class="product-deatails-subtotal text-right hidden-mobile">Subtotal</div>
+            
+            </div>
+            
+                <div class="cart-items">
+                    {% for item in cart.items %}
+                      {% render 'cart-item', item: item %}
+                        
+                    {% endfor %}
+                </div>
+                <div class="cart-summary">
+                  <span class="h4 small">Cart summary</span>
+                  <div class="cart-notes">
+                    <textarea name="note" placeholder="">{{ cart.note }}</textarea>
+                  </div>
+                  <div class="totals">
+                    <span>Discount:</span>
+                    <span id="total-discount">{{ cart.total_discount | money }}</span>
+                  </div>
+                  <div class="totals">
+                    <span>Total:</span>
+                    <span id="total-price">{{ cart.total_price | money }}</span>
+                  </div>
+                  <button type="submit" name="checkout" class="button model-2 full">Proceed to Checkout</a>
+                </div>
+
+
+                
+              </div>
+            
+            {% endform %}
+        {% endif %}
+    </div>
+    <div class="cart-page-footer">
+    </div>
+</div>
+
+{% schema %}
+{
+  "name": "t:sections.all.cart"
+}
+{% endschema %}

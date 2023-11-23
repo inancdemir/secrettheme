@@ -1,0 +1,321 @@
+{%- style -%}
+.filter-area-bg h4 {
+    padding: 32px 0 0 20px;
+}
+.filter-area-bg .range_container {
+  display: flex;
+  flex-direction: column;
+  margin-top: 25px;
+}
+
+.sliders_control {
+  position: relative;
+  min-height: 25px;
+}
+
+.form_control {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  column-gap: 16px;
+}
+.form_control .form_control_container {
+    width: 100%;
+}
+input[type=range]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  pointer-events: all;
+  width: 22px;
+  height: 22px;
+  background-color: #000000;
+  cursor: pointer;
+}
+
+input[type=range]::-moz-range-thumb {
+  -webkit-appearance: none;
+  pointer-events: all;
+  width: 22px;
+  height: 22px;
+  background-color: #000000;
+  cursor: pointer;  
+}
+
+input[type=range]::-webkit-slider-thumb:hover {
+  
+}
+
+input[type=range]::-webkit-slider-thumb:active {
+  
+}
+
+input[type="number"] {
+    color: #A7A7A7;
+    border: 1px solid #CBCBCB;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 26px;
+    letter-spacing: 0px;
+    padding: 16px 13px;
+    width: 100%;
+}
+
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button {  
+   opacity: 1;
+}
+
+input[type="range"] {
+  -webkit-appearance: none; 
+  appearance: none;
+  height: 4px;
+  width: 100%;
+  position: absolute;
+  background-color: #D9D9D9;
+  pointer-events: none;
+}
+
+#fromSlider {
+  height: 0;
+  z-index: 1;
+}
+
+
+
+{%- endstyle -%}
+<div class="filter-area-bg">
+    <div class="filter-area">
+        <h4 class="large">Filter</h4>
+        <span class="filter-close">
+            {% render 'icon-filter-close' %}        
+        </span>
+        <form class="filter-form">
+            {%- for filter in collection.filters -%}
+                <div class="filter-group-display">
+                    {%- case filter.type -%}
+    
+                    {%- when 'price_range' -%}
+                        <h3 class="subheadline" filter-title>{{ filter.label }}</h3>
+                        <div class="range_container">
+                            <div class="sliders_control">
+                                <input id="fromSlider" type="range" value="0" min="0" max="{{ filter.range_max | money_without_currency | replace: ',', '' }}"/>
+                                <input id="toSlider" type="range" value="{{ filter.range_max | money_without_currency | replace: ',', '' }}" min="0" max="{{ filter.range_max | money_without_currency | replace: ',', '' }}"/>
+                            </div>
+                            <div class="form_control">
+                                <div class="form_control_container">
+                                    
+                                    <input name="{{ filter.min_value.param_name }}"
+                                        id="fromInput"
+                                        {% if filter.min_value.value -%}
+                                            value="{{ filter.min_value.value | money_without_currency | replace: ',', '' }}"
+                                        {%- endif %}
+                                        type="number"
+                                        value="0"
+                                        min="0"
+                                        max="{{ filter.range_max | money_without_currency | replace: ',', '' }}"
+                                        class="form_control_container__time__input"
+                                        >
+                                </div>
+                                <div class="form_control_container">
+                                    
+                                    <input name="{{ filter.max_value.param_name }}"
+                                        id="toInput"
+                                        {% if filter.max_value.value -%}
+                                            value="{{ filter.max_value.value | money_without_currency | replace: ',', '' }}"
+                                        {%- endif %}
+                                        type="number"
+                                        value="{{ filter.range_max | money_without_currency | replace: ',', '' }}"
+                                        min="0"
+                                        max="{{ filter.range_max | money_without_currency | replace: ',', '' }}"
+                                        class="form_control_container__time__input"
+                                        >
+                                </div>
+                            </div>
+                        </div>
+
+                       
+    
+                    {%- when 'boolean' or 'list' -%}
+                        {% if filter.label == "Availability" %}
+                            <div class="filter-avail-check">
+                                <h3>In Stock</h3>
+                                <div>
+                                    <label class="switch">
+                                        {%- for filter_value in filter.values -%}
+                                            {% if filter_value.value == "1" %}
+                                            <input type="checkbox"
+                                                name="{{ filter_value.param_name }}"
+                                                value="{{ filter_value.value }}"
+                                                id="Filter-{{ filter.param_name }}-{{ forloop.index }}"
+                                                {% if filter_value.active -%}checked{%- endif %}
+                                                {% if filter_value.count == 0 and filter_value.active == false -%}disabled{%- endif %}
+                                            >
+                                            {% endif %}
+                                        {%- endfor -%}
+                                        <span class="slider"></span>
+                                    </label>
+                                </div>
+                                
+                            </div>
+                            
+                        {% else %}
+                            {% if filter.label == "Color" %}
+                            <h3 class="subheadline" filter-title>{{ filter.label }}</h3>
+                            <ul class="filter-group-display__list color-filter">
+                                {%- for filter_value in filter.values -%}
+                                    <li class="filter-group-display__list-item">
+                                        <input type="checkbox"
+                                            name="{{ filter_value.param_name }}"
+                                            value="{{ filter_value.value }}"
+                                            id="Filter-{{ filter.param_name }}-{{ forloop.index }}"
+                                            {% if filter_value.active -%}checked{%- endif %}
+                                            {% if filter_value.count == 0 and filter_value.active == false -%}disabled{%- endif %}
+                                        >
+                                        <label for="Filter-{{ filter.param_name }}-{{ forloop.index }}"{% if filter_value.param_name == "filter.v.option.color" %}class="Color-{{ filter_value.value }}"{% endif %}>{{ filter_value.label }}</label>
+                                    </li>
+                                {%- endfor -%}
+                            </ul>
+                            {% else %}
+                                <h3 class="subheadline" filter-title>{{ filter.label }}</h3>
+                                <ul class="filter-group-display__list check-box-list">
+                                    {%- for filter_value in filter.values -%}
+                                        <li class="filter-group-display__list-item">
+                                            <input type="checkbox"
+                                                name="{{ filter_value.param_name }}"
+                                                value="{{ filter_value.value }}"
+                                                id="Filter-{{ filter.param_name }}-{{ forloop.index }}"
+                                                {% if filter_value.active -%}checked{%- endif %}
+                                                {% if filter_value.count == 0 and filter_value.active == false -%}disabled{%- endif %}
+                                            >
+                                            <label for="Filter-{{ filter.param_name }}-{{ forloop.index }}"{% if filter_value.param_name == "filter.v.option.color" %}class="Color-{{ filter_value.value }}"{% endif %}>
+                                                {%- render 'empty-box' -%}
+                                                {%- render 'checked-box' -%}
+                                                {{ filter_value.label }}
+                                            </label>
+                                        </li>
+                                    {%- endfor -%}
+                                </ul>
+                            {% endif %}
+
+                        {% endif %}
+                        
+                    
+                        
+                    {%- endcase -%}
+                </div>
+                
+    
+                <script>
+                  /*  
+                  // Get all the checkboxes
+                    const checkboxes = document.querySelectorAll('.availability-check input[type="checkbox"]');
+                
+                    // Add a click event listener to each checkbox
+                    checkboxes.forEach(checkbox => {
+                        checkbox.addEventListener('click', function () {
+                            // Toggle a class on the parent li element
+                            this.parentNode.classList.toggle('active');
+                        });
+                    });
+                    */
+                </script>
+                
+            {%- endfor -%}
+            <div class="filter-footer">
+                <a href="{{ filter.url_to_remove }}" class="filter-reset filter-group-display__header-reset">Reset</a>
+                <input type="submit" value="Apply" class="filter-apply">
+            </div>
+        </form>
+        
+    </div>
+    
+</div>
+
+<script>
+    function controlFromInput(fromSlider, fromInput, toInput, controlSlider) {
+        const [from, to] = getParsed(fromInput, toInput);
+        fillSlider(fromInput, toInput, '#C6C6C6', '#25daa5', controlSlider);
+        if (from > to) {
+            fromSlider.value = to;
+            fromInput.value = to;
+        } else {
+            fromSlider.value = from;
+        }
+    }
+        
+    function controlToInput(toSlider, fromInput, toInput, controlSlider) {
+        const [from, to] = getParsed(fromInput, toInput);
+        fillSlider(fromInput, toInput, '#C6C6C6', '#25daa5', controlSlider);
+        setToggleAccessible(toInput);
+        if (from <= to) {
+            toSlider.value = to;
+            toInput.value = to;
+        } else {
+            toInput.value = from;
+        }
+    }
+    
+    function controlFromSlider(fromSlider, toSlider, fromInput) {
+      const [from, to] = getParsed(fromSlider, toSlider);
+      fillSlider(fromSlider, toSlider, '#D9D9D9', '#000000', toSlider);
+      if (from > to) {
+        fromSlider.value = to;
+        fromInput.value = to;
+      } else {
+        fromInput.value = from;
+      }
+    }
+    
+    function controlToSlider(fromSlider, toSlider, toInput) {
+      const [from, to] = getParsed(fromSlider, toSlider);
+      fillSlider(fromSlider, toSlider, '#D9D9D9', '#000000', toSlider);
+      setToggleAccessible(toSlider);
+      if (from <= to) {
+        toSlider.value = to;
+        toInput.value = to;
+      } else {
+        toInput.value = from;
+        toSlider.value = from;
+      }
+    }
+    
+    function getParsed(currentFrom, currentTo) {
+      const from = parseInt(currentFrom.value, 10);
+      const to = parseInt(currentTo.value, 10);
+      return [from, to];
+    }
+    
+    function fillSlider(from, to, sliderColor, rangeColor, controlSlider) {
+        const rangeDistance = to.max-to.min;
+        const fromPosition = from.value - to.min;
+        const toPosition = to.value - to.min;
+        controlSlider.style.background = `linear-gradient(
+          to right,
+          ${sliderColor} 0%,
+          ${sliderColor} ${(fromPosition)/(rangeDistance)*100}%,
+          ${rangeColor} ${((fromPosition)/(rangeDistance))*100}%,
+          ${rangeColor} ${(toPosition)/(rangeDistance)*100}%, 
+          ${sliderColor} ${(toPosition)/(rangeDistance)*100}%, 
+          ${sliderColor} 100%)`;
+    }
+    
+    function setToggleAccessible(currentTarget) {
+      const toSlider = document.querySelector('#toSlider');
+      if (Number(currentTarget.value) <= 0 ) {
+        toSlider.style.zIndex = 2;
+      } else {
+        toSlider.style.zIndex = 0;
+      }
+    }
+    
+    const fromSlider = document.querySelector('#fromSlider');
+    const toSlider = document.querySelector('#toSlider');
+    const fromInput = document.querySelector('#fromInput');
+    const toInput = document.querySelector('#toInput');
+    fillSlider(fromSlider, toSlider, '#D9D9D9', '#D9D9D9', toSlider);
+    setToggleAccessible(toSlider);
+    
+    fromSlider.oninput = () => controlFromSlider(fromSlider, toSlider, fromInput);
+    toSlider.oninput = () => controlToSlider(fromSlider, toSlider, toInput);
+    fromInput.oninput = () => controlFromInput(fromSlider, fromInput, toInput, toSlider);
+    toInput.oninput = () => controlToInput(toSlider, fromInput, toInput, toSlider);
+</script>

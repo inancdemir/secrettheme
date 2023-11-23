@@ -1,0 +1,481 @@
+{%- style -%}
+.section-{{ section.id }} {
+    background: {% if section.settings.background_image %}
+                    url("{{ section.settings.background_image | image_url }}"),
+                {% endif %}
+                {{ section.settings.background_color }};
+    background-repeat: no-repeat;
+    background-position: top center;
+    padding-top: calc(({{- section.settings.section_padding_top }} / 100) * 128px);
+    padding-bottom: calc(({{- section.settings.section_padding_bottom }} / 100) * 128px);
+}
+@media only screen and (min-width: 640px) {
+  .section-{{ section.id }} {
+    padding-top: calc(({{- section.settings.section_padding_top }} / 100) * 256px);
+    padding-bottom: calc(({{- section.settings.section_padding_bottom }} / 100) * 256px);
+  }
+}
+.section-{{ section.id }}.front-featured-product h2 {
+  color: {{ section.settings.title_color }};
+}
+ 
+.section-{{ section.id }}.front-featured-product .subtitle {
+    color: {{ section.settings.sub_title_color }};
+}
+.front-featured-product .description-view-all > p {
+    color: {{ section.settings.sub_title_color }};
+}
+.front-featured-product .product-list {
+    display: flex;
+    flex-direction: row;
+    margin-top: 30px;
+}    
+.collection-tabs {
+  width: 100%;
+  position: relative;
+  background-color: #fff;
+}
+{% unless section.settings.full_width %}
+.collection-tabs .flickity-viewport {
+  min-width: calc(100% + calc((100vw - 1460px) / 2));
+}
+{% endunless %}
+
+.wrapper {
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  margin-left: -9999px;
+}
+.wrapper.active {
+  position: relative;
+  margin-left: 0;
+}
+
+
+.slider-container {
+  overflow: hidden;
+}
+
+.slider-track {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+
+  -webkit-transition: .2s;
+  transition: .2s; }
+
+
+
+
+
+.slider-buttons {
+  display: flex;
+  justify-content: flex-end;
+  column-gap: 16px;
+  padding: 32px;
+}
+
+.tab-list {
+  display: flex;
+  column-gap: 18px;
+  margin-top: 32px;
+  margin-bottom: 32px;
+  max-width: 100%;
+  overflow-x: scroll;
+  -ms-overflow-style: none;  /* Internet Explorer 10+ */
+    scrollbar-width: none;  /* Firefox */
+}
+.tab-list::-webkit-scrollbar { 
+    display: none;  /* Safari and Chrome */
+  }
+@media only screen and (min-width: 640px) {
+  }
+.tab-list .h4 {
+  cursor: pointer;
+  border-bottom: 3px solid transparent;
+  white-space: nowrap;
+}
+.tab-list .h4:hover,
+.tab-list .h4.active {
+  border-bottom: 3px solid var(--body-color); 
+}
+.section-{{ section.id }} .carousel-slider-item {
+  width: calc(75% - {{ section.settings.products_item_gap }}px);
+}
+.section-{{ section.id }} .carousel-slider-item:first-child {
+  margin-left: 0
+}
+.section-{{ section.id }} .flickity-prev-next-button {
+    display: none;
+    top: 0;
+    margin-top: -30px;
+    right: 0;
+    margin-right: 22px;
+}
+.section-{{ section.id }} .flickity-prev-next-button.previous {
+    left: auto;
+    right: 70px;
+}
+{% if section.settings.full_width %}
+  
+{% endif %}
+
+@media only screen and (min-width: 640px) {
+  .section-{{ section.id }} .carousel-slider-item {
+    width: calc( 25% - ({{ section.settings.products_item_gap }}px * 3 ) / 4);
+    margin-left: {{ section.settings.products_item_gap }}px;
+  }
+  
+  .section-{{ section.id }} .flickity-prev-next-button,
+  .section-{{ section.id }} .flickity-prev-next-button.previous {
+    display: block;
+  }
+}
+
+{%- endstyle -%}
+{{ 'flickity.css' | asset_url | stylesheet_tag }}
+<script src="{{ 'flickity.js' | asset_url }}" defer="defer"></script>  
+
+
+
+<div class="front-featured-product section-{{ section.id }}">
+  {% unless section.settings.full_width %}
+    <div class="wide-width">
+  {% endunless %}
+  {% if section.settings.heading != blank %}
+    <h2 class="{{ section.settings.heading_font_size }} space-from-edges">{{ section.settings.heading }}</h2>
+  {% endif %}
+  {% if section.settings.sub-heading != blank %}
+    <div class="description-view-all subtitle space-from-edges">
+      {{ section.settings.sub-heading }}    
+    </div>
+  {% endif %}      
+
+  <div class="tab-list space-from-edges">
+    {%- for block in section.blocks -%}
+      {% case block.type %}
+          {%- when 'slide' -%}
+            {% if block.settings.collection.title %}
+              <span id="{{ block.id }}" class="h4 small">{{- block.settings.collection.title -}}</span>
+            {% else  %}
+              <span id="{{ block.id }}" class="h4 small">Collection Name</span>
+            {% endif %}
+      {%- endcase -%}
+    {%- endfor -%}
+  </div>
+    <div class="collection-tabs full-on-mobile">
+      {%- for block in section.blocks -%}
+        
+        {% case block.type %}
+            {%- when 'slide' -%}
+              <div class="wrapper" data-name="{{ block.id }}" {{ block.shopify_attributes }}>
+                <div class="slide-wrapper">
+                  {% if block.settings.collection.products %}
+                    {% for product in block.settings.collection.products %}
+                      <div class="carousel-slider-item image-size-{{ section.settings.image_size }} image-fit-{{- section.settings.image_fit }} image-pos-{{- section.settings.image_pos -}}">
+                        {% render 'product-item', product: product %}
+                      </div>
+                    {% endfor %}    
+                  {% else %}
+
+                    {% for product_number in (1..6) %}
+                      <div class="carousel-slider-item">
+                        <div class="product-list-item">
+                          <div class="product-image">
+                              {{ 'product-' | append: product_number | placeholder_svg_tag: 'demo-image product-image' }}
+                          </div>
+                          <div class="details">
+                            <span class="subheadline">Select Product To Show</span>
+                            <div class="price">
+                                <span class="original-price">$100</span>
+                                <span class="discounted-price">$90</span>
+                            </div>    
+                          </div>
+                        </div>
+                      </div>
+                    {% endfor %}  
+                  
+                    
+                  {% endif %}                
+                </div>
+            </div>
+        {%- endcase -%}
+      {%- endfor -%}
+    </div>
+      
+  {% unless section.settings.full_width %}
+  </div>
+  {% endunless %}
+</div>
+
+      
+<script>
+  function initializeTabbedContent() {
+    // Get all the <h3> elements within the .tab-list
+    const tabHeaders = document.querySelectorAll('.tab-list .h4');
+  
+    // Get all the .wrapper elements within the .collection-tabs
+    const tabContentWrappers = document.querySelectorAll('.collection-tabs .wrapper');
+  
+    // Add the "active" class to the first <h3> element and its corresponding .wrapper element
+    tabHeaders[0].classList.add('active');
+    tabContentWrappers[0].classList.add('active');
+  
+    // Add a click event listener to each <h3> element
+    tabHeaders.forEach((tabHeader, index) => {
+      tabHeader.addEventListener('click', () => {
+        // Remove the "active" class from all <h3> elements
+        tabHeaders.forEach(header => {
+          header.classList.remove('active');
+        });
+  
+        // Remove the "active" class from all .wrapper elements
+        tabContentWrappers.forEach(wrapper => {
+          wrapper.classList.remove('active');
+        });
+  
+        // Add the "active" class to the clicked <h3> element
+        tabHeader.classList.add('active');
+  
+        // Find the corresponding .wrapper element using the data-name attribute
+        const dataName = tabHeader.getAttribute('id');
+        const activeWrapper = document.querySelector(`.wrapper[data-name="${dataName}"]`);
+  
+        // Add the "active" class to the corresponding .wrapper element
+        activeWrapper.classList.add('active');
+        var flkty = new Flickity('.active .slide-wrapper', {
+          // Options
+          cellAlign: 'left',       // Align the first slide to the left
+          prevNextButtons: true,   // Show previous and next buttons
+          pageDots: false,         // Hide the page dots
+          groupCells: 1,  
+          cellSelector: '.carousel-slider-item',
+        });
+        flkty.reloadCells();
+      });
+    });
+    
+  }
+  
+  // Call the function to initialize the tabbed content
+  
+  document.addEventListener("DOMContentLoaded", function () {
+    initializeTabbedContent();
+      var flkty = new Flickity('.active .slide-wrapper', {
+          // Options
+          cellAlign: 'left',       // Align the first slide to the left
+          prevNextButtons: true,   // Show previous and next buttons
+          pageDots: false,         // Hide the page dots
+          groupCells: 1,
+          cellSelector: '.carousel-slider-item',
+      });   
+  });
+
+  {%- if request.design_mode -%}
+    document.addEventListener("shopify:section:load", function() {
+      initializeTabbedContent();
+        var flkty = new Flickity('.active .slide-wrapper', {
+          // Options
+          cellAlign: 'left',       // Align the first slide to the left
+          prevNextButtons: true,   // Show previous and next buttons
+          pageDots: false,         // Hide the page dots
+          groupCells: 1,
+          cellSelector: '.carousel-slider-item',
+      });
+    });
+  {%- endif -%}
+  
+</script>
+
+{% schema %}
+{
+  "name": "t:sections.collection_list.section_name",
+  "settings": [
+    {
+      "type": "text",
+      "label": "t:sections.all.heading",
+      "default": "t:sections.collection_list.section_name",
+      "id": "heading"
+    },
+    {
+      "type": "color",
+      "id": "title_color",
+      "label": "t:sections.all.heading",
+      "default": "#000000"
+    },
+    {
+      "type": "select",
+      "id": "heading_font_size",
+      "options": [
+        {
+          "value": "small",
+          "label": "t:sections.all.small"
+        },
+        {
+          "value": "medium",
+          "label": "t:sections.all.medium"
+        },
+        {
+          "value": "large",
+          "label": "t:sections.all.large"
+        }
+      ],
+      "label": "t:sections.all.heading_font_size",
+      "default": "large"
+    },
+    {
+      "type": "richtext",
+      "label": "t:sections.all.description",
+      "default": "t:sections.collection_list.description_default",
+      "id": "sub-heading"
+    },
+    {
+      "type": "color",
+      "id": "sub_title_color",
+      "label": "t:sections.all.description",
+      "default": "#000000"
+    },
+    {
+      "type": "select",
+      "id": "image_size",
+      "label": "t:sections.all.img_size",
+      "default": "two-three",
+      "options": [
+        {
+          "value": "one-one",
+          "label": "1 / 1"
+        },
+        {
+          "value": "three-two",
+          "label": "3 / 2"
+        },
+        {
+          "value": "fout-three",
+          "label": "4 / 3"
+        },
+        {
+          "value": "sixteen-nine",
+          "label": "16 / 9"
+        },
+        {
+          "value": "two-three",
+          "label": "2 / 3"
+        },
+        {
+          "value": "three-four",
+          "label": "3 / 4"
+        },
+        {
+          "value": "nine-sixteen",
+          "label": "9 / 16"
+        }
+      ]
+    },
+    {
+      "type": "select",
+      "id": "image_fit",
+      "label": "t:sections.all.image_fit",
+      "default": "contain",
+      "options": [
+        {
+          "value": "contain",
+          "label": "t:sections.all.image_contain"
+        },
+        {
+          "value": "cover",
+          "label": "t:sections.all.image_cover"
+        }
+      ]
+    },
+    {
+      "type": "select",
+      "id": "image_pos",
+      "label": "t:sections.all.image_position",
+      "default": "center",
+      "info": "t:sections.all.image_position_info",
+      "options": [
+        {
+          "value": "top",
+          "label": "t:sections.all.image_pos_top"
+        },
+        {
+          "value": "center",
+          "label": "t:sections.all.image_pos_center"
+        },
+        {
+          "value": "bottom",
+          "label": "t:sections.all.image_pos_bot"
+        }
+      ]
+    },
+    {
+      "type": "color_background",
+      "id": "background_color",
+      "label": "t:sections.all.background_color",
+      "default": "linear-gradient(180deg, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0) 100%)"
+    },
+    {
+      "type": "image_picker",
+      "id": "background_image",
+      "label": "t:sections.all.background_image"
+    },
+    {
+      "type": "range",
+      "id": "products_item_gap",
+      "min": 0,
+      "max": 64,
+      "step": 1,
+      "unit": "px",
+      "label": "t:sections.all.grid_space",
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "section_padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "%",
+      "label": "t:sections.all.section_padding_top",
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "section_padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "%",
+      "label": "t:sections.all.section_padding_bottom",
+      "default": 0
+    },
+    {
+      "type": "checkbox",
+      "id": "full_width",
+      "label": "t:sections.all.make_section_full",
+      "default": true
+    }
+  ],
+  "blocks": [
+    {
+      "type": "slide",
+      "name": "t:sections.collection_list.blocks.block_name",
+      "settings": [
+        {
+          "type": "collection",
+          "id": "collection",
+          "label": "t:sections.all.collections"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "t:sections.collection_list.section_name"
+    }
+  ]
+}
+{% endschema %}

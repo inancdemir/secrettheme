@@ -1,0 +1,226 @@
+{%- style -%}
+.footer-logo .div {
+  {% unless section.settings.full_width %}
+  max-width: 1440px;
+  margin-left: auto;
+  margin-right: auto;
+  {% endunless %}
+}
+.footer-subscribe form {
+    display: flex;
+    flex-direction: column;
+    row-gap: 25px;
+}
+.footer-bottom-right {
+  display: block;
+}
+@media only screen and (min-width: 768px) {
+  .footer-bottom-right {
+    display: flex;
+    align-items: center;
+    column-gap: 12px;
+  }
+}
+{%- endstyle -%}
+<footer class="footer">
+  <div class="footer-wrap">
+    {% if section.settings.footer-logo_on != blank %}
+      <div class="footer-logo">
+        {% if section.settings.footer-logo != blank %}
+          {{ section.settings.footer-logo | image_url: width: 200 | image_tag: loading: 'lazy', class: 'footer-logo' }}
+        {% else %}
+          <span class="h2 large h2-logo">{{ shop.name }}</span>
+        {% endif %} 
+      </div>
+    {% endif %} 
+    <div class="footer-top">
+      {% for block in section.blocks %}
+        {% case block.type %}
+          {%- when 'navigation' -%}
+            <div class="footer-column footer-column--nav">
+              {% if block.settings.linklist.title %}
+                <span class="h3">{{ block.settings.linklist.title }}</span>
+                <ul class="footer-menu">
+                  {% for link in block.settings.linklist.links %}
+                    <li>
+                      <a href="{{ link.url }}">{{ link.title }}</a>
+                    </li>
+                  {% endfor %}
+                </ul>
+              {% else %}
+                <span class="h3">MENU HEADER</span>
+                <ul class="footer-menu">
+                  <li><a href="#">Selected menu link</a></li>
+                  <li><a href="#">Selected menu link</a></li>
+                  <li><a href="#">Selected menu link</a></li>
+                  <li><a href="#">Selected menu link</a></li>
+                  <li><a href="#">Selected menu link</a></li>
+                  <li><a href="#">Selected menu link</a></li>
+                </ul>
+              {% endif %}
+              
+            </div>
+          {%- when 'newsletter' -%}
+            <div class="footer-column footer-column--news">
+              {{ block.settings.text }}
+  
+              <div class="footer-subscribe">
+                {% form 'customer', id: 'footer-newsletter' %}
+                  {% if form.posted_successfully? %}
+                    <p class="footer-column-news-message">You've been subscribed!</p>
+                  {% endif %}
+    
+                  {% if form.errors %}
+                    <p class="footer-column-news-message">{{ form.errors.messages.email }}</p>
+                  {% endif %}
+    
+                  <input type="hidden" name="contact[tags]" value="newsletter">
+                  <input name="contact[email]" type="email" placeholder="Email address">
+                  <button class="button model-2 full" type="submit">Subscribe</button>
+                {% endform %}
+              </div>
+              
+            </div>
+          {%- when 'text' -%}
+            <div class="footer-column footer-column--text">
+              <span class="h3">{{ block.settings.heading }}</span>
+              {{ block.settings.text }}
+            </div>
+        {% endcase %}
+      {% endfor %}
+    </div>
+  </div>
+    <div class="footer-bottom">
+      <div class="footer-wrap">
+        <p class="footer-copyright">
+          {% if section.settings.copyright != blank %}
+            {{ section.settings.copyright }}
+          {% else %}
+          &copy; {{ 'now' | date: '%Y' }}, {{ shop.name | link_to: '/' }} | {{ powered_by_link }}
+          {% endif %}
+        </p>
+        <div class="footer-bottom-right">
+          {% if section.settings.payment_icons %}
+            {%- unless shop.enabled_payment_types == empty -%}      
+              <ul class="footer-cards">
+                {%- for type in shop.enabled_payment_types -%}
+                  <li>
+                    {{ type | payment_type_svg_tag: class: 'icon icon--full-color' }}
+                  </li>
+                {%- endfor -%}
+              </ul>
+            {%- endunless -%}
+          {% endif %}
+          {% render 'country-localization' %}
+        </div>
+        
+      </div>
+  </div>
+</footer>
+
+{% schema %}
+{
+  "name": "t:sections.footer.name",
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "full_width",
+      "label": "t:sections.all.make_section_full",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "label": "t:sections.footer.footer_logo_on",
+      "id": "footer-logo_on",
+      "default": true
+    },
+    {
+      "id": "footer-logo",
+      "label": "t:sections.footer.footer_logo_on",
+      "type": "image_picker"
+    },
+    {
+      "id": "copyright",
+      "label": "t:sections.footer.copyright",
+      "type": "text",
+      "default": "© 2023 Rise, All rights reserved. Powered by Shopify"
+    },
+    {
+      "type": "checkbox",
+      "id": "payment_icons",
+      "label": "t:sections.footer.payment_icons",
+      "info": "info text",
+      "default": true
+    }
+  ],
+  "max_blocks": 5,
+  "blocks": [
+    {
+      "type": "newsletter",
+      "name": "t:sections.newsletter.name",
+      "settings": [
+        {
+          "id": "text",
+          "type": "richtext",
+          "label": "t:sections.all.text",
+          "default": "<p><strong>2-year product warranty<br />30-day returns</strong></p><p><strong>NEWSLETTER</strong></p><p>Be the first to hear about the latest news, product launches and events from Rains.</p>"
+        }
+      ]
+    },
+    {
+      "name": "t:sections.all.text",
+      "type": "text",
+      "settings": [
+        {
+          "id": "heading",
+          "type": "text",
+          "label": "t:sections.all.heading"
+        },
+        {
+          "id": "text",
+          "type": "richtext",
+          "label": "t:sections.all.text"
+        }
+      ]
+    },
+    {
+      "name": "t:sections.footer.nav_column",
+      "type": "navigation",
+      "settings": [
+        {
+          "type": "link_list",
+          "id": "linklist",
+          "label": "t:sections.footer.nav_menu"
+        }
+      ]
+    }
+  ],
+  "disabled_on": {
+    "templates": [
+      "*"
+    ],
+    "groups": [
+      "header"
+    ]
+  },
+  "presets": [
+    {
+      "name": "t:sections.footer.name",
+      "blocks": [
+        {
+          "type": "navigation"
+        },
+        {
+          "type": "navigation"
+        },
+        {
+          "type": "navigation"
+        },
+        {
+          "type": "navigation"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

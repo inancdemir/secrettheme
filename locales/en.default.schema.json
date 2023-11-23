@@ -1,0 +1,656 @@
+{
+  "settings_schema": {
+    
+    "logo": {
+      "name": "Logo",
+      "settings": {
+        "logo_image": {
+          "label": "Logo"
+        },
+        "logo_width": {
+          "label": "Desktop logo width",
+          "info": "Logo width is automatically optimized for mobile."
+        },
+        "favicon": {
+          "label": "Favicon image",
+          "info": "Will be scaled down to 32 x 32px"
+        }
+      }
+    },
+    "cart_drawer": {
+      "name": "Cart drawer",
+      "show_cart_drawer": "Show cart drawer",
+      "show_cart_button": "Show cart button on navigation bar",
+      "show_check_out_button": "Show checkout button",
+      "show_free_shiping": "Show free shiping bar",
+      "free_shiping_val_label": "Free shiping value",
+      "free_shiping_val_info": "Set a treshold amount for free shipping",
+      "free_shippping_text_label": "Free shipping message",
+      "free_shippping_done_text_label": "Message displayed upon reaching the free shipping threshold"
+    },
+    "search": {
+      "name": "Search"
+    },
+    "animation": {
+      "name": "Animations",
+      "product_image_animation": "Enable animation on product hover",
+      "quick_look_animation": "Enable animation on quick look"
+    },
+    "swatches": {
+      "name": "Color swatches",
+      "swatches_title": "Custom colors",
+      "swatches_info": "Follow this style when assigning colors: 'Color Name: Color Hex code,' - don't forget to follow with a comma; eg. 'Red: #ff0000,' . Put each custom color on a new line. For pictures, upload the swatch image files to your store's files area. Make sure the file names match the names of your color choices using hyphens instead of spaces, eg. if you have a color called Mars Red, name the file 'mars-red.png'.",
+      "swatch_width_auto": "Swatch width adjustment",
+      "auto": "Auto",
+      "selected_width": "Manual",
+      "swatch_size_width_label": "Width",
+      "swatch_size_width_info": "Adjust the width of swatches",
+      "swatch_size_height_label": "Height",
+      "swatch_size_height_info": "Adjust the height of swatches",
+      "swatch_radius_label": "Round corners",
+      "swatch_radius_info": "Use slider to round the corners of your color swatches"
+    },
+    "badges": {
+      "name": "Product badges",
+      "sale_badge_on": "This badge will appear solely on products with discounts.",
+      "sale_badge_text": "Sale badge",
+      "sale_badge_color":"Sale badge",
+      "second_badge_on_label": "Custom badge",
+      "second_badge_on_info": "Using the Shopify panel, set up a new tag and assign it to the products you want to display your custom badge on.",
+      "second_badge_tag": "Custom badge tag",
+      "second_badge_text": "Custom badge text displayed",
+      "second_badge_text_color": "Custom badge",
+      "third_badge_on_label": "Flama badge",
+      "third_badge_on_info": "Using the Shopify panel, set up a new tag and assign it to the products you want to display your custom badge on. Different than custom badge, flama will be displayed on the top right corner of the products.",
+      "third_badge_tag": "Flama badge tag",
+      "third_badge_text": "Flama badge text displayed",
+      "third_badge_text_color": "Flama badge"
+
+
+
+    },
+    "typography": {
+      "name": "Typography",
+      "settings": {
+        "type_header_font": {
+          "label": "Font",
+          "info": "Selecting a different font can affect the speed of your store. [Learn more about system fonts.](https://help.shopify.com/manual/online-store/os/store-speed/improving-speed#fonts)"
+        },
+        "titles": {
+          "bigger_titles" : "Font(H1-H2)",
+          "smaler_titles" : "Font(H3-H4)"
+        },
+        "heading_scale": {
+          "label": "Font size scale"
+        },
+        "heading_letter_scale": {
+          "label": "Letter spacing scale"
+        },
+        "heading_lineheight_scale": {
+          "label": "Line height scale"
+        },
+        "heading_uppercase": {
+          "label" : "Uppercase"
+        },
+        "header__1": {
+          "content": "Headings"
+        },
+        "header__2": {
+          "content": "Body"
+        },
+        "header__3": {
+          "content": "Buttons"
+        },
+        "header__4": {
+          "content": "Menu"
+        },
+        "type_body_font": {
+          "label": "Font",
+          "info": "Selecting a different font can affect the speed of your store. [Learn more about system fonts.](https://help.shopify.com/manual/online-store/os/store-speed/improving-speed#fonts)"
+        },
+        "body_scale": {
+          "label": "Font size scale"
+        },
+        "colors": {
+          "general_color_palete": "Colors",
+          "general_color": "General",
+          "button_1_color_1": "Primary",
+          "button_1_color_2": "Primary background",
+          "button_2_color_1": "Secondary",
+          "button_2_color_2": "Secondary background",
+          "button_3_color_1": "Thirtiary",
+          "button_3_color_2": "Thirtiary background",
+          "button_4_color_1": "Extra",
+          "button_4_color_2": "Extra background"
+        }
+      }
+    }   
+
+  },
+  
+  
+  "sections": {
+    "all": {
+      "show_pop": "Show popup",
+      "cart": "Cart",
+      "explan_image_1": "This field displays the dynamic image linked to the collection, and it can be modified in the collection settings within the Shopify panel. To replace this image, you can do so by clicking the 'Change' and then 'Select Image' buttons.",
+      "explan_image_2": "This selection will have no effect if a focal point is selected for images.",
+      "pagination": "Pagination",
+      "infinite": "Infinite",
+      "click_to_load": "Load more",
+      "paginated": "Paginated",
+      "promotion": "Promotion",
+      "promotion_pos": "Display at position",
+      "accordion": "Collapsible row",
+      "social_icons": "Social icons",
+      "badges": "Badges",
+      "heading_font_size" : "Heading font size",
+      "small": "Small",
+      "medium": "Medium",
+      "large": "Large",
+      "image": "Image",
+      "image_fit": "Image fit",
+      "image_contain": "Contain",
+      "image_cover": "Cover",
+      "image_position": "Image position",
+      "make_section_full": "Make section full width",
+      "image_position_info": "This setting will only work for cover image",
+      "image_pos_top": "Top",
+      "image_pos_center": "Center",
+      "image_pos_bot": "Bottom",
+      "text": "Text",
+      "speed": "Speed",
+      "super_text": "Super text",
+      "super_color": "Text",
+      "super_op": "Opacity",
+      "super_size": "Font size",
+      "super_gap": "Super's gap from bottom center",
+      "super_gap_mobile": "Super's gap from bottom center on mobile",
+      "text_gap" : "Text area's gap from content positions",
+      "body_text": "Body text",
+      "heading": "Heading",
+      "sub_heading": "Subheading",
+      "button_label": "Button label",
+      "button_default": "BUTTON LABEL",
+      "slide": "Slide",
+      "select_image": "Select image",
+      "add_link": "Add link",
+      "content": "Content",
+      "content_position": "Content position",
+      "section_height": "Section height",
+      "section_height_mobile": "Section height on mobile",
+      "background_image": "Background image",
+      "background_color": "Background color",
+      "color": "Color",
+      "description": "Description",
+      "description_heading": "Description heading",
+      "subheading": "Subheading",
+      "subheading_default": "<p>Add subheading</p>",
+      "column_per_row": "Columns per row",
+      "collections": "Collections",
+      "columns_spacings": "Column spacing",
+      "section_margin": "Section top and bottom margin",
+      "section_padding": "Section top and bottom padding",
+      "section_padding_top": "Section top padding",
+      "section_padding_bottom": "Section bottom padding",
+      "button_style": "Button style",
+      "img_size" : "Image size",
+      "section_width" : "Section width",
+      "grid_space": "Grid spacing",
+      "text_gap_sides": "Text area gap from image",
+      "visit_news": "Visit News",
+      "select_icon": "Select icon",
+      "left": "Left",
+      "right": "Right",
+      "center": "Center",
+      "on": "Show",
+      "off": "Hide",
+      "column": "Column",
+      "subscribe": "Subscribe",
+      "days": "Day(s)",
+      "day": "Day",
+      "hours": "Hour(s)",
+      "hour": "Hour",
+      "mins": "Minute(s)",
+      "min": "Minute",
+      "seconds": "Seconds",
+      "year": "Year",
+      "month": "Month",
+      "month_name": {
+        "1": "January",
+        "2": "February",
+        "3": "March",
+        "4": "April",
+        "5": "May",
+        "6": "June",
+        "7": "July",
+        "8": "August",
+        "9": "September",
+        "10": "October",
+        "11": "November",
+        "12": "December"
+      },
+      "text_position": {
+        "top_left": "Top left",
+        "top_center": "Top center",
+        "top_right": "Top right",
+        "mid_left": "Mid left",
+        "mid_center": "Mid center",
+        "mid_right": "Mid right",
+        "bottom_left": "Bottom left",
+        "bottom_center": "Bottom center",
+        "bottom_right": "Bottom right"
+      },
+      "padding": {
+        "section_padding_heading": "Section padding",
+        "padding_top": "Top padding",
+        "padding_bottom": "Bottom padding"
+      }
+    },
+    "apps": {
+      "name": "Apps",
+      "settings": {
+        "include_margins": {
+          "label": "Make section margins the same as theme"
+        }
+      },
+      "presets": {
+        "name": "Apps"
+      }
+    },
+    "custom-liquid": {
+      "name": "Custom Liquid",
+      "settings": {
+        "custom_liquid": {
+          "label": "Liquid code",
+          "info": "Add app snippets or other code to create advanced customizations. [Learn more](https://shopify.dev/docs/api/liquid)"
+        }
+      },
+      "presets": {
+        "name": "Custom Liquid"
+      }
+    },
+    "login": {
+      "name": "Login form",
+      "image_picker": "Image",
+      "form_title": "Title",
+      "form_title_forget": "Action text"
+    },
+    "register": {
+      "name": "Register form",
+      "image_picker": "Image",
+      "form_title": "Title",
+      "form_title_forget": "Action text"
+    },
+    "quick_view": {
+      "name": "Quick view",
+      "show_mobile": "Enable on mobile",
+      "show_desktop": "Enable on desktop"
+    },
+    "pop_ups": {
+      "name": "Popups",
+      "blocks": {
+        "campaing_pop": {
+          "name": "Campain popup",
+          "image_picker": "Image",
+          "heading": "Title"
+        },
+        "age_pop": {
+          "name": "Age verification popup",
+          "small_text": "Accent",
+          "header": "Heading",
+          "exit_text": "Accept button label",
+          "exit_url": "Decline button label",
+          "pop_footer": "Footnote"
+        },
+        "coockie_pop": {
+          "name": "Cookie consent",
+          "small_text": "Accent",
+          "button_first_text": "Left button",
+          "button_first_url": "Url",
+          "button_second_text": "Right button",
+          "button_second_url": "Url",
+          "bottom_text": "Footnote"
+
+        },
+        "subscribe": {
+          "name": "Signup popup",
+          "header": "Heading",
+          "small_text": "Text",
+          "close_text": "Decline button text"
+        }
+      }
+    },
+    "image-with-text": {
+      "name": "Image with text",
+      "settings": {
+        "image": {
+          "label": "Image"
+        },
+        "height": {
+          "label": "Image height"
+        }
+      },
+      "blocks": {
+        "heading": {
+          "name": "Heading",
+          "settings": {
+            "heading": {
+              "label": "Heading"
+            }
+          }
+        },
+        "text": {
+          "name": "Text",
+          "settings": {
+            "text": {
+              "label": "Content"
+            }
+          }
+        },
+        "button": {
+          "name": "Button",
+          "settings": {
+            "button_label": {
+              "label": "Button label",
+              "info": "If you want to hide the button, keep this field empty."
+            },
+            "button_link": {
+              "label": "Button link"
+            }
+          }
+        }
+      }
+    },
+    "breadcrumb": {
+      "name": "Breadcrumbs"
+    },
+    "product_layout": {
+      "name": "Product layout",
+      "show_breadcrumbs": "Show breadcrumbs",
+      "image_area_size": "Image area size",
+      "image_area_info": "Use slider to adjust product image size",
+      "details_padding": "Content distance",
+      "details_padding_info": "Use slider to adjust content distance from product image",
+      "details_items_gap": "Content spacing",
+      "details_items_gap_info": "Use slider to adjust vertical distance between content items",
+      "image_column": "Column count",
+      "vendor": "Vendor",
+      "product_title": "Product title",
+      "product_price": "Product price",
+      "show_discount": "Show discount",
+      "discount_format": "Discount format",
+      "show_tax": "Show tax included",
+      "product_variants": "Product variants",
+      "product_variants_labels": "Show variant labels",
+      "color_swatch_style": "Color swatch style",
+      "drop_down": "Dropdown",
+      "name_box": "Namebox",
+      "color_box": "Visualbox",
+      "size_swatch_style": "Size swatch style",
+      "other_swatches_style": "Alternative swatch style",
+      "find_size": "Find your size",
+      "select_page": "Select page",
+      "select_page_info": "Please navigate to Shopify panel if you do not have a size chart ready. [Learn more about creating a size chart.](https://help.shopify.com/en/manual/online-store/themes/themes-by-shopify/vintage-themes/customizing-vintage-themes/add-size-chart)",
+      "quantitiy_position": "Quantity selector style",
+      "quantitiy_position_block": "Block",
+      "quantitiy_position_inline": "Inline",
+      "dynamic_checkout": "Show dynamic checkout buttons",
+      "dynamic_checkout_info": "Using the payment methods available on your store, customers see their preferred option, like PayPal or Apple Pay. [Learn more.](https://help.shopify.com/manual/using-themes/change-the-layout/dynamic-checkout)"
+    },
+    "product_grid": {
+      "name": "Product grid",
+      "columns_desktop": "Column count for desktop",
+      "rows_desktop": "Row count for desktop",
+      "rows_desktop_info": "Adjust the number of rows to display.",
+      "columns_mobile": "Column count for mobile",
+      "columns_spacing": "Column spacing",
+      "add_size": "Promotion column size",
+      "add_size_info": "Modify the number of columns that the promotion area occupies. Please ensure that the size of this area aligns with your grid's row and column settings.",
+      "add_size_height": "To ensure that the height matches that of the product image area, kindly leave this space blank for automatic adjustment",
+      "image_cover": "Use maximum height for image",
+      "link_text": "Link text"
+    },
+    "header_banner": {
+      "name": "Top banner",
+      "gap_from_bottom": "Text distance from bottom",
+      "gap_from_bottom_mobile": "Text distance from bottom on mobile",
+      "featured_image_position": "You can adjust the total number of products displayed using the column and row settings."
+    },
+    "hero_slider": {
+      "hero_slider_name": "Slideshow",
+      "video": "Video",
+      "video_info": "Selected video will override image",
+      "overlay_color": "Overlay color",
+      "overlay_color_opacity": "Overlay color opacity",
+      "text_1": "<p>Write text to emphasize your story</p>",
+      "text_2": "Promote your story here!",
+      "text_3": "Add subheading",
+      "text_4": "BUTTON LABEL"
+    },
+    "article_section": {
+      "article_section_name": "Article"
+    },
+    "counter_section": {
+      "counter_section_name": "Countdown bar",
+      "counter_subhead_default": "Use this timer to create urgency and boost sales!",
+      "counter_background_info": "Make sure you've removed any background image to see the changes in background color" 
+    },
+    "featured_collections": {
+      "section_name": "Featured collections",
+      "description_color": "Description",
+      "description_size": "Description font size",
+      "description_lenght": "Lenght"
+    },
+    "collection_showcase": {
+      "section_name" : "Collection Showcase",
+      "subheading_default": "<p><strong>Use this section to showcase your collections</p></strong>",
+      "collection_model": "Text position according to collection image",
+      "collection_model_info": "Setup whether collection title and button label will be positioned inside or outside cover image. The dafault color of the text is white. If you set text position to outside, please use the color options to make your text appear.",
+      "collection_model_1": "Inside",
+      "collection_model_2": "Outside",
+      "single_collection_title": {
+        "color" : "Collection item color",
+        "font": "Collection item font size"
+      },
+      "shop_now": {
+        "color" : "Button color",
+        "font": "Button font size"
+      }
+    },
+    "featured_posts": {
+      "section_name": "Featured posts",
+      "select_blog": "Select blogs to show"
+    },
+
+    "collection_list": {
+      "section_name": "Collection tabs",
+      "select_blog": "Select blog to show",
+      "description_default": "<p><strong>Use this section with a slider and tabs to display the products in your collections.</p></strong>",
+      "blocks": {
+        "block_name": "Collection"
+      }
+    },
+    "featured_products": {
+      "section_name": "Featured products",
+      "select_products": "Select products to show"
+    },
+    "404": {
+      "name": "404 style"
+    },
+    "banner_section": {
+      "name": "Banner"
+    },
+    "multiple_columns_section": {
+      "name": "Multiple columns",
+      "mini_image_icon": "Image or custom icon to show",
+      "icon_active": "Show icon",
+      "icon_size": "Icon size",
+      "columns_align": "Align column items",
+      "force_cover": "Show cover image"
+    },
+    "collapsible_rows": {
+      "name": "Collapsible rows",
+      "row": "Row"
+    },
+    "testimonial_slider": {
+      "name": "Testimonial slider",
+      "block_name": "Quote",
+      "author": "Author",
+      "author_pos": "Author's title"
+    },
+    "before_after_gallery": {
+      "name": "Before and after gallery",
+      "quote_text": "Quote text"
+    },
+    "newsletter": {
+      "name": "Newsletter",
+      "select_spacing_between": "Select spacing between"
+    },
+    "shopthelook": {
+      "name": "Shop the look",
+      "info": "Select the background image to highlight your chosen products.",
+      "label": "Background image",
+      "add_product": "Product",
+      "choose_product": "Choose product",
+      "pp_horizontal":"Horizontal position",
+      "pp_verticle": "Vertical position"
+    },    
+    "announcement": {
+      "name": "Announcement bar",
+      "settings": {
+        "show_announcement": "Show announcement",
+        "home_page_only": "Home page only",
+        "social_icons": "Social links",
+        "show": "Show",
+        "campaign_text": "Campaign text"
+      }
+    },
+
+    "header": {
+      "blocks": {
+        "megamenu": {
+          "name": "Mega menu",
+          "mega_menu_name": "Dropdown parent link",
+          "info": "Write the title of the link in the main menu that you'd like the menu to appear from.",
+          "mega_menu_prom_1": "First promotion image",
+          "mega_menu_prom_1_info": "Choose an image for your promotion",
+          "mega_menu_prom_2": "Second promotion image",
+          "mega_menu_prom_2_info": "Choose an image for your promotion",
+          "mega_menu_prom_text": "Promotion text",
+          "mega_menu_prom_link": "Promotion link"
+          
+
+        }
+      },
+      "uppercase": "Make checked menu items uppercase",
+      "uppercase_first": "First level",
+      "uppercase_second": "Second level",
+      "uppercase_third": "Third level",
+      "name": "Navigation",
+      "settings": {
+        "logo_help": {
+          "content": "You can edit your logo in [theme settings](/editor?context=theme&category=logo)."
+        },
+        "logo_position": {
+          "label": "Logo position",
+          "options__1": {
+            "label": "Logo left, menu center"
+          },
+          "options__2": {
+            "label": "Logo left, menu left"
+          },
+          "options__3": {
+            "label": "Logo right, menu center"
+          },
+          "options__4": {
+            "label": "Logo center, menu center"
+          }
+        },
+        "logo_opacity": "Logo opacity",
+        "menu": {
+          "label": "Menu"
+        },
+        "menu_type_desktop": {
+          "label": "Desktop menu type",
+          "info": "Menu type is automatically optimized for mobile.",
+          "options__1": {
+            "label": "Dropdown"
+          },
+          "options__2": {
+            "label": "Mega menu"
+          },
+          "options__3": {
+            "label": "Drawer"
+          }
+        },
+        "show_line_separator": {
+          "label": "Show separator line"
+        },
+        "header__1": {
+          "content": "Color"
+        },
+        "menu_color_scheme": {
+          "label": "Menu color scheme"
+        },
+        "sticky_header_type": {
+          "label": "Sticky header"
+        },
+        "header__5": {
+          "content": "Language selector"
+        },
+        "header__6": {
+          "info": "To add a language, please go to your [language settings.](/admin/settings/languages)"
+        },
+        "enable_language_selector": {
+          "label": "Show language selector"
+        }
+      }
+    },
+    "footer": {
+      "name": "Footer",
+      "footer_logo_on": "Footer logo",
+      "copyright": "Copyright text",
+      "payment_icons": "Show payment icons",
+      "nav_column": "Navigation column",
+      "nav_menu": "Navigation menu",
+      "blocks": {
+        "link_list": {
+          "name": "Menu",
+          "settings": {
+            "heading": {
+              "label": "Heading"
+            },
+            "menu": {
+              "label": "Menu",
+              "info": "Shows main menu items only"
+            }
+          }
+        },
+        "text": {
+          "name": "Text",
+          "settings": {
+            "heading": {
+              "label": "Heading"
+            },
+            "subtext": {
+              "label": "Subheading"
+            }
+          }
+        }
+      },
+      "settings": {
+        "newsletter_enable": {
+          "label": "Display email subscription form"
+        },
+        "newsletter_heading": {
+          "label": "Heading"
+        },
+        "header__1": {
+          "content": "Email subscription form",
+          "info": "Subscribers are automatically added to your “approved marketing” customer list. [Learn more](https://help.shopify.com/manual/customers/manage-customers)"
+        }      
+      }
+    }
+  }
+}

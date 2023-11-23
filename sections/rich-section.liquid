@@ -1,0 +1,187 @@
+{%- style -%}
+.section-{{ section.id }} {
+    background: {% if section.settings.background_image %}
+                    url("{{ section.settings.background_image | image_url }}"),
+                {% endif %}
+                {{ section.settings.background_color }};
+    background-repeat: no-repeat;
+    background-position: top center;
+    padding: {{ section.settings.section_padding }}px 0;
+    color: {{ section.settings.content_color }};
+}
+.section-{{ section.id }} video {
+    max-width: 960px;
+}
+{%- endstyle -%}
+<div class="rich-section section-{{ section.id }}">
+    {% unless section.settings.full_width %}
+    <div class="wide-width">
+    {% endunless %}
+        <div class="rich-text-wrap {{ section.settings.align_content }}">
+            {%- for block in section.blocks -%}
+                {% case block.type %}
+                    {% when 'rich_header' %}
+                        <div {{ block.shopify_attributes }}>
+                        <h3 class="{{ block.settings.rich_title_tag }}">{{ block.settings.rich_title }}</h2>
+                        </div>
+                    {% when 'rich_image' %}
+                        <div {{ block.shopify_attributes }}>
+                        {{ block.settings.rich_image | image_url: width: 960 | image_tag: loading: 'lazy', class: 'rich-image' }}
+                        </div>
+                    {% when 'rich_video' %}
+                        <div {{ block.shopify_attributes }}>
+                            {{ block.settings.rich_video
+                                | video_tag:
+                                  image_size: '960px',
+                                  autoplay: true,
+                                  controls: false,
+                                  loop: true,
+                                  muted: true
+                            }}
+                        </div>
+                    {% when 'rich_text' %}
+                        <div {{ block.shopify_attributes }}>
+                        {{ block.settings.description }}
+                        </div>
+                {% endcase %}
+            {% endfor %}
+        </div>
+    {% unless section.settings.full_width %}
+    </div>
+    {% endunless %}
+</div>
+
+
+{% schema %}
+{
+  "name": "Rich section",
+  "settings": [
+    {
+      "type": "color_background",
+      "id": "background_color",
+      "label": "t:sections.all.background_color",
+      "default": "#000000"
+    },
+    {
+      "type": "color",
+      "id": "content_color",
+      "label": "t:sections.all.color",
+      "default": "#FFFFFF"
+    },
+    {
+      "type": "image_picker",
+      "id": "background_image",
+      "label": "t:sections.all.background_image"
+    },
+    {
+      "type": "range",
+      "id": "section_padding",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "label": "t:sections.all.section_padding",
+      "default": 30
+    },
+    {
+      "type": "select",
+      "id": "align_content",
+      "options": [
+        {
+          "value": "text-left",
+          "label": "Left"
+        },
+        {
+          "value": "text-center",
+          "label": "Center"
+        },
+        {
+          "value": "text-right",
+          "label": "Right"
+        }
+      ],
+      "label": "Content align",
+      "default": "text-center"
+    },
+    {
+      "type": "checkbox",
+      "id": "full_width",
+      "label": "t:sections.all.make_section_full",
+      "default": false
+    }
+  ],
+  "blocks": [
+    {
+      "type": "rich_header",
+      "name": "Header",
+      "settings": [
+        {
+          "type": "text",
+          "id": "rich_title",
+          "label": "t:sections.all.body_text",
+          "default": "Rich area title"
+        },
+        {
+          "type": "select",
+          "id": "rich_title_tag",
+          "options": [
+            {
+              "value": "small",
+              "label": "t:sections.all.small"
+            },
+            {
+              "value": "medium",
+              "label": "t:sections.all.medium"
+            },
+            {
+              "value": "large",
+              "label": "t:sections.all.large"
+            }
+          ],
+          "label": "t:sections.all.heading_font_size",
+          "default": "large"
+        }
+      ]
+    },
+    {
+      "type": "rich_image",
+      "name": "Image",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "rich_image",
+          "label": "t:sections.all.select_image"
+        }
+      ]
+    },
+    {
+      "type": "rich_video",
+      "name": "Video",
+      "settings": [
+        {
+          "type": "video",
+          "id": "rich_video",
+          "label": "Video"
+        }
+      ]
+    },
+    {
+      "type": "rich_text",
+      "name": "Text",
+      "settings": [
+        {
+          "type": "richtext",
+          "id": "description",
+          "label": "t:sections.all.body_text",
+          "default": "<p>Write text to emphasize your story</p>"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Rich section"
+    }
+  ]
+}
+{% endschema %}

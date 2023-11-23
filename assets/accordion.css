@@ -1,0 +1,32 @@
+.accordion {
+  border-width: 0px 1px 1px 1px;
+  border-style: solid;
+  border-color: #cbcbcb;
+  padding: 16px;
+}
+
+.accordion:first-child {
+  border-top: 1px solid #cbcbcb;
+}
+.accordion .accordion-title span.h4 {
+  display: flex;
+  justify-content: space-between;
+}
+.accordion .accordion-title span.h4 span.minus {
+  display: none;
+}
+
+.accordion .accordion-content {
+  height: 0;
+  overflow: hidden;
+}
+.accordion.active .accordion-content {
+  height: auto;
+  margin-top: 16px;
+}
+.accordion.active .accordion-title span.h4 span.minus {
+  display: flex;
+}
+.accordion.active .accordion-title span.h4 span.plus {
+  display: none;
+}

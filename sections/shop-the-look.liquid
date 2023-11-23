@@ -1,0 +1,268 @@
+{%- style -%}
+.section-{{ section.id }} h2 {
+  color: {{ section.settings.title_color }};
+}
+.section-{{ section.id }} .subtitle {
+  margin-bottom: 16px;
+  color: {{ section.settings.sub_title_color }};
+}
+@media only screen and (min-width: 640px) {
+  .section-{{ section.id }} .subtitle {
+    margin-bottom: 28px;
+  }
+}
+{%- endstyle -%}
+{{ 'shop-the-look.css' | asset_url | stylesheet_tag }}
+<script src="{{ 'shop-the-look.js' | asset_url }}" defer></script>
+<div class="section-{{ section.id }}">
+  {% unless section.settings.full_width %}
+    <div class="wide-width">
+  {% endunless %}
+  {% if section.settings.heading != blank %}
+    <h2 class="{{ section.settings.heading_font_size }} space-from-edges">{{ section.settings.heading }}</h2>
+  {% endif %}
+  {% if section.settings.sub-heading != blank %}
+    <div class="description-view-all subtitle space-from-edges">
+      {{ section.settings.sub-heading }}    
+    </div>
+  {% endif %} 
+  <div class="shop-to-look not-animate">  
+    {% unless section.settings.shop_to_look_image %}
+      {{ 'lifestyle-1' | placeholder_svg_tag: 'demo-image stl-image' }}
+    {% else %}
+      {{ section.settings.shop_to_look_image | image_url: width: 2000 | image_tag: loading: 'lazy', class: 'stl-image' }}
+    {% endunless %}
+    {%- for block in section.blocks -%}
+        {% case block.type %}
+            {%- when 'add_product' -%}
+              <div class="product-point-area{% if block.settings.pp_verticle > 50 %} bottom{%- endif -%}{% if block.settings.pp_horizontal > 50 %} right{%- endif -%}" style="top:{{ block.settings.pp_verticle }}%; left:{{ block.settings.pp_horizontal }}%;" {{ block.shopify_attributes }}>
+                  <div class="product-point {{ block.id }}">
+                      <span class="pasive">
+                          <svg width="30" height="31" viewBox="0 0 30 31" fill="none" xmlns="http://www.w3.org/2000/svg">
+                              <circle cx="15" cy="15.0312" r="15" fill="black" fill-opacity="0.3"/>
+                              <circle cx="15" cy="15.0312" r="11" fill="white"/>
+                              <path d="M15 12.0312V18.0312" stroke="black" stroke-width="1.5" stroke-linecap="round"/>
+                              <path d="M12 15.0312L18 15.0312" stroke="black" stroke-width="1.5" stroke-linecap="round"/>
+                          </svg>                            
+                      </span>
+                      <span class="active">
+                          <svg width="30" height="31" viewBox="0 0 30 31" fill="none" xmlns="http://www.w3.org/2000/svg">
+                              <circle cx="15" cy="15.0312" r="15" fill="black" fill-opacity="0.3"/>
+                              <circle cx="15" cy="15.0312" r="6" fill="white"/>
+                          </svg>                                
+                      </span>
+                  </div>
+                  {% if block.settings.product_list != blank %}
+                      {% for product in block.settings.product_list %}
+                        <div class="product-list-item image-shop">
+                          <span class="close">{%- render 'icon-close-white' -%}</span>
+                          <div class="product-image">
+                            {{ product.featured_image | image_url: width: 2000 | image_tag: loading: 'lazy', class: 'product-image' }}
+                          </div>
+                          <div class="color-variant-in-list">
+                            <span class="h4 subheadline">{{- product.title | upcase | link_to: product.url }}</span>
+                            {% if product.variants.size > 1 %}
+                              <div class="product-variant">
+                                  {% for option in product.options_with_values %}
+                                    {%- if option.name == "Color" -%}
+                                      <div class="product-option">
+                                        <span class="caption-2">{{ option.name }} | </span>
+                                        {% for value in option.values %}
+                                            <div class="product-list-colors {{ option.name }}-{{ value }}"></div>                                  
+                                          {% endfor %}
+                                      </div>
+                                    {%- endif -%}
+                                  {% endfor %}
+                              </div>
+                            {% endif %}
+                          </div>
+                          <div class="price">
+                              {% if product.compare_at_price > product.price %}
+                                  <span class="original-price">
+                                    {{ product.compare_at_price | money }}
+                                  </span>
+                                  <span class="discounted-price">
+                                    {{ product.price | money }}
+                                  </span>
+                                {% else %}
+                                  <span class="regular-price">
+                                    {{ product.price | money }}
+                                  </span>
+                                {% endif %}
+                          </div>
+                          <div class="view-product">
+                            <a href="{{ product.url }}" class="button {{ block.settings.button_style }} full">VIEW PRODUCT</a>
+                          </div>
+                        </div>
+                      {% endfor %}
+                    {% else %}
+                      <div class="product-list-item image-shop">
+                        <span class="close">{%- render 'icon-close-white' -%}</span>
+                        <div class="product-image">
+                          {{ 'product-3' | placeholder_svg_tag: 'demo-image product-image' }}
+                        </div>
+                        <div class="color-variant-in-list">
+                          <span class="h4 subheadline">Product Title</span>
+                        </div>
+                        <div class="price">
+                          <span class="original-price">
+                            $90
+                          </span>
+                          <span class="discounted-price">
+                            $80
+                          </span>
+                        </div>
+                        <div class="view-product">
+                          <a class="button {{ block.settings.button_style }} full">VIEW PRODUCT</a>
+                        </div>
+                      </div>
+                    {% endif %}                    
+              </div>
+        {% endcase %}
+    {% endfor %}
+  
+    </div>
+  {% unless section.settings.full_width %}
+  </div>
+  {% endunless %}
+</div>
+<script> 
+
+  {%- if request.design_mode -%}
+    document.addEventListener("shopify:section:load", function() {
+      shopTheLook();
+    });
+  {%- endif -%}
+</script>
+
+{% schema %}
+{
+  "name": "t:sections.shopthelook.name",
+  "settings": [
+    {
+      "type": "text",
+      "label": "t:sections.all.heading",
+      "default": "Check Out.",
+      "id": "heading"
+    },
+    {
+      "type": "color",
+      "id": "title_color",
+      "label": "t:sections.all.heading",
+      "default": "#000000"
+    },
+    {
+      "type": "select",
+      "id": "heading_font_size",
+      "options": [
+        {
+          "value": "small",
+          "label": "t:sections.all.small"
+        },
+        {
+          "value": "medium",
+          "label": "t:sections.all.medium"
+        },
+        {
+          "value": "large",
+          "label": "t:sections.all.large"
+        }
+      ],
+      "label": "t:sections.all.heading_font_size",
+      "default": "large"
+    },
+    {
+      "type": "richtext",
+      "label": "t:sections.all.description",
+      "default": "<p><strong>Mission: Mars</strong></p>",
+      "id": "sub-heading"
+    },
+    {
+      "type": "color",
+      "id": "sub_title_color",
+      "label": "t:sections.all.description",
+      "default": "#000000"
+    },
+    {
+      "type": "image_picker",
+      "id": "shop_to_look_image",
+      "info": "t:sections.shopthelook.info",
+      "label": "t:sections.shopthelook.label"
+    },
+    {
+      "type": "checkbox",
+      "id": "full_width",
+      "label": "t:sections.all.make_section_full",
+      "default": false
+    }
+  ],
+  "blocks": [
+    {
+      "type": "add_product",
+      "name": "t:sections.shopthelook.add_product",
+      "settings": [
+        {
+          "type": "product_list",
+          "id": "product_list",
+          "label": "t:sections.shopthelook.choose_product",
+          "limit": 1
+        },
+        {
+          "type": "range",
+          "id": "pp_horizontal",
+          "min": 0,
+          "max": 100,
+          "step": 1,
+          "unit": "%",
+          "label": "t:sections.shopthelook.pp_horizontal",
+          "default": 50
+        },
+        {
+          "type": "range",
+          "id": "pp_verticle",
+          "min": 0,
+          "max": 100,
+          "step": 1,
+          "unit": "%",
+          "label": "t:sections.shopthelook.pp_verticle",
+          "default": 50
+        },
+        {
+          "type": "select",
+          "id": "button_style",
+          "options": [
+            {
+              "value": "model-1",
+              "label": "t:settings_schema.typography.settings.colors.button_1_color_1"
+            },
+            {
+              "value": "model-2",
+              "label": "t:settings_schema.typography.settings.colors.button_2_color_1"
+            },
+            {
+              "value": "model-3",
+              "label": "t:settings_schema.typography.settings.colors.button_3_color_1"
+            },
+            {
+              "value": "model-4",
+              "label": "t:settings_schema.typography.settings.colors.button_4_color_1"
+            }
+          ],
+          "label": "t:sections.all.button_style",
+          "default": "model-2"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "t:sections.shopthelook.name",
+      "blocks": [
+        {
+          "type": "add_product"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

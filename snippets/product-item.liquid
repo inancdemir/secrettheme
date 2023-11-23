@@ -1,0 +1,80 @@
+<div class="product-list-item">
+  <div class="product-image">
+    <a class="image-wrap" href="{{- product.url -}}">
+      {% if product.featured_image %}
+      {{ product.featured_image | image_url: width: 600 | image_tag: loading: 'lazy', class: 'product-image' }}
+      {% else %}
+      {{ 'product-1' | placeholder_svg_tag: 'demo-image product-image' }}
+      {% endif %}
+    </a>
+    <button class="quick-view-button" data-product-id="{{- product.url -}}.js">
+      Quick View {% render 'icon-eye' %}        
+    </button>
+  </div>
+  <div class="details">
+    <div class="color-variant-in-list">
+      <span class="h4 subheadline">{{- product.title | link_to: product.url }}</span>
+      {% if product.variants.size > 1 %}
+        <div class="product-variant">
+            {% for option in product.options_with_values %}
+              {%- if option.name == "Color" -%}
+                <div class="product-option">
+                  <span class="caption-2">{{ option.name }} | </span>
+                  {% for value in option.values %}
+                      <div class="product-list-colors {{ option.name }}-{{ value }}"></div>                                  
+                    {% endfor %}
+                </div>
+              {%- endif -%}
+            {% endfor %}
+        </div>
+      {% endif %}
+    </div>
+    <div class="price caption">
+      {% if product.compare_at_price > product.price %}
+        <span class="original-price">
+          {{ product.compare_at_price | money }}
+        </span>
+        <span class="discounted-price">
+          {{ product.price | money }}
+        </span>
+      {% else %}
+        <span class="regular-price">
+          {{ product.price | money }}
+        </span>
+      {% endif %}
+    </div>
+    
+    {% if product.compare_at_price_max > product.price %}
+      <div class="save-amount callout">
+        Save {{ product.compare_at_price_max | minus: product.price | money }}
+      </div>
+    {% endif %}
+    <div class="left-badges">
+      {% if settings.second_badge_on %}
+        {% assign second_badge = settings.second_badge_tag %}
+        {% if product.tags contains second_badge %}
+          <div class="badge model-2">
+          {{ settings.second_badge_text }}
+          </div>
+        {% endif %}
+      {% endif %}
+      {% if settings.sale_badge_on %}
+        {% if product.compare_at_price_max > product.price %}
+          <div class="badge model-1">
+          {{ settings.sale_badge_text }}
+          </div>
+        {% endif %}
+      {% endif %}
+    </div>
+    <div class="right-banner">
+      {% if settings.third_badge_on %}
+        {% assign third_badge = settings.third_badge_tag %}
+        {% if product.tags contains third_badge %}
+          <div class="badge model-3">
+          {{ settings.third_badge_text }}
+          </div>
+        {% endif %}
+      {% endif %}
+    </div>
+  </div>  
+</div>

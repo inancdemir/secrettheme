@@ -1,0 +1,41 @@
+{
+    "sections": {
+        "collection-1": {
+            "type": "header-banner",
+            "blocks": {
+                "main": {
+                    "type": "heading",
+                    "settings": {
+                        "heading": "{{ collection.title }}."
+                    }
+                }
+            },
+            "block_order": [
+                "main"
+            ],
+            "settings": {
+                "background_image": "{{ collection.image }}"
+            }
+        },
+        "breadcrumb": {
+            "type": "breadcrumb",
+            "settings": {
+                "full_width": false
+            }
+        },
+        "main": {
+            "type": "product-list-filtreble",
+            "settings": {
+                "item_per_row": 4,
+                "heading": "",
+                "sub-heading": "",
+                "full_width": false
+            }
+        }
+    },
+    "order": [
+        "collection-1",
+        "breadcrumb",
+        "main"
+    ]
+}

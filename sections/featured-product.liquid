@@ -1,0 +1,180 @@
+{%- style -%}
+.section-{{ section.id }} {
+    background: {% if section.settings.background_image %}
+                    url("{{ section.settings.background_image | image_url }}"),
+                {% endif %}
+                {{ section.settings.background_color }};
+    background-repeat: no-repeat;
+    background-position: top center;
+    padding: {{ section.settings.section_padding }}px 0;
+                          
+}
+.section-{{ section.id }}.front-featured-product h2 {
+  letter-spacing: 0em;
+  margin: 0;
+  margin-left: 32px;
+  color: {{ section.settings.title_color }};
+}
+.section-{{ section.id }}.front-featured-product .description-view-all {
+  display: flex;
+  justify-content: space-between;
+  margin-left: 32px;
+  margin-right: 32px;
+}
+.section-{{ section.id }}.front-featured-product .description-view-all a {
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 20px;
+  letter-spacing: 0em;
+  text-align: right;
+  color: #000;
+}
+.section-{{ section.id }}.front-featured-product .description-view-all h3 {
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 29px;
+  letter-spacing: 0em;
+  text-align: left;
+  margin: 0;
+  display: flex;
+}
+.section-{{ section.id }}.front-featured-product .product-list {
+  display: flex;
+  flex-direction: row;
+}
+
+.section-{{ section.id }}.front-featured-product p.subtitle {
+    color: {{ section.settings.sub_title_color }};
+}
+.front-featured-product .description-view-all > p {
+    color: {{ section.settings.sub_title_color }};
+}
+.front-featured-product .product-list {
+    display: flex;
+    flex-direction: row;
+    margin-top: 30px;
+}
+@media only screen and (min-width: 640px) {
+  .section-{{ section.id }} .product-list {
+    column-gap: {{ section.settings.product_gap }}px;
+  }
+  .section-{{ section.id }} .product-list .product-list-item {
+    flex: 0 0 calc(calc((100% - calc({{ section.settings.product_gap }}px * calc({{ section.settings.product_per_row }} - 1))) / {{ section.settings.product_per_row }}));
+  }
+}
+{%- endstyle -%}
+<div class="front-featured-product section-{{ section.id }}">
+    {% if section.settings.heading != blank %}
+        <h2>{{ section.settings.heading }}</h2>
+    {% endif %}
+    <div class="description-view-all">
+        {% if section.settings.sub-heading != blank %}
+            <p class="subtitle">{{ section.settings.sub-heading }}</p>
+        {% endif %}
+        <a href="{{ collections['featured-products'].url }}">Show All Products</a>
+    </div>
+    <div class="product-list column-{{ section.settings.product_per_row }}">
+        {% if section.settings.product_list != empty %}
+            {% for product in section.settings.product_list %}
+                {% render 'product-item', product: product %}
+            {% endfor %} 
+        {% else %}            
+            {% for product_number in (1..section.settings.product_per_row) %}
+                <div class="product-list-item">
+                    <div class="product-image">
+                      {{ 'product-' | append: product_number | placeholder_svg_tag: 'demo-image slide-image' }}
+                    </div>
+                    <div class="details">
+                      <span class="h4 small">Select Product To Show</span>
+                      <div class="price">
+                          <span class="original-price">$100</span>
+                          <span class="discounted-price">$90</span>
+                      </div>    
+                    </div>                    
+                </div>
+            {% endfor %}           
+        {% endif %}
+    </div>
+</div>
+{% schema %}
+{
+  "name": "t:sections.featured_products.section_name",
+  "settings": [
+    {
+      "type": "text",
+      "label": "t:sections.all.heading",
+      "default": "Featured Products.",
+      "id": "heading"
+    },
+    {
+      "type": "color",
+      "id": "title_color",
+      "label": "t:sections.all.heading",
+      "default": "#000000"
+    },
+    {
+      "type": "text",
+      "label": "t:sections.all.description",
+      "default": "Quality ingredients. Real results.",
+      "id": "sub-heading"
+    },
+    {
+      "type": "color",
+      "id": "sub_title_color",
+      "label": "t:sections.all.description",
+      "default": "#000000"
+    },
+    {
+      "type": "range",
+      "id": "product_per_row",
+      "min": 1,
+      "max": 5,
+      "step": 1,
+      "unit": "itm",
+      "label": "t:sections.all.column_per_row",
+      "default": 4
+    },
+    {
+      "type": "range",
+      "id": "product_gap",
+      "min": 0,
+      "max": 60,
+      "step": 1,
+      "unit": "px",
+      "label": "Ürünler arası boşluk",
+      "default": 0
+    },
+    {
+      "type": "product_list",
+      "id": "product_list",
+      "label": "t:sections.featured_products.select_products"
+    },
+    {
+      "type": "color_background",
+      "id": "background_color",
+      "label": "t:sections.all.background_color",
+      "default": "linear-gradient(180deg, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0) 100%)"
+    },
+    {
+      "type": "image_picker",
+      "id": "background_image",
+      "label": "t:sections.all.background_image"
+    },
+    {
+      "type": "range",
+      "id": "section_padding",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "label": "t:sections.all.section_padding",
+      "default": 30
+    }
+  ],
+  "presets": [
+    {
+      "name": "t:sections.featured_products.section_name"
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,50 @@
+{%- style -%}
+.section-{{ section.id }} h2 {
+    display: inline-block;
+    position: relative;
+    margin-bottom: 50px;
+}
+.section-{{ section.id }} h2:after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 50%;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    backdrop-filter: blur(10px);
+    margin-top: 70px;
+}
+{%- endstyle -%}
+<div class="section-{{ section.id }} text-center">
+    <h4 class="medium">{{ section.settings.small_heading }}</h4>
+    <h2 class="large">{{ section.settings.big_heading }}</h2>
+    {{ section.settings.section_footer_text }}
+</div>
+
+{% schema %}
+{
+  "name": "t:sections.404.name",
+  "settings": [
+    {
+      "type": "text",
+      "label": "t:sections.all.sub_heading",
+      "default": "Page",
+      "id": "small_heading"
+    },
+    {
+      "type": "text",
+      "label": "t:sections.all.heading",
+      "default": "Not Found",
+      "id": "big_heading"
+    },
+    {
+      "type": "richtext",
+      "label": "t:sections.all.text",
+      "default": "<p>The page you are looking for does not exists.</p>",
+      "id": "section_footer_text"
+    }
+  ]
+}
+{% endschema %}

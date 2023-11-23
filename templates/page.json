@@ -1,0 +1,46 @@
+{
+    "sections": {
+        "page-header": {
+            "type": "banner",
+            "blocks": {
+                "main": {
+                    "type": "heading",
+                    "settings": {
+                        "heading": "{{ page.title }}."
+                    }
+                }
+            },
+            "block_order": [
+                "main"
+            ],
+            "settings": {
+                "section_height": 30,
+                "text_position": "bottom-center",
+                "gap_from_sides": 0
+            }
+        },
+        "spacer-1": {
+            "type": "spacer",
+            "settings": {
+                "desktop_space": "80",
+                "mobile_space": "40"
+            }
+        },
+        "default_page": {
+            "type": "main-page"
+        },
+        "spacer-2": {
+            "type": "spacer",
+            "settings": {
+                "desktop_space": "80",
+                "mobile_space": "40"
+            }
+        }
+    },
+    "order": [
+        "page-header",
+        "spacer-1",
+        "default_page",
+        "spacer-2"
+    ]
+}

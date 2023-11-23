@@ -1,0 +1,17 @@
+.single-post .header-tags {
+    display: flex;
+    padding: 16px 0;
+}
+.single-post .post-details p {
+    padding: 16px 0;
+}
+.single-post .footer-tags {
+    display: flex;
+    border-top: 1px solid #CBCBCB;
+    padding: 16px 0;
+    margin: 16px 0;
+}
+.single-post {
+    flex: 0 0 80%;
+    max-width: 80%;
+}

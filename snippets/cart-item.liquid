@@ -1,0 +1,39 @@
+<div class="cart-item" data-key="{{ item.key }}">
+    <div class="cart-item-image">
+      <img src="{{ item.image | image_url }}" width="70" height="100" alt="{{ item.title }}" loading="lazy">
+    </div>
+    <div class="cart-item-main">
+      
+        <div class="cart-item-main-flex-left">
+          
+            <h3 class="subheadline">
+              <a href="{{ item.url }}">{{ item.product.title }}</a>
+            </h3>
+            <span class="text-link">{{ item.variant.title }}</span>
+            <div class="remove-item text-link hidden-mobile">
+              <a href="{{ item.url_to_remove }}">{% render "icon-trash" %} Remove</a>
+            </div>
+          
+        </div>
+        <div class="cart-quantity-selector-wrap">
+            <div class="cart-quantity-selector">
+                <button class="minus" type="button">
+                    {% render 'icon-minus' %}
+                  </button>
+                  <input name="updates[]" type="text" value="{{ item.quantity }}">
+                  <button class="plus" type="button">
+                    {% render 'icon-plus' %}
+                  </button>
+            </div>
+          
+        </div>
+        <div class="product-each-price text-center hidden-mobile">{{ item.price | money }}</div>
+        <div class="cart-item-main-flex-right text-right hidden-mobile"><strong class="line-price">{{ item.final_line_price | money }}</strong></div>
+        
+    </div>
+    <div class="cart-item-main-flex-right text-right hidden-desktop">
+      <strong class="line-price">{{ item.final_line_price | money }}</strong>
+      <a href="{{ item.url_to_remove }}">{% render "icon-trash" %}</a>
+    </div>
+    
+  </div>

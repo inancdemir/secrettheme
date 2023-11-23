@@ -1,0 +1,39 @@
+.quantity {
+  border: 1px solid #cbcbcb;
+  display: flex;
+  justify-content: space-between;
+  text-align: center;
+  align-items: center;
+  padding: 14px 16px;
+  max-width: 150px;
+}
+.quantity input {
+  height: 24px;
+  font-size: 16px;
+  text-align: center;
+}
+/*quantity end*/
+
+.add-to-cart {
+  display: flex;
+}
+.add-to-cart.quantitiy-left {
+  flex-direction: row;
+}
+.add-to-cart.quantitiy-top {
+  flex-direction: column;
+}
+.quantity input {
+  max-width: 40px;
+}
+.quantity input::-webkit-outer-spin-button,
+.quantity input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+.quantity input[type='number'] {
+  -moz-appearance: textfield;
+}
+/* add to cart button end */

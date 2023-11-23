@@ -1,0 +1,31 @@
+{
+    "sections": {
+        "search-header": {
+            "type": "banner",
+            "blocks": {
+                "main": {
+                    "type": "heading",
+                    "settings": {
+                        "heading": "Search Results"
+                    }
+                }
+            },
+            "block_order": [
+                "main"
+            ],
+            "settings": {
+                "section_height": 30,
+                "text_position": "bottom-center",
+                "gap_from_sides": 0
+            }
+        },
+        "main": {
+            "type": "main-search"
+            
+        }
+    },
+    "order": [
+        "search-header",
+        "main"
+    ]
+}

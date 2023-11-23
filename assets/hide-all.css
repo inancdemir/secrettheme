@@ -1,0 +1,8 @@
+.price,
+.save-amount,
+.product-price,
+#add-to-cart,
+.add-to-cart,
+.header__icon--cart {
+    display: none !important;
+}

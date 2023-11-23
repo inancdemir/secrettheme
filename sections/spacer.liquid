@@ -1,0 +1,37 @@
+{%- style -%}
+  .spacer-v-{{ section.id }} {
+    display: block;
+    width: 100%;
+    height: {{ section.settings.mobile_space }}px;
+  }
+  @media only screen and (min-width: 768px) {
+    .spacer-v-{{ section.id }} {
+        height: {{ section.settings.desktop_space }}px;
+    }
+  }
+{%- endstyle -%}
+<div class="spacer-v-{{ section.id }}"></div>
+{% schema %}
+{
+  "name": "Spacer",
+  "settings": [
+    {
+      "type": "text",
+      "id": "desktop_space",
+      "label": "Spacer (Desktop)",
+      "default": "50"
+    },
+    {
+      "type": "text",
+      "id": "mobile_space",
+      "label": "Spacer (mobile)",
+      "default": "50"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Spacer"
+    }
+  ]
+}
+{% endschema %}

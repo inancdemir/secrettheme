@@ -1,0 +1,167 @@
+{{ 'article.css' | asset_url | stylesheet_tag }}
+{{ 'socials.css' | asset_url | stylesheet_tag }}
+<article class="single-article">
+  {%- if section.settings.show_breadcrumb -%}
+    {%- render 'breadcrumb' -%}
+  {%- endif -%}
+  <header class="text-center">
+    {%- if section.settings.blog_show_header != blank -%}
+    <h3 class="medium">{{ article.title }}</h3>
+    {%- endif -%}
+    {%- if section.settings.blog_show_author -%}
+      <span class="caption-2">
+        Posted by {{ article.author }}
+      </span>
+    {%- endif -%}
+    {%- if section.settings.blog_show_date -%}
+      <span class="caption-2">
+        on {{ article.published_at | date: '%B %d, %Y' }}
+      </span>
+    {%- endif -%}
+
+  </header>
+  <div class="section-{{ section.id }}">
+      {{ article.content }}
+  </div>
+  <div class="post-tags-shares">
+    {%- if section.settings.show_tags -%}
+      {%- if article.tags.size > 0 -%}
+        <div class="post-tags">
+          <ul aria-label="Tags">
+            {%- for tag in article.tags -%}
+              <li>
+                <a class="caption" href="{{ blog.url }}/tagged/{{ tag | handle }}">
+                  {{ tag }}
+                </a>
+              </li>
+            {%- endfor -%}
+          </ul>
+        </div>
+      {%- endif -%}
+    {%- endif -%}
+    {%- if section.settings.show_shares -%}
+      <div class="post-shares">
+        <div class="socilas">
+          <span class="caption">Share</span>
+          <ul>
+              <li>{% render 'icon-facebook' %}</li>
+              <li>{% render 'icon-twitter' %}</li>
+              <li>{% render 'icon-pinterest' %}</li>
+              <li>{% render 'icon-link' %}</li>
+          </ul>    
+        </div>  
+      </div>
+    {%- endif -%}   
+  </div>
+  {%- if section.settings.show_comments -%}
+    <footer>
+      <div class="article-comments">
+        <h3 class="subheadline">Leave a comment</h3>
+        <p class="callout no-gap">Your email address will not be published..</p>
+        {% form 'new_comment', article %}
+          {{ form.errors | default_errors }}
+          <div class="comment">
+            <textarea placeholder="Comment" name="comment[body]">{{ form.body }}</textarea>
+          </div>
+          <div class="name">
+            <input  placeholder="Name" type="text" name="comment[author]" value="{{ form.author }}">
+          </div>
+          <div class="email">
+            <input  placeholder="E-mail" type="email" name="comment[email]" value="{{ form.email }}">
+          </div>
+          <input class="button model-2 full" type="submit" value="Post">
+        {% endform %}
+  
+        {% paginate article.comments by 20 %}
+          {% for comment in article.comments %}
+            <div class="each-comment">
+              <span class="callout">{{ comment.created_at | date: '%B %d, %Y' }}</span>
+              <span class="h4 small">{{ comment.author }}</span>
+              {{ comment.content }}
+            </div>            
+          {% endfor %}
+          {{ paginate | default_pagination }}
+        {% endpaginate %}
+      </div>
+    </footer>
+  {%- endif -%} 
+</article>
+<script type="application/ld+json">
+  {
+    "@context": "http://schema.org",
+    "@type": "Article",
+    "articleBody": {{ article.content | strip_html | json }},
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": {{ request.origin | append: page.url | json }}
+    },
+    "headline": {{ article.title | json }},
+    {% if article.excerpt != blank %}
+      "description": {{ article.excerpt | strip_html | json }},
+    {% endif %}
+    {% if article.image %}
+      "image": [
+        {{ article | image_url: width: 1920 | prepend: "https:" | json }}
+      ],
+    {% endif %}
+    "datePublished": {{ article.published_at | date: '%Y-%m-%dT%H:%M:%SZ' | json }},
+    "dateCreated": {{ article.created_at | date: '%Y-%m-%dT%H:%M:%SZ' | json }},
+    "author": {
+      "@type": "Person",
+      "name": {{ article.author | json }}
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": {{ shop.name | json }}
+    }
+  }
+</script>
+{% schema %}
+{
+  "name": "t:sections.article_section.article_section_name",
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "show_breadcrumb",
+      "label": "Show breadcrumb",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "blog_show_header",
+      "label": "Show header",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "blog_show_author",
+      "label": "Show author",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "blog_show_date",
+      "label": "Show date",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "show_tags",
+      "label": "Show tags",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "show_shares",
+      "label": "Show shares",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "show_comments",
+      "label": "Show comments",
+      "default": true
+    }
+  ]
+}
+{% endschema %}

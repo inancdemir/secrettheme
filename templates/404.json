@@ -1,0 +1,26 @@
+{
+    "sections": {
+        "spacer-1": {
+            "type": "spacer",
+            "settings": {
+                "desktop_space": "200",
+                "mobile_space": "100"
+            }
+        },
+        "article": {
+            "type": "404"
+        },
+        "spacer-2": {
+            "type": "spacer",
+            "settings": {
+                "desktop_space": "200",
+                "mobile_space": "100"
+            }
+        }
+    },
+    "order": [
+        "spacer-1",
+        "article",
+        "spacer-2"
+    ]
+}
