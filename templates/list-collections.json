@@ -3,15 +3,12 @@
         "spacer": {
             "type": "spacer",
             "settings": {
-                "desktop_space": 70,
-                "mobile_space": 50
+                "desktop_space": "70",
+                "mobile_space": "50"
             }
         },
         "collection_lists": {
-            "type": "collection-lists",
-            "settings": {
-
-            }
+            "type": "collection-lists"
         }
     },
     "order": [

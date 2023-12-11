@@ -76,34 +76,42 @@
 
 
 <div class="front-collection-wrap section-{{ section.id }} columns-{{ section.settings.collection_per_line }}">
-    
-    {% if section.settings.collection_list != empty %}
-        {%- for collection in section.settings.collection_list -%}
-            <div class="single-collection-large">
-              {{ collection.featured_image | image_url: width: 2000 | image_tag: loading: 'lazy', class: 'product-image' }}
-                <div class="collection-details">
-                    <h2 class="{{ section.settings.heading_font_size }}">{{- collection.title | upcase | link_to: collection.url -}}</h2>
-                    {% if section.settings.enable_description == "enabled" %}
-                        <p class="h4 small">{{ collection.description | strip_html | truncate: section.settings.collection_description_lenght }}</p>
+   
+  {%- for block in section.blocks -%}
+    {% case block.type %}
+      {%- when 'collection' -%}
+          <div class="single-collection-large">
+            {% if block.settings.collection != empty %}
+              {{ block.settings.collection.featured_image | image_url: width: 2000 | image_tag: loading: 'lazy', class: 'product-image' }}
+            {% else %}
+              {{ 'collection-1' | placeholder_svg_tag: 'demo-image slide-image' }}
+            {% endif %}
+            <div class="collection-details">
+                <h2 class="{{ section.settings.heading_font_size }}">
+                  {% if block.settings.collection != empty %}
+                    {{- block.settings.collection.title | upcase | link_to: block.settings.collection.url -}}
+                  {% else %}
+                    Featured collection
+                  {% endif %}
+                </h2>
+                {% if block.settings.collection != empty %}
+                  {% if block.settings.enable_description == "enabled" %}
+
+                    {% if block.settings.enable_custom_description == "disabled" %}
+                      <p class="h4 small">{{- block.settings.collection.description | strip_html | truncate: block.settings.collection_description_lenght -}}</p>
+                    {% else  %}
+                      <div class="h4 small">{{- block.settings.custom_description -}}</div>
                     {% endif %}
-                    <a class="button {{ section.settings.button_style }}" href="{{ collection.url }}">{{- section.settings.collection_button_text -}}</a>
-                </div>
+                    
+                  {% endif %}
+                {% else %}
+                  <p class="h4 small">Collection Description</p>
+                {% endif %}
+                <a class="button {{ block.settings.button_style }}" href="{{ block.settings.collection.url }}">{{- block.settings.collection_button_text -}}</a>
             </div>
-        {%- endfor -%}
-    {% else %}
-        {% for collection_number in (1..section.settings.collection_per_line) %}
-            <div class="single-collection-large">
-                {{ 'collection-' | append: collection_number | placeholder_svg_tag: 'demo-image slide-image' }}
-                <div class="collection-details">
-                    <h2 class="{{ section.settings.heading_font_size }}">Featured Collection Name</h2>
-                    {% if section.settings.enable_description == "enabled" %}
-                        <p class="h4 small">Collection Description</p>
-                    {% endif %}
-                    <a class="button {{ section.settings.button_style }}" href="{{ collection.url }}">{{- section.settings.collection_button_text -}}</a>
-                </div>
-            </div>
-        {% endfor %}
-    {% endif %}
+          </div>
+    {% endcase %}
+  {% endfor %}
 </div>
 
 
@@ -148,33 +156,6 @@
       "default": "medium"
     },
     {
-      "type": "select",
-      "label": "Description",
-      "info": "Use this toggle to show or hide the collection description information that comes from your Shopify dashboard",
-      "id": "enable_description",
-      "default": "enabled",
-      "options": [
-        {
-          "value": "enabled",
-          "label": "t:sections.all.on"
-        },
-        {
-          "value": "disabled",
-          "label": "t:sections.all.off"
-        }
-      ]
-    },
-    {
-      "type": "range",
-      "id": "collection_description_lenght",
-      "min": 10,
-      "max": 300,
-      "step": 10,
-      "unit": "x",
-      "label": "t:sections.featured_collections.description_lenght",
-      "default": 40
-    },
-    {
       "type": "color",
       "id": "collection_description_color",
       "label": "t:sections.featured_collections.description_color",
@@ -196,35 +177,6 @@
       "default": 1
     },
     {
-      "type": "collection_list",
-      "id": "collection_list",
-      "label": "t:sections.all.collections"
-    },
-    {
-      "type": "select",
-      "id": "button_style",
-      "options": [
-        {
-          "value": "model-1",
-          "label": "t:settings_schema.typography.settings.colors.button_1_color_1"
-        },
-        {
-          "value": "model-2",
-          "label": "t:settings_schema.typography.settings.colors.button_2_color_1"
-        },
-        {
-          "value": "model-3",
-          "label": "t:settings_schema.typography.settings.colors.button_3_color_1"
-        },
-        {
-          "value": "model-4",
-          "label": "t:settings_schema.typography.settings.colors.button_4_color_1"
-        }
-      ],
-      "label": "t:sections.all.button_style",
-      "default": "model-1"
-    },
-    {
       "type": "range",
       "id": "spacings",
       "min": 0,
@@ -241,9 +193,107 @@
       "default": true
     }
   ],
+  "blocks": [
+    {
+      "type": "collection",
+      "name": "t:sections.collection_showcase.collection_showcase_block.name",
+      "settings": [
+        {
+          "type": "collection",
+          "id": "collection",
+          "label": "t:sections.all.collections"
+        },
+        {
+          "type": "select",
+          "label": "Description",
+          "info": "Use this toggle to show or hide the collection description information that comes from your Shopify dashboard",
+          "id": "enable_description",
+          "default": "enabled",
+          "options": [
+            {
+              "value": "enabled",
+              "label": "t:sections.all.on"
+            },
+            {
+              "value": "disabled",
+              "label": "t:sections.all.off"
+            }
+          ]
+        },
+        {
+          "type": "range",
+          "id": "collection_description_lenght",
+          "min": 10,
+          "max": 300,
+          "step": 10,
+          "unit": "x",
+          "label": "t:sections.featured_collections.description_lenght",
+          "default": 40
+        },
+        {
+          "type": "select",
+          "label": "Custom text",
+          "info": "Enable ise custom description gelir, aksi halde collection description gelir.",
+          "id": "enable_custom_description",
+          "default": "enabled",
+          "options": [
+            {
+              "value": "enabled",
+              "label": "t:sections.all.on"
+            },
+            {
+              "value": "disabled",
+              "label": "t:sections.all.off"
+            }
+          ]
+        },
+        {
+          "type": "richtext",
+          "id": "custom_description",
+          "label": "Custom description",
+          "default": "<p><strong>Collection description</strong></p>"
+        },
+        {
+          "type": "text",
+          "id": "collection_button_text",
+          "label": "t:sections.all.button_label",
+          "default": "BUTTON LABEL"
+        },
+        {
+          "type": "select",
+          "id": "button_style",
+          "options": [
+            {
+              "value": "model-1",
+              "label": "t:settings_schema.typography.settings.colors.button_1_color_1"
+            },
+            {
+              "value": "model-2",
+              "label": "t:settings_schema.typography.settings.colors.button_2_color_1"
+            },
+            {
+              "value": "model-3",
+              "label": "t:settings_schema.typography.settings.colors.button_3_color_1"
+            },
+            {
+              "value": "model-4",
+              "label": "t:settings_schema.typography.settings.colors.button_4_color_1"
+            }
+          ],
+          "label": "t:sections.all.button_style",
+          "default": "model-1"
+        }
+      ]
+    }
+  ],
   "presets": [
     {
-      "name": "t:sections.featured_collections.section_name"
+      "name": "t:sections.featured_collections.section_name",
+      "blocks": [
+        {
+          "type": "collection"
+        }
+      ]
     }
   ]
 }

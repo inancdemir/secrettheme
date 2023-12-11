@@ -37,7 +37,7 @@
 .section-{{ section.id }} .collection-hor .single-collection {
   flex: 0 0 80%;
   max-width: 80%;
-  padding-top: {{ section.settings.spacings }}px;
+  margin-top: {{ section.settings.spacings }}px;
   position: relative;
 }
 @media only screen and (min-width: 640px) {
@@ -49,10 +49,32 @@
   margin: 0 8px 0 8px;
 }
 .section-{{ section.id }} .model-two {
-  margin: 0 16px 16px 16px;
   position: absolute;
+  margin: 0;
   left: 0;
+  top: 0;
+  right: 0;
   bottom: 0;
+}
+
+.section-{{ section.id }} .model-two a {
+  display: flex;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+}
+.section-{{ section.id }} .model-two a:before {
+  content: "";
+  width: 100%;
+  height: 100%;
+  background: {{ section.settings.collection_item_title_bg_color }};
+}
+.section-{{ section.id }} .model-two a h3.subheadline {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    margin: 16px;
 }
 .section-{{ section.id }} .single-collection h3 {
     color: {{ section.settings.collection_item_title_color }};
@@ -68,11 +90,11 @@
 
 {%- endstyle -%}
 
-
+{% unless section.settings.full_width %}
+<div class="wide-width">
+{% endunless %}
 <div class="front-collection-wrap section-{{ section.id }}">
-    {% unless section.settings.full_width %}
-    <div class="wide-width">
-    {% endunless %}
+    
     {% if section.settings.heading != blank %}
       <h2 class="{{ section.settings.heading_font_size }} space-from-edges">{{ section.settings.heading }}</h2>
     {% endif %}
@@ -81,36 +103,50 @@
     {% endif %}
     
     <div class="collection-hor">
-        {% if section.settings.collection_list != empty %}
-            {%- for collection in section.settings.collection_list -%}
-              <div class="single-collection image-size-{{ section.settings.image_size }} image-fit-{{- section.settings.image_fit }} image-pos-{{- section.settings.image_pos -}}">
-                <div class="image-wrap">  
-                  {{ collection.featured_image | image_url: width: 1000 | image_tag: loading: 'lazy', class: 'product-image' }}
-                </div>
-                <div class="{{ section.settings.collection_model }}">
-                  <h3 class="subheadline">
-                      {{- collection.title | upcase | link_to: collection.url -}}
-                  </h3>
-                  <a class="shop-now text-link" href="{{ collection.url }}">Shop Now</a>
-                </div>
+      {%- for block in section.blocks -%}
+        {% case block.type %}
+          {%- when 'collection' -%}
+            <div class="single-collection image-size-{{ section.settings.image_size }} image-fit-{{- section.settings.image_fit }} image-pos-{{- section.settings.image_pos -}}">
+              <div class="image-wrap">  
+                {% if block.settings.collection != empty %}
+                  {% if section.settings.collection_model == "model-one" %}
+                    <a href="{{ block.settings.collection.url }}">
+                  {% endif %}
+                      {{ block.settings.collection.featured_image | image_url: width: 600 | image_tag: loading: 'lazy', class: 'product-image' }}
+                  {% if section.settings.collection_model == "model-two" %}
+                    </a>
+                  {% endif %}
+                {% else %}
+                  {{ 'collection-1' | placeholder_svg_tag: 'demo-image' }}
+                {% endif %}
               </div>
-            {%- endfor -%}
-        {% else %}
-          {% for collection_number in (1..section.settings.collection_per_line) %}
-            <div class="single-collection">
-                {{ 'collection-' | append: collection_number | placeholder_svg_tag: 'demo-image' }}
-                <div class="{{ section.settings.collection_model }}">
-                  <h3 class="subheadline">Collection Title {{ collection_number }}</h3>
-                  <a class="shop-now text-link" href="#">Shop Now</a>
-                </div>
+              <div class="{{ section.settings.collection_model }}">
+                {% if section.settings.collection_model == "model-two" %}
+                  <a href="{{ block.settings.collection.url }}">
+                {% endif %}
+                  <h3 class="subheadline">
+                    {% if block.settings.collection != empty %}
+                      {{- block.settings.collection.title | upcase -}}
+                    {% else %}
+                      Collection Name
+                    {% endif %}
+                  </h3>
+                  {% unless section.settings.collection_model == "model-two" %}
+                  <a class="shop-now text-link" href="{{ block.settings.collection.url }}">Shop Now</a>
+                  {% endunless %}
+                {% if section.settings.collection_model == "model-two" %}
+                  </a>
+                {% endif %}
+              </div>
             </div>
-          {% endfor %}
-        {% endif %}
+        {% endcase %}
+      {% endfor %}
     </div>
-    {% unless section.settings.full_width %}
-    </div>
-    {% endunless %}
+    
 </div>
+{% unless section.settings.full_width %}
+</div>
+{% endunless %}
 
 
 
@@ -124,7 +160,7 @@
       "type": "text",
       "id": "heading",
       "label": "t:sections.all.heading",
-      "default": "t:sections.collection_showcase.section_name"
+      "default": "Collection Showcase."
     },
     {
       "type": "color",
@@ -156,7 +192,7 @@
       "type": "richtext",
       "id": "sub_heading",
       "label": "t:sections.all.sub_heading",
-      "default": "t:sections.collection_showcase.subheading_default"
+      "default": "<p><strong>Use this section to showcase your collections</strong></p>"
     },
     {
       "type": "color",
@@ -172,11 +208,6 @@
       "step": 1,
       "label": "t:sections.all.column_per_row",
       "default": 3
-    },
-    {
-      "type": "collection_list",
-      "id": "collection_list",
-      "label": "t:sections.all.collections"
     },
     {
       "type": "select",
@@ -279,6 +310,12 @@
       "default": 16
     },
     {
+      "type": "color_background",
+      "id": "collection_item_title_bg_color",
+      "label": "Sadece inside olduğundaki arkaplan",
+      "default": "linear-gradient(180deg, rgba(0, 0, 0, 0) 75%, rgba(0, 0, 0, 0.8) 100%)"
+    },
+    {
       "type": "color",
       "id": "collection_item_title_color",
       "label": "t:sections.collection_showcase.single_collection_title.color",
@@ -325,12 +362,36 @@
       "type": "checkbox",
       "id": "full_width",
       "label": "t:sections.all.make_section_full",
-      "default": true
+      "default": false
+    }
+  ],
+  "blocks": [
+    {
+      "type": "collection",
+      "name": "t:sections.collection_showcase.collection_showcase_block.name",
+      "settings": [
+        {
+          "type": "collection",
+          "id": "collection",
+          "label": "t:sections.all.collections"
+        }
+      ]
     }
   ],
   "presets": [
     {
-      "name": "t:sections.collection_showcase.section_name"
+      "name": "t:sections.collection_showcase.section_name",
+      "blocks": [
+        {
+          "type": "collection"
+        },
+        {
+          "type": "collection"
+        },
+        {
+          "type": "collection"
+        }
+      ]
     }
   ]
 }

@@ -1,13 +1,13 @@
 {%- style -%}
 .section-{{ section.id }} {
-    background: {% if section.settings.background_image %}
-                    url("{{ section.settings.background_image | image_url }}"),
-                {% endif %}
-                {{ section.settings.background_color }};
-    background-repeat: no-repeat;
-    background-position: top center;
-    padding-top: calc(({{- section.settings.section_padding_top }} / 100) * 128px);
-    padding-bottom: calc(({{- section.settings.section_padding_bottom }} / 100) * 128px);
+  background: {% if section.settings.background_image %}
+                  url("{{ section.settings.background_image | image_url }}"),
+              {% endif %}
+              {{ section.settings.background_color }};
+  background-repeat: no-repeat;
+  background-position: top center;
+  padding-top: calc(({{- section.settings.section_padding_top }} / 100) * 128px);
+  padding-bottom: calc(({{- section.settings.section_padding_bottom }} / 100) * 128px);
 }
 @media only screen and (min-width: 640px) {
   .section-{{ section.id }} {
@@ -17,91 +17,18 @@
 }
 .section-{{ section.id }}.front-featured-product h2 {
   color: {{ section.settings.title_color }};
-}
- 
+} 
 .section-{{ section.id }}.front-featured-product .subtitle {
     color: {{ section.settings.sub_title_color }};
 }
 .front-featured-product .description-view-all > p {
     color: {{ section.settings.sub_title_color }};
 }
-.front-featured-product .product-list {
-    display: flex;
-    flex-direction: row;
-    margin-top: 30px;
-}    
-.collection-tabs {
-  width: 100%;
-  position: relative;
-  background-color: #fff;
-}
 {% unless section.settings.full_width %}
-.collection-tabs .flickity-viewport {
-  min-width: calc(100% + calc((100vw - 1460px) / 2));
-}
+  .collection-tabs .flickity-viewport {
+    min-width: calc(100% + calc((100vw - 1460px) / 2));
+  }
 {% endunless %}
-
-.wrapper {
-  width: 100%;
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  margin-left: -9999px;
-}
-.wrapper.active {
-  position: relative;
-  margin-left: 0;
-}
-
-
-.slider-container {
-  overflow: hidden;
-}
-
-.slider-track {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-
-  -webkit-transition: .2s;
-  transition: .2s; }
-
-
-
-
-
-.slider-buttons {
-  display: flex;
-  justify-content: flex-end;
-  column-gap: 16px;
-  padding: 32px;
-}
-
-.tab-list {
-  display: flex;
-  column-gap: 18px;
-  margin-top: 32px;
-  margin-bottom: 32px;
-  max-width: 100%;
-  overflow-x: scroll;
-  -ms-overflow-style: none;  /* Internet Explorer 10+ */
-    scrollbar-width: none;  /* Firefox */
-}
-.tab-list::-webkit-scrollbar { 
-    display: none;  /* Safari and Chrome */
-  }
-@media only screen and (min-width: 640px) {
-  }
-.tab-list .h4 {
-  cursor: pointer;
-  border-bottom: 3px solid transparent;
-  white-space: nowrap;
-}
-.tab-list .h4:hover,
-.tab-list .h4.active {
-  border-bottom: 3px solid var(--body-color); 
-}
 .section-{{ section.id }} .carousel-slider-item {
   width: calc(75% - {{ section.settings.products_item_gap }}px);
 }
@@ -119,16 +46,13 @@
     left: auto;
     right: 70px;
 }
-{% if section.settings.full_width %}
-  
-{% endif %}
 
 @media only screen and (min-width: 640px) {
   .section-{{ section.id }} .carousel-slider-item {
-    width: calc( 25% - ({{ section.settings.products_item_gap }}px * 3 ) / 4);
+    max-width: calc( 25% - ({{ section.settings.products_item_gap }}px * 3 ) / 4);
+    min-width: calc( 25% - ({{ section.settings.products_item_gap }}px * 3 ) / 4);
     margin-left: {{ section.settings.products_item_gap }}px;
   }
-  
   .section-{{ section.id }} .flickity-prev-next-button,
   .section-{{ section.id }} .flickity-prev-next-button.previous {
     display: block;
@@ -136,10 +60,11 @@
 }
 
 {%- endstyle -%}
+
 {{ 'flickity.css' | asset_url | stylesheet_tag }}
-<script src="{{ 'flickity.js' | asset_url }}" defer="defer"></script>  
-
-
+{{ 'collection-list.css' | asset_url | stylesheet_tag }}
+<script src="{{ 'flickity.js' | asset_url }}" defer="defer"></script>
+<script src="{{ 'collection-list.js' | asset_url }}" defer="defer"></script>
 
 <div class="front-featured-product section-{{ section.id }}">
   {% unless section.settings.full_width %}
@@ -157,47 +82,99 @@
   <div class="tab-list space-from-edges">
     {%- for block in section.blocks -%}
       {% case block.type %}
-          {%- when 'slide' -%}
-            {% if block.settings.collection.title %}
+        {%- when 'slide' -%}
+          {% if block.settings.collection.title %}
+            {% if forloop.index0 == 0 %} <!-- Kontrol, ilk çağrılan block için -->
+              <span id="{{ block.id }}" class="h4 small active">{{- block.settings.collection.title -}}</span>
+            {% else %}
               <span id="{{ block.id }}" class="h4 small">{{- block.settings.collection.title -}}</span>
-            {% else  %}
+            {% endif %}
+          {% else  %}
+            {% if forloop.index0 == 0 %} <!-- Kontrol, ilk çağrılan block için -->
+              <span id="{{ block.id }}" class="h4 small active">Collection Name</span>
+            {% else %}
               <span id="{{ block.id }}" class="h4 small">Collection Name</span>
             {% endif %}
+          {% endif %}
       {%- endcase -%}
-    {%- endfor -%}
+    {%- endfor -%}    
   </div>
     <div class="collection-tabs full-on-mobile">
       {%- for block in section.blocks -%}
         
         {% case block.type %}
             {%- when 'slide' -%}
-              <div class="wrapper" data-name="{{ block.id }}" {{ block.shopify_attributes }}>
+              {% if forloop.index0 == 0 %}
+                <div class="wrapper active" data-name="{{ block.id }}" {{ block.shopify_attributes }}>
+              {% else %}
+                <div class="wrapper" data-name="{{ block.id }}" {{ block.shopify_attributes }}>
+              {% endif %}
                 <div class="slide-wrapper">
-                  {% if block.settings.collection.products %}
-                    {% for product in block.settings.collection.products %}
-                      <div class="carousel-slider-item image-size-{{ section.settings.image_size }} image-fit-{{- section.settings.image_fit }} image-pos-{{- section.settings.image_pos -}}">
-                        {% render 'product-item', product: product %}
-                      </div>
-                    {% endfor %}    
+                  {% if block.settings.collection != empty %}
+                    {% if block.settings.collection.products %}
+                      {% for product in block.settings.collection.products %}
+                        <div class="carousel-slider-item image-size-{{ section.settings.image_size }} image-fit-{{- section.settings.image_fit }} image-pos-{{- section.settings.image_pos -}}">
+                          {% render 'product-item', product: product %}
+                        </div>
+                      {% endfor %}
+                    {% endif %}
                   {% else %}
 
-                    {% for product_number in (1..6) %}
-                      <div class="carousel-slider-item">
+                    {% for product_number in (1..4) %}
+                      <div class="carousel-slider-item image-size-{{ section.settings.image_size }} image-fit-{{- section.settings.image_fit }} image-pos-{{- section.settings.image_pos -}}">
                         <div class="product-list-item">
                           <div class="product-image">
+                            <div class="image-wrap">
                               {{ 'product-' | append: product_number | placeholder_svg_tag: 'demo-image product-image' }}
+                            </div>
+                            <button class="quick-view-button" data-product-id="/products/curve-w-jacket.js">
+                              Quick View <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                              <path fill-rule="evenodd" clip-rule="evenodd" d="M15.1609 12.0531C15.1609 13.7991 13.7449 15.2141 11.9989 15.2141C10.2529 15.2141 8.83789 13.7991 8.83789 12.0531C8.83789 10.3061 10.2529 8.89111 11.9989 8.89111C13.7449 8.89111 15.1609 10.3061 15.1609 12.0531Z" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                              <path fill-rule="evenodd" clip-rule="evenodd" d="M11.998 19.3549C15.806 19.3549 19.289 16.6169 21.25 12.0529C19.289 7.48885 15.806 4.75085 11.998 4.75085H12.002C8.194 4.75085 4.711 7.48885 2.75 12.0529C4.711 16.6169 8.194 19.3549 12.002 19.3549H11.998Z" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                              </svg>        
+                            </button>
                           </div>
+                          
                           <div class="details">
-                            <span class="subheadline">Select Product To Show</span>
-                            <div class="price">
-                                <span class="original-price">$100</span>
-                                <span class="discounted-price">$90</span>
-                            </div>    
+                            <div class="color-variant-in-list">
+                              <span class="h4 subheadline"><a href="/products/curve-w-jacket" title="">Product Name</a></span>
+                                <div class="product-variant">                                    
+                                  <div class="product-option">
+                                    <span class="caption-2">Color | </span>
+                                    <div class="product-list-colors Color-Sahara"></div>
+                                    <div class="product-list-colors Color-Mars"></div>
+                                    <div class="product-list-colors Color-Sunset"></div>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="price caption">
+                                <span class="original-price">
+                                  $100.00
+                                </span>
+                                <span class="discounted-price">
+                                  $90.00
+                                </span>
+                              </div>
+                              <div class="save-amount callout">
+                                Save 10$
+                              </div>
+                              <div class="left-badges">
+                                <div class="badge model-2" data-live-text-setting="second_badge_text">
+                                  ⚡️ BEST SELLER
+                                </div>
+                                <div class="badge model-1" data-live-text-setting="sale_badge_text">
+                                  SALE
+                                </div>
+                              </div>
+                              <div class="right-banner">
+                                <div class="badge model-3" data-live-text-setting="third_badge_text">
+                                  NEW
+                                </div>
+                              </div>
+                            </div>
                           </div>
                         </div>
-                      </div>
                     {% endfor %}  
-                  
                     
                   {% endif %}                
                 </div>
@@ -213,70 +190,10 @@
 
       
 <script>
-  function initializeTabbedContent() {
-    // Get all the <h3> elements within the .tab-list
-    const tabHeaders = document.querySelectorAll('.tab-list .h4');
   
-    // Get all the .wrapper elements within the .collection-tabs
-    const tabContentWrappers = document.querySelectorAll('.collection-tabs .wrapper');
-  
-    // Add the "active" class to the first <h3> element and its corresponding .wrapper element
-    tabHeaders[0].classList.add('active');
-    tabContentWrappers[0].classList.add('active');
-  
-    // Add a click event listener to each <h3> element
-    tabHeaders.forEach((tabHeader, index) => {
-      tabHeader.addEventListener('click', () => {
-        // Remove the "active" class from all <h3> elements
-        tabHeaders.forEach(header => {
-          header.classList.remove('active');
-        });
-  
-        // Remove the "active" class from all .wrapper elements
-        tabContentWrappers.forEach(wrapper => {
-          wrapper.classList.remove('active');
-        });
-  
-        // Add the "active" class to the clicked <h3> element
-        tabHeader.classList.add('active');
-  
-        // Find the corresponding .wrapper element using the data-name attribute
-        const dataName = tabHeader.getAttribute('id');
-        const activeWrapper = document.querySelector(`.wrapper[data-name="${dataName}"]`);
-  
-        // Add the "active" class to the corresponding .wrapper element
-        activeWrapper.classList.add('active');
-        var flkty = new Flickity('.active .slide-wrapper', {
-          // Options
-          cellAlign: 'left',       // Align the first slide to the left
-          prevNextButtons: true,   // Show previous and next buttons
-          pageDots: false,         // Hide the page dots
-          groupCells: 1,  
-          cellSelector: '.carousel-slider-item',
-        });
-        flkty.reloadCells();
-      });
-    });
-    
-  }
-  
-  // Call the function to initialize the tabbed content
-  
-  document.addEventListener("DOMContentLoaded", function () {
-    initializeTabbedContent();
-      var flkty = new Flickity('.active .slide-wrapper', {
-          // Options
-          cellAlign: 'left',       // Align the first slide to the left
-          prevNextButtons: true,   // Show previous and next buttons
-          pageDots: false,         // Hide the page dots
-          groupCells: 1,
-          cellSelector: '.carousel-slider-item',
-      });   
-  });
-
   {%- if request.design_mode -%}
-    document.addEventListener("shopify:section:load", function() {
-      initializeTabbedContent();
+    document.addEventListener("shopify:section:load", function(event) {
+        initializeTabbedContent();
         var flkty = new Flickity('.active .slide-wrapper', {
           // Options
           cellAlign: 'left',       // Align the first slide to the left
@@ -285,9 +202,9 @@
           groupCells: 1,
           cellSelector: '.carousel-slider-item',
       });
+      flkty.reloadCells();
     });
   {%- endif -%}
-  
 </script>
 
 {% schema %}
@@ -297,7 +214,7 @@
     {
       "type": "text",
       "label": "t:sections.all.heading",
-      "default": "t:sections.collection_list.section_name",
+      "default": "Collection tabs",
       "id": "heading"
     },
     {
@@ -329,7 +246,7 @@
     {
       "type": "richtext",
       "label": "t:sections.all.description",
-      "default": "t:sections.collection_list.description_default",
+      "default": "<p><strong>Use this section with a slider and tabs to display the products in your collections.</strong></p>",
       "id": "sub-heading"
     },
     {
@@ -456,7 +373,7 @@
       "type": "checkbox",
       "id": "full_width",
       "label": "t:sections.all.make_section_full",
-      "default": true
+      "default": false
     }
   ],
   "blocks": [
@@ -474,7 +391,21 @@
   ],
   "presets": [
     {
-      "name": "t:sections.collection_list.section_name"
+      "name": "t:sections.collection_list.section_name",
+      "blocks": [
+        {
+          "type": "slide",
+          "settings": {
+            "collection": ""
+          }
+        },
+        {
+          "type": "slide",
+          "settings": {
+            "collection": ""
+          }
+        }
+      ]
     }
   ]
 }

@@ -1,5 +1,4 @@
 {%- style -%}
-/* bu da inancın testi */
     .section-{{ section.id }} {
       margin: {{ section.settings.section_margin }}px 0;
       {% unless section.settings.full_width %}
@@ -262,6 +261,13 @@ button.hide {
   border: 1px solid var(--body-color);
 }
 
+.variant-inventory .stock-check {
+  display: none;
+}
+.variant-inventory .stock-check.active {
+  display: block;
+}
+
 {%- endstyle -%}
 {{ 'socials.css' | asset_url | stylesheet_tag }}
 
@@ -352,8 +358,26 @@ button.hide {
           {% render 'breadcrumb' %}
         {% endif %}
         
-        <input hidden aria-label="product-variant" id="single-product-id" name="id" value="{{ product.selected_or_first_available_variant.id }}">
-
+        <div class="variant-inventory">
+          {% for variant in product.variants %}
+            {% if variant.inventory_management == "shopify" %}
+              <div class="stock-check stock-check-{{ variant.id }} {% if product.variants.first.id == variant.id %} active{% endif %}">
+                {% if variant.inventory_quantity > 0 %}
+                <span>{{ variant.inventory_quantity }}</span>
+                {% else %}
+                  <span>Out of stock</span>
+                {% endif %}
+              </div>
+            {% else %}
+              <div class="stock-check stock-check-{{ variant.id }}">
+                <span>Available</span>
+              </div>
+            {% endif %}
+            
+            
+        {% endfor %}
+        
+          </div>
         {%- for block in section.blocks -%}
           
           {% case block.type %}
@@ -408,10 +432,10 @@ button.hide {
                       <input type="number" name="quantity" aria-label="product-quantity" min="1" value="1">
                       <button class="q-up" aria-label="plus-quantity">{% render 'icon-plus' %}</button> 
                   </div>                  
-                  <button type="submit" class="button {{ block.settings.button_style }} full in-stock" id="add-cart" {% unless product.selected_or_first_available_variant.available %}disabled{% endunless %}>
+                  <button type="submit" class="button model-3 full in-stock" id="add-cart" {% unless product.selected_or_first_available_variant.available %}disabled{% endunless %}>
                     {{ block.settings.button_label }}
                   </button>
-                  <button type="submit" class="button {{ block.settings.button_style }} full hide outof-stock" id="add-cart" disabled>
+                  <button type="submit" class="button model-3 full hide outof-stock" id="add-cart" disabled>
                     {{ block.settings.button_label_nostock }}
                   </button>
               </div>
@@ -461,24 +485,7 @@ button.hide {
               
             {%- when 'variants' -%}
               <div class="product-variants" {{ block.shopify_attributes }}>
-                <div class="in-box-view">
-                {% for variant in product.variants %}
-                  <div class="detailed-boxes" style="">
-                    
-                      <input type="radio" name="id" value="{{ variant.id }}"
-                        {% if variant == product.selected_or_first_available_variant %}checked{% endif %}
-                      >
-                    <label>
-                      <h4 class="small">{{ variant.title }}</h4>
-                      {{ variant.price | money }}<br />
-                      {% if variant.compare_at_price > variant.price %}
-                        Save:<small class="underline">{{ variant.compare_at_price | minus: variant.price | money }}</small>
-                      {% endif %}
-                    </label>
-                  </div>
-                {% endfor %}
-                </div>
-                {% comment %}
+                
                 {% if product.variants.size > 1 %}
                   <div class="product-variant">
                       {% for option in product.options_with_values %}
@@ -519,7 +526,6 @@ button.hide {
                       {% endfor %}
                   </div>
                 {% endif %}
-                {% endcomment %}
               </div>
             
             {%- when 'socials' -%}
@@ -874,7 +880,7 @@ button.hide {
 
 
       // variant id changer
-      document.querySelector('#single-product-id').value = matchedVariant.id
+      //document.querySelector('#single-product-id').value = matchedVariant.id
       // price changer
       document.querySelector('.product-details .original-price').textContent = formatMoney(matchedVariant.compare_at_price, "{{ shop.money_format }}" )
       document.querySelector('.product-details .discounted-price').textContent = formatMoney(matchedVariant.price, "{{ shop.money_format }}" )
@@ -882,7 +888,7 @@ button.hide {
       document.querySelector('.if-have-savings span.change-as-val').textContent = formatMoney((matchedVariant.compare_at_price - matchedVariant.price), "{{ shop.money_format }}" );
       var calculatedValue = (((matchedVariant.compare_at_price - matchedVariant.price) / matchedVariant.compare_at_price) * 100);
       var formattedValue = calculatedValue.toFixed(0);
-      document.querySelector('.if-have-savings span.change-as-persentage').textContent = formattedValue;
+      //document.querySelector('.if-have-savings span.change-as-persentage').textContent = formattedValue;
 
 
 
@@ -899,15 +905,17 @@ button.hide {
       //button checker
       var add = document.querySelector('#add-cart')
       
-      
-
       if (matchedVariant.available) {
         document.querySelector('.in-stock').classList.remove('hide')
         document.querySelector('.outof-stock').classList.add('hide')
+        document.querySelector('.shopify-payment-button__button--unbranded').setAttribute('aria-disabled', 'false');
+        
       } else {
         document.querySelector('.outof-stock').classList.remove('hide')
-        document.querySelector('.in-stock').classList.add('hide')        
+        document.querySelector('.in-stock').classList.add('hide')
+        document.querySelector('.shopify-payment-button__button--unbranded').setAttribute('aria-disabled', 'true');
       }  
+      console.log(matchedVariant.id);
     })
   
   })

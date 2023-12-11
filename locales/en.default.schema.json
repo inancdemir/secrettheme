@@ -447,11 +447,14 @@
       "subheading_default": "<p><strong>Use this section to showcase your collections</p></strong>",
       "collection_model": "Text position according to collection image",
       "collection_model_info": "Setup whether collection title and button label will be positioned inside or outside cover image. The dafault color of the text is white. If you set text position to outside, please use the color options to make your text appear.",
-      "collection_model_1": "Inside",
-      "collection_model_2": "Outside",
+      "collection_model_1": "Outside",
+      "collection_model_2": "Inside",
       "single_collection_title": {
         "color" : "Collection item color",
         "font": "Collection item font size"
+      },
+      "collection_showcase_block": {
+        "name": "Collection"
       },
       "shop_now": {
         "color" : "Button color",
@@ -466,7 +469,7 @@
     "collection_list": {
       "section_name": "Collection tabs",
       "select_blog": "Select blog to show",
-      "description_default": "<p><strong>Use this section with a slider and tabs to display the products in your collections.</p></strong>",
+      "description_default": "<p><strong>Use this section with a slider and tabs to display the products in your collections.</strong></p>",
       "blocks": {
         "block_name": "Collection"
       }

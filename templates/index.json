@@ -107,7 +107,32 @@
                 "section_padding_top": 50,
                 "section_padding_bottom": 50,
                 "full_width": false
-            }
+            },
+            "blocks": {
+                "collection-1": {
+                    "type": "collection",
+                    "settings": {
+                        "collection": ""
+                    }
+                },
+                "collection-2": {
+                    "type": "collection",
+                    "settings": {
+                        "collection": ""
+                    }
+                },
+                "collection-3": {
+                    "type": "collection",
+                    "settings": {
+                        "collection": ""
+                    }
+                }
+            },
+            "block_order": [
+                "collection-1",
+                "collection-2",
+                "collection-3"
+            ]
         },
         "home-featured-collections": {
             "type": "featured-collections",
@@ -125,7 +150,18 @@
                 "spacings": 0,
                 "section_margin": 0,
                 "heading_font_size": "large"
-            }
+            },
+            "blocks": {
+                "collection-1": {
+                    "type": "collection",
+                    "settings": {
+                        "collection": ""
+                    }
+                }
+            },
+            "block_order": [
+                "collection-1"
+            ]
         },
         "home-featured-collections-2": {
             "type": "featured-collections",
@@ -143,7 +179,25 @@
                 "spacings": 16,
                 "heading_font_size": "large",
                 "full_width": false
-            }
+            },
+            "blocks": {
+                "collection-1": {
+                    "type": "collection",
+                    "settings": {
+                        "collection": ""
+                    }
+                },
+                "collection-2": {
+                    "type": "collection",
+                    "settings": {
+                        "collection": ""
+                    }
+                }
+            },
+            "block_order": [
+                "collection-1",
+                "collection-2"
+            ]
         },
         "home-image-with-text": {
             "type": "image-with-text",

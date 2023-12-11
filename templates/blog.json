@@ -3,8 +3,8 @@
         "spacer-1": {
             "type": "spacer",
             "settings": {
-                "desktop_space": 100,
-                "mobile_space": 80
+                "desktop_space": "100",
+                "mobile_space": "80"
             }
         },
         "breadcrumb": {

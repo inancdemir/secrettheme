@@ -28,15 +28,15 @@
         "spacer-1": {
             "type": "spacer",
             "settings": {
-                "desktop_space": 50,
-                "mobile_space": 30
+                "desktop_space": "50",
+                "mobile_space": "30"
             }
         },
         "spacer-2": {
             "type": "spacer",
             "settings": {
-                "desktop_space": 50,
-                "mobile_space": 30
+                "desktop_space": "50",
+                "mobile_space": "30"
             }
         }
     },
