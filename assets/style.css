@@ -1074,6 +1074,7 @@ form.filter-form input[type="radio"], form.filter-form input[type="checkbox"] {
 ul.inline {
     display: flex;
     column-gap: 5px;
+    flex-wrap: wrap;
 }
 ul.check-box-list {
     display: flex;

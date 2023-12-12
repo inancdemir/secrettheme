@@ -88,7 +88,7 @@
         {{ section.settings.sub-heading }}    
       </div>
     {% endif %}
-    <div class="blog-post-list column-{{ section.settings.product_per_row }} image-size-{{ section.settings.image_size }} image-fit-{{- section.settings.image_fit }} image-pos-{{- section.settings.image_pos -}}">
+    <div class="blog-post-list column-{{ section.settings.product_per_row }} image-size-{{ section.settings.image_size }} image-fit-{{- section.settings.image_fit }} image-pos-{{- section.settings.image_pos }} authore-{{- section.settings.show_authore }} date-{{- section.settings.show_date }} tags-{{- section.settings.show_tags }} comments-{{- section.settings.show_comments -}}">
       {%- paginate blog.articles by 12 -%}
       {% for article in blog.articles %}
         {% render 'single-post' article: article %}
@@ -268,6 +268,30 @@
           "label": "Paginated"
         }
       ]
+    },
+    {
+      "type": "checkbox",
+      "id": "show_authore",
+      "label": "Yazar göster",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "show_date",
+      "label": "Tarih göster",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "show_tags",
+      "label": "Tagleri göster",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "show_comments",
+      "label": "commentleri göster",
+      "default": true
     }
   ]
 }

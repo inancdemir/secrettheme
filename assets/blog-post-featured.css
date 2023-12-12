@@ -14,3 +14,20 @@
         margin: 10px 0;
     }
 }
+.footer-tags .tags {
+    display: flex;
+    flex-wrap: wrap;
+    max-width: calc(100% - 90px);
+}
+.authore-false .authore {
+    display: none;
+}
+.date-false .date {
+    display: none;
+}
+.tags-false .tags {
+    display: none;
+}
+.comments-false .views-comments {
+    display: none;
+}

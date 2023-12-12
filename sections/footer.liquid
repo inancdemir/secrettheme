@@ -27,7 +27,7 @@
     {% if section.settings.footer-logo_on != blank %}
       <div class="footer-logo">
         {% if section.settings.footer-logo != blank %}
-          {{ section.settings.footer-logo | image_url: width: 200 | image_tag: loading: 'lazy', class: 'footer-logo' }}
+          {{ section.settings.footer-logo | image_url: width: 360 | image_tag: loading: 'lazy', class: 'footer-logo-image' }}
         {% else %}
           <span class="h2 large h2-logo">{{ shop.name }}</span>
         {% endif %} 

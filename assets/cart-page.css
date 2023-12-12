@@ -121,7 +121,7 @@
   position: relative;
   margin: 34px auto 67px; 
   max-width: 474px;
-  overflow: hidden;
+  
 }
 .shipping-away-bar .fill {
     position: absolute;
@@ -236,4 +236,10 @@
 }
 .cart-summary textarea {
   width: 100%;
+}
+.empty-cart {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: center;
 }

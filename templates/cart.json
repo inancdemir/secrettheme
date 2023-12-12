@@ -3,9 +3,17 @@
         "cart": {
             "type": "cart",
             "settings": {}
+        },
+        "spacer": {
+            "type": "spacer",
+            "settings": {
+                "desktop_space": "128",
+                "mobile_space": "64"
+            }
         }
+            
     },
     "order": [
-        "cart"
+        "cart","spacer"
     ]
 }

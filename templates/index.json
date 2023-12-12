@@ -137,7 +137,6 @@
         "home-featured-collections": {
             "type": "featured-collections",
             "settings": {
-                "collection_height": 65,
                 "collection_header_color": "#FFFFFF",
                 "collection_header_size": 96,
                 "enable_description": "enabled",
@@ -166,7 +165,6 @@
         "home-featured-collections-2": {
             "type": "featured-collections",
             "settings": {
-                "collection_height": 65,
                 "collection_header_color": "#FFFFFF",
                 "collection_header_size": 96,
                 "enable_description": "enabled",
