@@ -254,11 +254,23 @@
             "pp_verticle": 37,
             "button_style": "model-2"
           }
+        },
+        "cdf0dd4d-6065-41e3-b71e-8de9d4bc1265": {
+          "type": "add_product",
+          "settings": {
+            "product_list": [
+              "solar-ski-jacket"
+            ],
+            "pp_horizontal": 67,
+            "pp_verticle": 71,
+            "button_style": "model-2"
+          }
         }
       },
       "block_order": [
         "test",
-        "5484f694-f98b-40b9-a04c-bc96fed36142"
+        "5484f694-f98b-40b9-a04c-bc96fed36142",
+        "cdf0dd4d-6065-41e3-b71e-8de9d4bc1265"
       ],
       "settings": {
         "heading": "Unveil adventure with every turn",
