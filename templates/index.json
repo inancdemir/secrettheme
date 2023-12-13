@@ -20,11 +20,11 @@
         "slide-2": {
           "type": "hero_slide",
           "settings": {
-            "description": "<p>Write text to emphasize your story<\/p>",
-            "heading": "Promote your story here!",
-            "sub_heading": "Add subheading",
-            "button_text": "BUTTON LABEL",
-            "button_url": "",
+            "description": "<p>UNVEILING INNOVATION ON WINTER SPORTSWEAR<\/p>",
+            "heading": "Base Layers for the Toughest Climates",
+            "sub_heading": "Introducing our 2023\/24 Base Layers",
+            "button_text": "VIEW COLLECTION",
+            "button_url": "shopify:\/\/collections\/base-layers",
             "button_style": "model-4",
             "overlay_color": "#000000",
             "overlay_color_opacity": 40
