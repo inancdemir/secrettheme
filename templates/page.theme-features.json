@@ -159,6 +159,7 @@
     },
     "default_page": {
       "type": "main-page",
+      "disabled": true,
       "settings": {
         "page_width": "small"
       }
@@ -389,14 +390,14 @@
       "settings": {
         "section_height": 53,
         "text_position": "mid-center",
-        "super_color": "#FFFFFF",
+        "super_color": "#ffffff",
         "super_opacity": 40,
         "super_font_size": 300,
         "super_line_height": 350,
-        "heading_color": "#FFFFFF",
+        "heading_color": "#ffffff",
         "heading_font_size": 59,
         "heading_line_height": 107,
-        "sub_heading_color": "#FFFFFF",
+        "sub_heading_color": "#ffffff",
         "sub_heading_font_size": 20,
         "sub_heading_line_height": 30,
         "gap_from_sides": 60,
@@ -1094,7 +1095,7 @@
       ],
       "settings": {
         "background_color": "#B8C9D6",
-        "content_color": "#FFFFFF",
+        "content_color": "#ffffff",
         "section_padding": 100,
         "align_content": "text-center",
         "full_width": false
@@ -1123,7 +1124,7 @@
       ],
       "settings": {
         "background_color": "#000",
-        "content_color": "#FFFFFF",
+        "content_color": "#ffffff",
         "section_padding": 59,
         "align_content": "text-center",
         "full_width": false
