@@ -327,7 +327,8 @@
         "sub_heading_line_height": 47,
         "gap_from_sides": 0,
         "overlay_color": "#000000",
-        "overlay_color_opacity": 60
+        "overlay_color_opacity": 60,
+        "background_image": "shopify:\/\/shop_images\/cngrs_full-length_photo_of_two_woman_wearing_ski_suits_drone_sh_e4ff4cb8-4374-4afb-abe1-36f245f302e9.png"
       }
     }
   },
