@@ -16,7 +16,7 @@
       "settings": {
         "section_height": 400,
         "section_height_mobile": 200,
-        "heading_color": "#FFFFFF",
+        "heading_color": "#ffffff",
         "heading_font_size": "large",
         "gap_from_bottom": 96,
         "gap_from_bottom_mobile": 33,
@@ -40,7 +40,7 @@
           "type": "add_add",
           "settings": {
             "add_position": 3,
-            "add_size": 2,
+            "add_size": 1,
             "min_height": "",
             "image": "shopify:\/\/shop_images\/cngrs_full-length_photo_of_two_brunette_woman_wearing_ski_jacke_edcbdd0b-4234-4b5b-b127-9aacd1b645fe.webp",
             "cover": true,
@@ -66,7 +66,7 @@
         "title": "#000000",
         "background_color": "linear-gradient(180deg, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0) 100%)",
         "section_padding": 0,
-        "add_color": "#FFFFFF",
+        "add_color": "#ffffff",
         "no_product": "This collection is currently empty of products.",
         "full_width": false
       }
