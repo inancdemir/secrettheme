@@ -249,11 +249,12 @@
         "test"
       ],
       "settings": {
-        "heading": "Check Out.",
+        "heading": "Unveil adventure with every turn",
         "title_color": "#000000",
         "heading_font_size": "large",
-        "sub-heading": "<p><strong>Mission: Mars<\/strong><\/p>",
+        "sub-heading": "<p>Conquering the snow capped peaks in durability and style<\/p>",
         "sub_title_color": "#000000",
+        "shop_to_look_image": "shopify:\/\/shop_images\/cngrs_full-length_photo_of_two_brunette_woman_wearing_ski_jacke_781c9782-4f3c-49e5-9687-d7408e0845f1.png",
         "full_width": false
       }
     },
