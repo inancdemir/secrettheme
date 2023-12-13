@@ -457,6 +457,7 @@
             "title_size": "small",
             "block_content": "",
             "items_align": "center",
+            "cover_image": "shopify:\/\/shop_images\/boutiques.jpg",
             "cover_image_force": true
           }
         },
@@ -470,6 +471,7 @@
             "title_size": "small",
             "block_content": "",
             "items_align": "center",
+            "cover_image": "shopify:\/\/shop_images\/boutiquesinside.jpg",
             "cover_image_force": true
           }
         }
