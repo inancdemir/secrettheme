@@ -1,50 +1,92 @@
 {
-    "sections": {
-        "product_first": {
-            "type": "product-layout",
-            "blocks": {
-                "product-inner-1": {
-                    "type": "title_text",
-                    "settings": {}
-                },
-                "product-inner-2": {
-                    "type": "prices",
-                    "settings": {}
-                },
-                "product-inner-3": {
-                    "type": "variants",
-                    "settings": {}
-                },
-                "product-inner-4": {
-                    "type": "button",
-                    "settings": {}
-                },
-                "product-inner-5": {
-                    "type": "socials",
-                    "settings": {}
-                },
-                "product-inner-6": {
-                    "type": "description",
-                    "settings": {}
-                },
-                "product-inner-7": {
-                    "type": "accordion",
-                    "settings": {}
-                }
-            },
-            "block_order": [
-                "product-inner-1",
-                "product-inner-2",
-                "product-inner-3",
-                "product-inner-4",
-                "product-inner-5",
-                "product-inner-6",
-                "product-inner-7"
-            ],
-            "settings": {}
+  "sections": {
+    "product_first": {
+      "type": "product-layout",
+      "blocks": {
+        "product-inner-1": {
+          "type": "title_text",
+          "settings": {
+            "text": "{{ product.title }}"
+          }
+        },
+        "product-inner-2": {
+          "type": "prices",
+          "settings": {
+            "show_discount": true,
+            "discount_format": "1",
+            "show_tax_include": true
+          }
+        },
+        "7d6083bd-f986-4c0b-81cb-c82980572503": {
+          "type": "badges",
+          "settings": {
+          }
+        },
+        "product-inner-3": {
+          "type": "variants",
+          "settings": {
+            "label_on": true,
+            "color-style": "color-options"
+          }
+        },
+        "119b5dd0-56f1-4363-bbe5-de8ad8a62160": {
+          "type": "find_your_size",
+          "settings": {
+            "find_your_size_title": "Find your size",
+            "page": ""
+          }
+        },
+        "product-inner-4": {
+          "type": "button",
+          "settings": {
+            "button_label": "ADD TO CART",
+            "button_label_nostock": "OUT OF STOCK",
+            "quantity_position": "quantitiy-top",
+            "button_style": "model-2",
+            "show_quick_buy": false
+          }
+        },
+        "product-inner-5": {
+          "type": "socials",
+          "settings": {
+          }
+        },
+        "product-inner-6": {
+          "type": "description",
+          "settings": {
+            "description_text": "Description"
+          }
+        },
+        "product-inner-7": {
+          "type": "accordion",
+          "settings": {
+            "accorion_title": "Care Instructions",
+            "accorion_contnet": "<p>Accordion content will be there<\/p>"
+          }
         }
-    },
-    "order": [
-        "product_first"
-    ]
+      },
+      "block_order": [
+        "product-inner-1",
+        "product-inner-2",
+        "7d6083bd-f986-4c0b-81cb-c82980572503",
+        "product-inner-3",
+        "119b5dd0-56f1-4363-bbe5-de8ad8a62160",
+        "product-inner-4",
+        "product-inner-5",
+        "product-inner-6",
+        "product-inner-7"
+      ],
+      "settings": {
+        "full_width": false,
+        "breadcrumb_on": true,
+        "image_area": 50,
+        "details_padding": 5,
+        "details_items_gap": 16,
+        "image_column": "one"
+      }
+    }
+  },
+  "order": [
+    "product_first"
+  ]
 }
