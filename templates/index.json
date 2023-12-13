@@ -243,10 +243,22 @@
             "pp_verticle": 19,
             "button_style": "model-2"
           }
+        },
+        "5484f694-f98b-40b9-a04c-bc96fed36142": {
+          "type": "add_product",
+          "settings": {
+            "product_list": [
+              "orange-goggles"
+            ],
+            "pp_horizontal": 28,
+            "pp_verticle": 37,
+            "button_style": "model-2"
+          }
         }
       },
       "block_order": [
-        "test"
+        "test",
+        "5484f694-f98b-40b9-a04c-bc96fed36142"
       ],
       "settings": {
         "heading": "Unveil adventure with every turn",
