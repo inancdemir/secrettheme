@@ -431,83 +431,6 @@
         "mobile_space": "64"
       }
     },
-    "home-newsletter": {
-      "type": "newsletter",
-      "settings": {
-        "heading": "Subscribe to Our Newsletter",
-        "subheading": "<p>Sign-up for our monthly update on our latest products and be the first to know about upcoming sales and promotions.<\/p>",
-        "button": "Subscribe",
-        "footnote": "<p>Enter your email to receive our newsletter. You can unsubscribe at anytime.<\/p>",
-        "select_spacing_between": 16,
-        "section_padding": 64,
-        "color": "#ffffff",
-        "button_style": "model-1",
-        "bg_color": "#000000"
-      }
-    },
-    "home-before-after-gallery": {
-      "type": "before-after-gallery",
-      "settings": {
-        "heading": "Before After Gallery",
-        "heading_color": "#000000",
-        "heading_font_size": "large",
-        "sub_heading": "<p><strong>Use this section to showcase your collections<\/p><\/strong>",
-        "sub_heading_color": "#000000",
-        "full_width": true,
-        "sectio-height": "600",
-        "sectio-height_mobile": "400",
-        "image_fit": "contain",
-        "image_pos": "center",
-        "section_padding_top": 50,
-        "section_padding_bottom": 50
-      }
-    },
-    "home-collapsible-rows": {
-      "type": "collapsible-rows",
-      "blocks": {
-        "accordion": {
-          "type": "accordion",
-          "settings": {
-            "accorion_title": "How do I make a purchase?",
-            "accorion_contnet": "<p>This is an example of a response that you might give. It's good to be as thorough as possible in responses as that has a tendency to improve trust overall.<\/p>"
-          }
-        },
-        "accordion-2": {
-          "type": "accordion",
-          "settings": {
-            "accorion_title": "How do I know if my order is confirmed?",
-            "accorion_contnet": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin eros ex, finibus vel augue eget, gravida ornare tortor. Nulla vel tristique eros, eget porta urna.<\/p>"
-          }
-        },
-        "accordion-3": {
-          "type": "accordion",
-          "settings": {
-            "accorion_title": "Can I change my shipping address after my order is placed?",
-            "accorion_contnet": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin eros ex, finibus vel augue eget, gravida ornare tortor. Nulla vel tristique eros, eget porta urna.<\/p>"
-          }
-        }
-      },
-      "block_order": [
-        "accordion",
-        "accordion-2",
-        "accordion-3"
-      ],
-      "settings": {
-        "heading": "F.A.Q.",
-        "heading_color": "#000000",
-        "heading_font_size": "medium",
-        "section_padding_top": 0,
-        "section_padding_bottom": 0,
-        "full_width": false
-      }
-    },
-    "home-spacer-5": {
-      "type": "spacer",
-      "settings": {
-        "desktop_space": "128",
-        "mobile_space": "64"
-      }
-    },
     "home-multiple-columns": {
       "type": "multiple-columns",
       "blocks": {
@@ -517,10 +440,10 @@
             "select_icon": "award",
             "select_icon_active": false,
             "icon_size": 30,
-            "block_title": "St. Agni",
+            "block_title": "Discover Our Boutiques",
             "title_size": "large",
-            "block_content": "<p>Lorem ipsum dolor sit amet consectetur. Enim bibendum ultrices ultricies in eu lorem nec. Fames nulla sociis quam etiam mattis purus amet. Sed quisque ac id turpis. Euismod egestas nam.<\/p>",
-            "items_align": "center",
+            "block_content": "<p>Discover the fusion of innovation and sustainability in Aspena’s boutiques, where hands-on experiences with our advanced, eco-friendly jackets and expert guidance await to tailor your outdoor wear for the future.<\/p>",
+            "items_align": "left",
             "cover_image_force": false
           }
         },
@@ -610,6 +533,20 @@
         "overlay_color_opacity": 40
       }
     },
+    "home-newsletter": {
+      "type": "newsletter",
+      "settings": {
+        "heading": "Subscribe to Our Newsletter",
+        "subheading": "<p>Sign-up for our monthly update on our latest products and be the first to know about upcoming sales and promotions.<\/p>",
+        "button": "Subscribe",
+        "footnote": "<p>Enter your email to receive our newsletter. You can unsubscribe at anytime.<\/p>",
+        "select_spacing_between": 16,
+        "section_padding": 64,
+        "color": "#ffffff",
+        "button_style": "model-1",
+        "bg_color": "#000000"
+      }
+    },
     "home-multiple-columns-2": {
       "type": "multiple-columns",
       "blocks": {
@@ -695,12 +632,9 @@
     "home-featured-posts",
     "home-testimonial-slider",
     "home-spacer-4",
-    "home-newsletter",
-    "home-before-after-gallery",
-    "home-collapsible-rows",
-    "home-spacer-5",
     "home-multiple-columns",
     "home-banner",
+    "home-newsletter",
     "home-multiple-columns-2"
   ]
 }
