@@ -237,10 +237,10 @@
           "type": "add_product",
           "settings": {
             "product_list": [
-
+              "ajax-goggles"
             ],
-            "pp_horizontal": 50,
-            "pp_verticle": 50,
+            "pp_horizontal": 65,
+            "pp_verticle": 19,
             "button_style": "model-2"
           }
         }
