@@ -539,10 +539,10 @@
     "home-newsletter": {
       "type": "newsletter",
       "settings": {
-        "heading": "Subscribe to Our Newsletter",
-        "subheading": "<p>Sign-up for our monthly update on our latest products and be the first to know about upcoming sales and promotions.<\/p>",
+        "heading": "Stay Updated",
+        "subheading": "<p>Subscribe for the Latest in Fabric Innovation<\/p>",
         "button": "Subscribe",
-        "footnote": "<p>Enter your email to receive our newsletter. You can unsubscribe at anytime.<\/p>",
+        "footnote": "<p>Enter your email to receive our newsletter. You can unsubscribe anytime.<\/p>",
         "select_spacing_between": 16,
         "section_padding": 64,
         "color": "#ffffff",
