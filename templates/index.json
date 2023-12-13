@@ -57,13 +57,13 @@
         "fs-1": {
           "type": "slide",
           "settings": {
-            "collection": ""
+            "collection": "frontpage"
           }
         },
         "fs-2": {
           "type": "slide",
           "settings": {
-            "collection": ""
+            "collection": "accessories"
           }
         }
       },
