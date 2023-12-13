@@ -6,6 +6,8 @@
     "type_body_font": "montserrat_n5",
     "body_scale": 100,
     "swatches": "Sand:#FFA500, Crimson:#F5741D, Gray:#383e42,Solar:#FFA500,Sky:#87CEEB,Ice:A5F2F3,Dawn:#808080,Powder:#FFC0CB,Electric:#7DF9FF,Sahara:#383e42,Yellow:#FFFF00,Arctic:#FFFFFF,Orange:#FFA500,Purple:#B200ED,Green:#008000,Gradient:#089f8f",
+    "second_badge_tag": "Bestseller",
+    "third_badge_tag": "New commer",
     "page_width": 1200,
     "spacing_sections": 0,
     "spacing_grid_horizontal": 8,
