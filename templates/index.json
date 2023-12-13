@@ -393,6 +393,44 @@
         "show_comments": true
       }
     },
+    "home-testimonial-slider": {
+      "type": "testimonial-slider",
+      "blocks": {
+        "quote": {
+          "type": "quote",
+          "settings": {
+            "description": "<p>“I've traveled from the drizzly streets of London to the rugged terrain of the Scottish Highlands in my Ajax Jacket, and it has never let me down. It's the only jacket I trust to keep up with my adventurous lifestyle and the ever-changing weather.\"<\/p>",
+            "heading": "Isla S.",
+            "position": "World Dweller"
+          }
+        },
+        "quote-2": {
+          "type": "quote",
+          "settings": {
+            "description": "<p>\"I've scaled Alpine peaks and traversed sun-drenched Mediterranean trails in my Trailblaze pants. These are more than just pants; they're my trusty companion for every adventure, perfectly balancing comfort and durability.\"<\/p>",
+            "heading": "Kylie M.",
+            "position": "Athlete"
+          }
+        }
+      },
+      "block_order": [
+        "quote",
+        "quote-2"
+      ],
+      "settings": {
+        "heading": "Voices of our Community",
+        "section_padding": 64,
+        "background_color": "linear-gradient(180deg, rgba(0, 0, 0, 1), rgba(0, 0, 0, 1) 100%)",
+        "text_color": "#ffffff"
+      }
+    },
+    "home-spacer-4": {
+      "type": "spacer",
+      "settings": {
+        "desktop_space": "128",
+        "mobile_space": "64"
+      }
+    },
     "home-newsletter": {
       "type": "newsletter",
       "settings": {
@@ -422,44 +460,6 @@
         "image_pos": "center",
         "section_padding_top": 50,
         "section_padding_bottom": 50
-      }
-    },
-    "home-testimonial-slider": {
-      "type": "testimonial-slider",
-      "blocks": {
-        "quote": {
-          "type": "quote",
-          "settings": {
-            "description": "<p>“It was really fun getting to know the team during the project. They were all helpful in answering my questions and made me feel at ease. The design ended up being better than I could have envisioned!”<\/p>",
-            "heading": "Venus Gonul",
-            "position": "Product Designer"
-          }
-        },
-        "quote-2": {
-          "type": "quote",
-          "settings": {
-            "description": "<p>“It was really fun getting to know the team during the project. They were all helpful in answering my questions and made me feel at ease. The design ended up being better than I could have envisioned!”<\/p>",
-            "heading": "Venus Gonul",
-            "position": "Product Designer"
-          }
-        }
-      },
-      "block_order": [
-        "quote",
-        "quote-2"
-      ],
-      "settings": {
-        "heading": "What They’re Saying.",
-        "section_padding": 64,
-        "background_color": "linear-gradient(180deg, rgba(0, 0, 0, 1), rgba(0, 0, 0, 1) 100%)",
-        "text_color": "#ffffff"
-      }
-    },
-    "home-spacer-4": {
-      "type": "spacer",
-      "settings": {
-        "desktop_space": "128",
-        "mobile_space": "64"
       }
     },
     "home-collapsible-rows": {
@@ -693,10 +693,10 @@
     "home-image-with-text",
     "home-image-with-text-2",
     "home-featured-posts",
-    "home-newsletter",
-    "home-before-after-gallery",
     "home-testimonial-slider",
     "home-spacer-4",
+    "home-newsletter",
+    "home-before-after-gallery",
     "home-collapsible-rows",
     "home-spacer-5",
     "home-multiple-columns",
