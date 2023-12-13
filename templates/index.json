@@ -72,13 +72,13 @@
         "fs-2"
       ],
       "settings": {
-        "heading": "Collection List.",
+        "heading": "Discover our collections",
         "title_color": "#000000",
         "heading_font_size": "large",
-        "sub-heading": "<p><strong>Use this section with a slider and tabs to display the products in your collections.<\/strong><\/p>",
+        "sub-heading": "<p><strong>Experience clothing that adapts, protects, and lasts.<\/strong><\/p>",
         "sub_title_color": "#000000",
         "image_size": "three-four",
-        "image_fit": "contain",
+        "image_fit": "cover",
         "image_pos": "center",
         "background_color": "linear-gradient(180deg, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0) 100%)",
         "products_item_gap": 0,
