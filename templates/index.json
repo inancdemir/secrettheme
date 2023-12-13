@@ -212,7 +212,7 @@
         "collection-2"
       ],
       "settings": {
-        "collection_height": 660,
+        "collection_height": 800,
         "collection_height_mobile": 400,
         "collection_header_color": "#ffffff",
         "heading_font_size": "large",
