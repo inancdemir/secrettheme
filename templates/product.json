@@ -33,7 +33,7 @@
           "type": "find_your_size",
           "settings": {
             "find_your_size_title": "Find your size",
-            "page": ""
+            "page": "sizing-chart"
           }
         },
         "product-inner-4": {
