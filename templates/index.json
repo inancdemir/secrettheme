@@ -6,11 +6,12 @@
         "slide-1": {
           "type": "hero_slide",
           "settings": {
-            "description": "<p>Write text to emphasize your story<\/p>",
-            "heading": "Promote your story here!",
-            "sub_heading": "Add subheading",
-            "button_text": "BUTTON LABEL",
-            "button_url": "",
+            "slide_bg": "shopify:\/\/shop_images\/carousel-hero.png",
+            "description": "<p>UNVEILING INNOVATION IN WINTER SPORTSWEAR<\/p>",
+            "heading": "Elevate to New Heights with Comfort",
+            "sub_heading": "Meet our 2023\/24 W\/F Collection",
+            "button_text": "VIEW MORE",
+            "button_url": "shopify:\/\/collections",
             "button_style": "model-4",
             "overlay_color": "#000000",
             "overlay_color_opacity": 40
@@ -37,7 +38,7 @@
       "settings": {
         "section_height": 100,
         "text_position": "bottom-center",
-        "super": "SUPER",
+        "super": "RISE",
         "super_color": "#ffffff",
         "super_opacity": 40,
         "super_font_size": 20,
@@ -387,7 +388,7 @@
         "footnote": "<p>Enter your email to receive our newsletter. You can unsubscribe at anytime.<\/p>",
         "select_spacing_between": 16,
         "section_padding": 64,
-        "color": "#FFFFFF",
+        "color": "#ffffff",
         "button_style": "model-1",
         "bg_color": "#000000"
       }
@@ -437,7 +438,7 @@
         "heading": "What They’re Saying.",
         "section_padding": 64,
         "background_color": "linear-gradient(180deg, rgba(0, 0, 0, 1), rgba(0, 0, 0, 1) 100%)",
-        "text_color": "#FFFFFF"
+        "text_color": "#ffffff"
       }
     },
     "home-spacer-4": {
