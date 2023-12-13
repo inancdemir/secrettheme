@@ -30,13 +30,13 @@
         "area_size": 40,
         "animation_speed": 40,
         "social_icons": true,
-        "instagram_link": "",
+        "instagram_link": "https:\/\/instagram.com\/shopify",
         "instagram_link_show": true,
-        "facebook_link": "",
+        "facebook_link": "https:\/\/facebook.com\/shopify",
         "facebook_link_show": true,
-        "x_link": "",
+        "x_link": "https:\/\/x.com\/shopify",
         "x_link_show": true,
-        "tiktok_link": "",
+        "tiktok_link": "https:\/\/tiktok.com\/@shopify",
         "tiktok_link_show": true
       }
     },
