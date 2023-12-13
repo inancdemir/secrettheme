@@ -494,20 +494,20 @@
         "header": {
           "type": "heading",
           "settings": {
-            "heading": "RISE STORE"
+            "heading": "New York Boutique"
           }
         },
         "text": {
           "type": "text",
           "settings": {
-            "sub_heading": "<p>Subheading<\/p>"
+            "sub_heading": "<p>Experience the cutting-edge of eco-chic in the heart of the Big Apple<\/p>"
           }
         },
         "button": {
           "type": "button",
           "settings": {
-            "button_text": "Button Label",
-            "button_url": "",
+            "button_text": "Explore Boutiques",
+            "button_url": "shopify:\/\/pages\/about-us",
             "button_style": "model-4"
           }
         }
@@ -532,7 +532,8 @@
         "sub_heading_line_height": 30,
         "gap_from_sides": 60,
         "overlay_color": "#000000",
-        "overlay_color_opacity": 40
+        "overlay_color_opacity": 40,
+        "background_image": "shopify:\/\/shop_images\/row.png"
       }
     },
     "home-newsletter": {
