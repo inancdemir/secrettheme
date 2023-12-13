@@ -236,6 +236,7 @@
         "image-1": {
           "type": "image",
           "settings": {
+            "image": "shopify:\/\/shop_images\/Lindsey-Vonn-2015.webp",
             "custom_size": true,
             "image_size": "one-one",
             "image_fit": "cover",
@@ -245,6 +246,7 @@
         "image-2": {
           "type": "image",
           "settings": {
+            "image": "shopify:\/\/shop_images\/mikaela_shiffrin_9cb8f104-174a-41c3-8792-c737c63dd615.jpg",
             "custom_size": true,
             "image_size": "one-one",
             "image_fit": "cover",
@@ -254,6 +256,7 @@
         "image-3": {
           "type": "image",
           "settings": {
+            "image": "shopify:\/\/shop_images\/federica_brignone.webp",
             "custom_size": true,
             "image_size": "one-one",
             "image_fit": "cover",
@@ -276,48 +279,55 @@
     "banner": {
       "type": "banner",
       "blocks": {
+        "db454540-21a7-4f30-8a62-e4d5f4217b22": {
+          "type": "super_heading",
+          "settings": {
+            "super": "ASPENA"
+          }
+        },
         "header": {
           "type": "heading",
           "settings": {
-            "heading": "RISE STORE"
+            "heading": "2023\/24 F\/W"
           }
         },
         "text": {
           "type": "text",
           "settings": {
-            "sub_heading": "<p>Subheading<\/p>"
+            "sub_heading": "<p>VISIT OUR 2023\/24 NEW ARRIVALS<\/p>"
           }
         },
         "button": {
           "type": "button",
           "settings": {
-            "button_text": "Button Label",
-            "button_url": "",
+            "button_text": "GO TO COLLECTION",
+            "button_url": "shopify:\/\/collections\/new-commers",
             "button_style": "model-4"
           }
         }
       },
       "block_order": [
+        "db454540-21a7-4f30-8a62-e4d5f4217b22",
         "header",
         "text",
         "button"
       ],
       "settings": {
         "section_height": 100,
-        "text_position": "bottom-left",
+        "text_position": "mid-center",
         "super_color": "#ffffff",
         "super_opacity": 40,
         "super_font_size": 300,
         "super_line_height": 350,
         "heading_color": "#ffffff",
-        "heading_font_size": 48,
-        "heading_line_height": 60,
+        "heading_font_size": 69,
+        "heading_line_height": 99,
         "sub_heading_color": "#ffffff",
         "sub_heading_font_size": 20,
-        "sub_heading_line_height": 30,
-        "gap_from_sides": 60,
+        "sub_heading_line_height": 47,
+        "gap_from_sides": 0,
         "overlay_color": "#000000",
-        "overlay_color_opacity": 40
+        "overlay_color_opacity": 60
       }
     }
   },
