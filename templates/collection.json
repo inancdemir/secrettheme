@@ -46,7 +46,7 @@
             "cover": true,
             "text": "<p>Introducing our cutting-edge <strong>AJAX Goggles<\/strong><\/p>",
             "button_text": "Shop Now",
-            "button_url": ""
+            "button_url": "shopify:\/\/collections\/accessories"
           }
         }
       },
