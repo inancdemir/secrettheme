@@ -1,6 +1,8 @@
 <div class="single-post">
     <div class="image-wrap">
-      {{ article.image | image_url: width: 600 | image_tag: loading: 'lazy' }}
+      <a href="{{ article.url }}">
+        {{ article.image | image_url: width: 600 | image_tag: loading: 'lazy' }}
+      </a>
     </div>
     <div class="post-details">
       <div class="header-tags callout space-between">

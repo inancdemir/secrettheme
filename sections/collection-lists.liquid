@@ -47,6 +47,28 @@
   left: 0;
   bottom: 0;
 }
+
+.section-{{ section.id }} .model-two a {
+  display: flex;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+}
+
+.section-{{ section.id }} .model-two a:before {
+  content: "";
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0) 50%, {{ section.settings.tint_color }} 100%);
+  opacity: {{ section.settings.tint_opacity }}%;
+}
+.section-{{ section.id }} .model-two a h3.subheadline {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    margin: 16px;
+}
 .section-{{ section.id }} .single-collection h3 {
     color: {{ section.settings.collection_item_title_color }};
     margin: 16px 0 0 0;
@@ -58,7 +80,6 @@
     margin-top: 8px;
     display: block;
 }
-
 {%- endstyle -%}
 
 {%- liquid
@@ -74,10 +95,11 @@
   endif
 
 -%}
+{% unless section.settings.full_width %}
+<div class="wide-width">
+{% endunless %}
 <div class="front-collection-wrap section-{{ section.id }}">
-  {% unless section.settings.full_width %}
-  <div class="wide-width">
-  {% endunless %}
+  
   {% if section.settings.heading %}
     <h2 class="{{ section.settings.heading_font_size }}">{{ section.settings.heading }}</h2>
   {% endif %}
@@ -91,8 +113,8 @@
             <div class="image-wrap">  
             {% if collection.featured_image %}
               {{ collection.featured_image | image_url: width: 1000 | image_tag: loading: 'lazy', class: 'product-image' }}
-              {% else  %}
-              {% endif %}
+            {% else  %}
+            {% endif %}
             </div>
             <div class="{{ section.settings.collection_model }}">
               <h3 class="subheadline">
@@ -105,7 +127,7 @@
       {% else %}
         {%- for collection in collections -%}
             
-              <div class="single-collection image-size-{{ section.settings.image_size }} image-fit-{{- section.settings.image_fit }} image-pos-{{- section.settings.image_pos -}}">
+          <div class="single-collection image-size-{{ section.settings.image_size }} image-fit-{{- section.settings.image_fit }} image-pos-{{- section.settings.image_pos -}}">
                 <div class="image-wrap">
                   {% if collection.featured_image %}
                   {{ collection.featured_image | image_url: width: 1000 | image_tag: loading: 'lazy', class: 'product-image' }}
@@ -123,10 +145,11 @@
         {%- endfor -%}
       {% endif %}  
     </div>
-  {% unless section.settings.full_width %}
-  </div>
-  {% endunless %}
+  
 </div>
+{% unless section.settings.full_width %}
+</div>
+{% endunless %}
 
 
 
@@ -344,6 +367,22 @@
       "unit": "px",
       "label": "t:sections.all.columns_spacings",
       "default": 16
+    },
+    {
+      "type": "range",
+      "id": "tint_opacity",
+      "min": 0,
+      "max": 100,
+      "step": 10,
+      "unit": "%",
+      "label": "Tint Opacity",
+      "default": 50
+    },
+    {
+      "type": "color",
+      "id": "tint_color",
+      "label": "Tint color",
+      "default": "#000000"
     },
     {
       "type": "color",

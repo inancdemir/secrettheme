@@ -1,7 +1,14 @@
 {%- style -%}
 .section-{{ section.id }} {
+  background: {% if section.settings.background_image %}
+                    url("{{ section.settings.background_image | image_url }}"),
+                {% endif %}
+                {{ section.settings.background_color }};
+  background-repeat: no-repeat;
+  background-position: top center;
   padding-top: calc(({{- section.settings.section_padding_top }} / 100) * 128px);
   padding-bottom: calc(({{- section.settings.section_padding_bottom }} / 100) * 128px);
+  color: {{ section.settings.content_color }};
 }
 @media only screen and (min-width: 640px) {
   .section-{{ section.id }} {
@@ -14,7 +21,7 @@
   width: 100%;
   overflow: hidden;
   flex-wrap: wrap;
-  column-gap: 16px;
+  column-gap: {{ section.settings.spacings }}px;
   flex-direction: column;
 }
 .multi-columns .column {
@@ -27,6 +34,7 @@
   flex-direction: column;
   row-gap: 16px;
 }
+/*
 .multi-columns.columns-1 .column {
   flex: 0 0 100%;
 }
@@ -41,6 +49,10 @@
 }
 .multi-columns.columns-5 .column {
   flex: 0 0 calc(20% - (64px / 5));
+}
+*/
+.section-{{ section.id }} .column {
+  flex: 0 0 calc(calc((100% - calc({{ section.settings.spacings }}px * calc({{ section.settings.column_per_line }} - 1))) / {{ section.settings.column_per_line }}));
 }
 .multi-columns .column.left {
   text-align: left;
@@ -76,7 +88,7 @@
 @media only screen and (min-width: 768px) {
   .multi-columns {
     flex-direction: row;
-    align-items: center;
+    align-items: baseline;
   }
 }
 {%- endstyle -%}
@@ -143,13 +155,42 @@
   "name": "t:sections.multiple_columns_section.name",
   "settings": [
     {
-      "type": "range",
+      "type": "select",
       "id": "column_per_line",
-      "min": 1,
-      "max": 5,
+      "options": [
+        {
+          "value": "1",
+          "label": "1"
+        },
+        {
+          "value": "2",
+          "label": "2"
+        },
+        {
+          "value": "3",
+          "label": "3"
+        },
+        {
+          "value": "4",
+          "label": "4"
+        },
+        {
+          "value": "5",
+          "label": "5"
+        }
+      ],
+      "label": "Kaç block olsun?",
+      "default": "4"
+    },
+    {
+      "type": "range",
+      "id": "spacings",
+      "min": 0,
+      "max": 100,
       "step": 1,
-      "label": "t:sections.all.column_per_row",
-      "default": 3
+      "unit": "px",
+      "label": "t:sections.all.columns_spacings",
+      "default": 16
     },
     {
       "type": "range",
@@ -159,7 +200,7 @@
       "step": 1,
       "unit": "%",
       "label": "t:sections.all.section_padding_top",
-      "default": 0
+      "default": 10
     },
     {
       "type": "range",
@@ -169,13 +210,26 @@
       "step": 1,
       "unit": "%",
       "label": "t:sections.all.section_padding_bottom",
-      "default": 50
+      "default": 10
     },
     {
       "type": "checkbox",
       "id": "full_width",
       "label": "t:sections.all.make_section_full",
       "default": true
+    },
+    {
+      "type": "color_background",
+      "id": "background_color",
+      "label": "t:sections.all.background_color",
+      "info": "Burası info alanı",
+      "default": "linear-gradient(180deg, #ffffff 100%, #ffffff 100%)"
+    },
+    {
+      "type": "color",
+      "id": "content_color",
+      "label": "t:sections.all.color",
+      "default": "#000000"
     }
   ],
   "blocks": [

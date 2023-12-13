@@ -28,7 +28,7 @@
 }
 .section-{{ section.id }} .hero-bg .text-on-hero {
   position: absolute;
-  max-width: 1000px;
+  max-width: {{ section.settings.section_width }}px;
   padding: {{ section.settings.gap_from_sides }}px;
   z-index: 2;
 }
@@ -179,6 +179,16 @@
       "unit": "vh",
       "label": "t:sections.all.section_height",
       "default": 100
+    },
+    {
+      "type": "range",
+      "id": "section_width",
+      "min": 280,
+      "max": 1280,
+      "step": 10,
+      "unit": "px",
+      "label": "Banner text alanları genişliği",
+      "default": 1200
     },
     {
       "type": "select",

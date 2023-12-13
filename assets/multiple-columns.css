@@ -3,7 +3,6 @@
     width: 100%;
     overflow: hidden;
     flex-wrap: wrap;
-    column-gap: 16px;
     flex-direction: column;
   }
   .multi-columns .column {
@@ -16,21 +15,7 @@
     flex-direction: column;
     row-gap: 16px;
   }
-  .multi-columns.columns-1 .column {
-    flex: 0 0 100%;
-  }
-  .multi-columns.columns-2 .column {
-    flex: 0 0 calc(50% - 8px);
-  }
-  .multi-columns.columns-3 .column {
-    flex: 0 0 calc((100% / 3) - (32px / 3));
-  }
-  .multi-columns.columns-4 .column {
-    flex: 0 0 calc(25% - 12px);
-  }
-  .multi-columns.columns-5 .column {
-    flex: 0 0 calc(20% - (64px / 5));
-  }
+
   .multi-columns .column.left {
     text-align: left;
   }
