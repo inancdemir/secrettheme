@@ -1,32 +1,59 @@
 {
-    "name": "Footer",
-    "type": "footer",
-    "sections": {
-      "footer": {
-        "type": "footer",
-        "blocks": {
-          "subscribe": {
-            "type": "newsletter"            
-          },
-          "menu-1": {
-            "type": "navigation"            
-          },
-          "menu-2": {
-            "type": "navigation"            
-          },
-          "menu-3": {
-            "type": "navigation"            
-          },
-          "menu-4": {
-            "type": "navigation"            
+  "name": "Footer",
+  "type": "footer",
+  "sections": {
+    "footer": {
+      "type": "footer",
+      "blocks": {
+        "subscribe": {
+          "type": "newsletter",
+          "settings": {
+            "text": "<p><strong>2-year product warranty<br\/>30-day returns<\/strong><\/p><p><strong>NEWSLETTER<\/strong><\/p><p>Be the first to hear about the latest news, product launches and events from Aspena.<\/p>"
           }
         },
-        "block_order": [
-          "subscribe", "menu-1", "menu-2", "menu-3", "menu-4" 
-        ]
+        "menu-1": {
+          "type": "navigation",
+          "settings": {
+            "linklist": "shop"
+          }
+        },
+        "menu-2": {
+          "type": "navigation",
+          "settings": {
+            "linklist": "main-menu"
+          }
+        },
+        "menu-3": {
+          "type": "navigation",
+          "settings": {
+            "linklist": "information"
+          }
+        },
+        "f7764cb4-c0bc-4d19-aabf-ac4a8a9a16f0": {
+          "type": "text",
+          "settings": {
+            "heading": "OUR LEGACY",
+            "text": "<p>Aspena embodies the future of women's winter sports apparel. Merging innovative technology with eco-friendly fabrics, our brand empowers female athletes to brave the elements with confidence and style. Each piece is crafted to celebrate strength, resilience, and the courageous spirit of women who dare to conquer the slopes.<\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "subscribe",
+        "menu-1",
+        "menu-2",
+        "menu-3",
+        "f7764cb4-c0bc-4d19-aabf-ac4a8a9a16f0"
+      ],
+      "settings": {
+        "full_width": true,
+        "footer-logo_on": true,
+        "footer-logo": "shopify:\/\/shop_images\/footer_logo.png",
+        "copyright": "© 2023 Rise, All rights reserved. Powered by Shopify",
+        "payment_icons": true
       }
-    },
-    "order": [
-      "footer"
-    ]
-  }
+    }
+  },
+  "order": [
+    "footer"
+  ]
+}
