@@ -295,20 +295,20 @@
         "header": {
           "type": "heading",
           "settings": {
-            "heading": "Image with text"
+            "heading": "Green weaves: Our commitment to eco-conscious fabrication"
           }
         },
         "text": {
           "type": "text",
           "settings": {
-            "text": "<p>Use this space to tell your customers about your brand. Describe a product, share news, or greet visitors to your store.<\/p>"
+            "text": "<p>Our eco-friendly approach is at the core of our textiles. Using organic and recycled materials, we conserve water, reduce energy, and minimize waste. Choosing our green fabrics is not just about style—it's a statement of care for nature and quality.<\/p>"
           }
         },
         "link": {
           "type": "button",
           "settings": {
             "button_label": "Read More",
-            "button_link": ""
+            "button_link": "shopify:\/\/blogs\/news\/what-gear-do-i-need"
           }
         }
       },
@@ -318,6 +318,7 @@
         "link"
       ],
       "settings": {
+        "image": "shopify:\/\/shop_images\/comfort.jpg",
         "image_size": 50,
         "max_width": 100,
         "text_width": 5,
@@ -334,20 +335,20 @@
         "header": {
           "type": "heading",
           "settings": {
-            "heading": "Our Sustainable 'YORS' World"
+            "heading": "Unmatched comfort"
           }
         },
         "text": {
           "type": "text",
           "settings": {
-            "text": "<p>In order to be sensitive to our world as Y.orstruly family, our sustainability vision covers a wide range from our fabric, sewing, packaging and labels.<\/p>"
+            "text": "<p>Embrace unmatched comfort with our fabric that's as intelligent as it is cozy. Designed to move with you, the material offers a soothing touch against the skin, while its advanced fibers maintain an optimal temperature and wick away moisture. It's a tactile experience that feels tailor-made for comfort, no matter where your day takes you.<\/p>"
           }
         },
         "link": {
           "type": "button",
           "settings": {
             "button_label": "Read More",
-            "button_link": ""
+            "button_link": "shopify:\/\/blogs\/news"
           }
         }
       },
@@ -357,6 +358,7 @@
         "link"
       ],
       "settings": {
+        "image": "shopify:\/\/shop_images\/durability.jpg",
         "image_size": 50,
         "max_width": 100,
         "text_width": 5,
