@@ -141,15 +141,15 @@
         "collection-1": {
           "type": "collection",
           "settings": {
-            "collection": "",
+            "collection": "new-commers",
             "enable_description": "enabled",
             "collection_description_lenght": 40,
             "enable_custom_description": "enabled",
-            "custom_description": "<p><strong>Collection description<\/strong><\/p>",
-            "text_position": "bottom-center",
-            "collection_button_text": "BUTTON LABEL",
+            "custom_description": "<p><strong>Unveiling timeless classics for the trailblazer modernista<\/strong><\/p>",
+            "text_position": "bottom-left",
+            "collection_button_text": "SHOP NOW",
             "button_style": "model-1",
-            "image_pos": "center"
+            "image_pos": "top"
           }
         }
       },
@@ -157,7 +157,7 @@
         "collection-1"
       ],
       "settings": {
-        "collection_height": 640,
+        "collection_height": 800,
         "collection_height_mobile": 400,
         "collection_header_color": "#ffffff",
         "heading_font_size": "large",
