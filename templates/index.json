@@ -41,28 +41,14 @@
         "text_position": "bottom-center",
         "super": "RISE",
         "super_color": "#ffffff",
-        "super_opacity": 40,
+        "super_opacity": 20,
         "super_font_size": 20,
-        "super_gap": 300,
+        "super_gap": 430,
         "super_gap_mobile": 450,
         "gap_from_sides": 60,
         "body_color": "#ffffff",
         "heading_color": "#ffffff",
         "sub_heading_color": "#ffffff"
-      }
-    },
-    "home-counter": {
-      "type": "countdown-bar",
-      "settings": {
-        "title": "Countdown Bar.",
-        "sub_title": "Use this timer to create urgency and boost sales!",
-        "year": 2024,
-        "month": "1",
-        "day": "1",
-        "hour": 1,
-        "minute": 1,
-        "text_color": "#ffffff",
-        "background": "linear-gradient(#000000, #000000)"
       }
     },
     "home-collection-list": {
@@ -89,7 +75,7 @@
         "heading": "Collection List.",
         "title_color": "#000000",
         "heading_font_size": "large",
-        "sub-heading": "<p><strong>Use this section with a slider and tabs to display the products in your collections.<\/p><\/strong>",
+        "sub-heading": "<p><strong>Use this section with a slider and tabs to display the products in your collections.<\/strong><\/p>",
         "sub_title_color": "#000000",
         "image_size": "three-four",
         "image_fit": "contain",
@@ -669,7 +655,6 @@
   },
   "order": [
     "home-slider",
-    "home-counter",
     "home-collection-list",
     "home-collection-showcase",
     "home-featured-collections",
