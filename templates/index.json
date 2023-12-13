@@ -372,10 +372,10 @@
     "home-featured-posts": {
       "type": "featured-posts",
       "settings": {
-        "heading": "Featured Posts.",
+        "heading": "Chronicles",
         "title_color": "#000000",
-        "heading_font_size": "large",
-        "sub-heading": "<p>Add subheading<\/p>",
+        "heading_font_size": "medium",
+        "sub-heading": "<p>Inside the Weave: The Latest in Fabric Innovation<\/p>",
         "sub_title_color": "#000000",
         "button_label": "Visit News",
         "product_per_row": 3,
