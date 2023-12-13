@@ -93,19 +93,19 @@
         "collection-1": {
           "type": "collection",
           "settings": {
-            "collection": ""
+            "collection": "frontpage"
           }
         },
         "collection-2": {
           "type": "collection",
           "settings": {
-            "collection": ""
+            "collection": "accessories"
           }
         },
         "collection-3": {
           "type": "collection",
           "settings": {
-            "collection": ""
+            "collection": "jackets"
           }
         }
       },
@@ -115,15 +115,15 @@
         "collection-3"
       ],
       "settings": {
-        "heading": "Collection Showcase.",
+        "heading": "2023 F\/W",
         "heading_color": "#000000",
         "heading_font_size": "large",
-        "sub_heading": "<p><strong>Use this section to showcase your collections<\/strong><\/p>",
+        "sub_heading": "<p><strong>Tailor your wardrobe to your world<\/strong><\/p>",
         "sub_heading_color": "#000000",
         "collection_per_line": 3,
         "image_size": "one-one",
         "image_fit": "cover",
-        "image_pos": "center",
+        "image_pos": "top",
         "collection_model": "model-two",
         "spacings": 16,
         "collection_item_title_bg_color": "linear-gradient(180deg, rgba(0, 0, 0, 0) 75%, rgba(0, 0, 0, 0.8) 100%)",
