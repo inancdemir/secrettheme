@@ -63,6 +63,20 @@
             "accorion_title": "Care Instructions",
             "accorion_contnet": "<p>Accordion content will be there<\/p>"
           }
+        },
+        "84ceafbc-7b4f-4c50-bd7d-26a907d51b77": {
+          "type": "accordion",
+          "settings": {
+            "accorion_title": "Details",
+            "accorion_contnet": "<p>Accordion content will be there<\/p>"
+          }
+        },
+        "a2801155-d3c1-43be-8207-63cc54650448": {
+          "type": "accordion",
+          "settings": {
+            "accorion_title": "Style Measurements",
+            "accorion_contnet": "<p>Accordion content will be there<\/p>"
+          }
         }
       },
       "block_order": [
@@ -74,7 +88,9 @@
         "product-inner-4",
         "product-inner-5",
         "product-inner-6",
-        "product-inner-7"
+        "product-inner-7",
+        "84ceafbc-7b4f-4c50-bd7d-26a907d51b77",
+        "a2801155-d3c1-43be-8207-63cc54650448"
       ],
       "settings": {
         "full_width": false,
