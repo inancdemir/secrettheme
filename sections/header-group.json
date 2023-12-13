@@ -1,1 +1,81 @@
-{"name":"Header group","type":"header","sections":{"top-bar":{"type":"top-bar","blocks":{"tp-1":{"type":"announcement","settings":{}},"tp-2":{"type":"announcement","settings":{}}},"block_order":["tp-1","tp-2"],"settings":{}},"header":{"type":"header","settings":{}}},"order":["top-bar","header"]}
+{
+  "name": "Header group",
+  "type": "header",
+  "sections": {
+    "top-bar": {
+      "type": "top-bar",
+      "blocks": {
+        "tp-1": {
+          "type": "announcement",
+          "settings": {
+            "area_text": "<p>FREE SHIPPING ON <a href='#'>ORDERS<\/a> FROM $150<\/p>"
+          }
+        },
+        "tp-2": {
+          "type": "announcement",
+          "settings": {
+            "area_text": "<p>FREE SHIPPING ON <a href='#'>ORDERS<\/a> FROM $150<\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "tp-1",
+        "tp-2"
+      ],
+      "settings": {
+        "show_announcement": true,
+        "home_page_only": true,
+        "text_color": "#FFFFFF",
+        "background_color": "#000000",
+        "area_size": 40,
+        "animation_speed": 40,
+        "social_icons": true,
+        "instagram_link": "https:\/\/instagram.com\/shopify",
+        "instagram_link_show": true,
+        "facebook_link": "https:\/\/facebook.com\/shopify",
+        "facebook_link_show": true,
+        "x_link": "https:\/\/x.com\/shopify",
+        "x_link_show": true,
+        "tiktok_link": "https:\/\/tiktok.com\/@shopify",
+        "tiktok_link_show": true
+      }
+    },
+    "header": {
+      "type": "header",
+      "blocks": {
+        "e2ddebac-abb6-40e2-b5b5-5dff22c12352": {
+          "type": "mega_menu",
+          "settings": {
+            "mega_menu": "Collections",
+            "image_promo_first": "shopify:\/\/shop_images\/cngrs_full-length_photo_of_two_woman_wearing_ski_suits_drone_sh_e4ff4cb8-4374-4afb-abe1-36f245f302e9.png",
+            "promo_text_first": "Jackets",
+            "promo_link_first": "shopify:\/\/collections\/jackets",
+            "image_promo_second": "shopify:\/\/shop_images\/cngrs_full-length_photo_of_two_brunette_woman_wearing_ski_jacke_781c9782-4f3c-49e5-9687-d7408e0845f1.png",
+            "promo_text_second": "Goggles",
+            "promo_link_second": "shopify:\/\/collections\/accessories"
+          }
+        }
+      },
+      "block_order": [
+        "e2ddebac-abb6-40e2-b5b5-5dff22c12352"
+      ],
+      "settings": {
+        "logo_position": "menu-pos-one",
+        "logo_opacity": 100,
+        "select_menu": "main-menu",
+        "menu_type_desktop": "mega",
+        "sticky_header_type": "on",
+        "uppercase_first_lvl": true,
+        "uppercase_second_lvl": false,
+        "uppercase_third_lvl": false,
+        "menu_color": "#FFFFFF",
+        "menu_bg": "#000000",
+        "enable_language_selector": true
+      }
+    }
+  },
+  "order": [
+    "top-bar",
+    "header"
+  ]
+}

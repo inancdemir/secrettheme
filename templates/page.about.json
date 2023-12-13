@@ -1,297 +1,350 @@
 {
-    "sections": {
-        "about-banner": {
-            "type": "header-banner",
-            "blocks": {
-              "welcome": {
-                "type": "richtextarea",
-                "settings": {
-                    "description": "<p>WELCOME TO</p>"
-                } 
-              },
-              "header": {
-                "type": "heading",
-                "settings": {
-                    "description": "RISE"
-                }
-              },
-              "spacer-1": {
-                "type": "spacer",
-                "settings": {
-                    "spacer-height": 16 
-                }
-              },
-              "explain": {
-                "type": "richtextarea",
-                "settings": {
-                    "description": "<h4>This page shows how you can use its About page template.</h4>"
-                }
-              },
-              "spacer-2": {
-                "type": "spacer",
-                "settings": {
-                    "spacer-height": 32 
-                }
-              },
-              "button": {
-                "type": "button"
-              }
-            },
-            "block_order": [
-                "welcome",
-                "header",
-                "spacer-1",
-                "explain",
-                "spacer-2",
-                "button"
-            ],
-            "settings": {
-                "section_height_mobile": 600,
-                "section_height": 600,
-                "gap_from_bottom": 100
-            }
+  "sections": {
+    "about-banner": {
+      "type": "header-banner",
+      "blocks": {
+        "welcome": {
+          "type": "richtextarea",
+          "settings": {
+            "description": "<p>This is<\/p>"
+          }
         },
-        "main-area": {
-            "type": "main-page"
+        "header": {
+          "type": "heading",
+          "settings": {
+            "heading": "Aspena"
+          }
         },
-        "image-grid": {
-            "type": "image-grid",
-            "blocks": {
-                "image-1": {
-                  "type": "image"
-                },
-                "image-2": {
-                  "type": "image"
-                }
-            },
-            "block_order": [
-                "image-1",
-                "image-2"
-            ]
+        "spacer-1": {
+          "type": "spacer",
+          "settings": {
+            "spacer-height": 16
+          }
         },
-        "image-with-text": {
-            "type": "image-with-text",
-            "blocks": {
-                "subhead": {
-                    "type": "text",
-                    "settings": {
-                        "text": "<p>#2</p>"
-                    }
-                },
-                "header": {
-                    "type": "heading",
-                    "settings": {
-                        "heading": "Header"
-                    }
-                },
-                "text": {
-                    "type": "text",
-                    "settings": {
-                        "text": "<p>Diam tellus mauris praesent vitae. Diam auctor tempus nulla nisi. Tempor sed a ridiculus dictum nulla nisl faucibus nullam. Viverra enim dignissim libero netus pulvinar in egestas. Odio duis volutpat tincidunt eget ultrices ut odio sed quis.</p>"
-                    }
-                }
-            },
-            "block_order": [
-                "subhead",
-                "header",
-                "text",
-                "link"
-            ],
-            "settings": {
-                "image_size": 50,
-                "max_width": 100,
-                "text_width": 5,
-                "heading_font_size": "large",
-                "heading_line_height": 78,
-                "text_font_size": 18,
-                "text_line_height": 28,
-                "image_position": "image-on-right",
-                "section_bg": "#FFFFFF",
-                "section_margin": 0,
-                "full_width": false,
-                "text_align": "text-center"
-            }
-        },
-        "image-with-text-second": {
-            "type": "image-with-text",
-            "blocks": {
-                "subhead": {
-                    "type": "text",
-                    "settings": {
-                        "text": "<p>#2</p>"
-                    }
-                },
-                "header": {
-                    "type": "heading",
-                    "settings": {
-                        "heading": "Header"
-                    }
-                },
-                "text": {
-                    "type": "text",
-                    "settings": {
-                        "text": "<p>Diam tellus mauris praesent vitae. Diam auctor tempus nulla nisi. Tempor sed a ridiculus dictum nulla nisl faucibus nullam. Viverra enim dignissim libero netus pulvinar in egestas. Odio duis volutpat tincidunt eget ultrices ut odio sed quis.</p>"
-                    }
-                }
-            },
-            "block_order": [
-                "subhead",
-                "header",
-                "text",
-                "link"
-            ],
-            "settings": {
-                "image_size": 50,
-                "max_width": 100,
-                "text_width": 5,
-                "heading_font_size": "large",
-                "heading_line_height": 78,
-                "text_font_size": 18,
-                "text_line_height": 28,
-                "image_position": "image-on-left",
-                "section_bg": "#FFFFFF",
-                "section_margin": 0,
-                "full_width": false,
-                "text_align": "text-center"
-            }
-        },
-        "black-bg-1": {
-            "type": "rich-section",
-            "settings": {
-                "section_padding": 100
-            },
-            "blocks": {
-                "header": {
-                    "type": "rich_header"
-                },
-                "text": {
-                    "type": "rich_text",
-                    "settings": {
-                        "description": "<p>Diam tellus mauris praesent vitae. Diam auctor tempus nulla nisi. Tempor sed a ridiculus dictum nulla nisl faucibus nullam. Viverra enim dignissim libero netus pulvinar in egestas. Odio duis volutpat tincidunt eget ultrices ut odio sed quis.</p>"
-                    }
-                }
-            },
-            "block_order": [
-                "header",
-                "text"
-            ]
-        },
-        "black-bg-2": {
-            "type": "image-grid",
-            "settings": {
-                "grid_column_count": 3,
-                "background_color": "linear-gradient(180deg, rgba(0, 0, 0, 1), rgba(0, 0, 0, 1) 100%)"
-            },
-            "blocks": {
-                "image-1": {
-                  "type": "image"
-                },
-                "image-2": {
-                  "type": "image"
-                },
-                "image-3": {
-                    "type": "image"
-                }
-            },
-            "block_order": [
-                "image-1",
-                "image-2",
-                "image-3"
-            ]
-        },
-        "banner": {
-            "type": "banner",
-            "blocks": {
-                "header": {
-                    "type": "heading",
-                    "settings": {
-                        "heading": "RISE STORE"
-                    }
-                },
-                "text": {
-                    "type": "text",
-                    "settings": {
-                        "sub_heading": "<p>Subheading</p>"
-                    }
-                },
-                "button": {
-                    "type": "button",
-                    "settings": {
-                        "button_text": "Button Label",
-                        "button_url": ""
-                    }
-                }
-            },
-            "block_order": [
-                "header",
-                "text",
-                "button"
-            ],
-            "settings": {
-                "section_height": 100,
-                "text_position": "bottom-left",
-                "super_color": "#FFFFFF",
-                "super_opacity": 40,
-                "super_font_size": 300,
-                "super_line_height": 350,
-                "heading_color": "#FFFFFF",
-                "heading_font_size": 48,
-                "heading_line_height": 60,
-                "sub_heading_color": "#FFFFFF",
-                "sub_heading_font_size": 20,
-                "sub_heading_line_height": 30,
-                "gap_from_sides": 60
-            }
-        },
-        "about-spacer-1": {
-            "type": "spacer",
-            "settings": {
-                "desktop_space": "50",
-                "mobile_space": "30"
-            }
-        },
-        "about-spacer-2": {
-            "type": "spacer",
-            "settings": {
-                "desktop_space": "50",
-                "mobile_space": "30"
-            }
-        },
-        "about-spacer-3": {
-            "type": "spacer",
-            "settings": {
-                "desktop_space": "50",
-                "mobile_space": "30"
-            }
-        },
-        "about-spacer-4": {
-            "type": "spacer",
-            "settings": {
-                "desktop_space": "80",
-                "mobile_space": "30"
-            }
-        },
-        "about-spacer-5": {
-            "type": "spacer",
-            "settings": {
-                "desktop_space": "80",
-                "mobile_space": "30"
-            }
+        "explain": {
+          "type": "richtextarea",
+          "settings": {
+            "description": "<h4>Where elegance meets adventure in the heart of the mountains<\/h4>"
+          }
         }
+      },
+      "block_order": [
+        "welcome",
+        "header",
+        "spacer-1",
+        "explain"
+      ],
+      "settings": {
+        "section_height": 600,
+        "section_height_mobile": 600,
+        "heading_color": "#FFFFFF",
+        "heading_font_size": "large",
+        "gap_from_bottom": 100,
+        "gap_from_bottom_mobile": 33,
+        "overlay_color": "#000000",
+        "overlay_color_opacity": 40,
+        "background_image": "shopify:\/\/shop_images\/a-lonely-mountain-covered-in-snow.jpg",
+        "image_pos": "center"
+      }
     },
-    "order": [
-        "about-banner",
-        "about-spacer-1",
-        "main-area",
-        "about-spacer-2",
-        "image-grid",
-        "about-spacer-3",
-        "image-with-text",
-        "about-spacer-4",
-        "image-with-text-second",
-        "about-spacer-5",
-        "black-bg-1",
-        "black-bg-2",
-        "banner"
-    ]
+    "about-spacer-1": {
+      "type": "spacer",
+      "settings": {
+        "desktop_space": "50",
+        "mobile_space": "30"
+      }
+    },
+    "main-area": {
+      "type": "main-page",
+      "settings": {
+        "page_width": "medium"
+      }
+    },
+    "about-spacer-2": {
+      "type": "spacer",
+      "settings": {
+        "desktop_space": "50",
+        "mobile_space": "30"
+      }
+    },
+    "image-grid": {
+      "type": "image-grid",
+      "blocks": {
+        "image-1": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/cngrs_upper_body_photo_of_a_blonde_woman_wearing_a_dark_gray_sk_c872bc56-9718-4298-b022-c3d696a723f6.png",
+            "custom_size": true,
+            "image_size": "one-one",
+            "image_fit": "cover",
+            "image_pos": "center"
+          }
+        },
+        "image-2": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/cngrs_upper_body_photo_of_a_blonde_woman_wearing_a_red_ski_suit_2fad2d94-229a-44bb-96ab-2a5a8e4d4a11.png",
+            "custom_size": true,
+            "image_size": "one-one",
+            "image_fit": "cover",
+            "image_pos": "center"
+          }
+        }
+      },
+      "block_order": [
+        "image-1",
+        "image-2"
+      ],
+      "settings": {
+        "full_width": false,
+        "grid_column_count": 2,
+        "background_color": "linear-gradient(180deg, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0) 100%)",
+        "section_padding": 30
+      }
+    },
+    "about-spacer-3": {
+      "type": "spacer",
+      "settings": {
+        "desktop_space": "50",
+        "mobile_space": "30"
+      }
+    },
+    "image-with-text": {
+      "type": "image-with-text",
+      "blocks": {
+        "subhead": {
+          "type": "text",
+          "settings": {
+            "text": "<p><strong>Breaking the Ice<\/strong><\/p>"
+          }
+        },
+        "header": {
+          "type": "heading",
+          "settings": {
+            "heading": "The Rise of Women in Winter Sports"
+          }
+        },
+        "text": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Winter sports have long been a domain where the daring and fearless venture, but in recent years, these icy arenas have become a platform for the empowerment of women. From the snow-laden slopes of skiing to the thrilling tracks of snowboarding, women are not just participating; they are excelling, breaking barriers, and redefining what it means to be a female athlete in these traditionally male-dominated sports. Each turn on the skis, each leap from the snowboard, is a testament to the strength, resilience, and indomitable spirit of women.<\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "subhead",
+        "header",
+        "text"
+      ],
+      "settings": {
+        "image": "shopify:\/\/shop_images\/cngrs_upper_body_photo_of_a_blonde_woman_wearing_a_red_ski_suit_a9dac283-213a-4ec8-9209-16de58bad4f4.png",
+        "image_size": 50,
+        "max_width": 100,
+        "text_width": 5,
+        "heading_font_size": "large",
+        "image_position": "image-on-right",
+        "text_align": "text-center",
+        "section_bg": "#ffffff",
+        "full_width": false
+      }
+    },
+    "about-spacer-4": {
+      "type": "spacer",
+      "settings": {
+        "desktop_space": "80",
+        "mobile_space": "30"
+      }
+    },
+    "image-with-text-second": {
+      "type": "image-with-text",
+      "blocks": {
+        "subhead": {
+          "type": "text",
+          "settings": {
+            "text": "<p><strong>Snow Queens<\/strong><\/p>"
+          }
+        },
+        "header": {
+          "type": "heading",
+          "settings": {
+            "heading": "The Ascendancy of Women in Alpine Athletics"
+          }
+        },
+        "text": {
+          "type": "text",
+          "settings": {
+            "text": "<p>This transformation isn't just about the medals or the accolades; it's about creating an inclusive space where women can demonstrate their skills, challenge stereotypes, and inspire the next generation of girls to embrace winter sports with confidence and passion. The rise of women in winter sports is a celebration of equality and empowerment, proving that on the snow, everyone has a chance to make their mark.<\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "subhead",
+        "header",
+        "text"
+      ],
+      "settings": {
+        "image": "shopify:\/\/shop_images\/ski-1024x707.jpg",
+        "image_size": 50,
+        "max_width": 100,
+        "text_width": 5,
+        "heading_font_size": "large",
+        "image_position": "image-on-left",
+        "text_align": "text-center",
+        "section_bg": "#ffffff",
+        "full_width": false
+      }
+    },
+    "about-spacer-5": {
+      "type": "spacer",
+      "settings": {
+        "desktop_space": "80",
+        "mobile_space": "30"
+      }
+    },
+    "black-bg-1": {
+      "type": "rich-section",
+      "blocks": {
+        "header": {
+          "type": "rich_header",
+          "settings": {
+            "rich_title": "Hall of fame in Winter Sports",
+            "rich_title_tag": "large"
+          }
+        },
+        "text": {
+          "type": "rich_text",
+          "settings": {
+            "description": "<p>These women, hailing from diverse backgrounds and disciplines, have ascended to the pinnacle of winter athletics, from the gravity-defying slopes of competitive skiing to the high-speed thrills of snowboarding.<\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "header",
+        "text"
+      ],
+      "settings": {
+        "background_color": "#000000",
+        "content_color": "#FFFFFF",
+        "section_padding": 100,
+        "align_content": "text-center",
+        "full_width": false
+      }
+    },
+    "black-bg-2": {
+      "type": "image-grid",
+      "blocks": {
+        "image-1": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Lindsey-Vonn-2015.webp",
+            "custom_size": true,
+            "image_size": "one-one",
+            "image_fit": "cover",
+            "image_pos": "center"
+          }
+        },
+        "image-2": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/mikaela_shiffrin_9cb8f104-174a-41c3-8792-c737c63dd615.jpg",
+            "custom_size": true,
+            "image_size": "one-one",
+            "image_fit": "cover",
+            "image_pos": "center"
+          }
+        },
+        "image-3": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/federica_brignone.webp",
+            "custom_size": true,
+            "image_size": "one-one",
+            "image_fit": "cover",
+            "image_pos": "center"
+          }
+        }
+      },
+      "block_order": [
+        "image-1",
+        "image-2",
+        "image-3"
+      ],
+      "settings": {
+        "full_width": false,
+        "grid_column_count": 3,
+        "background_color": "linear-gradient(180deg, rgba(0, 0, 0, 1), rgba(0, 0, 0, 1) 100%)",
+        "section_padding": 30
+      }
+    },
+    "banner": {
+      "type": "banner",
+      "blocks": {
+        "db454540-21a7-4f30-8a62-e4d5f4217b22": {
+          "type": "super_heading",
+          "settings": {
+            "super": "ASPENA"
+          }
+        },
+        "header": {
+          "type": "heading",
+          "settings": {
+            "heading": "2023\/24 F\/W"
+          }
+        },
+        "text": {
+          "type": "text",
+          "settings": {
+            "sub_heading": "<p>VISIT OUR 2023\/24 NEW ARRIVALS<\/p>"
+          }
+        },
+        "button": {
+          "type": "button",
+          "settings": {
+            "button_text": "GO TO COLLECTION",
+            "button_url": "shopify:\/\/collections\/new-commers",
+            "button_style": "model-4"
+          }
+        }
+      },
+      "block_order": [
+        "db454540-21a7-4f30-8a62-e4d5f4217b22",
+        "header",
+        "text",
+        "button"
+      ],
+      "settings": {
+        "section_height": 100,
+        "text_position": "mid-center",
+        "super_color": "#ffffff",
+        "super_opacity": 40,
+        "super_font_size": 300,
+        "super_line_height": 350,
+        "heading_color": "#ffffff",
+        "heading_font_size": 69,
+        "heading_line_height": 99,
+        "sub_heading_color": "#ffffff",
+        "sub_heading_font_size": 20,
+        "sub_heading_line_height": 47,
+        "gap_from_sides": 0,
+        "overlay_color": "#000000",
+        "overlay_color_opacity": 60,
+        "background_image": "shopify:\/\/shop_images\/cngrs_full-length_photo_of_two_woman_wearing_ski_suits_drone_sh_e4ff4cb8-4374-4afb-abe1-36f245f302e9.png"
+      }
+    }
+  },
+  "order": [
+    "about-banner",
+    "about-spacer-1",
+    "main-area",
+    "about-spacer-2",
+    "image-grid",
+    "about-spacer-3",
+    "image-with-text",
+    "about-spacer-4",
+    "image-with-text-second",
+    "about-spacer-5",
+    "black-bg-1",
+    "black-bg-2",
+    "banner"
+  ]
 }

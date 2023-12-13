@@ -1,41 +1,80 @@
 {
-    "sections": {
-        "collection-1": {
-            "type": "header-banner",
-            "blocks": {
-                "main": {
-                    "type": "heading",
-                    "settings": {
-                        "heading": "{{ collection.title }}."
-                    }
-                }
-            },
-            "block_order": [
-                "main"
-            ],
-            "settings": {
-                "background_image": "{{ collection.image }}"
-            }
-        },
-        "breadcrumb": {
-            "type": "breadcrumb",
-            "settings": {
-                "full_width": false
-            }
-        },
+  "sections": {
+    "collection-1": {
+      "type": "header-banner",
+      "blocks": {
         "main": {
-            "type": "product-list-filtreble",
-            "settings": {
-                "item_per_row": 4,
-                "heading": "",
-                "sub-heading": "",
-                "full_width": false
-            }
+          "type": "heading",
+          "settings": {
+            "heading": "{{ collection.title }}."
+          }
         }
-    },
-    "order": [
-        "collection-1",
-        "breadcrumb",
+      },
+      "block_order": [
         "main"
-    ]
+      ],
+      "settings": {
+        "section_height": 400,
+        "section_height_mobile": 200,
+        "heading_color": "#ffffff",
+        "heading_font_size": "large",
+        "gap_from_bottom": 96,
+        "gap_from_bottom_mobile": 33,
+        "overlay_color": "#000000",
+        "overlay_color_opacity": 40,
+        "background_image": "{{ collection.image }}",
+        "image_pos": "center"
+      }
+    },
+    "breadcrumb": {
+      "type": "breadcrumb",
+      "settings": {
+        "section_padding": 24,
+        "full_width": false
+      }
+    },
+    "main": {
+      "type": "product-list-filtreble",
+      "blocks": {
+        "4a0907a4-9663-40b9-9080-0f8d381583ad": {
+          "type": "add_add",
+          "settings": {
+            "add_position": 3,
+            "add_size": 1,
+            "min_height": "",
+            "image": "shopify:\/\/shop_images\/cngrs_full-length_photo_of_two_brunette_woman_wearing_ski_jacke_edcbdd0b-4234-4b5b-b127-9aacd1b645fe.webp",
+            "cover": true,
+            "text": "<p>Introducing our cutting-edge <strong>AJAX Goggles<\/strong><\/p>",
+            "button_text": "Shop Now",
+            "button_url": "shopify:\/\/collections\/accessories"
+          }
+        }
+      },
+      "block_order": [
+        "4a0907a4-9663-40b9-9080-0f8d381583ad"
+      ],
+      "settings": {
+        "item_per_row": 4,
+        "item_show_row": 3,
+        "item_per_row_mobile": "2",
+        "product_gap": 0,
+        "image_size": "two-three",
+        "image_fit": "contain",
+        "image_pos": "center",
+        "pagination_settings": "paginated",
+        "heading": "",
+        "title": "#000000",
+        "background_color": "linear-gradient(180deg, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0) 100%)",
+        "section_padding": 0,
+        "add_color": "#ffffff",
+        "no_product": "This collection is currently empty of products.",
+        "full_width": false
+      }
+    }
+  },
+  "order": [
+    "collection-1",
+    "breadcrumb",
+    "main"
+  ]
 }

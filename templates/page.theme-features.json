@@ -1,0 +1,1219 @@
+{
+  "sections": {
+    "503202e4-90be-42ee-bd9d-7b3d492e6522": {
+      "type": "banner",
+      "blocks": {
+        "176a3c0e-2cf8-412c-9943-50d9a36862d2": {
+          "type": "text",
+          "settings": {
+            "sub_heading": "<p>INTRODUCING RISE FOR SHOPIFY<\/p>"
+          }
+        },
+        "template--14728833269859__503202e4-90be-42ee-bd9d-7b3d492e6522-heading-1": {
+          "type": "heading",
+          "settings": {
+            "heading": "HIGH-END MEETS HIGH-CONVERSION"
+          }
+        },
+        "template--14728833269859__503202e4-90be-42ee-bd9d-7b3d492e6522-text-1": {
+          "type": "text",
+          "settings": {
+            "sub_heading": "<p>Unleash unparalleled shopping experiences with the next-gen in e-commerce design<\/p>"
+          }
+        },
+        "10105421-0735-434f-893c-5fa11da649a8": {
+          "type": "button",
+          "settings": {
+            "button_text": "TRY RISE COMPLETELY FREE",
+            "button_url": "",
+            "button_style": "model-4"
+          }
+        }
+      },
+      "block_order": [
+        "176a3c0e-2cf8-412c-9943-50d9a36862d2",
+        "template--14728833269859__503202e4-90be-42ee-bd9d-7b3d492e6522-heading-1",
+        "template--14728833269859__503202e4-90be-42ee-bd9d-7b3d492e6522-text-1",
+        "10105421-0735-434f-893c-5fa11da649a8"
+      ],
+      "settings": {
+        "section_height": 120,
+        "text_position": "top-center",
+        "super_color": "#ffffff",
+        "super_opacity": 40,
+        "super_font_size": 300,
+        "super_line_height": 210,
+        "heading_color": "#ffffff",
+        "heading_font_size": 48,
+        "heading_line_height": 60,
+        "sub_heading_color": "#ffffff",
+        "sub_heading_font_size": 20,
+        "sub_heading_line_height": 52,
+        "gap_from_sides": 125,
+        "overlay_color": "#000000",
+        "overlay_color_opacity": 40,
+        "background_image": "shopify:\/\/shop_images\/singleimage-hero.jpg"
+      }
+    },
+    "514a8c17-efcb-4a12-a145-a807ee44a43d": {
+      "type": "multiple-columns",
+      "blocks": {
+        "template--14728833269859__514a8c17-efcb-4a12-a145-a807ee44a43d-column-1": {
+          "type": "column",
+          "settings": {
+            "icon_mini_image": "shopify:\/\/shop_images\/Vector.svg",
+            "select_icon": "award",
+            "select_icon_active": false,
+            "icon_size": 30,
+            "block_title": "Elegant Design",
+            "title_size": "small",
+            "block_content": "<p>Where timeless elegance meets modern design, captivating your audience at every scroll and click<\/p>",
+            "items_align": "center",
+            "cover_image_force": false
+          }
+        },
+        "template--14728833269859__514a8c17-efcb-4a12-a145-a807ee44a43d-column-2": {
+          "type": "column",
+          "settings": {
+            "icon_mini_image": "shopify:\/\/shop_images\/Combine.svg",
+            "select_icon": "award",
+            "select_icon_active": false,
+            "icon_size": 30,
+            "block_title": "Engineered for Excellence",
+            "title_size": "small",
+            "block_content": "<p>Our theme is built exclusively for Shopify 2.0, seamlessly blending innovation with high conversions to propel your store into the future!\"<\/p>",
+            "items_align": "center",
+            "cover_image_force": false
+          }
+        },
+        "template--14728833269859__514a8c17-efcb-4a12-a145-a807ee44a43d-column-3": {
+          "type": "column",
+          "settings": {
+            "icon_mini_image": "shopify:\/\/shop_images\/Switch.svg",
+            "select_icon": "award",
+            "select_icon_active": false,
+            "icon_size": 30,
+            "block_title": "Effortless Customization",
+            "title_size": "small",
+            "block_content": "<p>Discover the power of true flexibility – offering effortless customization options that let you shape your store's look and feel with just a few clicks, no coding required<\/p>",
+            "items_align": "center",
+            "cover_image_force": false
+          }
+        },
+        "baeb5a84-7866-4e9b-8ebf-a86d5b3a4192": {
+          "type": "column",
+          "settings": {
+            "icon_mini_image": "shopify:\/\/shop_images\/Support.svg",
+            "select_icon": "award",
+            "select_icon_active": false,
+            "icon_size": 30,
+            "block_title": "Elite Support Squad",
+            "title_size": "small",
+            "block_content": "<p>Never feel lost in the digital realm again; our Shopify theme comes backed by a top-notch support team, dedicated to ensuring your e- commerce success around the clock.<\/p>",
+            "items_align": "center",
+            "cover_image_force": false
+          }
+        }
+      },
+      "block_order": [
+        "template--14728833269859__514a8c17-efcb-4a12-a145-a807ee44a43d-column-1",
+        "template--14728833269859__514a8c17-efcb-4a12-a145-a807ee44a43d-column-2",
+        "template--14728833269859__514a8c17-efcb-4a12-a145-a807ee44a43d-column-3",
+        "baeb5a84-7866-4e9b-8ebf-a86d5b3a4192"
+      ],
+      "settings": {
+        "column_per_line": 4,
+        "section_padding_top": 37,
+        "section_padding_bottom": 38,
+        "full_width": true
+      }
+    },
+    "43a5e2c0-6f15-48a3-9977-44e413809363": {
+      "type": "rich-section",
+      "blocks": {
+        "f25b645b-958f-402d-a869-ca314679ff4c": {
+          "type": "rich_header",
+          "settings": {
+            "rich_title": "Design",
+            "rich_title_tag": "large"
+          }
+        },
+        "c9cd4f6a-c0f9-4913-b792-4ad295203e82": {
+          "type": "rich_text",
+          "settings": {
+            "description": "<p>Crafted for elegance, engineered for ease.  Embrace the ultimate in thumb-friendly design with expansive layout possibilities<\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "f25b645b-958f-402d-a869-ca314679ff4c",
+        "c9cd4f6a-c0f9-4913-b792-4ad295203e82"
+      ],
+      "settings": {
+        "background_color": "#FFFFFF",
+        "content_color": "#000000",
+        "section_padding": 76,
+        "align_content": "text-center",
+        "full_width": false
+      }
+    },
+    "default_page": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "page_width": "small"
+      }
+    },
+    "spacer-2": {
+      "type": "spacer",
+      "settings": {
+        "desktop_space": "80",
+        "mobile_space": "40"
+      }
+    },
+    "c1fb4d61-a950-461f-b6c5-3f3ae182afad": {
+      "type": "image-with-text",
+      "blocks": {
+        "template--14728833269859__c1fb4d61-a950-461f-b6c5-3f3ae182afad-heading-1": {
+          "type": "heading",
+          "settings": {
+            "heading": "Unique Design & Clean Look"
+          }
+        },
+        "template--14728833269859__c1fb4d61-a950-461f-b6c5-3f3ae182afad-text-1": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Stand out from the crowd with our easy-to- use custom sections. Mix and match for a store that's uniquely yours!<\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "template--14728833269859__c1fb4d61-a950-461f-b6c5-3f3ae182afad-heading-1",
+        "template--14728833269859__c1fb4d61-a950-461f-b6c5-3f3ae182afad-text-1"
+      ],
+      "settings": {
+        "image": "shopify:\/\/shop_images\/clean.jpg",
+        "image_size": 50,
+        "max_width": 100,
+        "text_width": 5,
+        "heading_font_size": "large",
+        "image_position": "image-on-right",
+        "text_align": "text-left",
+        "section_bg": "",
+        "full_width": false
+      }
+    },
+    "4499543f-9597-4703-87c2-32d47621a546": {
+      "type": "image-with-text",
+      "blocks": {
+        "template--14728833269859__4499543f-9597-4703-87c2-32d47621a546-heading-1": {
+          "type": "heading",
+          "settings": {
+            "heading": "Extensive Layout Capabilities"
+          }
+        },
+        "template--14728833269859__4499543f-9597-4703-87c2-32d47621a546-text-1": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Change colors for each section. Use the full screen width, adjust spaces between columns for a different look, and add gradients to add extra flair!<\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "template--14728833269859__4499543f-9597-4703-87c2-32d47621a546-heading-1",
+        "template--14728833269859__4499543f-9597-4703-87c2-32d47621a546-text-1"
+      ],
+      "settings": {
+        "image": "shopify:\/\/shop_images\/layout.jpg",
+        "image_size": 50,
+        "max_width": 100,
+        "text_width": 5,
+        "heading_font_size": "large",
+        "image_position": "image-on-left",
+        "text_align": "text-left",
+        "section_bg": "",
+        "full_width": false
+      }
+    },
+    "d18b40bd-06cb-469b-bcd0-4097470750a9": {
+      "type": "image-with-text",
+      "blocks": {
+        "template--14728833269859__d18b40bd-06cb-469b-bcd0-4097470750a9-heading-1": {
+          "type": "heading",
+          "settings": {
+            "heading": "Thumb-Friendly Design"
+          }
+        },
+        "template--14728833269859__d18b40bd-06cb-469b-bcd0-4097470750a9-text-1": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Navigate with ease on any device with our thumb-friendly design - crafted for comfort, ensuring a seamless shopping experience right at your fingertips!<\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "template--14728833269859__d18b40bd-06cb-469b-bcd0-4097470750a9-heading-1",
+        "template--14728833269859__d18b40bd-06cb-469b-bcd0-4097470750a9-text-1"
+      ],
+      "settings": {
+        "image": "shopify:\/\/shop_images\/thumb.jpg",
+        "image_size": 50,
+        "max_width": 100,
+        "text_width": 5,
+        "heading_font_size": "large",
+        "image_position": "image-on-right",
+        "text_align": "text-left",
+        "section_bg": "",
+        "full_width": false
+      }
+    },
+    "95c9084a-470d-4431-a42b-6abdb1573586": {
+      "type": "rich-section",
+      "blocks": {
+        "66ba7b39-0c20-4694-b86a-9b484e93205b": {
+          "type": "rich_header",
+          "settings": {
+            "rich_title": "Navigation",
+            "rich_title_tag": "large"
+          }
+        },
+        "a1127600-89f5-471c-829f-e4fb803dd1c9": {
+          "type": "rich_text",
+          "settings": {
+            "description": "<p>Experience a dynamic navigation enhanced with our signature glass effect<\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "66ba7b39-0c20-4694-b86a-9b484e93205b",
+        "a1127600-89f5-471c-829f-e4fb803dd1c9"
+      ],
+      "settings": {
+        "background_color": "#FFFFFF",
+        "content_color": "#000000",
+        "section_padding": 100,
+        "align_content": "text-center",
+        "full_width": false
+      }
+    },
+    "00371a23-69de-4ec0-9a6e-7d81e6e60fae": {
+      "type": "multiple-columns",
+      "blocks": {
+        "template--14728833269859__00371a23-69de-4ec0-9a6e-7d81e6e60fae-column-1": {
+          "type": "column",
+          "settings": {
+            "select_icon": "award",
+            "select_icon_active": false,
+            "icon_size": 30,
+            "block_title": "Unique to Rise Theme - Glass Effect",
+            "title_size": "medium",
+            "block_content": "",
+            "items_align": "center",
+            "cover_image": "shopify:\/\/shop_images\/glass.jpg",
+            "cover_image_force": true
+          }
+        },
+        "template--14728833269859__00371a23-69de-4ec0-9a6e-7d81e6e60fae-column-2": {
+          "type": "column",
+          "settings": {
+            "select_icon": "award",
+            "select_icon_active": false,
+            "icon_size": 30,
+            "block_title": "Mega Menu with Promotions",
+            "title_size": "medium",
+            "block_content": "",
+            "items_align": "center",
+            "cover_image": "shopify:\/\/shop_images\/menupromo.jpg",
+            "cover_image_force": true
+          }
+        }
+      },
+      "block_order": [
+        "template--14728833269859__00371a23-69de-4ec0-9a6e-7d81e6e60fae-column-1",
+        "template--14728833269859__00371a23-69de-4ec0-9a6e-7d81e6e60fae-column-2"
+      ],
+      "settings": {
+        "column_per_line": 2,
+        "section_padding_top": 0,
+        "section_padding_bottom": 50,
+        "full_width": true
+      }
+    },
+    "18fef974-2c85-44b5-848f-102040aa5464": {
+      "type": "multiple-columns",
+      "blocks": {
+        "template--14728833269859__18fef974-2c85-44b5-848f-102040aa5464-column-3": {
+          "type": "column",
+          "settings": {
+            "select_icon": "award",
+            "select_icon_active": false,
+            "icon_size": 30,
+            "block_title": "Predictive Search with Powerful Capabilities",
+            "title_size": "medium",
+            "block_content": "",
+            "items_align": "center",
+            "cover_image": "shopify:\/\/shop_images\/search.jpg",
+            "cover_image_force": true
+          }
+        }
+      },
+      "block_order": [
+        "template--14728833269859__18fef974-2c85-44b5-848f-102040aa5464-column-3"
+      ],
+      "settings": {
+        "column_per_line": 1,
+        "section_padding_top": 0,
+        "section_padding_bottom": 50,
+        "full_width": true
+      }
+    },
+    "34f4fbc4-58ed-48fe-b713-d7dd16a578fb": {
+      "type": "banner",
+      "blocks": {
+        "template--14728833269859__34f4fbc4-58ed-48fe-b713-d7dd16a578fb-heading-1": {
+          "type": "heading",
+          "settings": {
+            "heading": "A plethora of sections"
+          }
+        },
+        "template--14728833269859__34f4fbc4-58ed-48fe-b713-d7dd16a578fb-text-1": {
+          "type": "text",
+          "settings": {
+            "sub_heading": "<p>Revolutionizing the digital marketplace by blending unparalleled adaptability with a wealth of innovative features and an abundance of sections<\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "template--14728833269859__34f4fbc4-58ed-48fe-b713-d7dd16a578fb-heading-1",
+        "template--14728833269859__34f4fbc4-58ed-48fe-b713-d7dd16a578fb-text-1"
+      ],
+      "settings": {
+        "section_height": 53,
+        "text_position": "mid-center",
+        "super_color": "#ffffff",
+        "super_opacity": 40,
+        "super_font_size": 300,
+        "super_line_height": 350,
+        "heading_color": "#ffffff",
+        "heading_font_size": 59,
+        "heading_line_height": 107,
+        "sub_heading_color": "#ffffff",
+        "sub_heading_font_size": 20,
+        "sub_heading_line_height": 30,
+        "gap_from_sides": 60,
+        "overlay_color": "#000000",
+        "overlay_color_opacity": 40,
+        "background_image": "shopify:\/\/shop_images\/sections_3866cb04-d1f2-40bd-952c-8b12e56718ee.jpg"
+      }
+    },
+    "19c35dca-c47e-4daf-a0e1-7f2d909929fc": {
+      "type": "rich-section",
+      "blocks": {
+        "6e11ac66-3409-4050-bc20-972fbae39753": {
+          "type": "rich_header",
+          "settings": {
+            "rich_title": "Promotions",
+            "rich_title_tag": "large"
+          }
+        },
+        "d979ed68-40bd-4c34-afbd-e401fcf69acd": {
+          "type": "rich_text",
+          "settings": {
+            "description": "<p>High variety of options to promote your product<\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "6e11ac66-3409-4050-bc20-972fbae39753",
+        "d979ed68-40bd-4c34-afbd-e401fcf69acd"
+      ],
+      "settings": {
+        "background_color": "#FFFFFF",
+        "content_color": "#000000",
+        "section_padding": 100,
+        "align_content": "text-center",
+        "full_width": false
+      }
+    },
+    "deb0951c-7638-4016-a0fc-18899e3ca4da": {
+      "type": "image-with-text",
+      "blocks": {
+        "b0d754ba-2500-4228-9f17-2d1494f5ee3e": {
+          "type": "heading",
+          "settings": {
+            "heading": "Use Promotions in Collections"
+          }
+        },
+        "c94f8715-90e8-4ab0-adcd-68725f3de211": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Embed promotions directly within your product collections, creating a more dynamic and engaging shopping experience. Boost customer interest and sales effortlessly by highlighting special deals and featured products in a visually appealing and organized manner.<\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "b0d754ba-2500-4228-9f17-2d1494f5ee3e",
+        "c94f8715-90e8-4ab0-adcd-68725f3de211"
+      ],
+      "settings": {
+        "image": "shopify:\/\/shop_images\/promocol.jpg",
+        "image_size": 50,
+        "max_width": 100,
+        "text_width": 5,
+        "heading_font_size": "large",
+        "image_position": "image-on-right",
+        "text_align": "text-left",
+        "section_bg": "",
+        "full_width": false
+      }
+    },
+    "ec1b8b16-55c0-4637-a749-ce950a1fcb21": {
+      "type": "image-with-text",
+      "blocks": {
+        "dbdc9eac-6594-4b20-85b3-5f003262840c": {
+          "type": "heading",
+          "settings": {
+            "heading": "Use Promotions in Collections"
+          }
+        },
+        "e36051ff-32ca-4ed7-83b4-4dc36cfc7147": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Integrate promotions seamlessly into your site’s mega menu, making it easier for customers to discover special deals and featured products as they browse. Enhance user engagement and drive sales with this intuitive and visually appealing addition, elevating your mega menu to not just a navigational tool but a dynamic promotional platform.<\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "dbdc9eac-6594-4b20-85b3-5f003262840c",
+        "e36051ff-32ca-4ed7-83b4-4dc36cfc7147"
+      ],
+      "settings": {
+        "image": "shopify:\/\/shop_images\/menupromo.jpg",
+        "image_size": 50,
+        "max_width": 100,
+        "text_width": 5,
+        "heading_font_size": "large",
+        "image_position": "image-on-left",
+        "text_align": "text-left",
+        "section_bg": "",
+        "full_width": false
+      }
+    },
+    "9782419d-61b7-454f-9998-5adf95ba39ac": {
+      "type": "image-with-text",
+      "blocks": {
+        "462beaab-6689-4963-a1f0-b5c72df1c36c": {
+          "type": "heading",
+          "settings": {
+            "heading": "Use Promotions in Collections"
+          }
+        },
+        "32fa63b7-d2e7-4e46-976c-8d2f22df59e2": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Embed interactive hotspots on your product images, enabling customers to click and uncover detailed information, special features, or exclusive offers. This interactive and engaging tool not only enriches the customer experience but also highlights the unique aspects of your products, enhancing both engagement and the potential for increased sales.<\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "462beaab-6689-4963-a1f0-b5c72df1c36c",
+        "32fa63b7-d2e7-4e46-976c-8d2f22df59e2"
+      ],
+      "settings": {
+        "image": "shopify:\/\/shop_images\/hotspots.jpg",
+        "image_size": 50,
+        "max_width": 100,
+        "text_width": 5,
+        "heading_font_size": "large",
+        "image_position": "image-on-right",
+        "text_align": "text-left",
+        "section_bg": "",
+        "full_width": false
+      }
+    },
+    "428ff177-5dec-4b90-a255-fff071d8b991": {
+      "type": "image-with-text",
+      "blocks": {
+        "421510ac-3b42-4652-9748-5a8d7d7d8f5e": {
+          "type": "heading",
+          "settings": {
+            "heading": "Use Promotions in Collections"
+          }
+        },
+        "2772a4ea-7fc1-4c71-b391-9f89452e039d": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Apply custom badges to your products, helping them stand out and capture customer attention. Whether it's highlighting new arrivals, bestsellers, or special offers, these eye-catching badges are a simple yet effective way to differentiate your products and boost their visibility, directly impacting customer engagement and sales.<\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "421510ac-3b42-4652-9748-5a8d7d7d8f5e",
+        "2772a4ea-7fc1-4c71-b391-9f89452e039d"
+      ],
+      "settings": {
+        "image": "shopify:\/\/shop_images\/badges.jpg",
+        "image_size": 50,
+        "max_width": 100,
+        "text_width": 5,
+        "heading_font_size": "large",
+        "image_position": "image-on-left",
+        "text_align": "text-left",
+        "section_bg": "",
+        "full_width": false
+      }
+    },
+    "01580b8e-79bf-45cf-9037-93eaad05d68d": {
+      "type": "rich-section",
+      "blocks": {
+        "47070524-643d-427e-b8c7-e42662fa32a9": {
+          "type": "rich_header",
+          "settings": {
+            "rich_title": "Products",
+            "rich_title_tag": "large"
+          }
+        },
+        "9773dcad-1d65-4649-ae00-938bb2915838": {
+          "type": "rich_text",
+          "settings": {
+            "description": "<p>High variety of options to promote your product<\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "47070524-643d-427e-b8c7-e42662fa32a9",
+        "9773dcad-1d65-4649-ae00-938bb2915838"
+      ],
+      "settings": {
+        "background_color": "#FFFFFF",
+        "content_color": "#000000",
+        "section_padding": 100,
+        "align_content": "text-center",
+        "full_width": false
+      }
+    },
+    "da446824-5fcd-48ae-a41c-aeedf44a5a59": {
+      "type": "multiple-columns",
+      "blocks": {
+        "template--14728833269859__da446824-5fcd-48ae-a41c-aeedf44a5a59-column-1": {
+          "type": "column",
+          "settings": {
+            "select_icon": "award",
+            "select_icon_active": false,
+            "icon_size": 30,
+            "block_title": "Advanced Filtering",
+            "title_size": "small",
+            "block_content": "<p>Allow customers to effortlessly sort and find products based on their preferences, streamlining their shopping journey and significantly improving product discoverability and customer satisfaction.<\/p>",
+            "items_align": "left",
+            "cover_image": "shopify:\/\/shop_images\/filter.jpg",
+            "cover_image_force": true
+          }
+        },
+        "template--14728833269859__da446824-5fcd-48ae-a41c-aeedf44a5a59-column-2": {
+          "type": "column",
+          "settings": {
+            "select_icon": "award",
+            "select_icon_active": false,
+            "icon_size": 30,
+            "block_title": "Product View Adjustments",
+            "title_size": "small",
+            "block_content": "<p>Modify product layouts, ensuring an optimal viewing experience that aligns with your brand aesthetic and enhances customer engagement.<\/p>",
+            "items_align": "left",
+            "cover_image": "shopify:\/\/shop_images\/coming.jpg",
+            "cover_image_force": true
+          }
+        },
+        "template--14728833269859__da446824-5fcd-48ae-a41c-aeedf44a5a59-column-3": {
+          "type": "column",
+          "settings": {
+            "select_icon": "award",
+            "select_icon_active": false,
+            "icon_size": 30,
+            "block_title": "Image Zoom",
+            "title_size": "small",
+            "block_content": "<p>Show detailed, up-close views of product images, helping customers make informed decisions with greater confidence and clarity.<\/p>",
+            "items_align": "left",
+            "cover_image": "shopify:\/\/shop_images\/zoom.jpg",
+            "cover_image_force": true
+          }
+        }
+      },
+      "block_order": [
+        "template--14728833269859__da446824-5fcd-48ae-a41c-aeedf44a5a59-column-1",
+        "template--14728833269859__da446824-5fcd-48ae-a41c-aeedf44a5a59-column-2",
+        "template--14728833269859__da446824-5fcd-48ae-a41c-aeedf44a5a59-column-3"
+      ],
+      "settings": {
+        "column_per_line": 3,
+        "section_padding_top": 0,
+        "section_padding_bottom": 50,
+        "full_width": true
+      }
+    },
+    "05d2fd64-ef10-4008-8953-40de7f84ff4d": {
+      "type": "multiple-columns",
+      "blocks": {
+        "5478970b-dabe-432c-8a29-cb3542d8b3f5": {
+          "type": "column",
+          "settings": {
+            "select_icon": "award",
+            "select_icon_active": false,
+            "icon_size": 30,
+            "block_title": "Shopify Reviews",
+            "title_size": "small",
+            "block_content": "<p>Enable customers to easily leave and read reviews, providing valuable feedback that enhances your product's reputation and assists future buyers in their purchasing decisions.<\/p>",
+            "items_align": "left",
+            "cover_image": "shopify:\/\/shop_images\/reviews.jpg",
+            "cover_image_force": true
+          }
+        },
+        "f9a6456e-698a-4c64-a6cb-88afc1bdb9c0": {
+          "type": "column",
+          "settings": {
+            "select_icon": "award",
+            "select_icon_active": false,
+            "icon_size": 30,
+            "block_title": "Custom Badges",
+            "title_size": "small",
+            "block_content": "<p>Create and display unique badges on your products, highlighting special features or promotions, and instantly drawing customer attention to your key offerings.<\/p>",
+            "items_align": "left",
+            "cover_image": "shopify:\/\/shop_images\/custom.jpg",
+            "cover_image_force": true
+          }
+        },
+        "f338f66c-fdd4-48b9-be11-e67a334724d1": {
+          "type": "column",
+          "settings": {
+            "select_icon": "award",
+            "select_icon_active": false,
+            "icon_size": 30,
+            "block_title": "Stock Inventory",
+            "title_size": "small",
+            "block_content": "<p>Provide real-time updates on your inventory levels, ensuring accurate information for customers. Keep your customers informed and create a sense of urgency. <\/p>",
+            "items_align": "left",
+            "cover_image": "shopify:\/\/shop_images\/inventory.jpg",
+            "cover_image_force": true
+          }
+        }
+      },
+      "block_order": [
+        "5478970b-dabe-432c-8a29-cb3542d8b3f5",
+        "f9a6456e-698a-4c64-a6cb-88afc1bdb9c0",
+        "f338f66c-fdd4-48b9-be11-e67a334724d1"
+      ],
+      "settings": {
+        "column_per_line": 3,
+        "section_padding_top": 0,
+        "section_padding_bottom": 50,
+        "full_width": true
+      }
+    },
+    "3b206074-cdd4-4c5f-9b95-71d7274985a7": {
+      "type": "rich-section",
+      "blocks": {
+        "18289268-6305-414d-9da9-34ed14d03c21": {
+          "type": "rich_header",
+          "settings": {
+            "rich_title": "Plus",
+            "rich_title_tag": "large"
+          }
+        },
+        "beae163e-93bb-40b9-9c41-b0e99b756449": {
+          "type": "rich_text",
+          "settings": {
+            "description": "<p>Discover more features to further elevate your store's potential<\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "18289268-6305-414d-9da9-34ed14d03c21",
+        "beae163e-93bb-40b9-9c41-b0e99b756449"
+      ],
+      "settings": {
+        "background_color": "#FFFFFF",
+        "content_color": "#000000",
+        "section_padding": 30,
+        "align_content": "text-center",
+        "full_width": false
+      }
+    },
+    "8563ce2a-a11c-425a-9424-6173ec086a34": {
+      "type": "multiple-columns",
+      "blocks": {
+        "template--14728833269859__8563ce2a-a11c-425a-9424-6173ec086a34-column-1": {
+          "type": "column",
+          "settings": {
+            "select_icon": "award",
+            "select_icon_active": false,
+            "icon_size": 30,
+            "block_title": "Glass Navigation, Background & Buttons",
+            "title_size": "small",
+            "block_content": "<p>Try different colors and use our signature Glass effect to standout from competitors.<\/p>",
+            "items_align": "left",
+            "cover_image_force": false
+          }
+        },
+        "template--14728833269859__8563ce2a-a11c-425a-9424-6173ec086a34-column-2": {
+          "type": "column",
+          "settings": {
+            "select_icon": "award",
+            "select_icon_active": false,
+            "icon_size": 30,
+            "block_title": "Mega Menu Navigation",
+            "title_size": "small",
+            "block_content": "<p>Create various submenus and layout options to promote your products.<\/p>",
+            "items_align": "left",
+            "cover_image_force": false
+          }
+        },
+        "template--14728833269859__8563ce2a-a11c-425a-9424-6173ec086a34-column-3": {
+          "type": "column",
+          "settings": {
+            "select_icon": "award",
+            "select_icon_active": false,
+            "icon_size": 30,
+            "block_title": "Multipurpose Popus",
+            "title_size": "small",
+            "block_content": "<p>Ideal for signing up for newsletters, showcasing promotions, and setting up countdowns with flexible layout choices.<\/p>",
+            "items_align": "left",
+            "cover_image_force": false
+          }
+        },
+        "4eacc329-c79c-4bbd-b33a-cfe1c7c40a59": {
+          "type": "column",
+          "settings": {
+            "select_icon": "award",
+            "select_icon_active": false,
+            "icon_size": 30,
+            "block_title": "Shop the Look",
+            "title_size": "small",
+            "block_content": "<p>Enhance customer engagement and drive sales by showcasing several products within one interactive picture.<\/p>",
+            "items_align": "left",
+            "cover_image_force": false
+          }
+        },
+        "504514f2-0453-43c2-8117-03e495484ac2": {
+          "type": "column",
+          "settings": {
+            "select_icon": "award",
+            "select_icon_active": false,
+            "icon_size": 30,
+            "block_title": "Quick View",
+            "title_size": "small",
+            "block_content": "<p>Let customers view details and add items to their cart directly, skipping the need to visit the product page.<\/p>",
+            "items_align": "left",
+            "cover_image_force": false
+          }
+        },
+        "1d822bd7-2742-4d7c-a305-528ccda42227": {
+          "type": "column",
+          "settings": {
+            "select_icon": "award",
+            "select_icon_active": false,
+            "icon_size": 30,
+            "block_title": "Free Shipping Bar",
+            "title_size": "small",
+            "block_content": "<p>Drive quick purchases with an integrated progress bar in the Cart, encouraging customers to buy more.<\/p>",
+            "items_align": "left",
+            "cover_image_force": false
+          }
+        },
+        "4cd73078-3c09-4a6d-8ccb-d8c6bb7a5e42": {
+          "type": "column",
+          "settings": {
+            "select_icon": "award",
+            "select_icon_active": false,
+            "icon_size": 30,
+            "block_title": "Powerful FilteringOptions",
+            "title_size": "small",
+            "block_content": "<p>Have your customers find products fast using a price slider, color swatches, and handy product tags for smooth browsing.<\/p>",
+            "items_align": "left",
+            "cover_image_force": false
+          }
+        },
+        "456a589b-5f4a-40d5-aa5a-752888648d65": {
+          "type": "column",
+          "settings": {
+            "select_icon": "award",
+            "select_icon_active": false,
+            "icon_size": 30,
+            "block_title": "Column SpacingAdjustments",
+            "title_size": "small",
+            "block_content": "<p>Refine your layout with Column Spacing Adjustments, ensuring a tailored and streamlined appearance for your content.<\/p>",
+            "items_align": "left",
+            "cover_image_force": false
+          }
+        },
+        "5d3ec86a-abe1-4eae-bce5-bafb6f54a0e2": {
+          "type": "column",
+          "settings": {
+            "select_icon": "award",
+            "select_icon_active": false,
+            "icon_size": 30,
+            "block_title": "Countdown Timer",
+            "title_size": "small",
+            "block_content": "<p>Show a real-time countdown for special events or deals, building excitement among your shoppers.<\/p>",
+            "items_align": "left",
+            "cover_image_force": false
+          }
+        },
+        "fa5eb26c-aa90-41e7-bc86-33e7a8be89b9": {
+          "type": "column",
+          "settings": {
+            "select_icon": "award",
+            "select_icon_active": false,
+            "icon_size": 30,
+            "block_title": "Anouncement Bar",
+            "title_size": "small",
+            "block_content": "<p>Highlight important updates or offers at the top with the Announcement Bar, keeping your customers informed and engaged.<\/p>",
+            "items_align": "left",
+            "cover_image_force": false
+          }
+        },
+        "baef4342-8963-4481-afb7-29c61c1037e1": {
+          "type": "column",
+          "settings": {
+            "select_icon": "award",
+            "select_icon_active": false,
+            "icon_size": 30,
+            "block_title": "Collection PagePromotion Field",
+            "title_size": "small",
+            "block_content": "<p>Feature your top deals or highlights on the Collection Page using the Promotion Field, ensuring your customers see the best you have to offer.<\/p>",
+            "items_align": "left",
+            "cover_image_force": false
+          }
+        },
+        "f3a8b59e-1557-4022-8aec-e8ce67631a98": {
+          "type": "column",
+          "settings": {
+            "select_icon": "award",
+            "select_icon_active": false,
+            "icon_size": 30,
+            "block_title": "Age VerificaitionPopup",
+            "title_size": "small",
+            "block_content": "<p>Ensure age-appropriate browsing with the Age Verification Popup, prompting visitors to confirm their age before accessing certain content.<\/p>",
+            "items_align": "left",
+            "cover_image_force": false
+          }
+        },
+        "1d7016a3-6410-4a22-8706-fc780b4018d4": {
+          "type": "column",
+          "settings": {
+            "select_icon": "award",
+            "select_icon_active": false,
+            "icon_size": 30,
+            "block_title": "Custom ProductBadges",
+            "title_size": "small",
+            "block_content": "<p>Add custom badges to products to showcase new items, limited editions, top-sellers, and beyond.<\/p>",
+            "items_align": "left",
+            "cover_image_force": false
+          }
+        },
+        "298691e7-aeb8-49a7-b74f-a1c73a625019": {
+          "type": "column",
+          "settings": {
+            "select_icon": "award",
+            "select_icon_active": false,
+            "icon_size": 30,
+            "block_title": "Newsletter Sign UpFields",
+            "title_size": "small",
+            "block_content": "<p>Capture customer interest and grow your subscriber list with Newsletter Sign-Up Fields, making it easy for visitors to stay informed.<\/p>",
+            "items_align": "left",
+            "cover_image_force": false
+          }
+        },
+        "c53e2acd-41cb-4c9c-a6d7-d40bca77fed5": {
+          "type": "column",
+          "settings": {
+            "select_icon": "award",
+            "select_icon_active": false,
+            "icon_size": 30,
+            "block_title": "Collapsible Information Fields",
+            "title_size": "small",
+            "block_content": "<p>Keep your content neat and organized with Collapsible Information Fields, allowing users to expand details as they wish.<\/p>",
+            "items_align": "left",
+            "cover_image_force": false
+          }
+        },
+        "59a28936-0fe2-4e86-af1c-44b8ede9f624": {
+          "type": "column",
+          "settings": {
+            "select_icon": "award",
+            "select_icon_active": false,
+            "icon_size": 30,
+            "block_title": "Predictive Search",
+            "title_size": "small",
+            "block_content": "<p>Anticipate your customer's needs with our predictive search, offering real-time suggestions as they type.<\/p>",
+            "items_align": "left",
+            "cover_image_force": false
+          }
+        },
+        "316c6a83-2811-40e5-b6ef-49cc625bbd90": {
+          "type": "column",
+          "settings": {
+            "select_icon": "award",
+            "select_icon_active": false,
+            "icon_size": 30,
+            "block_title": "Color Swatch Customization",
+            "title_size": "small",
+            "block_content": "<p>Fine-tune your product visuals with color swatch customization, ensuring shoppers see the perfect shade every time.<\/p>",
+            "items_align": "left",
+            "cover_image_force": false
+          }
+        },
+        "b52bcbe3-3bb6-4296-af5f-2100a69f2ffc": {
+          "type": "column",
+          "settings": {
+            "select_icon": "award",
+            "select_icon_active": false,
+            "icon_size": 30,
+            "block_title": "Section Padding",
+            "title_size": "small",
+            "block_content": "<p>Tailor your site's feel with adjustable section padding, ensuring the perfect spacing for a clean and balanced look.<\/p>",
+            "items_align": "left",
+            "cover_image_force": false
+          }
+        },
+        "2989ae46-9f81-4d86-9b70-17524674f796": {
+          "type": "column",
+          "settings": {
+            "select_icon": "award",
+            "select_icon_active": false,
+            "icon_size": 30,
+            "block_title": "Section WidthCustomization",
+            "title_size": "small",
+            "block_content": "<p>Fine-tune your site's layout with section width adjustments, giving each segment the perfect breadth for an optimized look.<\/p>",
+            "items_align": "left",
+            "cover_image_force": false
+          }
+        },
+        "0b320b62-4bf1-402e-a0ec-81291ef89e54": {
+          "type": "column",
+          "settings": {
+            "select_icon": "award",
+            "select_icon_active": false,
+            "icon_size": 30,
+            "block_title": "Animations",
+            "title_size": "small",
+            "block_content": "<p>Breathe life into your content with dynamic animations, adding movement and flair to captivate your audience.<\/p>",
+            "items_align": "left",
+            "cover_image_force": false
+          }
+        },
+        "50d03672-8790-4242-8b32-93b7cf448fb4": {
+          "type": "column",
+          "settings": {
+            "select_icon": "award",
+            "select_icon_active": false,
+            "icon_size": 30,
+            "block_title": "Custom Icons",
+            "title_size": "small",
+            "block_content": "<p>Select from a variety of 50+ specially-crafted icons to showcase your product or business highlights.<\/p>",
+            "items_align": "left",
+            "cover_image_force": false
+          }
+        },
+        "c1b2ff9d-b32d-405c-8cb7-ae7ff708c2fe": {
+          "type": "column",
+          "settings": {
+            "select_icon": "award",
+            "select_icon_active": false,
+            "icon_size": 30,
+            "block_title": "Flexible Hero Section",
+            "title_size": "small",
+            "block_content": "<p>Adjust and tailor the main showcase area to fit your brand's vision with our adaptable hero section.<\/p>",
+            "items_align": "left",
+            "cover_image_force": false
+          }
+        },
+        "90ebf7e4-e995-4f31-8595-f8d238090678": {
+          "type": "column",
+          "settings": {
+            "select_icon": "award",
+            "select_icon_active": false,
+            "icon_size": 30,
+            "block_title": "And Many More",
+            "title_size": "small",
+            "block_content": "<p>Explore numerous other settings to elevate your shop's uniqueness and boost your sales.<\/p>",
+            "items_align": "left",
+            "cover_image_force": false
+          }
+        }
+      },
+      "block_order": [
+        "template--14728833269859__8563ce2a-a11c-425a-9424-6173ec086a34-column-1",
+        "template--14728833269859__8563ce2a-a11c-425a-9424-6173ec086a34-column-2",
+        "template--14728833269859__8563ce2a-a11c-425a-9424-6173ec086a34-column-3",
+        "4eacc329-c79c-4bbd-b33a-cfe1c7c40a59",
+        "504514f2-0453-43c2-8117-03e495484ac2",
+        "1d822bd7-2742-4d7c-a305-528ccda42227",
+        "4cd73078-3c09-4a6d-8ccb-d8c6bb7a5e42",
+        "456a589b-5f4a-40d5-aa5a-752888648d65",
+        "5d3ec86a-abe1-4eae-bce5-bafb6f54a0e2",
+        "fa5eb26c-aa90-41e7-bc86-33e7a8be89b9",
+        "baef4342-8963-4481-afb7-29c61c1037e1",
+        "f3a8b59e-1557-4022-8aec-e8ce67631a98",
+        "1d7016a3-6410-4a22-8706-fc780b4018d4",
+        "298691e7-aeb8-49a7-b74f-a1c73a625019",
+        "c53e2acd-41cb-4c9c-a6d7-d40bca77fed5",
+        "59a28936-0fe2-4e86-af1c-44b8ede9f624",
+        "316c6a83-2811-40e5-b6ef-49cc625bbd90",
+        "b52bcbe3-3bb6-4296-af5f-2100a69f2ffc",
+        "2989ae46-9f81-4d86-9b70-17524674f796",
+        "0b320b62-4bf1-402e-a0ec-81291ef89e54",
+        "50d03672-8790-4242-8b32-93b7cf448fb4",
+        "c1b2ff9d-b32d-405c-8cb7-ae7ff708c2fe",
+        "90ebf7e4-e995-4f31-8595-f8d238090678"
+      ],
+      "settings": {
+        "column_per_line": 4,
+        "section_padding_top": 0,
+        "section_padding_bottom": 50,
+        "full_width": true
+      }
+    },
+    "9f60eba7-5b98-4fe5-abcb-90f708d82e7b": {
+      "type": "rich-section",
+      "blocks": {
+        "ee05433e-31a6-4937-adb8-273a8c382d77": {
+          "type": "rich_header",
+          "settings": {
+            "rich_title": "Customer Support",
+            "rich_title_tag": "large"
+          }
+        },
+        "602a9e90-61a1-4fa1-b551-f23d10a62f64": {
+          "type": "rich_text",
+          "settings": {
+            "description": "<p>Experience our outstanding customer service, marked by rapid responses, efficiency, and genuine care. With our top-tier technical support, feel valued and understood—because excellence in support is our promise to you.<\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "ee05433e-31a6-4937-adb8-273a8c382d77",
+        "602a9e90-61a1-4fa1-b551-f23d10a62f64"
+      ],
+      "settings": {
+        "background_color": "#B8C9D6",
+        "content_color": "#ffffff",
+        "section_padding": 100,
+        "align_content": "text-center",
+        "full_width": false
+      }
+    },
+    "fb94fe61-bcb4-47ca-9990-5e793c5e216b": {
+      "type": "rich-section",
+      "blocks": {
+        "f6c1f43f-4dce-4ed8-91f5-ebe3e130bd3c": {
+          "type": "rich_header",
+          "settings": {
+            "rich_title": "For Developers",
+            "rich_title_tag": "large"
+          }
+        },
+        "b3f9dfa5-92f8-4e30-a420-0e2a72c990f2": {
+          "type": "rich_text",
+          "settings": {
+            "description": "<p>High variety of options to promote your product<\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "f6c1f43f-4dce-4ed8-91f5-ebe3e130bd3c",
+        "b3f9dfa5-92f8-4e30-a420-0e2a72c990f2"
+      ],
+      "settings": {
+        "background_color": "#000",
+        "content_color": "#ffffff",
+        "section_padding": 59,
+        "align_content": "text-center",
+        "full_width": false
+      }
+    },
+    "1c1c5124-176e-42d9-b085-bebb3cf2eb7e": {
+      "type": "multiple-columns",
+      "blocks": {
+        "template--14728833269859__1c1c5124-176e-42d9-b085-bebb3cf2eb7e-column-1": {
+          "type": "column",
+          "settings": {
+            "select_icon": "award",
+            "select_icon_active": false,
+            "icon_size": 30,
+            "block_title": "Accessibility",
+            "title_size": "small",
+            "block_content": "<p>We prioritize accessibility, ensuring everyone can navigate with ease. Whether it's through keyboard shortcuts, ARIA roles, or alternative content, we've designed with inclusivity in mind.<\/p>",
+            "items_align": "center",
+            "cover_image_force": false
+          }
+        },
+        "template--14728833269859__1c1c5124-176e-42d9-b085-bebb3cf2eb7e-column-2": {
+          "type": "column",
+          "settings": {
+            "select_icon": "award",
+            "select_icon_active": false,
+            "icon_size": 30,
+            "block_title": "Finetuned to the Smallest Fraction in Time",
+            "title_size": "small",
+            "block_content": "<p>We're dedicated to lightning-fast performance. Experience blazing speeds and minimized wait times for a smoother browsing journey.<\/p>",
+            "items_align": "left",
+            "cover_image_force": false
+          }
+        },
+        "template--14728833269859__1c1c5124-176e-42d9-b085-bebb3cf2eb7e-column-3": {
+          "type": "column",
+          "settings": {
+            "select_icon": "award",
+            "select_icon_active": false,
+            "icon_size": 30,
+            "block_title": "Developed by Industry Veterans",
+            "title_size": "small",
+            "block_content": "<p>Designed by a diverse team of theme developers, UI\/UX specialists, merchants, designers, and SaaS pioneers. Rely on the expertise and insights of industry leaders.<\/p>",
+            "items_align": "center",
+            "cover_image_force": false
+          }
+        }
+      },
+      "block_order": [
+        "template--14728833269859__1c1c5124-176e-42d9-b085-bebb3cf2eb7e-column-1",
+        "template--14728833269859__1c1c5124-176e-42d9-b085-bebb3cf2eb7e-column-2",
+        "template--14728833269859__1c1c5124-176e-42d9-b085-bebb3cf2eb7e-column-3"
+      ],
+      "custom_css": [
+
+      ],
+      "settings": {
+        "column_per_line": 3,
+        "section_padding_top": 0,
+        "section_padding_bottom": 50,
+        "full_width": true
+      }
+    }
+  },
+  "order": [
+    "503202e4-90be-42ee-bd9d-7b3d492e6522",
+    "514a8c17-efcb-4a12-a145-a807ee44a43d",
+    "43a5e2c0-6f15-48a3-9977-44e413809363",
+    "default_page",
+    "spacer-2",
+    "c1fb4d61-a950-461f-b6c5-3f3ae182afad",
+    "4499543f-9597-4703-87c2-32d47621a546",
+    "d18b40bd-06cb-469b-bcd0-4097470750a9",
+    "95c9084a-470d-4431-a42b-6abdb1573586",
+    "00371a23-69de-4ec0-9a6e-7d81e6e60fae",
+    "18fef974-2c85-44b5-848f-102040aa5464",
+    "34f4fbc4-58ed-48fe-b713-d7dd16a578fb",
+    "19c35dca-c47e-4daf-a0e1-7f2d909929fc",
+    "deb0951c-7638-4016-a0fc-18899e3ca4da",
+    "ec1b8b16-55c0-4637-a749-ce950a1fcb21",
+    "9782419d-61b7-454f-9998-5adf95ba39ac",
+    "428ff177-5dec-4b90-a255-fff071d8b991",
+    "01580b8e-79bf-45cf-9037-93eaad05d68d",
+    "da446824-5fcd-48ae-a41c-aeedf44a5a59",
+    "05d2fd64-ef10-4008-8953-40de7f84ff4d",
+    "3b206074-cdd4-4c5f-9b95-71d7274985a7",
+    "8563ce2a-a11c-425a-9424-6173ec086a34",
+    "9f60eba7-5b98-4fe5-abcb-90f708d82e7b",
+    "fb94fe61-bcb4-47ca-9990-5e793c5e216b",
+    "1c1c5124-176e-42d9-b085-bebb3cf2eb7e"
+  ]
+}

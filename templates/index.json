@@ -1,562 +1,643 @@
 {
-    "sections": {
-        "home-slider": {
-            "type": "slideshow",
-            "blocks": {
-                "slide-1": {
-                    "type": "hero_slide",
-                    "settings": {
-                        "description": "<p>Write text to emphasize your story</p>",
-                        "heading": "Promote your story here!",
-                        "sub_heading": "Add subheading",
-                        "button_text": "BUTTON LABEL",
-                        "button_url": ""
-                    }
-                },
-                "slide-2": {
-                    "type": "hero_slide",
-                    "settings": {
-                        "description": "<p>Write text to emphasize your story</p>",
-                        "heading": "Promote your story here!",
-                        "sub_heading": "Add subheading",
-                        "button_text": "BUTTON LABEL",
-                        "button_url": ""
-                    }
-                }
-            },
-            "block_order": [
-                "slide-1",
-                "slide-2"
-            ],
-            "settings": {
-                "section_height": 100,
-                "text_position": "bottom-center",
-                "super": "SUPER",
-                "super_color": "#FFFFFF",
-                "super_opacity": 40,
-                "super_font_size": 20,
-                "super_gap": 300,
-                "gap_from_sides": 60,
-                "body_color": "#FFFFFF",
-                "heading_color": "#FFFFFF",
-                "sub_heading_color": "#FFFFFF"
-            }
+  "sections": {
+    "home-slider": {
+      "type": "slideshow",
+      "blocks": {
+        "slide-1": {
+          "type": "hero_slide",
+          "settings": {
+            "slide_bg": "shopify:\/\/shop_images\/carousel-hero.png",
+            "description": "<p>UNVEILING INNOVATION IN WINTER SPORTSWEAR<\/p>",
+            "heading": "Elevate to New Heights with Comfort",
+            "sub_heading": "Meet our 2023\/24 W\/F Collection",
+            "button_text": "VIEW MORE",
+            "button_url": "shopify:\/\/collections",
+            "button_style": "model-4",
+            "overlay_color": "#000000",
+            "overlay_color_opacity": 40
+          }
         },
-        "home-counter": {
-            "type": "countdown-bar",
-            "settings": {
-                "title": "Countdown Bar.",
-                "sub_title": "Use this timer to create urgency and boost sales!",
-                "year": 2024,
-                "month": "1",
-                "day": "1",
-                "hour": 1,
-                "minute": 1,
-                "text_color": "#FFFFFF",
-                "background": "linear-gradient(#000000, #000000)"
-            }
-        },
-        "home-collection-list": {
-            "type": "collection-list",
-            "blocks": {
-                "fs-1": {
-                    "type": "slide",
-                    "settings": {
-                        "collection": ""
-                    }
-                },
-                "fs-2": {
-                    "type": "slide",
-                    "settings": {
-                        "collection": ""
-                    }
-                }
-            },
-            "block_order": [
-                "fs-1",
-                "fs-2"
-            ],
-            "settings": {
-                "heading": "Collection List.",
-                "title_color": "#000000",
-                "sub-heading": "<p><strong>Use this section with a slider and tabs to display the products in your collections.</p></strong>",
-                "sub_title_color": "#000000",
-                "image_size": "three-four",
-                "background_color": "linear-gradient(180deg, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0) 100%)",
-                "section_padding_top": 50,
-                "full_width": false
-            }
-        },
-        "home-collection-showcase": {
-            "type": "collection-showcase",
-            "settings": {
-                "heading": "Collection Showcase.",
-                "heading_color": "#000000",
-                "heading_font_size": "large",
-                "sub_heading": "<p><strong>Use this section to showcase your collections</strong></p>",
-                "sub_heading_color": "#000000",
-                "sub_heading_font_size": 24,
-                "collection_per_line": 3,
-                "collection_list": [],
-                "spacings": 16,
-                "collection_item_title_color": "#FFFFFF",
-                "collection_item_title_size": 16,
-                "shop_now_color": "#FFFFFF",
-                "shop_now_size": 14,
-                "background_color": "linear-gradient(180deg, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0) 100%)",
-                "section_padding_top": 50,
-                "section_padding_bottom": 50,
-                "full_width": false
-            },
-            "blocks": {
-                "collection-1": {
-                    "type": "collection",
-                    "settings": {
-                        "collection": ""
-                    }
-                },
-                "collection-2": {
-                    "type": "collection",
-                    "settings": {
-                        "collection": ""
-                    }
-                },
-                "collection-3": {
-                    "type": "collection",
-                    "settings": {
-                        "collection": ""
-                    }
-                }
-            },
-            "block_order": [
-                "collection-1",
-                "collection-2",
-                "collection-3"
-            ]
-        },
-        "home-featured-collections": {
-            "type": "featured-collections",
-            "settings": {
-                "collection_header_color": "#FFFFFF",
-                "collection_header_size": 96,
-                "enable_description": "enabled",
-                "collection_description_lenght": 40,
-                "collection_description_color": "#FFFFFF",
-                "collection_description_size": 24,
-                "collection_button_text": "BUTTON LABEL",
-                "collection_per_line": 1,
-                "collection_list": [],
-                "spacings": 0,
-                "section_margin": 0,
-                "heading_font_size": "large"
-            },
-            "blocks": {
-                "collection-1": {
-                    "type": "collection",
-                    "settings": {
-                        "collection": ""
-                    }
-                }
-            },
-            "block_order": [
-                "collection-1"
-            ]
-        },
-        "home-featured-collections-2": {
-            "type": "featured-collections",
-            "settings": {
-                "collection_header_color": "#FFFFFF",
-                "collection_header_size": 96,
-                "enable_description": "enabled",
-                "collection_description_lenght": 40,
-                "collection_description_color": "#FFFFFF",
-                "collection_description_size": 24,
-                "collection_button_text": "BUTTON LABEL",
-                "collection_per_line": 2,
-                "collection_list": [],
-                "spacings": 16,
-                "heading_font_size": "large",
-                "full_width": false
-            },
-            "blocks": {
-                "collection-1": {
-                    "type": "collection",
-                    "settings": {
-                        "collection": ""
-                    }
-                },
-                "collection-2": {
-                    "type": "collection",
-                    "settings": {
-                        "collection": ""
-                    }
-                }
-            },
-            "block_order": [
-                "collection-1",
-                "collection-2"
-            ]
-        },
-        "home-image-with-text": {
-            "type": "image-with-text",
-            "blocks": {
-                "header": {
-                    "type": "heading",
-                    "settings": {
-                        "heading": "Image with text"
-                    }
-                },
-                "text": {
-                    "type": "text",
-                    "settings": {
-                        "text": "<p>Use this space to tell your customers about your brand. Describe a product, share news, or greet visitors to your store.</p>"
-                    }
-                },
-                "link": {
-                    "type": "button",
-                    "settings": {
-                        "button_label": "Read More",
-                        "button_link": ""
-                    }
-                }
-            },
-            "block_order": [
-                "header",
-                "text",
-                "link"
-            ],
-            "settings": {
-                "image_size": 50,
-                "max_width": 100,
-                "text_width": 5,
-                "heading_font_size": "large",
-                "heading_line_height": 78,
-                "text_font_size": 18,
-                "text_line_height": 28,
-                "image_position": "image-on-left",
-                "section_bg": "#FFFFFF",
-                "section_margin": 0,
-                "full_width": false
-            }
-        },
-        "home-image-with-text-2": {
-            "type": "image-with-text",
-            "blocks": {
-                "header": {
-                    "type": "heading",
-                    "settings": {
-                        "heading": "Our Sustainable 'YORS' World"
-                    }
-                },
-                "text": {
-                    "type": "text",
-                    "settings": {
-                        "text": "<p>In order to be sensitive to our world as Y.orstruly family, our sustainability vision covers a wide range from our fabric, sewing, packaging and labels.</p>"
-                    }
-                },
-                "link": {
-                    "type": "button",
-                    "settings": {
-                        "button_label": "Read More",
-                        "button_link": ""
-                    }
-                }
-            },
-            "block_order": [
-                "header",
-                "text",
-                "link"
-            ],
-            "settings": {
-                "image_size": 50,
-                "max_width": 100,
-                "text_width": 5,
-                "heading_font_size": "small",
-                "heading_line_height": 78,
-                "text_font_size": 18,
-                "text_line_height": 28,
-                "image_position": "image-on-right",
-                "section_bg": "#FFFFFF",
-                "section_margin": 0,
-                "full_width": false
-            }
-        },
-        "home-featured-posts": {
-            "type": "featured-posts",
-            "settings": {
-                "heading": "Featured Posts.",
-                "title_color": "#000000",
-                "sub-heading": "<p>Add subheading</p>",
-                "sub_title_color": "#000000",
-                "product_per_row": 3,
-                "blog": "",
-                "background_color": "linear-gradient(180deg, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0) 100%)",
-                "section_padding_top": 50,
-                "section_padding_bottom": 50,
-                "section_margin": 0
-            }
-        },
-        "home-banner": {
-            "type": "banner",
-            "blocks": {
-                "header": {
-                    "type": "heading",
-                    "settings": {
-                        "heading": "RISE STORE"
-                    }
-                },
-                "text": {
-                    "type": "text",
-                    "settings": {
-                        "sub_heading": "<p>Subheading</p>"
-                    }
-                },
-                "button": {
-                    "type": "button",
-                    "settings": {
-                        "button_text": "Button Label",
-                        "button_url": ""
-                    }
-                }
-            },
-            "block_order": [
-                "header",
-                "text",
-                "button"
-            ],
-            "settings": {
-                "section_height": 100,
-                "text_position": "bottom-left",
-                "super_color": "#FFFFFF",
-                "super_opacity": 40,
-                "super_font_size": 300,
-                "super_line_height": 350,
-                "heading_color": "#FFFFFF",
-                "heading_font_size": 48,
-                "heading_line_height": 60,
-                "sub_heading_color": "#FFFFFF",
-                "sub_heading_font_size": 20,
-                "sub_heading_line_height": 30,
-                "gap_from_sides": 60
-            }
-        },
-        "home-shop-the-look": {
-            "type": "shop-the-look",
-            "blocks": {
-                "test": {
-                    "type": "add_product",
-                    "settings": {
-                        "product_list": [],
-                        "pp_horizontal": 50,
-                        "pp_verticle": 50
-                    }
-                }
-            },
-            "block_order": [
-                "test"
-            ],
-            "settings": {}
-        },
-        "home-spacer-1": {
-            "type": "spacer",
-            "settings": {
-                "desktop_space": "128",
-                "mobile_space": "64"
-            }
-        },
-        "home-spacer-2": {
-            "type": "spacer",
-            "settings": {
-                "desktop_space": "128",
-                "mobile_space": "64"
-            }
-        },
-        "home-spacer-3": {
-            "type": "spacer",
-            "settings": {
-                "desktop_space": "128",
-                "mobile_space": "64"
-            }
-        },
-        "home-spacer-4": {
-            "type": "spacer",
-            "settings": {
-                "desktop_space": "128",
-                "mobile_space": "64"
-            }
-        },
-        "home-spacer-5": {
-            "type": "spacer",
-            "settings": {
-                "desktop_space": "128",
-                "mobile_space": "64"
-            }
-        },
-        "home-newsletter": {
-            "type": "newsletter"
-        },
-        "home-before-after-gallery": {
-            "type": "before-after-gallery"
-        },
-        "home-testimonial-slider": {
-            "type": "testimonial-slider",
-            "blocks": {
-                "quote": {
-                    "type": "quote"
-                },
-                "quote-2": {
-                    "type": "quote"
-                }
-            },
-            "block_order": [
-                "quote", "quote-2"
-            ]
-        },
-        "home-collapsible-rows": {
-            "type": "collapsible-rows",
-            "settings": {
-                "full_width": false
-            },
-            "blocks": {
-                "accordion": {
-                    "type": "accordion",
-                    "settings": {
-                        "accorion_title" :"How do I make a purchase?",
-                        "accorion_contnet": "<p>This is an example of a response that you might give. It's good to be as thorough as possible in responses as that has a tendency to improve trust overall.</p>"
-                    }
-                },
-                "accordion-2": {
-                    "type": "accordion",
-                    "settings": {
-                        "accorion_title" :"How do I know if my order is confirmed?",
-                        "accorion_contnet": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin eros ex, finibus vel augue eget, gravida ornare tortor. Nulla vel tristique eros, eget porta urna.</p>"
-                    }
-                },
-                "accordion-3": {
-                    "type": "accordion",
-                    "settings": {
-                        "accorion_title" :"Can I change my shipping address after my order is placed?",
-                        "accorion_contnet": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin eros ex, finibus vel augue eget, gravida ornare tortor. Nulla vel tristique eros, eget porta urna.</p>"
-                    }
-                }
-            },
-            "block_order": [
-                "accordion", "accordion-2", "accordion-3"
-            ]
-        },
-        "home-multiple-columns": {
-            "type": "multiple-columns",
-            "settings": {
-                "full_width": false
-            },
-            "blocks": {
-                "column-1": {
-                    "type": "column",
-                    "settings": {
-                        "block_title": "St. Agni",
-                        "title_size": "large",
-                        "items_align": "center",
-                        "block_content": "<p>Lorem ipsum dolor sit amet consectetur. Enim bibendum ultrices ultricies in eu lorem nec. Fames nulla sociis quam etiam mattis purus amet. Sed quisque ac id turpis. Euismod egestas nam.</p>"
-                    }
-                },
-                "column-2": {
-                    "type": "column",
-                    "settings": {
-                        "cover_image_force": true
-                    }
-                },
-                "column-3": {
-                    "type": "column",
-                    "settings": {
-                        "cover_image_force": true
-                    }
-                }
-            },
-            "block_order": [
-                "column-1", "column-2", "column-3"
-            ]
-        },
-        "home-multiple-columns-2": {
-            "type": "multiple-columns",
-            "settings": {
-                "full_width": true,
-                "column_per_line": 4,
-                "section_padding_top": 25,
-                "section_padding_bottom": 0
-            },
-            "blocks": {
-                "column-1": {
-                    "type": "column",
-                    "settings": {
-                        "select_icon_active": true,
-                        "select_icon": "deliverytruck",
-                        "block_title": "Easy Returns",
-                        "title_size": "small",
-                        "items_align": "center",
-                        "block_content": "<p>Your exchange ships out as soon as you email us</p>"
-                    }
-                },
-                "column-2": {
-                    "type": "column",
-                    "settings": {
-                        "select_icon_active": true,
-                        "select_icon": "earth",
-                        "block_title": "Worldwide Shipping",
-                        "title_size": "small",
-                        "items_align": "center",
-                        "block_content": "<p>Receive your order an estimated 3-5 days after shipment</p>"
-                    }
-                },
-                "column-3": {
-                    "type": "column",
-                    "settings": {
-                        "select_icon_active": true,
-                        "select_icon": "tree",
-                        "block_title": "Atelier-Grade Materials",
-                        "title_size": "small",
-                        "items_align": "center",
-                        "block_content": "<p>Made with love, using high-quality, premium materials</p>"
-                    }
-                },
-                "column-4": {
-                    "type": "column",
-                    "settings": {
-                        "select_icon_active": true,
-                        "select_icon": "percent",
-                        "block_title": "Buy Now Pay Later",
-                        "title_size": "small",
-                        "items_align": "center",
-                        "block_content": "<p>Pay in installments with 0% interest and no extra charges through Shop Pay</p>"
-                    }
-                }
-            },
-            "block_order": [
-                "column-1", "column-2", "column-3", "column-4"
-            ]
+        "slide-2": {
+          "type": "hero_slide",
+          "settings": {
+            "slide_bg": "shopify:\/\/shop_images\/iamsose7en_create_a_photo_of_a_woman_wearing_the_rain_wear_and__c86186aa-3a1c-4227-81d9-f511af6af34e.png",
+            "description": "<p>UNVEILING INNOVATION ON WINTER SPORTSWEAR<\/p>",
+            "heading": "Base Layers for the Toughest Climates",
+            "sub_heading": "Introducing our 2023\/24 Base Layers",
+            "button_text": "VIEW COLLECTION",
+            "button_url": "shopify:\/\/collections\/base-layers",
+            "button_style": "model-4",
+            "overlay_color": "#000000",
+            "overlay_color_opacity": 40
+          }
         }
+      },
+      "block_order": [
+        "slide-1",
+        "slide-2"
+      ],
+      "settings": {
+        "section_height": 100,
+        "text_position": "bottom-center",
+        "super": "RISE",
+        "super_color": "#ffffff",
+        "super_opacity": 20,
+        "super_font_size": 20,
+        "super_gap": 430,
+        "super_gap_mobile": 450,
+        "gap_from_sides": 60,
+        "body_color": "#ffffff",
+        "heading_color": "#ffffff",
+        "sub_heading_color": "#ffffff"
+      }
     },
-    "order": [
-        "home-slider",
-        "home-counter",
-        "home-collection-list",
-        "home-collection-showcase",
-        "home-featured-collections",
-        "home-spacer-1",
-        "home-featured-collections-2",
-        "home-spacer-2",      
-        "home-shop-the-look",
-        "home-spacer-3",
-        "home-image-with-text",
-        "home-image-with-text-2",
-        "home-featured-posts",
-        "home-newsletter",
-        "home-before-after-gallery",
-        "home-testimonial-slider",
-        "home-spacer-4",
-        "home-collapsible-rows",
-        "home-spacer-5",
-        "home-multiple-columns",
-        "home-banner",
-        "home-multiple-columns-2"
-    ]
+    "home-collection-list": {
+      "type": "collection-list",
+      "blocks": {
+        "fs-1": {
+          "type": "slide",
+          "settings": {
+            "collection": "frontpage"
+          }
+        },
+        "fs-2": {
+          "type": "slide",
+          "settings": {
+            "collection": "accessories"
+          }
+        }
+      },
+      "block_order": [
+        "fs-1",
+        "fs-2"
+      ],
+      "settings": {
+        "heading": "Discover our collections",
+        "title_color": "#000000",
+        "heading_font_size": "large",
+        "sub-heading": "<p><strong>Experience clothing that adapts, protects, and lasts.<\/strong><\/p>",
+        "sub_title_color": "#000000",
+        "image_size": "three-four",
+        "image_fit": "cover",
+        "image_pos": "center",
+        "background_color": "linear-gradient(180deg, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0) 100%)",
+        "products_item_gap": 0,
+        "section_padding_top": 50,
+        "section_padding_bottom": 0,
+        "full_width": false
+      }
+    },
+    "home-collection-showcase": {
+      "type": "collection-showcase",
+      "blocks": {
+        "collection-1": {
+          "type": "collection",
+          "settings": {
+            "collection": "frontpage"
+          }
+        },
+        "collection-2": {
+          "type": "collection",
+          "settings": {
+            "collection": "accessories"
+          }
+        },
+        "collection-3": {
+          "type": "collection",
+          "settings": {
+            "collection": "jackets"
+          }
+        }
+      },
+      "block_order": [
+        "collection-1",
+        "collection-2",
+        "collection-3"
+      ],
+      "settings": {
+        "heading": "2023 F\/W",
+        "heading_color": "#000000",
+        "heading_font_size": "large",
+        "sub_heading": "<p><strong>Tailor your wardrobe to your world<\/strong><\/p>",
+        "sub_heading_color": "#000000",
+        "collection_per_line": 3,
+        "image_size": "one-one",
+        "image_fit": "cover",
+        "image_pos": "top",
+        "collection_model": "model-two",
+        "spacings": 16,
+        "collection_item_title_bg_color": "linear-gradient(180deg, rgba(0, 0, 0, 0) 75%, rgba(0, 0, 0, 0.8) 100%)",
+        "collection_item_title_color": "#ffffff",
+        "shop_now_color": "#ffffff",
+        "background_color": "linear-gradient(180deg, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0) 100%)",
+        "section_padding_top": 50,
+        "section_padding_bottom": 50,
+        "full_width": false
+      }
+    },
+    "home-featured-collections": {
+      "type": "featured-collections",
+      "blocks": {
+        "collection-1": {
+          "type": "collection",
+          "settings": {
+            "collection": "new-commers",
+            "enable_description": "enabled",
+            "collection_description_lenght": 40,
+            "enable_custom_description": "enabled",
+            "custom_description": "<p><strong>Unveiling timeless classics for the trailblazer modernista<\/strong><\/p>",
+            "text_position": "bottom-left",
+            "collection_button_text": "SHOP NOW",
+            "button_style": "model-1",
+            "image_pos": "top"
+          }
+        }
+      },
+      "block_order": [
+        "collection-1"
+      ],
+      "settings": {
+        "collection_height": 800,
+        "collection_height_mobile": 400,
+        "collection_header_color": "#ffffff",
+        "heading_font_size": "large",
+        "collection_description_color": "#ffffff",
+        "collection_per_line": 1,
+        "spacings": 0,
+        "full_width": true,
+        "tint_opacity": 50
+      }
+    },
+    "home-spacer-1": {
+      "type": "spacer",
+      "settings": {
+        "desktop_space": "128",
+        "mobile_space": "64"
+      }
+    },
+    "home-featured-collections-2": {
+      "type": "featured-collections",
+      "blocks": {
+        "collection-1": {
+          "type": "collection",
+          "settings": {
+            "collection": "jackets",
+            "enable_description": "enabled",
+            "collection_description_lenght": 40,
+            "enable_custom_description": "enabled",
+            "custom_description": "<p><strong>Collection description<\/strong><\/p>",
+            "text_position": "bottom-center",
+            "collection_button_text": "BUTTON LABEL",
+            "button_style": "model-1",
+            "image_pos": "center"
+          }
+        },
+        "collection-2": {
+          "type": "collection",
+          "settings": {
+            "collection": "accessories",
+            "enable_description": "enabled",
+            "collection_description_lenght": 40,
+            "enable_custom_description": "enabled",
+            "custom_description": "<p><strong>Collection description<\/strong><\/p>",
+            "text_position": "bottom-center",
+            "collection_button_text": "BUTTON LABEL",
+            "button_style": "model-1",
+            "image_pos": "center"
+          }
+        }
+      },
+      "block_order": [
+        "collection-1",
+        "collection-2"
+      ],
+      "settings": {
+        "collection_height": 800,
+        "collection_height_mobile": 400,
+        "collection_header_color": "#ffffff",
+        "heading_font_size": "large",
+        "collection_description_color": "#ffffff",
+        "collection_per_line": 2,
+        "spacings": 16,
+        "full_width": false,
+        "tint_opacity": 50
+      }
+    },
+    "home-spacer-2": {
+      "type": "spacer",
+      "settings": {
+        "desktop_space": "128",
+        "mobile_space": "64"
+      }
+    },
+    "home-shop-the-look": {
+      "type": "shop-the-look",
+      "blocks": {
+        "test": {
+          "type": "add_product",
+          "settings": {
+            "product_list": [
+              "ajax-goggles"
+            ],
+            "pp_horizontal": 65,
+            "pp_verticle": 19,
+            "button_style": "model-2"
+          }
+        },
+        "5484f694-f98b-40b9-a04c-bc96fed36142": {
+          "type": "add_product",
+          "settings": {
+            "product_list": [
+              "orange-goggles"
+            ],
+            "pp_horizontal": 28,
+            "pp_verticle": 37,
+            "button_style": "model-2"
+          }
+        },
+        "cdf0dd4d-6065-41e3-b71e-8de9d4bc1265": {
+          "type": "add_product",
+          "settings": {
+            "product_list": [
+              "solar-ski-jacket"
+            ],
+            "pp_horizontal": 67,
+            "pp_verticle": 71,
+            "button_style": "model-2"
+          }
+        }
+      },
+      "block_order": [
+        "test",
+        "5484f694-f98b-40b9-a04c-bc96fed36142",
+        "cdf0dd4d-6065-41e3-b71e-8de9d4bc1265"
+      ],
+      "settings": {
+        "heading": "Unveil adventure with every turn",
+        "title_color": "#000000",
+        "heading_font_size": "large",
+        "sub-heading": "<p>Conquering the snow capped peaks in durability and style<\/p>",
+        "sub_title_color": "#000000",
+        "shop_to_look_image": "shopify:\/\/shop_images\/cngrs_full-length_photo_of_two_brunette_woman_wearing_ski_jacke_781c9782-4f3c-49e5-9687-d7408e0845f1.png",
+        "full_width": false
+      }
+    },
+    "home-spacer-3": {
+      "type": "spacer",
+      "settings": {
+        "desktop_space": "128",
+        "mobile_space": "64"
+      }
+    },
+    "home-image-with-text": {
+      "type": "image-with-text",
+      "blocks": {
+        "header": {
+          "type": "heading",
+          "settings": {
+            "heading": "Green weaves: Our commitment to eco-conscious fabrication"
+          }
+        },
+        "text": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Our eco-friendly approach is at the core of our textiles. Using organic and recycled materials, we conserve water, reduce energy, and minimize waste. Choosing our green fabrics is not just about style—it's a statement of care for nature and quality.<\/p>"
+          }
+        },
+        "link": {
+          "type": "button",
+          "settings": {
+            "button_label": "Read More",
+            "button_link": "shopify:\/\/blogs\/news\/what-gear-do-i-need"
+          }
+        }
+      },
+      "block_order": [
+        "header",
+        "text",
+        "link"
+      ],
+      "settings": {
+        "image": "shopify:\/\/shop_images\/comfort.jpg",
+        "image_size": 50,
+        "max_width": 100,
+        "text_width": 5,
+        "heading_font_size": "large",
+        "image_position": "image-on-left",
+        "text_align": "text-left",
+        "section_bg": "#ffffff",
+        "full_width": false
+      }
+    },
+    "home-image-with-text-2": {
+      "type": "image-with-text",
+      "blocks": {
+        "header": {
+          "type": "heading",
+          "settings": {
+            "heading": "Unmatched comfort"
+          }
+        },
+        "text": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Embrace unmatched comfort with our fabric that's as intelligent as it is cozy. Designed to move with you, the material offers a soothing touch against the skin, while its advanced fibers maintain an optimal temperature and wick away moisture. It's a tactile experience that feels tailor-made for comfort, no matter where your day takes you.<\/p>"
+          }
+        },
+        "link": {
+          "type": "button",
+          "settings": {
+            "button_label": "Read More",
+            "button_link": "shopify:\/\/blogs\/news"
+          }
+        }
+      },
+      "block_order": [
+        "header",
+        "text",
+        "link"
+      ],
+      "settings": {
+        "image": "shopify:\/\/shop_images\/durability.jpg",
+        "image_size": 50,
+        "max_width": 100,
+        "text_width": 5,
+        "heading_font_size": "small",
+        "image_position": "image-on-right",
+        "text_align": "text-left",
+        "section_bg": "#ffffff",
+        "full_width": false
+      }
+    },
+    "home-featured-posts": {
+      "type": "featured-posts",
+      "settings": {
+        "heading": "Chronicles",
+        "title_color": "#000000",
+        "heading_font_size": "medium",
+        "sub-heading": "<p>Inside the Weave: The Latest in Fabric Innovation<\/p>",
+        "sub_title_color": "#000000",
+        "button_label": "Visit News",
+        "product_per_row": 3,
+        "blog": "news",
+        "image_size": "one-one",
+        "image_fit": "cover",
+        "image_pos": "center",
+        "background_color": "linear-gradient(180deg, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0) 100%)",
+        "section_padding_top": 50,
+        "section_padding_bottom": 50,
+        "full_width": false,
+        "show_authore": true,
+        "show_date": true,
+        "show_tags": true,
+        "show_comments": true
+      }
+    },
+    "home-testimonial-slider": {
+      "type": "testimonial-slider",
+      "blocks": {
+        "quote": {
+          "type": "quote",
+          "settings": {
+            "description": "<p>“I've traveled from the drizzly streets of London to the rugged terrain of the Scottish Highlands in my Ajax Jacket, and it has never let me down. It's the only jacket I trust to keep up with my adventurous lifestyle and the ever-changing weather.\"<\/p>",
+            "heading": "Isla S.",
+            "position": "World Dweller"
+          }
+        },
+        "quote-2": {
+          "type": "quote",
+          "settings": {
+            "description": "<p>\"I've scaled Alpine peaks and traversed sun-drenched Mediterranean trails in my Trailblaze pants. These are more than just pants; they're my trusty companion for every adventure, perfectly balancing comfort and durability.\"<\/p>",
+            "heading": "Kylie M.",
+            "position": "Athlete"
+          }
+        }
+      },
+      "block_order": [
+        "quote",
+        "quote-2"
+      ],
+      "settings": {
+        "heading": "Voices of our Community",
+        "section_padding": 64,
+        "background_color": "linear-gradient(180deg, rgba(0, 0, 0, 1), rgba(0, 0, 0, 1) 100%)",
+        "text_color": "#ffffff"
+      }
+    },
+    "home-spacer-4": {
+      "type": "spacer",
+      "settings": {
+        "desktop_space": "128",
+        "mobile_space": "64"
+      }
+    },
+    "home-multiple-columns": {
+      "type": "multiple-columns",
+      "blocks": {
+        "column-1": {
+          "type": "column",
+          "settings": {
+            "select_icon": "award",
+            "select_icon_active": false,
+            "icon_size": 30,
+            "block_title": "Discover Our Boutiques",
+            "title_size": "large",
+            "block_content": "<p>Discover the fusion of innovation and sustainability in Aspena’s boutiques, where hands-on experiences with our advanced, eco-friendly jackets and expert guidance await to tailor your outdoor wear for the future.<\/p>",
+            "items_align": "left",
+            "cover_image_force": false
+          }
+        },
+        "column-2": {
+          "type": "column",
+          "settings": {
+            "select_icon": "award",
+            "select_icon_active": false,
+            "icon_size": 30,
+            "block_title": "",
+            "title_size": "small",
+            "block_content": "",
+            "items_align": "center",
+            "cover_image": "shopify:\/\/shop_images\/boutiques.jpg",
+            "cover_image_force": true
+          }
+        },
+        "column-3": {
+          "type": "column",
+          "settings": {
+            "select_icon": "award",
+            "select_icon_active": false,
+            "icon_size": 30,
+            "block_title": "",
+            "title_size": "small",
+            "block_content": "",
+            "items_align": "center",
+            "cover_image": "shopify:\/\/shop_images\/boutiquesinside.jpg",
+            "cover_image_force": true
+          }
+        }
+      },
+      "block_order": [
+        "column-1",
+        "column-2",
+        "column-3"
+      ],
+      "settings": {
+        "column_per_line": 3,
+        "section_padding_top": 0,
+        "section_padding_bottom": 50,
+        "full_width": false
+      }
+    },
+    "home-banner": {
+      "type": "banner",
+      "blocks": {
+        "header": {
+          "type": "heading",
+          "settings": {
+            "heading": "New York Boutique"
+          }
+        },
+        "text": {
+          "type": "text",
+          "settings": {
+            "sub_heading": "<p>Experience the cutting-edge of eco-chic in the heart of the Big Apple<\/p>"
+          }
+        },
+        "button": {
+          "type": "button",
+          "settings": {
+            "button_text": "Explore Boutiques",
+            "button_url": "shopify:\/\/pages\/about-us",
+            "button_style": "model-4"
+          }
+        }
+      },
+      "block_order": [
+        "header",
+        "text",
+        "button"
+      ],
+      "settings": {
+        "section_height": 100,
+        "text_position": "bottom-left",
+        "super_color": "#ffffff",
+        "super_opacity": 40,
+        "super_font_size": 300,
+        "super_line_height": 350,
+        "heading_color": "#ffffff",
+        "heading_font_size": 48,
+        "heading_line_height": 60,
+        "sub_heading_color": "#ffffff",
+        "sub_heading_font_size": 20,
+        "sub_heading_line_height": 30,
+        "gap_from_sides": 60,
+        "overlay_color": "#000000",
+        "overlay_color_opacity": 40,
+        "background_image": "shopify:\/\/shop_images\/row.png"
+      }
+    },
+    "home-newsletter": {
+      "type": "newsletter",
+      "settings": {
+        "heading": "Stay Updated",
+        "subheading": "<p>Subscribe for the Latest in Fabric Innovation<\/p>",
+        "button": "Subscribe",
+        "footnote": "<p>Enter your email to receive our newsletter. You can unsubscribe anytime.<\/p>",
+        "select_spacing_between": 16,
+        "section_padding": 64,
+        "color": "#ffffff",
+        "button_style": "model-1",
+        "bg_color": "#000000"
+      }
+    },
+    "home-multiple-columns-2": {
+      "type": "multiple-columns",
+      "blocks": {
+        "column-1": {
+          "type": "column",
+          "settings": {
+            "select_icon": "deliverytruck",
+            "select_icon_active": true,
+            "icon_size": 30,
+            "block_title": "Easy Returns",
+            "title_size": "small",
+            "block_content": "<p>Your exchange ships out as soon as you email us<\/p>",
+            "items_align": "center",
+            "cover_image_force": false
+          }
+        },
+        "column-2": {
+          "type": "column",
+          "settings": {
+            "select_icon": "earth",
+            "select_icon_active": true,
+            "icon_size": 30,
+            "block_title": "Worldwide Shipping",
+            "title_size": "small",
+            "block_content": "<p>Receive your order an estimated 3-5 days after shipment<\/p>",
+            "items_align": "center",
+            "cover_image_force": false
+          }
+        },
+        "column-3": {
+          "type": "column",
+          "settings": {
+            "select_icon": "tree",
+            "select_icon_active": true,
+            "icon_size": 30,
+            "block_title": "Atelier-Grade Materials",
+            "title_size": "small",
+            "block_content": "<p>Made with love, using high-quality, premium materials<\/p>",
+            "items_align": "center",
+            "cover_image_force": false
+          }
+        },
+        "column-4": {
+          "type": "column",
+          "settings": {
+            "select_icon": "percent",
+            "select_icon_active": true,
+            "icon_size": 30,
+            "block_title": "Buy Now Pay Later",
+            "title_size": "small",
+            "block_content": "<p>Pay in installments with 0% interest and no extra charges through Shop Pay<\/p>",
+            "items_align": "center",
+            "cover_image_force": false
+          }
+        }
+      },
+      "block_order": [
+        "column-1",
+        "column-2",
+        "column-3",
+        "column-4"
+      ],
+      "settings": {
+        "column_per_line": 4,
+        "section_padding_top": 25,
+        "section_padding_bottom": 0,
+        "full_width": true
+      }
+    }
+  },
+  "order": [
+    "home-slider",
+    "home-collection-list",
+    "home-collection-showcase",
+    "home-featured-collections",
+    "home-spacer-1",
+    "home-featured-collections-2",
+    "home-spacer-2",
+    "home-shop-the-look",
+    "home-spacer-3",
+    "home-image-with-text",
+    "home-image-with-text-2",
+    "home-featured-posts",
+    "home-testimonial-slider",
+    "home-spacer-4",
+    "home-multiple-columns",
+    "home-banner",
+    "home-newsletter",
+    "home-multiple-columns-2"
+  ]
 }

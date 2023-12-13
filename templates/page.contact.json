@@ -1,50 +1,68 @@
 {
-    "sections": {
-        "contact-header": {
-            "type": "banner",
-            "blocks": {
-                "main": {
-                    "type": "heading",
-                    "settings": {
-                        "heading": "Contact Us."
-                    }
-                }
-            },
-            "block_order": [
-                "main"
-            ],
-            "settings": {
-                "section_height": 30,
-                "text_position": "bottom-center",
-                "gap_from_sides": 0
-            }
-        },
+  "sections": {
+    "contact-header": {
+      "type": "banner",
+      "blocks": {
         "main": {
-            "type": "contact"   
-        },
-        "map": {
-            "type": "map"   
-        },
-        "spacer-1": {
-            "type": "spacer",
-            "settings": {
-                "desktop_space": "50",
-                "mobile_space": "30"
-            }
-        },
-        "spacer-2": {
-            "type": "spacer",
-            "settings": {
-                "desktop_space": "50",
-                "mobile_space": "30"
-            }
+          "type": "heading",
+          "settings": {
+            "heading": "Contact Us."
+          }
         }
+      },
+      "block_order": [
+        "main"
+      ],
+      "settings": {
+        "section_height": 30,
+        "text_position": "bottom-center",
+        "super_color": "#FFFFFF",
+        "super_opacity": 40,
+        "super_font_size": 300,
+        "super_line_height": 350,
+        "heading_color": "#FFFFFF",
+        "heading_font_size": 48,
+        "heading_line_height": 60,
+        "sub_heading_color": "#FFFFFF",
+        "sub_heading_font_size": 20,
+        "sub_heading_line_height": 30,
+        "gap_from_sides": 0,
+        "overlay_color": "#000000",
+        "overlay_color_opacity": 40
+      }
     },
-    "order": [
-        "contact-header",
-        "main",
-        "spacer-1",
-        "map",
-        "spacer-2"
-    ]
+    "main": {
+      "type": "contact",
+      "settings": {
+      }
+    },
+    "spacer-1": {
+      "type": "spacer",
+      "settings": {
+        "desktop_space": "50",
+        "mobile_space": "30"
+      }
+    },
+    "map": {
+      "type": "map",
+      "settings": {
+        "google_api": "Enter your api key",
+        "full_width": false
+      }
+    },
+    "spacer-2": {
+      "type": "spacer",
+      "settings": {
+        "desktop_space": "50",
+        "mobile_space": "30"
+      }
+    }
+  },
+  "order": [
+    "contact-header",
+    "main",
+    "spacer-1",
+    "map",
+    "spacer-2"
+  ]
 }
