@@ -181,7 +181,7 @@
         "collection-1": {
           "type": "collection",
           "settings": {
-            "collection": "",
+            "collection": "jackets",
             "enable_description": "enabled",
             "collection_description_lenght": 40,
             "enable_custom_description": "enabled",
@@ -195,7 +195,7 @@
         "collection-2": {
           "type": "collection",
           "settings": {
-            "collection": "",
+            "collection": "accessories",
             "enable_description": "enabled",
             "collection_description_lenght": 40,
             "enable_custom_description": "enabled",
@@ -212,7 +212,7 @@
         "collection-2"
       ],
       "settings": {
-        "collection_height": 640,
+        "collection_height": 660,
         "collection_height_mobile": 400,
         "collection_header_color": "#ffffff",
         "heading_font_size": "large",
