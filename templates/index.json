@@ -6,7 +6,6 @@
         "slide-1": {
           "type": "hero_slide",
           "settings": {
-            "slide_bg": "shopify:\/\/shop_images\/carousel-hero.png",
             "description": "<p>UNVEILING INNOVATION IN WINTER SPORTSWEAR<\/p>",
             "heading": "Elevate to New Heights with Comfort",
             "sub_heading": "Meet our 2023\/24 W\/F Collection",
@@ -20,7 +19,6 @@
         "slide-2": {
           "type": "hero_slide",
           "settings": {
-            "slide_bg": "shopify:\/\/shop_images\/iamsose7en_create_a_photo_of_a_woman_wearing_the_rain_wear_and__c86186aa-3a1c-4227-81d9-f511af6af34e.png",
             "description": "<p>UNVEILING INNOVATION ON WINTER SPORTSWEAR<\/p>",
             "heading": "Base Layers for the Toughest Climates",
             "sub_heading": "Introducing our 2023\/24 Base Layers",
@@ -282,7 +280,6 @@
         "heading_font_size": "large",
         "sub-heading": "<p>Conquering the snow capped peaks in durability and style<\/p>",
         "sub_title_color": "#000000",
-        "shop_to_look_image": "shopify:\/\/shop_images\/cngrs_full-length_photo_of_two_brunette_woman_wearing_ski_jacke_781c9782-4f3c-49e5-9687-d7408e0845f1.png",
         "full_width": false
       }
     },
@@ -361,7 +358,6 @@
         "link"
       ],
       "settings": {
-        "image": "shopify:\/\/shop_images\/durability.jpg",
         "image_size": 50,
         "max_width": 100,
         "text_width": 5,
@@ -460,7 +456,6 @@
             "title_size": "small",
             "block_content": "",
             "items_align": "center",
-            "cover_image": "shopify:\/\/shop_images\/boutiques.jpg",
             "cover_image_force": true
           }
         },
@@ -474,7 +469,6 @@
             "title_size": "small",
             "block_content": "",
             "items_align": "center",
-            "cover_image": "shopify:\/\/shop_images\/boutiquesinside.jpg",
             "cover_image_force": true
           }
         }
@@ -490,7 +484,7 @@
         "section_padding_top": 0,
         "section_padding_bottom": 50,
         "full_width": false,
-        "background_color": "linear-gradient(180deg, #ffffff 100%, #ffffff 100%)",
+        "background_color": "linear-gradient(180deg, rgba(255, 255, 255, 1) 100%, rgba(255, 255, 255, 1) 100%)",
         "content_color": "#000000"
       }
     },
@@ -539,15 +533,14 @@
         "sub_heading_line_height": 30,
         "gap_from_sides": 60,
         "overlay_color": "#000000",
-        "overlay_color_opacity": 40,
-        "background_image": "shopify:\/\/shop_images\/row.png"
+        "overlay_color_opacity": 40
       }
     },
     "home-newsletter": {
       "type": "newsletter",
       "settings": {
         "heading": "Stay Updated",
-        "subheading": "<p>Subscribe for the Latest in Fabric Innovation<\/p>",
+        "subheading": "<p>Stay ahead with the latest news and promotions in fabric innovation<\/p>",
         "button": "Subscribe",
         "footnote": "<p>Enter your email to receive our newsletter. You can unsubscribe anytime.<\/p>",
         "select_spacing_between": 16,
