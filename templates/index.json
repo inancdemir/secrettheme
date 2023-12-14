@@ -38,6 +38,7 @@
       ],
       "settings": {
         "section_height": 100,
+        "section_width": 1200,
         "text_position": "bottom-center",
         "super": "RISE",
         "super_color": "#ffffff",
@@ -126,7 +127,8 @@
         "image_pos": "top",
         "collection_model": "model-two",
         "spacings": 16,
-        "collection_item_title_bg_color": "linear-gradient(180deg, rgba(0, 0, 0, 0) 75%, rgba(0, 0, 0, 0.8) 100%)",
+        "tint_opacity": 50,
+        "tint_color": "#000000",
         "collection_item_title_color": "#ffffff",
         "shop_now_color": "#ffffff",
         "background_color": "linear-gradient(180deg, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0) 100%)",
@@ -165,7 +167,8 @@
         "collection_per_line": 1,
         "spacings": 0,
         "full_width": true,
-        "tint_opacity": 50
+        "tint_opacity": 50,
+        "tint_color": "#000000"
       }
     },
     "home-spacer-1": {
@@ -220,7 +223,8 @@
         "collection_per_line": 2,
         "spacings": 16,
         "full_width": false,
-        "tint_opacity": 50
+        "tint_opacity": 50,
+        "tint_color": "#000000"
       }
     },
     "home-spacer-2": {
@@ -318,10 +322,9 @@
         "link"
       ],
       "settings": {
-        "image": "shopify:\/\/shop_images\/comfort.jpg",
         "image_size": 50,
         "max_width": 100,
-        "text_width": 5,
+        "text_width": 12,
         "heading_font_size": "large",
         "image_position": "image-on-left",
         "text_align": "text-left",
@@ -482,10 +485,13 @@
         "column-3"
       ],
       "settings": {
-        "column_per_line": 3,
+        "column_per_line": "3",
+        "spacings": 16,
         "section_padding_top": 0,
         "section_padding_bottom": 50,
-        "full_width": false
+        "full_width": false,
+        "background_color": "linear-gradient(180deg, #ffffff 100%, #ffffff 100%)",
+        "content_color": "#000000"
       }
     },
     "home-banner": {
@@ -519,6 +525,7 @@
       ],
       "settings": {
         "section_height": 100,
+        "section_width": 1200,
         "text_position": "bottom-left",
         "super_color": "#ffffff",
         "super_opacity": 40,
@@ -613,10 +620,13 @@
         "column-4"
       ],
       "settings": {
-        "column_per_line": 4,
+        "column_per_line": "4",
+        "spacings": 16,
         "section_padding_top": 25,
         "section_padding_bottom": 0,
-        "full_width": true
+        "full_width": true,
+        "background_color": "linear-gradient(180deg, #ffffff 100%, #ffffff 100%)",
+        "content_color": "#000000"
       }
     }
   },
