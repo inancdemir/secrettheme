@@ -1,24 +1,36 @@
-Dawn 11.0.0 introduces new customization options to the announcement bar, new animations and hover effects, and a Quick order list section to product pages. 
+Release Notes for Rise Theme - Version 1.0.0
 
-### Added
-- You can now add multiple Announcement bar sections to your Header. 
-- You can now display social media icons in the Announcement bar. 
-- You can now add the country/region selector and the language selector to the Announcement bar.
-- You can now set a different color scheme for your navigation menu than for your Header. 
-- We added a new “Zoom in on scroll” animation option to the Image with text and Image banner sections.
-- We added a new “Vertical lift” hover effect option to cards and buttons. 
-- You can now apply the outline button style to the button on Image with text. 
-- You can now adjust the bottom padding on the Subtotal section in the cart.
-- We introduced a new Quick order list section to the product template. This allows you to optimize your product pages for bulk buying. 
-- Customers who qualify for volume pricing will now see the different price breaks on your product pages. 
+We are excited to announce the release of the Rise Theme by Oak Themes, a modern and innovative theme designed exclusively for Shopify stores. This inaugural version, 1.0.0, marks the beginning of a new era for e-commerce websites, offering a blend of style, functionality, and user-friendly experiences.
 
-### Changed
-- We reduced the height of the Announcement bar section.
-- You can now choose to auto rotate the Announcement bar slides every 3 seconds. The minimum was previously 5 seconds.
-- Your mobile menu drawer will now appear full-width.
-- The Featured collection section will now display placeholder product images until a collection is selected. 
+New Features
+1. Responsive Design
+Fully responsive layout that adapts seamlessly to all screen sizes, ensuring a consistent shopping experience across desktops, tablets, and smartphones.
+2. Customizable Homepage Layout
+Drag-and-drop sections for easy homepage customization, allowing store owners to showcase their products and promotions effectively.
+3. Advanced Product Filtering
+Enhanced product filtering options to help customers quickly find what they're looking for.
+4. Optimized Checkout Process
+Streamlined and intuitive checkout process to minimize cart abandonment and improve conversion rates.
+5. SEO Friendly
+Built with best SEO practices in mind to help improve search engine rankings.
+6. High-Quality Visuals
+Support for high-resolution images, enabling stunning visual displays of products.
+7. Social Media Integration
+Easy integration with various social media platforms to enhance marketing and customer engagement.
+8. Detailed Documentation
+Comprehensive documentation to guide users through theme installation, customization, and management.
 
-### Fixes and improvements
-- We fixed a bug where text links were not styled properly in the heading of the Related products section.
-- We made light stylistic improvements to link styles, alignment and spacing for both the dropdown and mega menu types in the Header.
-- We fixed a bug where the Footer would display extra white space when the “Show email signup” setting was left unchecked. 
+Improvements
+Performance Optimization: Enhanced loading times and overall website performance.
+Accessibility Enhancements: Improved accessibility features for a more inclusive user experience.
+
+Installation and Support
+Installation: Refer to our detailed guide on the theme installation process, available in the provided documentation.
+Support: For any questions or issues, please visit our support portal at https://oakthemes.net/documentation/.
+Acknowledgements
+Special thanks to our dedicated team of developers, designers, and early beta testers who have contributed to the development and refinement of the Rise Theme.
+
+We are committed to continuous improvement and eagerly await your feedback to make Rise Theme even better in future updates.
+
+Oak Themes
+12/14/2023
