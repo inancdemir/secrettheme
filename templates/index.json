@@ -6,7 +6,6 @@
         "slide-1": {
           "type": "hero_slide",
           "settings": {
-            "slide_bg": "shopify:\/\/shop_images\/carousel-hero.png",
             "description": "<p>UNVEILING INNOVATION IN WINTER SPORTSWEAR<\/p>",
             "heading": "Elevate to New Heights with Comfort",
             "sub_heading": "Meet our 2023\/24 W\/F Collection",
@@ -20,7 +19,6 @@
         "slide-2": {
           "type": "hero_slide",
           "settings": {
-            "slide_bg": "shopify:\/\/shop_images\/iamsose7en_create_a_photo_of_a_woman_wearing_the_rain_wear_and__c86186aa-3a1c-4227-81d9-f511af6af34e.png",
             "description": "<p>UNVEILING INNOVATION ON WINTER SPORTSWEAR<\/p>",
             "heading": "Base Layers for the Toughest Climates",
             "sub_heading": "Introducing our 2023\/24 Base Layers",
@@ -38,6 +36,7 @@
       ],
       "settings": {
         "section_height": 100,
+        "section_width": 1200,
         "text_position": "bottom-center",
         "super": "RISE",
         "super_color": "#ffffff",
@@ -126,7 +125,8 @@
         "image_pos": "top",
         "collection_model": "model-two",
         "spacings": 16,
-        "collection_item_title_bg_color": "linear-gradient(180deg, rgba(0, 0, 0, 0) 75%, rgba(0, 0, 0, 0.8) 100%)",
+        "tint_opacity": 50,
+        "tint_color": "#000000",
         "collection_item_title_color": "#ffffff",
         "shop_now_color": "#ffffff",
         "background_color": "linear-gradient(180deg, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0) 100%)",
@@ -165,7 +165,8 @@
         "collection_per_line": 1,
         "spacings": 0,
         "full_width": true,
-        "tint_opacity": 50
+        "tint_opacity": 50,
+        "tint_color": "#000000"
       }
     },
     "home-spacer-1": {
@@ -220,7 +221,8 @@
         "collection_per_line": 2,
         "spacings": 16,
         "full_width": false,
-        "tint_opacity": 50
+        "tint_opacity": 50,
+        "tint_color": "#000000"
       }
     },
     "home-spacer-2": {
@@ -278,7 +280,6 @@
         "heading_font_size": "large",
         "sub-heading": "<p>Conquering the snow capped peaks in durability and style<\/p>",
         "sub_title_color": "#000000",
-        "shop_to_look_image": "shopify:\/\/shop_images\/cngrs_full-length_photo_of_two_brunette_woman_wearing_ski_jacke_781c9782-4f3c-49e5-9687-d7408e0845f1.png",
         "full_width": false
       }
     },
@@ -318,10 +319,13 @@
         "link"
       ],
       "settings": {
-        "image": "shopify:\/\/shop_images\/comfort.jpg",
         "image_size": 50,
         "max_width": 100,
+<<<<<<< HEAD
         "text_width": 32,
+=======
+        "text_width": 12,
+>>>>>>> 42fa8abc550b5eea3b62e72fbc1c6b05b9883997
         "heading_font_size": "large",
         "image_position": "image-on-left",
         "text_align": "text-left",
@@ -358,7 +362,6 @@
         "link"
       ],
       "settings": {
-        "image": "shopify:\/\/shop_images\/durability.jpg",
         "image_size": 50,
         "max_width": 100,
         "text_width": 32,
@@ -457,7 +460,6 @@
             "title_size": "small",
             "block_content": "",
             "items_align": "center",
-            "cover_image": "shopify:\/\/shop_images\/boutiques.jpg",
             "cover_image_force": true
           }
         },
@@ -471,7 +473,6 @@
             "title_size": "small",
             "block_content": "",
             "items_align": "center",
-            "cover_image": "shopify:\/\/shop_images\/boutiquesinside.jpg",
             "cover_image_force": true
           }
         }
@@ -483,10 +484,19 @@
       ],
       "settings": {
         "column_per_line": "3",
+<<<<<<< HEAD
         "section_padding_top": 0,
         "section_padding_bottom": 50,
         "ver_align": "center",
         "full_width": false
+=======
+        "spacings": 16,
+        "section_padding_top": 0,
+        "section_padding_bottom": 50,
+        "full_width": false,
+        "background_color": "linear-gradient(180deg, rgba(255, 255, 255, 1) 100%, rgba(255, 255, 255, 1) 100%)",
+        "content_color": "#000000"
+>>>>>>> 42fa8abc550b5eea3b62e72fbc1c6b05b9883997
       }
     },
     "home-banner": {
@@ -520,6 +530,7 @@
       ],
       "settings": {
         "section_height": 100,
+        "section_width": 1200,
         "text_position": "bottom-left",
         "super_color": "#ffffff",
         "super_opacity": 40,
@@ -533,15 +544,14 @@
         "sub_heading_line_height": 30,
         "gap_from_sides": 60,
         "overlay_color": "#000000",
-        "overlay_color_opacity": 40,
-        "background_image": "shopify:\/\/shop_images\/row.png"
+        "overlay_color_opacity": 40
       }
     },
     "home-newsletter": {
       "type": "newsletter",
       "settings": {
         "heading": "Stay Updated",
-        "subheading": "<p>Subscribe for the Latest in Fabric Innovation<\/p>",
+        "subheading": "<p>Stay ahead with the latest news and promotions in fabric innovation<\/p>",
         "button": "Subscribe",
         "footnote": "<p>Enter your email to receive our newsletter. You can unsubscribe anytime.<\/p>",
         "select_spacing_between": 16,
@@ -615,9 +625,15 @@
       ],
       "settings": {
         "column_per_line": "4",
+<<<<<<< HEAD
+=======
+        "spacings": 16,
+>>>>>>> 42fa8abc550b5eea3b62e72fbc1c6b05b9883997
         "section_padding_top": 25,
         "section_padding_bottom": 0,
-        "full_width": true
+        "full_width": true,
+        "background_color": "linear-gradient(180deg, #ffffff 100%, #ffffff 100%)",
+        "content_color": "#000000"
       }
     }
   },
