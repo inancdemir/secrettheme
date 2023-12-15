@@ -11,12 +11,12 @@
       margin-bottom: 32px;
     }
     .section-{{ section.id }} .single-collection-large {
-      height: {{ section.settings.collection_height_mobile }}px;
+      height: {% if section.settings.full_height_mobil %} 100vh {% else %} {{ section.settings.collection_height_mobile }}px {% endif %};
     }
     
     @media only screen and (min-width: 640px) {
       .section-{{ section.id }} .single-collection-large {
-        height: {{ section.settings.collection_height }}px;
+        height: {% if section.settings.full_height_desktop %} 100vh {% else %} {{ section.settings.collection_height }}px {% endif %};
       }
       .front-collection-wrap.columns-2,
       .front-collection-wrap.columns-3 {
@@ -132,12 +132,19 @@
     {
       "type": "range",
       "id": "collection_height",
-      "min": 300,
-      "max": 800,
-      "step": 20,
+      "min": 500,
+      "max": 1500,
+      "step": 10,
       "unit": "px",
       "label": "t:sections.all.section_height",
       "default": 640
+    },
+    {
+      "type": "checkbox",
+      "id": "full_height_desktop",
+      "label": "Masa üstü full height",
+      "info": "Bu check varsa yukarıdaki slider çalışmaz",
+      "default": false
     },
     {
       "type": "range",
@@ -148,6 +155,13 @@
       "unit": "px",
       "label": "Mobile height",
       "default": 400
+    },
+    {
+      "type": "checkbox",
+      "id": "full_height_mobil",
+      "label": "Mobil full height",
+      "info": "Bu check varsa yukarıdaki slider çalışmaz",
+      "default": false
     },
     {
       "type": "color",

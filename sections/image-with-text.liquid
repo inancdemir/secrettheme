@@ -5,11 +5,6 @@
     background-color: {{ section.settings.section_bg }};
     margin: 0 auto;
     max-width:  {{ section.settings.max_width }}%;
-    {% unless section.settings.full_width %}
-      max-width: 1440px;
-      margin-left: auto;
-      margin-right: auto;
-    {% endunless %}
 }
 .image-with-text.section-{{ section.id }} .image-side {
   line-height: 0;
@@ -23,7 +18,7 @@
     min-height: 430px;
 }
 .image-with-text.section-{{ section.id }} .text-side {
-  padding: {{ section.settings.text_width }}%;
+  padding: 0 {{ section.settings.text_width }}px;
   row-gap: 16px;
   flex-direction: column;
   display: flex;
@@ -36,7 +31,8 @@
 }
 @media only screen and (min-width: 640px) {
   .image-with-text.section-{{ section.id }} {
-      display: flex;  
+      display: flex;
+      column-gap: {{ section.settings.row_gap }}px;
   }
   .image-with-text.section-{{ section.id }} .image-side {
       min-width: {{ section.settings.image_size }}%;
@@ -45,7 +41,9 @@
 }
 
 {%- endstyle -%}
-
+{% unless section.settings.full_width %}
+<div class="wide-width">
+{% endunless %}
 <div class="image-with-text section-{{ section.id }} {{ section.settings.image_position }}">
     <div class="image-side">
       {% if section.settings.image %}
@@ -92,6 +90,9 @@
         
     </div>
 </div>
+{% unless section.settings.full_width %}
+</div>
+{% endunless %}
 {% schema %}
 {
   "name": "t:sections.image-with-text.name",
@@ -114,6 +115,16 @@
     },
     {
       "type": "range",
+      "id": "row_gap",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "label": "Resim - text area arasındaki açıklık",
+      "default": 16
+    },
+    {
+      "type": "range",
       "id": "max_width",
       "min": 50,
       "max": 100,
@@ -126,11 +137,11 @@
       "type": "range",
       "id": "text_width",
       "min": 0,
-      "max": 40,
+      "max": 100,
       "step": 1,
-      "unit": "%",
+      "unit": "px",
       "label": "t:sections.all.text_gap_sides",
-      "default": 5
+      "default": 32
     },
     {
       "type": "select",

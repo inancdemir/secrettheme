@@ -85,10 +85,12 @@
   width: auto;
   height: auto;
 }
+
+
 @media only screen and (min-width: 768px) {
-  .multi-columns {
+  .section-{{ section.id }} .multi-columns {
     flex-direction: row;
-    align-items: baseline;
+    align-items: {{ section.settings.ver_align }};
   }
 }
 {%- endstyle -%}
@@ -115,7 +117,7 @@
                       {% if block.settings.cover_image %}
                         {{ block.settings.cover_image | image_url: width: 600 | image_tag: loading: 'lazy', class: 'cover-image' }}
                       {% else %}
-                      {{ 'hero-apparel-1' | placeholder_svg_tag: ' cover-image' }}
+                      {{ 'collection-4' | placeholder_svg_tag: 'demo-cover-image' }}
                       {% endif %}
                     {% endif %}
 
@@ -211,6 +213,26 @@
       "unit": "%",
       "label": "t:sections.all.section_padding_bottom",
       "default": 10
+    },
+    {
+      "type": "select",
+      "id": "ver_align",
+      "options": [
+        {
+          "value": "flex-start",
+          "label": "Top"
+        },
+        {
+          "value": "center",
+          "label": "Center"
+        },
+        {
+          "value": "flex-end",
+          "label": "Bottom"
+        }
+      ],
+      "label": "Dikey hizalama",
+      "default": "flex-start"
     },
     {
       "type": "checkbox",

@@ -321,7 +321,7 @@
         "image": "shopify:\/\/shop_images\/comfort.jpg",
         "image_size": 50,
         "max_width": 100,
-        "text_width": 5,
+        "text_width": 32,
         "heading_font_size": "large",
         "image_position": "image-on-left",
         "text_align": "text-left",
@@ -361,7 +361,7 @@
         "image": "shopify:\/\/shop_images\/durability.jpg",
         "image_size": 50,
         "max_width": 100,
-        "text_width": 5,
+        "text_width": 32,
         "heading_font_size": "small",
         "image_position": "image-on-right",
         "text_align": "text-left",
@@ -482,9 +482,10 @@
         "column-3"
       ],
       "settings": {
-        "column_per_line": 3,
+        "column_per_line": "3",
         "section_padding_top": 0,
         "section_padding_bottom": 50,
+        "ver_align": "center",
         "full_width": false
       }
     },
@@ -613,7 +614,7 @@
         "column-4"
       ],
       "settings": {
-        "column_per_line": 4,
+        "column_per_line": "4",
         "section_padding_top": 25,
         "section_padding_bottom": 0,
         "full_width": true

@@ -52,3 +52,13 @@
       flex-direction: row;
     }
   }
+  .multi-columns .column svg.demo-cover-image {
+    background-color: #d3d3d3;
+    object-fit: contain;
+    fill: #acacac;
+    stroke: #acacac;
+    display: block;
+    max-height: 100%;
+    max-width: 100%;
+    width: 100%;
+  }

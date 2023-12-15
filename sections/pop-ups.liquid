@@ -48,7 +48,7 @@
 {%- for block in section.blocks -%}
   {% case block.type %}
       {%- when 'campaing_pop' -%}
-        <div class="rise-pop {% if block.settings.show_pop %}active"{% endif %} {{ block.shopify_attributes }}>
+        <div class="rise-pop {% if block.settings.show_pop %}active{% endif %} {{ block.shopify_attributes }}">
           <div class="rise-pop-wrap left-bottom campain">
             <span class="pop-close">{%- render 'icon-close' -%}</span>
             <div class="campain-wrap">
@@ -139,6 +139,54 @@
 
   {%- endcase -%}
 {%- endfor -%}
+
+<script>
+  function showPopup() {
+    var popup = document.querySelector('.rise-pop');
+    popup.classList.add('active');
+  }
+  
+document.addEventListener('DOMContentLoaded', function() {
+    var closeButton = document.querySelector('.pop-close');
+    var risePop = document.querySelector('.rise-pop');
+
+    closeButton.addEventListener('click', function() {
+        if (risePop.classList.contains('active')) {
+            risePop.classList.remove('active');
+        }
+    });
+});
+
+
+function displayPopupOncePerDay() {
+  // İlgili çerezin adı
+  const cookieName = 'popupDisplayed';
+
+  // Bugünün tarihi
+  const today = new Date();
+  const dd = String(today.getDate()).padStart(2, '0');
+  const mm = String(today.getMonth() + 1).padStart(2, '0'); // Ocak 0'dan başlar
+  const yyyy = today.getFullYear();
+  const todayString = `${yyyy}-${mm}-${dd}`;
+
+  // Çerez kontrolü
+  const popupDisplayed = document.cookie.replace(/(?:(?:^|.*;\s*)popupDisplayed\s*\=\s*([^;]*).*$)|^.*$/, "$1");
+
+  // Eğer çerez bulunamazsa veya bugünkü tarih çerezdeki tarihten farklıysa
+  if (!popupDisplayed || popupDisplayed !== todayString) {
+    // Pop-up'ı göster
+    showPopup();
+
+    // Çereze bugünkü tarihi kaydet (bir gün boyunca pop-up'ı gösterilmeyeceği anlamına gelir)
+    document.cookie = `popupDisplayed=${todayString}; max-age=${60 * 60 * 24}; path=/`;
+  }
+}
+
+// Sayfa yüklendiğinde pop-up kontrolü yap
+document.addEventListener("DOMContentLoaded", function() {
+  displayPopupOncePerDay();
+});
+</script>
 
 {% schema %}
 {
