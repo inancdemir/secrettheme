@@ -14,7 +14,6 @@
 }
 .section-{{ section.id }}.front-collection-wrap .subtitle {
     color: {{ section.settings.sub_heading_color }};
-
 }
 .section-{{ section.id }} .collection-hor {
     display: flex;
@@ -22,32 +21,24 @@
     column-gap: {{ section.settings.spacings }}px;
     overflow-y: scroll;
 }
-@media only screen and (min-width: 640px) {
-  .section-{{ section.id }} .collection-hor {
-    flex-wrap: wrap;
-  }
-}
 .section-{{ section.id }} .collection-hor .single-collection {
   flex: 0 0 80%;
   max-width: 80%;
   padding-top: {{ section.settings.spacings }}px;
   position: relative;
 }
-@media only screen and (min-width: 640px) {
-  .section-{{ section.id }} .collection-hor .single-collection {
-    flex: 0 0 calc(calc((100% - calc({{ section.settings.spacings }}px * calc({{ section.settings.collection_per_line }} - 1))) / {{ section.settings.collection_per_line }}));
-  }
-}
+
 .section-{{ section.id }} .model-one {
   margin: 0 8px 0 8px;
 }
 .section-{{ section.id }} .model-two {
-  margin: 0 16px 16px 16px;
   position: absolute;
+  margin: 0;
   left: 0;
+  top: 0;
+  right: 0;
   bottom: 0;
 }
-
 .section-{{ section.id }} .model-two a {
   display: flex;
   position: absolute;
@@ -55,7 +46,6 @@
   height: 100%;
   margin: 0;
 }
-
 .section-{{ section.id }} .model-two a:before {
   content: "";
   width: 100%;
@@ -79,6 +69,15 @@
     text-decoration: underline;
     margin-top: 8px;
     display: block;
+}
+
+@media only screen and (min-width: 640px) {
+  .section-{{ section.id }} .collection-hor {
+    flex-wrap: wrap;
+  }
+  .section-{{ section.id }} .collection-hor .single-collection {
+    flex: 0 0 calc(calc((100% - calc({{ section.settings.spacings }}px * calc({{ section.settings.collection_per_line }} - 1))) / {{ section.settings.collection_per_line }}));
+  }
 }
 {%- endstyle -%}
 
@@ -109,39 +108,72 @@
     <div class="collection-hor">
       {% if section.settings.collection_list != empty %}
         {%- for collection in section.settings.collection_list -%}
+
           <div class="single-collection image-size-{{ section.settings.image_size }} image-fit-{{- section.settings.image_fit }} image-pos-{{- section.settings.image_pos -}}">
             <div class="image-wrap">  
-            {% if collection.featured_image %}
-              {{ collection.featured_image | image_url: width: 1000 | image_tag: loading: 'lazy', class: 'product-image' }}
-            {% else  %}
-            {% endif %}
+              {% if section.settings.collection_model == "model-one" %}
+                <a href="{{ block.settings.collection.url }}">
+              {% endif %}
+                  {{ collection.featured_image | image_url: width: 600 | image_tag: loading: 'lazy', class: 'product-image' }}
+              {% if section.settings.collection_model == "model-two" %}
+                </a>
+              {% endif %}
             </div>
             <div class="{{ section.settings.collection_model }}">
-              <h3 class="subheadline">
-                {{- collection.title | upcase | link_to: collection.url -}}
-              </h3>
-              <a class="shop-now text-link" href="{{ collection.url }}">Shop Now</a>
+              {% if section.settings.collection_model == "model-two" %}
+                <a href="{{ collection.url }}">
+              {% endif %}
+                <h3 class="subheadline">
+                  {% if collection != empty %}
+                    {{- collection.title | upcase -}}
+                  {% else %}
+                    Collection Name
+                  {% endif %}
+                </h3>
+                {% unless section.settings.collection_model == "model-two" %}
+                <a class="shop-now text-link" href="{{ collection.url }}">Shop Now</a>
+                {% endunless %}
+              {% if section.settings.collection_model == "model-two" %}
+                </a>
+              {% endif %}
             </div>
           </div>
+
+
         {%- endfor -%}
       {% else %}
         {%- for collection in collections -%}
             
           <div class="single-collection image-size-{{ section.settings.image_size }} image-fit-{{- section.settings.image_fit }} image-pos-{{- section.settings.image_pos -}}">
-                <div class="image-wrap">
-                  {% if collection.featured_image %}
-                  {{ collection.featured_image | image_url: width: 1000 | image_tag: loading: 'lazy', class: 'product-image' }}
-                  {% else  %}
+            <div class="image-wrap">  
+              {% if section.settings.collection_model == "model-one" %}
+                <a href="{{ block.settings.collection.url }}">
+              {% endif %}
+                  {{ collection.featured_image | image_url: width: 600 | image_tag: loading: 'lazy', class: 'product-image' }}
+              {% if section.settings.collection_model == "model-two" %}
+                </a>
+              {% endif %}
+            </div>
+            <div class="{{ section.settings.collection_model }}">
+              {% if section.settings.collection_model == "model-two" %}
+                <a href="{{ collection.url }}">
+              {% endif %}
+                <h3 class="subheadline">
+                  {% if collection != empty %}
+                    {{- collection.title | upcase -}}
+                  {% else %}
+                    Collection Name
                   {% endif %}
-                </div>
-                <div class="{{ section.settings.collection_model }}">
-                  <h3 class="subheadline">
-                    {{- collection.title | upcase | link_to: collection.url -}}
-                  </h3>
-                  <a class="shop-now text-link" href="{{ collection.url }}">Shop Now</a>
-                </div>
-              </div>
-            
+                </h3>
+                {% unless section.settings.collection_model == "model-two" %}
+                <a class="shop-now text-link" href="{{ collection.url }}">Shop Now</a>
+                {% endunless %}
+              {% if section.settings.collection_model == "model-two" %}
+                </a>
+              {% endif %}
+            </div>
+          </div>
+
         {%- endfor -%}
       {% endif %}  
     </div>
@@ -266,7 +298,7 @@
       "type": "collection_list",
       "id": "collection_list",
       "label": "t:sections.all.collections",
-      "info": "You can configure the collections that appear here. If no collection is chosen, this section will showcase all the collections that your store has"
+      "info": "eğer seçili dğeilse sitedeki tüm collectionları gösterir"
     },
     {
       "type": "select",
@@ -344,17 +376,17 @@
     {
       "type": "select",
       "id": "collection_model",
-      "label": "Collection text display",
+      "label": "Collection model",
       "default": "model-two",
-      "info": "Use this setting to configure whether to show text on collections inside or outside collection image",
+      "info": "Change model of the collection boxes",
       "options": [
         {
           "value": "model-one",
-          "label": "Outside"
+          "label": "Model one"
         },
         {
           "value": "model-two",
-          "label": "Inside"
+          "label": "Model two"
         }
       ]
     },

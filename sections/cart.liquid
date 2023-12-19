@@ -20,11 +20,17 @@
           </div>
           
           {% endif %}
+        {% if pers_val_bar < 100 %}
         <div class="shipping-away-bar">
             <div class="fill" style="width: {{ pers_val_bar }}%;">
                 {% render 'icon-truck' %}
             </div>
         </div>
+        {% else  %}
+        <div class="shipping-away">
+          <p>{{ settings.free_shippping_done_text }}</p>
+        </div>
+        {% endif %}
     {% endif %}
     <div class="cart-page-main">
         {% if cart.empty? %}

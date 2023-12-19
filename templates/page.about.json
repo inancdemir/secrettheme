@@ -37,7 +37,7 @@
       "settings": {
         "section_height": 600,
         "section_height_mobile": 600,
-        "heading_color": "#ffffff",
+        "heading_color": "#FFFFFF",
         "heading_font_size": "large",
         "gap_from_bottom": 100,
         "gap_from_bottom_mobile": 33,
@@ -73,6 +73,7 @@
         "image-1": {
           "type": "image",
           "settings": {
+            "image": "shopify:\/\/shop_images\/cngrs_upper_body_photo_of_a_blonde_woman_wearing_a_dark_gray_sk_c872bc56-9718-4298-b022-c3d696a723f6.png",
             "custom_size": true,
             "image_size": "one-one",
             "image_fit": "cover",
@@ -223,10 +224,8 @@
       ],
       "settings": {
         "background_color": "#000000",
-        "content_color": "#ffffff",
-        "element_gaps": 20,
-        "section_padding_top": 10,
-        "section_padding_bottom": 10,
+        "content_color": "#FFFFFF",
+        "section_padding": 100,
         "align_content": "text-center",
         "full_width": false
       }
@@ -315,7 +314,6 @@
       ],
       "settings": {
         "section_height": 100,
-        "section_width": 1200,
         "text_position": "mid-center",
         "super_color": "#ffffff",
         "super_opacity": 40,

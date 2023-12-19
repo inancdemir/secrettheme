@@ -6,49 +6,66 @@
   {%- endif -%}
   <header class="text-center">
     {%- if section.settings.blog_show_header != blank -%}
-    <h3 class="medium">{{ article.title }}</h3>
+    <h3 class="large">{{ article.title }}</h3>
     {%- endif -%}
     {%- if section.settings.blog_show_author -%}
-      <span class="caption-2">
+      <span class="callout">
         Posted by {{ article.author }}
       </span>
     {%- endif -%}
     {%- if section.settings.blog_show_date -%}
-      <span class="caption-2">
+      <span class="callout">
         on {{ article.published_at | date: '%B %d, %Y' }}
       </span>
     {%- endif -%}
-
   </header>
   <div class="section-{{ section.id }}">
       {{ article.content }}
   </div>
   <div class="post-tags-shares">
     {%- if section.settings.show_tags -%}
-      {%- if article.tags.size > 0 -%}
         <div class="post-tags">
-          <ul aria-label="Tags">
-            {%- for tag in article.tags -%}
-              <li>
-                <a class="caption" href="{{ blog.url }}/tagged/{{ tag | handle }}">
-                  {{ tag }}
-                </a>
-              </li>
-            {%- endfor -%}
-          </ul>
+          {%- if article.tags.size > 0 -%}
+            <ul aria-label="Tags">
+              {%- for tag in article.tags -%}
+                <li>
+                  <a class="caption" href="{{ blog.url }}/tagged/{{ tag | handle }}">
+                    {{ tag }}
+                  </a>
+                </li>  
+              {%- endfor -%}
+            </ul>          
+          {%- endif -%}
         </div>
-      {%- endif -%}
     {%- endif -%}
     {%- if section.settings.show_shares -%}
       <div class="post-shares">
         <div class="socilas">
-          <span class="caption">Share</span>
+          <span class="subheadline">Share</span>
+          {% assign full_url = request.host | append: request.path %}
           <ul>
-              <li>{% render 'icon-facebook' %}</li>
-              <li>{% render 'icon-twitter' %}</li>
-              <li>{% render 'icon-pinterest' %}</li>
-              <li>{% render 'icon-link' %}</li>
-          </ul>    
+            <li>
+              <a aria-label="facebook-share" href="https://www.facebook.com/sharer/sharer.php?u={{- full_url -}}" target="_blank">
+                {% render 'icon-facebook' %}
+              </a>
+            </li>
+            <li>
+              <a aria-label="twitter-share" href="https://twitter.com/intent/tweet?text=CURVE%20W%20JACKET&url={{- full_url -}}" target="_blank">
+                {% render 'icon-twitter' %}
+              </a>
+            </li>
+            <li>
+              <a aria-label="pinterest-share" target="_blank" href="//pinterest.com/pin/create/button/?url={{ full_url }}&amp;media={{ product.featured_image | image_url: width: 1000 }}&amp;description={{ product.title | escape }}">
+                {% render 'icon-pinterest' %}
+              </a>
+            </li>
+            <li>|</li>
+            <li>
+              <span id="copyClip" onclick="copyURLToClipboard()" aria-label="copy-link">
+                {% render 'icon-link' %}
+              </span>
+            </li>
+          </ul>     
         </div>  
       </div>
     {%- endif -%}   
@@ -69,14 +86,14 @@
           <div class="email">
             <input  placeholder="E-mail" type="email" name="comment[email]" value="{{ form.email }}">
           </div>
-          <input class="button model-2 full" type="submit" value="Post">
+          <input class="button model-2 full" type="submit" value="POST COMMENT">
         {% endform %}
   
         {% paginate article.comments by 20 %}
           {% for comment in article.comments %}
             <div class="each-comment">
               <span class="callout">{{ comment.created_at | date: '%B %d, %Y' }}</span>
-              <span class="h4 small">{{ comment.author }}</span>
+              <h4 class="h4 small">{{ comment.author }}</h4>
               {{ comment.content }}
             </div>            
           {% endfor %}

@@ -1,8 +1,7 @@
 {%- style -%}
 .section-{{ section.id }} .hero-bg {
-    min-height: {{ section.settings.section_height }}vh;
-    max-height: {{ section.settings.section_height }}vh;   
-    overflow: hidden;
+  height: {% if section.settings.full_height_mobil %} 100vh {% else %} {{ section.settings.collection_height_mobile }}px {% endif %};
+  overflow: hidden;
 }
 .section-{{ section.id }} .hero-bg .super {
     color: {{ section.settings.super_color }};
@@ -123,7 +122,11 @@
 .text-on-hero .button-area {
     margin: 20px 0;
 }
-
+@media only screen and (min-width: 640px) {
+  .section-{{ section.id }} .hero-bg {
+    height: {% if section.settings.full_height_desktop %} 100vh {% else %} {{ section.settings.collection_height }}px {% endif %};
+  }
+}
 
 {%- endstyle -%}
 <div class="main-content-area section-{{ section.id }}">
@@ -172,13 +175,37 @@
   "settings": [
     {
       "type": "range",
-      "id": "section_height",
-      "min": 20,
-      "max": 120,
-      "step": 1,
-      "unit": "vh",
+      "id": "collection_height",
+      "min": 500,
+      "max": 1500,
+      "step": 10,
+      "unit": "px",
       "label": "t:sections.all.section_height",
-      "default": 100
+      "default": 640
+    },
+    {
+      "type": "checkbox",
+      "id": "full_height_desktop",
+      "label": "Masa üstü full height",
+      "info": "Bu check varsa yukarıdaki slider çalışmaz",
+      "default": false
+    },
+    {
+      "type": "range",
+      "id": "collection_height_mobile",
+      "min": 300,
+      "max": 800,
+      "step": 20,
+      "unit": "px",
+      "label": "Mobile height",
+      "default": 400
+    },
+    {
+      "type": "checkbox",
+      "id": "full_height_mobil",
+      "label": "Mobil full height",
+      "info": "Bu check varsa yukarıdaki slider çalışmaz",
+      "default": false
     },
     {
       "type": "range",
@@ -355,7 +382,7 @@
       "type": "video",
       "id": "video",
       "label": "Video",
-      "info": "If a video is selected, background image will not be displayed"
+      "info": "eğer video varsa imaj görüntülenmez"
     }
   ],
   "blocks": [
@@ -385,7 +412,7 @@
     },
     {
       "type": "text",
-      "name": "Subheading",
+      "name": "Text/Sub Title",
       "settings": [
         {
           "type": "richtext",
@@ -439,7 +466,7 @@
   ],
   "presets": [
     {
-      "name": "Hero",
+      "name": "Banner",
       "blocks": [
         {
           "type": "super_heading"

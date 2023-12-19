@@ -5,12 +5,25 @@
     margin-left: auto;
     margin-right: auto;
 }
+.single-article header {
+  margin-bottom: 34px;
+}
 .single-article .breadcrumbs {
   margin: 0 0 24px 0;
 }
-
-.single-article p {
-    padding: 20px 0;
+.single-article p,
+.single-article h1,
+.single-article h2,
+.single-article h3,
+.single-article h4,
+.single-article h5,
+.single-article h6,
+.single-article img,
+.single-article blockquote {
+    padding: 14px 0;
+}
+.single-article h3.large {
+  padding-bottom: 8px;
 }
 .post-tags ul {
   display: flex;
@@ -63,6 +76,27 @@
   background-color: #F8F8F8;
   padding: 32px;
   margin: 24px 0 0 0;
+}
+.each-comment span {
+  display: block;
+}
+
+.post-shares .socilas {
+  display: flex;
+  line-height: 32px;
+  align-items: center;
+}
+.post-shares .socilas span {
+  margin-right: 32px;
+}
+.post-shares .socilas li {
+  display: flex;
+  height: 32px;
+}
+.post-shares .socilas a {
+  display: block;
+  width: 32px;
+  height: 32px;
 }
 @media only screen and (min-width: 768px) {
   .article-comments form .name,

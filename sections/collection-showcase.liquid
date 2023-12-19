@@ -56,7 +56,6 @@
   right: 0;
   bottom: 0;
 }
-
 .section-{{ section.id }} .model-two a {
   display: flex;
   position: absolute;
@@ -95,14 +94,12 @@
 <div class="wide-width">
 {% endunless %}
 <div class="front-collection-wrap section-{{ section.id }}">
-    
     {% if section.settings.heading != blank %}
       <h2 class="{{ section.settings.heading_font_size }} space-from-edges">{{ section.settings.heading }}</h2>
     {% endif %}
     {% if section.settings.sub_heading != blank %}
         <div class="subtitle subheadline space-from-edges">{{ section.settings.sub_heading }}</div>
     {% endif %}
-    
     <div class="collection-hor">
       {%- for block in section.blocks -%}
         {% case block.type %}
@@ -143,16 +140,10 @@
         {% endcase %}
       {% endfor %}
     </div>
-    
 </div>
 {% unless section.settings.full_width %}
 </div>
 {% endunless %}
-
-
-
-
-
 {% schema %}
 {
   "name": "t:sections.collection_showcase.section_name",
@@ -161,7 +152,7 @@
       "type": "text",
       "id": "heading",
       "label": "t:sections.all.heading",
-      "default": "Collection showcase."
+      "default": "Collection Showcase."
     },
     {
       "type": "color",

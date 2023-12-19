@@ -267,17 +267,12 @@ button.hide {
 .variant-inventory .stock-check.active {
   display: block;
 }
-
 {%- endstyle -%}
 {{ 'socials.css' | asset_url | stylesheet_tag }}
-
 {{ 'accordion.css' | asset_url | stylesheet_tag }}
-
 {{ 'add-to-cart.css' | asset_url | stylesheet_tag }}
 {{ 'flickity.css' | asset_url | stylesheet_tag }}
 {{ 'venobox.css' | asset_url | stylesheet_tag }}
-
-
 <script src="{{ 'venobox.js' | asset_url }}" defer></script>
 <script src="{{ 'flickity.js' | asset_url }}" defer></script>
 <script id="accordions" src="{{ 'accordion.js' | asset_url }}" defer></script>
@@ -315,9 +310,6 @@ button.hide {
         {% endcase %}
       {% endfor %}
     </ul>
-    
-
-
     <div class="image-navigation">
       
       {% assign featured = product.selected_or_first_available_variant.featured_media.id %}

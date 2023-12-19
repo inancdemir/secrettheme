@@ -286,10 +286,11 @@ input:checked + .slider:before {
     margin: 0
 }
 .filter-close {
-    position: absolute;
-    margin: 32px;
-    top: 0;
-    right: 0;
+  position: absolute;
+  margin: 32px 20px 0 0;
+  top: 0;
+  right: 0;
+  cursor: pointer;
 }
 
 .product-list .breadcrumbs {
@@ -322,12 +323,25 @@ input:checked + .slider:before {
   display: flex;
   justify-content: center;
 }
+.add-text-wrap:before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0) 50%, {{ section.settings.tint_color }} 100%);
+  opacity: {{ section.settings.tint_opacity }}%;
+}
 .add-text-wrap .add-text-content {
   padding: 22px;
   display: flex;
   align-self: center;
   flex-direction: column;
   row-gap: 32px;
+  z-index: 2;
 }
 .add-text-wrap .add-text-content * {
   color: {{ section.settings.add_color }};
@@ -430,7 +444,6 @@ input:checked + .slider:before {
     assign productPerRow = section.settings.item_per_row
     assign rowPerpage = section.settings.item_show_row
     assign productperpage = productPerRow | times: rowPerpage
-    
   %}
     {% paginate collection.products by productperpage %}
       <div class="product-list full-on-mobile column-{{ section.settings.item_per_row }} column-mobile-{{ section.settings.item_per_row_mobile }} image-size-{{- section.settings.image_size }} image-fit-{{- section.settings.image_fit }} image-pos-{{- section.settings.image_pos -}}" id="AjaxinateContainer">
@@ -441,8 +454,9 @@ input:checked + .slider:before {
 
                 {% if forloop.parentloop.index == block.settings.add_position %}
                   <div class="product-list-item add{% unless block.settings.cover %} contain-image{% endunless %} add-size-{{- block.settings.add_size -}}" {{ block.shopify_attributes }} {%- if block.settings.min_height != empty -%}style="height: {{- block.settings.min_height -}}px"{%- endif -%}>
+
                     {% if block.settings.image %}
-                      {{ block.settings.image | image_url: width: 400 | image_tag: loading: 'lazy', class: 'add-image' }}
+                      {{ block.settings.image | image_url: width: 1000 | image_tag: loading: 'lazy', class: 'add-image' }}
                     {% else %}
                       {{ 'product-2' | placeholder_svg_tag: 'add-image' }}
                     {% endif %}
@@ -557,38 +571,36 @@ input:checked + .slider:before {
       "type": "select",
       "id": "image_size",
       "label": "t:sections.all.img_size",
-      "info": "Use Edit image to include a focal point, which will specify the main area of focus in your image",
       "default": "two-three",
       "options": [
         {
-            "value": "one-one",
-            "label": "Square (1:1)"
-          },
-          {
-            "value": "three-two",
-            "label": "Landscape (3:2)"
-          },
-          {
-            "value": "fout-three",
-            "label": "Landscape (4:3)"
-          },
-          {
-            "value": "sixteen-nine",
-            "label": "Landscape (16:9)"
-          },
-          {
-            "value": "two-three",
-            "label": "Portrait (2:3)"
-          },
-          {
-            "value": "three-four",
-            "label": "Portrait (3:4)"
-          },
-          {
-            "value": "nine-sixteen",
-            "label": "Portrait (9:16)"
-          }
-
+          "value": "one-one",
+          "label": "Square (1:1)"
+        },
+        {
+          "value": "three-two",
+          "label": "Landscape (3:2)"
+        },
+        {
+          "value": "fout-three",
+          "label": "Landscape (4:3)"
+        },
+        {
+          "value": "sixteen-nine",
+          "label": "Landscape (16:9)"
+        },
+        {
+          "value": "two-three",
+          "label": "Portrait (2:3)"
+        },
+        {
+          "value": "three-four",
+          "label": "Portrait (3:4)"
+        },
+        {
+          "value": "nine-sixteen",
+          "label": "Portrait (9:16)"
+        }
       ]
     },
     {
@@ -698,6 +710,23 @@ input:checked + .slider:before {
       "id": "full_width",
       "label": "t:sections.all.make_section_full",
       "default": true
+    },
+    {
+      "type": "range",
+      "id": "tint_opacity",
+      "min": 0,
+      "max": 100,
+      "step": 10,
+      "unit": "%",
+      "label": "Tint Opacity",
+      "default": 50,
+      "info": "Burada addler için uygulanacak arka plan. Bütün add için aynı uygulanacak."
+    },
+    {
+      "type": "color",
+      "id": "tint_color",
+      "label": "Tint color",
+      "default": "#000000"
     }
   ],
   "blocks": [

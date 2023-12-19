@@ -8,27 +8,11 @@
       {% endif %}
     </a>
     <button class="quick-view-button" data-product-id="{{- product.url -}}.js">
-      Quick View {% render 'icon-eye' %}        
+      {% render 'icon-eye' %} Quick View
     </button>
   </div>
   <div class="details">
-    <div class="color-variant-in-list">
-      <span class="h4 subheadline">{{- product.title | link_to: product.url }}</span>
-      {% if product.variants.size > 1 %}
-        <div class="product-variant">
-            {% for option in product.options_with_values %}
-              {%- if option.name == "Color" -%}
-                <div class="product-option">
-                  <span class="caption-2">{{ option.name }} | </span>
-                  {% for value in option.values %}
-                      <div class="product-list-colors {{ option.name }}-{{ value }}"></div>                                  
-                    {% endfor %}
-                </div>
-              {%- endif -%}
-            {% endfor %}
-        </div>
-      {% endif %}
-    </div>
+    <span class="h4 subheadline product-title">{{- product.title | link_to: product.url }}</span>
     <div class="price caption">
       {% if product.compare_at_price > product.price %}
         <span class="original-price">
@@ -43,6 +27,24 @@
         </span>
       {% endif %}
     </div>
+    <div class="color-variant-in-list">
+      {% if product.variants.size > 1 %}
+        <div class="product-variant">
+            {% for option in product.options_with_values %}
+              {%- if option.name == "Color" -%}
+                <div class="product-option">
+                  <span class="caption-2">{{ option.name }} | </span>
+                  {% for value in option.values %}
+                      <div class="product-list-colors {{ option.name }}-{{ value }}"></div>                                  
+                    {% endfor %}
+                </div>
+              {%- endif -%}
+            {% endfor %}
+        </div>
+      {% endif %}
+
+    </div>
+    
     
     {% if product.compare_at_price_max > product.price %}
       <div class="save-amount callout">
