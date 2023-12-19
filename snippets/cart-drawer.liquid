@@ -251,6 +251,10 @@
 .cart-variants {
   opacity: 0.6;
 }
+.view-cart-custom-fontsize {
+  font-size: 14px;
+  font-weight: 500;
+}
 
 {%- endstyle -%}
 <div class="cart-drawer">
@@ -284,7 +288,7 @@
                     <div class="cart-drawer-item-main-flex-left">
                       <div class="cart-item-details">
                         <h3 class="subheadline"><a href="{{ item.url }}">{{ item.product.title }}</a></h3>
-                        <p class="text-link cart-variants">{{ item.variant.title }}</p>    
+                        <p class="callout cart-variants">{{ item.variant.title }}</p>    
                         <div class="remove-item text-link">
                           <a href="{{ item.url_to_remove }}">{% render "icon-trash" %} Remove</a>
                         </div>
@@ -353,7 +357,7 @@
               <button type="submit" name="checkout" class="button model-2 full">CHECKOUT</button>
               {% endif %}
             </div>
-            <div class="text-center underline"><a href="">View cart</a></div>
+            <div class="text-center underline view-cart-custom-fontsize"><a href="">View cart</a></div>
             
           </footer>
         {% endif %}
