@@ -388,7 +388,7 @@ h3.large, .h3.large {
 }
 h4, .h4 {
     font-family: var(--font-sub-title-family);
-    font-weight: 700;
+    font-weight: 500;
     letter-spacing: 0em;
     font-size: calc(var(--font-sub-title-size) * 18px);
     line-height: calc((var(--font-sub-title-size) * 18px) * 1.2);
@@ -474,7 +474,7 @@ h6, .h6 {
     line-height: calc((var(--font-body-size) * 11px) * 1.54);
 }
 .caption {
-    font-weight: 600;
+    font-weight: 500;
     letter-spacing: 0em;
     font-size: calc(var(--font-body-size) * 14px);
     line-height: calc((var(--font-body-size) * 14px) * 1.57);
@@ -513,10 +513,10 @@ h6, .h6 {
    }
 }
 .subheadline h3, .subheadline .h3 {
-    font-weight: 600;
+    font-weight: 500;
 }
 strong {
-    font-weight: 600;
+    font-weight: 500;
 }
 input[type="text"], input[type="email"], textarea {
     border: 1px solid #cbcbcb;
@@ -542,7 +542,7 @@ button,
 .shopify-challenge__button.btn {
     font-size: calc(var(--font-button-size) * 14px);
     line-height: calc((var(--font-button-size) * 14px) * 1.57);
-    font-weight: 700;
+    font-weight: 600;
     padding: 17px 20px;
     letter-spacing: 0em;
     display: inline-block;
@@ -1945,7 +1945,7 @@ div#predictive-search ul.search-products li .quick-view-button {
     .badge {
         font-size: 12px;
         line-height: 18px;
-        font-weight: 700;
+        font-weight: 500;
         padding: 6px 16px;
    }
 }
