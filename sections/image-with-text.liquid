@@ -1,10 +1,12 @@
 {%- style -%}
+{% unless section.settings.use_default_colors %}
+{% endunless %}
 .image-with-text.section-{{ section.id }} {
-    display: block;
-    align-items: center;
-    background-color: {{ section.settings.section_bg }};
-    margin: 0 auto;
-    max-width:  {{ section.settings.max_width }}%;
+  display: block;
+  align-items: center;
+  background-color: {{ section.settings.section_bg }};
+  margin: 0 auto;
+  max-width:  {{ section.settings.max_width }}%;
 }
 .image-with-text.section-{{ section.id }} .image-side {
   line-height: 0;
@@ -24,8 +26,6 @@
   display: flex;
 }
 
-.image-with-text.section-{{ section.id }}.image-on-left {
-}
 .image-with-text.section-{{ section.id }}.image-on-right .image-side {
     order: 2
 }
@@ -203,6 +203,12 @@
       "type": "color",
       "id": "section_bg",
       "label": "t:sections.all.background_color"
+    },
+    {
+      "type": "checkbox",
+      "id": "use_default_colors",
+      "label": "Use default colors",
+      "default": false
     },
     {
       "type": "checkbox",

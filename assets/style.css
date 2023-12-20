@@ -1,3 +1,6 @@
+.shopify-challenge__container {
+    margin: 30vh auto;
+}
 html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
     margin: 0;
     padding: 0;
@@ -534,7 +537,9 @@ input[type="text"]:focus, input[type="email"]:focus, textarea:focus {
 .thin {
     font-weight: 400;
 }
-.button, button {
+.button, 
+button,
+.shopify-challenge__button.btn {
     font-size: calc(var(--font-button-size) * 14px);
     line-height: calc((var(--font-button-size) * 14px) * 1.57);
     font-weight: 700;
@@ -587,13 +592,21 @@ input[type="text"]:focus, input[type="email"]:focus, textarea:focus {
     background: var(--button-second-color);
     transition: all 0.4s ease-in-out;
 }
-.button.model-3, button.model-3 {
+.button.model-3, 
+button.model-3,
+.shopify-challenge__button.btn {
     display: inline-block;
     color: var(--button-third-color);
     border: 1px solid var(--button-third-color);
     transition: all 0.4s ease-in-out;
 }
-.button.model-3:hover, button.model-3:hover {
+.shopify-challenge__button.btn {
+    text-align: center;
+    margin: 40px auto;
+    display: block;
+}
+.button.model-3:hover, button.model-3:hover,
+.shopify-challenge__button.btn:hover {
     color: var(--button-third-color_bg);
     border: 1px solid var(--button-third-color);
     background: var(--button-third-color);

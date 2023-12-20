@@ -39,7 +39,7 @@
   display: flex;
 }
 .section-{{ section.id }}.front-featured-product .product-list {
-  display: flex;
+  display: flex; 
   flex-direction: row;
 }
 
@@ -59,11 +59,14 @@
     column-gap: {{ section.settings.product_gap }}px;
   }
   .section-{{ section.id }} .product-list .product-list-item {
-    flex: 0 0 calc(calc((100% - calc({{ section.settings.product_gap }}px * calc({{ section.settings.product_per_row }} - 1))) / {{ section.settings.product_per_row }}));
+    flex: 0 0 calc(calc((100% - calc({{ section.settings.product_gap }}px * calc({{ section.settings.item_per_row }} - 1))) / {{ section.settings.item_per_row }}));
   }
 }
 {%- endstyle -%}
-<div class="front-featured-product section-{{ section.id }}">
+{% unless section.settings.full_width %}
+<div class="wide-width">
+{% endunless %}
+  <div class="front-featured-product section-{{ section.id }}">
     {% if section.settings.heading != blank %}
         <h2>{{ section.settings.heading }}</h2>
     {% endif %}
@@ -73,13 +76,13 @@
         {% endif %}
         <a href="{{ collections['featured-products'].url }}">Show All Products</a>
     </div>
-    <div class="product-list column-{{ section.settings.product_per_row }}">
+    <div class="product-list full-on-mobile column-{{ section.settings.item_per_row }} column-mobile-{{ section.settings.item_per_row_mobile }} image-size-{{- section.settings.image_size }} image-fit-{{- section.settings.image_fit }} image-pos-{{- section.settings.image_pos -}}">
         {% if section.settings.product_list != empty %}
             {% for product in section.settings.product_list %}
                 {% render 'product-item', product: product %}
             {% endfor %} 
         {% else %}            
-            {% for product_number in (1..section.settings.product_per_row) %}
+            {% for product_number in (1..section.settings.item_per_row) %}
                 <div class="product-list-item">
                     <div class="product-image">
                       {{ 'product-' | append: product_number | placeholder_svg_tag: 'demo-image slide-image' }}
@@ -95,7 +98,10 @@
             {% endfor %}           
         {% endif %}
     </div>
+  </div>
+{% unless section.settings.full_width %}
 </div>
+{% endunless %}
 {% schema %}
 {
   "name": "t:sections.featured_products.section_name",
@@ -126,7 +132,7 @@
     },
     {
       "type": "range",
-      "id": "product_per_row",
+      "id": "item_per_row",
       "min": 1,
       "max": 5,
       "step": 1,
@@ -135,14 +141,103 @@
       "default": 4
     },
     {
+      "type": "select",
+      "id": "item_per_row_mobile",
+      "label": "t:sections.product_grid.columns_mobile",
+      "default": "2",
+      "options": [
+        {
+          "value": "1",
+          "label": "1"
+        },
+        {
+          "value": "2",
+          "label": "2"
+        }
+      ]
+    },
+    {
       "type": "range",
       "id": "product_gap",
       "min": 0,
       "max": 60,
       "step": 1,
       "unit": "px",
-      "label": "Ürünler arası boşluk",
+      "label": "t:sections.product_grid.columns_spacing",
       "default": 0
+    },
+    {
+      "type": "select",
+      "id": "image_size",
+      "label": "t:sections.all.img_size",
+      "default": "two-three",
+      "options": [
+        {
+          "value": "one-one",
+          "label": "Square (1:1)"
+        },
+        {
+          "value": "three-two",
+          "label": "Landscape (3:2)"
+        },
+        {
+          "value": "fout-three",
+          "label": "Landscape (4:3)"
+        },
+        {
+          "value": "sixteen-nine",
+          "label": "Landscape (16:9)"
+        },
+        {
+          "value": "two-three",
+          "label": "Portrait (2:3)"
+        },
+        {
+          "value": "three-four",
+          "label": "Portrait (3:4)"
+        },
+        {
+          "value": "nine-sixteen",
+          "label": "Portrait (9:16)"
+        }
+      ]
+    },
+    {
+      "type": "select",
+      "id": "image_fit",
+      "label": "t:sections.all.image_fit",
+      "default": "contain",
+      "options": [
+        {
+          "value": "contain",
+          "label": "t:sections.all.image_contain"
+        },
+        {
+          "value": "cover",
+          "label": "t:sections.all.image_cover"
+        }
+      ]
+    },
+    {
+      "type": "select",
+      "id": "image_pos",
+      "label": "t:sections.all.image_position",
+      "default": "center",
+      "info": "t:sections.all.image_position_info",
+      "options": [
+        {
+          "value": "top",
+          "label": "t:sections.all.image_pos_top"
+        },
+        {
+          "value": "center",
+          "label": "t:sections.all.image_pos_center"
+        },
+        {
+          "value": "bottom",
+          "label": "t:sections.all.image_pos_bot"
+        }
+      ]
     },
     {
       "type": "product_list",
@@ -169,6 +264,12 @@
       "unit": "px",
       "label": "t:sections.all.section_padding",
       "default": 30
+    },
+    {
+      "type": "checkbox",
+      "id": "full_width",
+      "label": "t:sections.all.make_section_full",
+      "default": true
     }
   ],
   "presets": [

@@ -152,6 +152,7 @@
       "settings": {
         "background_color": "#FFFFFF",
         "content_color": "#000000",
+        "section_padding": 76,
         "align_content": "text-center",
         "full_width": false
       }
@@ -290,6 +291,7 @@
       "settings": {
         "background_color": "#FFFFFF",
         "content_color": "#000000",
+        "section_padding": 100,
         "align_content": "text-center",
         "full_width": false
       }
@@ -428,6 +430,7 @@
       "settings": {
         "background_color": "#FFFFFF",
         "content_color": "#000000",
+        "section_padding": 100,
         "align_content": "text-center",
         "full_width": false
       }
@@ -584,6 +587,7 @@
       "settings": {
         "background_color": "#FFFFFF",
         "content_color": "#000000",
+        "section_padding": 100,
         "align_content": "text-center",
         "full_width": false
       }
@@ -728,6 +732,7 @@
       "settings": {
         "background_color": "#FFFFFF",
         "content_color": "#000000",
+        "section_padding": 30,
         "align_content": "text-center",
         "full_width": false
       }
@@ -1091,6 +1096,7 @@
       "settings": {
         "background_color": "#B8C9D6",
         "content_color": "#ffffff",
+        "section_padding": 100,
         "align_content": "text-center",
         "full_width": false
       }
@@ -1119,6 +1125,7 @@
       "settings": {
         "background_color": "#000",
         "content_color": "#ffffff",
+        "section_padding": 59,
         "align_content": "text-center",
         "full_width": false
       }

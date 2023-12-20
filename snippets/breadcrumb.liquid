@@ -12,10 +12,13 @@
     column-gap: 5px;
   }
 
-  .breadcrumbs__item {
+  .breadcrumbs__item a {
     display: inline-block;
     color: var(--body-color);
     opacity: 0.45;
+  }
+  .breadcrumbs__item:last-child a {
+    opacity: 1;
   }
 
   .breadcrumbs__item:not(:last-child):after {
