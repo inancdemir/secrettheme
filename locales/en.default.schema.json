@@ -190,7 +190,7 @@
       "collections": "Collections",
       "columns_spacings": "Column spacing",
       "section_margin": "Section top and bottom margin",
-      "section_padding": "Section top and bottom padding",
+      "section_padding": "Top and bottom spacing",
       "section_padding_top": "Top spacing",
       "section_padding_bottom": "Bottom spacing",
       "button_style": "Button style",
@@ -443,7 +443,7 @@
       "description_lenght": "Lenght"
     },
     "collection_showcase": {
-      "section_name" : "Collection Showcase",
+      "section_name" : "Collection showcase",
       "subheading_default": "<p><strong>Use this section to showcase your collections</p></strong>",
       "collection_model": "Text position according to collection image",
       "collection_model_info": "Setup whether collection title and button label will be positioned inside or outside cover image. The dafault color of the text is white. If you set text position to outside, please use the color options to make your text appear.",
@@ -508,7 +508,7 @@
     },
     "newsletter": {
       "name": "Newsletter",
-      "select_spacing_between": "Select spacing between"
+      "select_spacing_between": "Gap between elements"
     },
     "shopthelook": {
       "name": "Shop the look",
