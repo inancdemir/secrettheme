@@ -1,50 +1,62 @@
 {%- style -%}
 {% unless section.settings.use_default_colors %}
+  .section-{{ section.id }} {
+    background-color: {{ section.settings.section_bg }};
+  }
+  .section-{{ section.id }} h3 {
+    color: {{ section.settings.section_heading }};
+  }
+  .section-{{ section.id }} .text-area {
+    color: {{ section.settings.section_text }};
+  }
+  .section-{{ section.id }} .button.media-text,
+  .section-{{ section.id }} .button.media-text * {
+    color: {{ section.settings.section_text }};
+    stroke: {{ section.settings.section_text }};
+  }
 {% endunless %}
-.image-with-text.section-{{ section.id }} {
+.section-{{ section.id }} .image-with-text {
   display: block;
   align-items: center;
-  background-color: {{ section.settings.section_bg }};
   margin: 0 auto;
   max-width:  {{ section.settings.max_width }}%;
 }
-.image-with-text.section-{{ section.id }} .image-side {
+.section-{{ section.id }} .image-with-text .image-side {
   line-height: 0;
 }
-.image-with-text.section-{{ section.id }} .image-side img {
+.section-{{ section.id }} .image-with-text .image-side img {
     width: 100%;
     height: auto;
 }
-.image-with-text.section-{{ section.id }} .image-side img.demo-image {
+.section-{{ section.id }} .image-with-text .image-side img.demo-image {
     max-height: 430px;
     min-height: 430px;
 }
-.image-with-text.section-{{ section.id }} .text-side {
+.section-{{ section.id }} .image-with-text .text-side {
   padding: 0 {{ section.settings.text_width }}px;
   row-gap: 16px;
   flex-direction: column;
   display: flex;
 }
-
-.image-with-text.section-{{ section.id }}.image-on-right .image-side {
+.section-{{ section.id }} .image-with-text.image-on-right .image-side {
     order: 2
 }
 @media only screen and (min-width: 640px) {
-  .image-with-text.section-{{ section.id }} {
+  .section-{{ section.id }} .image-with-text {
       display: flex;
       column-gap: {{ section.settings.row_gap }}px;
   }
-  .image-with-text.section-{{ section.id }} .image-side {
+  .section-{{ section.id }} .image-with-text .image-side {
       min-width: {{ section.settings.image_size }}%;
       max-width: {{ section.settings.image_size }}%;
   }
 }
-
 {%- endstyle -%}
+<div class="section-{{ section.id }}">
 {% unless section.settings.full_width %}
 <div class="wide-width">
 {% endunless %}
-<div class="image-with-text section-{{ section.id }} {{ section.settings.image_position }}">
+<div class="image-with-text {{ section.settings.image_position }}">
     <div class="image-side">
       {% if section.settings.image %}
         {{ section.settings.image | image_url: width: 1500 | image_tag: loading: 'lazy' }}
@@ -66,17 +78,19 @@
                 </div>
                 {%- when 'button' -%}
                   {%- if block.settings.button_label != blank -%}
+                    <div class="button-area" {{ block.shopify_attributes }}>
                       <a
                       {% if block.settings.button_link == blank %}
-                          role="link" aria-disabled="true"
+                        role="link" aria-disabled="true"
                       {% else %}
-                          href="{{ block.settings.button_link }}"
+                        role="link" aria-disabled="true"
+                        href="{{ block.settings.button_link }}"
                       {% endif %}
-                      class="button media-text text-link"
-                      {{ block.shopify_attributes }}
+                        class="button text-link {{ block.settings.button_style }}"
                       >
-                      {{ block.settings.button_label | escape }} {% render "icon-right-arrow" %}
+                      {{ block.settings.button_label | escape }} {% if block.settings.button_style == "media-text" %}{% render "icon-right-arrow" %}{% endif %}
                       </a>
+                    </div>
                   {%- endif -%}
               {%- endcase -%}
           {%- endfor -%}
@@ -93,6 +107,7 @@
 {% unless section.settings.full_width %}
 </div>
 {% endunless %}
+</div>
 {% schema %}
 {
   "name": "t:sections.image-with-text.name",
@@ -205,6 +220,18 @@
       "label": "t:sections.all.background_color"
     },
     {
+      "type": "color",
+      "id": "section_heading",
+      "label": "header block colors",
+      "default": "#000000"
+    },
+    {
+      "type": "color",
+      "id": "section_text",
+      "label": "text block colors",
+      "default": "#000000"
+    },
+    {
       "type": "checkbox",
       "id": "use_default_colors",
       "label": "Use default colors",
@@ -245,7 +272,6 @@
     {
       "type": "button",
       "name": "t:sections.image-with-text.blocks.button.name",
-      "limit": 1,
       "settings": [
         {
           "type": "text",
@@ -258,6 +284,34 @@
           "type": "url",
           "id": "button_link",
           "label": "t:sections.image-with-text.blocks.button.settings.button_link.label"
+        },
+        {
+          "type": "select",
+          "id": "button_style",
+          "options": [
+            {
+              "value": "model-1",
+              "label": "t:settings_schema.typography.settings.colors.button_1_color_1"
+            },
+            {
+              "value": "model-2",
+              "label": "t:settings_schema.typography.settings.colors.button_2_color_1"
+            },
+            {
+              "value": "model-3",
+              "label": "t:settings_schema.typography.settings.colors.button_3_color_1"
+            },
+            {
+              "value": "model-4",
+              "label": "t:settings_schema.typography.settings.colors.button_4_color_1"
+            },
+            {
+              "value": "media-text",
+              "label": "only text"
+            }
+          ],
+          "label": "t:sections.all.button_style",
+          "default": "media-text"
         }
       ]
     }

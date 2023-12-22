@@ -1,6 +1,7 @@
 {{ 'featured-collections.css' | asset_url | stylesheet_tag }}
 {%- style -%}
     .section-{{ section.id }} {
+      background-color: {{ section.settings.section_bg }};
       margin: {{ section.settings.section_margin }}px 0;
     }
     .section-{{ section.id }} .collection-details h2 {
@@ -82,49 +83,50 @@
 {%- endstyle -%}
 
 
-{% unless section.settings.full_width %}
-<div class="wide-width">
-{% endunless %}
-<div class="front-collection-wrap section-{{ section.id }} columns-{{ section.settings.collection_per_line }}">
-  {%- for block in section.blocks -%}
-    {% case block.type %}
-      {%- when 'collection' -%}
-          <div class="single-collection-large image-pos-{{- block.settings.image_pos -}}">
-            {% if block.settings.collection != empty %}
-              {{ block.settings.collection.featured_image | image_url: width: 2000 | image_tag: loading: 'lazy', class: 'product-image' }}
-            {% else %}
-              {{ 'collection-1' | placeholder_svg_tag: 'demo-image slide-image' }}
-            {% endif %}
-            <div class="collection-details {{ block.settings.text_position }}">
-                <h2 class="{{ section.settings.heading_font_size }}">
-                  {% if block.settings.collection != empty %}
-                    {{- block.settings.collection.title | upcase | link_to: block.settings.collection.url -}}
-                  {% else %}
-                    Featured collection
-                  {% endif %}
-                </h2>
-                {% if block.settings.collection != empty %}
-                  {% if block.settings.enable_description == "enabled" %}
 
-                    {% if block.settings.enable_custom_description == "disabled" %}
-                      <p class="h4 small">{{- block.settings.collection.description | strip_html | truncate: block.settings.collection_description_lenght -}}</p>
-                    {% else  %}
-                      <div class="h4 small">{{- block.settings.custom_description -}}</div>
+<div class="section-{{ section.id }}">
+  {% unless section.settings.full_width %}
+  <div class="wide-width">
+  {% endunless %}
+    <div class="front-collection-wrap columns-{{ section.settings.collection_per_line }}">
+    {%- for block in section.blocks -%}
+      {% case block.type %}
+        {%- when 'collection' -%}
+            <div class="single-collection-large image-pos-{{- block.settings.image_pos -}}">
+              {% if block.settings.collection != empty %}
+                {{ block.settings.collection.featured_image | image_url: width: 2000 | image_tag: loading: 'lazy', class: 'product-image' }}
+              {% else %}
+                {{ 'collection-1' | placeholder_svg_tag: 'demo-image slide-image' }}
+              {% endif %}
+              <div class="collection-details {{ block.settings.text_position }}">
+                  <h2 class="{{ section.settings.heading_font_size }}">
+                    {% if block.settings.collection != empty %}
+                      {{- block.settings.collection.title | upcase | link_to: block.settings.collection.url -}}
+                    {% else %}
+                      Featured collection
                     {% endif %}
-                    
+                  </h2>
+                  {% if block.settings.collection != empty %}
+                    {% if block.settings.enable_description == "enabled" %}
+                      {% if block.settings.enable_custom_description == "disabled" %}
+                        <p class="h4 small">{{- block.settings.collection.description | strip_html | truncate: block.settings.collection_description_lenght -}}</p>
+                      {% else  %}
+                        <div class="h4 small">{{- block.settings.custom_description -}}</div>
+                      {% endif %}                      
+                    {% endif %}
+                  {% else %}
+                    <p class="h4 small">Collection Description</p>
                   {% endif %}
-                {% else %}
-                  <p class="h4 small">Collection Description</p>
-                {% endif %}
-                <a class="button {{ block.settings.button_style }}" href="{{ block.settings.collection.url }}">{{- block.settings.collection_button_text -}}</a>
+                  <a class="button {{ block.settings.button_style }}" href="{{ block.settings.collection.url }}">{{- block.settings.collection_button_text -}}</a>
+              </div>
             </div>
-          </div>
-    {% endcase %}
-  {% endfor %}
+      {% endcase %}
+    {% endfor %}
+    </div>
+  {% unless section.settings.full_width %}
+  </div>
+  {% endunless %}
 </div>
-{% unless section.settings.full_width %}
-</div>
-{% endunless %}
 {% schema %}
 {
   "name": "t:sections.featured_collections.section_name",
@@ -235,6 +237,11 @@
       "id": "tint_color",
       "label": "Tint color",
       "default": "#000000"
+    },
+    {
+      "type": "color",
+      "id": "section_bg",
+      "label": "t:sections.all.background_color"
     }
   ],
   "blocks": [

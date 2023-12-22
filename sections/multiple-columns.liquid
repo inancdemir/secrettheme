@@ -16,12 +16,13 @@
     padding-bottom: calc(({{- section.settings.section_padding_bottom }} / 100) * 256px);
   }
 }
-.multi-columns {
+.section-{{ section.id }} .multi-columns {
   display: flex;
   width: 100%;
   overflow: hidden;
   flex-wrap: wrap;
   column-gap: {{ section.settings.spacings }}px;
+  row-gap: {{ section.settings.spacings_v }}px;
   flex-direction: column;
 }
 .multi-columns .column {
@@ -192,6 +193,16 @@
       "step": 1,
       "unit": "px",
       "label": "t:sections.all.columns_spacings",
+      "default": 16
+    },
+    {
+      "type": "range",
+      "id": "spacings_v",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "label": "vertical boşluk",
       "default": 16
     },
     {

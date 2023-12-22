@@ -12,10 +12,10 @@
     background-repeat: no-repeat;
     background-position: top center;
   }
-  .section-{{ section.id }}.front-collection-wrap  h2 {
+  .section-{{ section.id }} .front-collection-wrap  h2 {
     color: {{ section.settings.heading_color }};
   }
-  .section-{{ section.id }}.front-collection-wrap .subtitle {
+  .section-{{ section.id }} .front-collection-wrap .subtitle {
       color: {{ section.settings.sub_heading_color }};
   }
   .section-{{ section.id }} .model-two a:before {
@@ -98,10 +98,12 @@
 
 {%- endstyle -%}
 
-{% unless section.settings.full_width %}
-<div class="wide-width">
-{% endunless %}
-<div class="front-collection-wrap section-{{ section.id }}">
+
+<div class="section-{{ section.id }}">
+  {% unless section.settings.full_width %}
+  <div class="wide-width">
+  {% endunless %}
+  <div class="front-collection-wrap">
     {% if section.settings.heading != blank %}
       <h2 class="{{ section.settings.heading_font_size }} space-from-edges">{{ section.settings.heading }}</h2>
     {% endif %}
@@ -148,10 +150,12 @@
         {% endcase %}
       {% endfor %}
     </div>
+  </div>
+  {% unless section.settings.full_width %}
+  </div>
+  {% endunless %}
 </div>
-{% unless section.settings.full_width %}
-</div>
-{% endunless %}
+
 {% schema %}
 {
   "name": "t:sections.collection_showcase.section_name",

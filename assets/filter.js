@@ -12,3 +12,6 @@ function openFilters() {
       closeFilters();
     });
   })
+
+  
+  

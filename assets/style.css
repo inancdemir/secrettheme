@@ -494,7 +494,7 @@ h6, .h6 {
 .subheadline,
 *.subheadline {
     letter-spacing: 0em;
-    font-weight: 500;
+    font-weight: 500 !important;
     font-size: calc(var(--font-sub-title-size) * 14px);
     line-height: calc((var(--font-sub-title-size) * 14px) * 1.57);
 }
@@ -1717,6 +1717,7 @@ ul#LanguageList:before {
     top: 0;
     margin-top: 16px;
     z-index: 9;
+    cursor: pointer;
 }
 @media only screen and (min-width: 640px) {
     .search-wrap .search-close {
@@ -1854,7 +1855,8 @@ div#predictive-search ul.search-products li .quick-view-button {
     -o-transform: translateX(-50%) translateY(-50%) scale(1.2);
     transform: translateX(-50%) translateY(-50%) scale(1.2);
 }
-.product-image-animation .not-animate .product-list-item:hover img {
+.product-image-animation .not-animate .product-list-item:hover img,
+.product-list-item.add:hover img {
     -webkit-transform: translateX(0%) translateY(0%) scale(1);
     -moz-transform: translateX(0%) translateY(0%) scale(1);
     -o-transform: translateX(0%) translateY(0%) scale(1);

@@ -93,7 +93,7 @@
           {% for comment in article.comments %}
             <div class="each-comment">
               <span class="callout">{{ comment.created_at | date: '%B %d, %Y' }}</span>
-              <h4 class="h4 small">{{ comment.author }}</h4>
+              <span class="h4 small">{{ comment.author }}</span>
               {{ comment.content }}
             </div>            
           {% endfor %}
