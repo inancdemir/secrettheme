@@ -183,7 +183,7 @@
       "background_color": "Background",
       "color": "Color",
       "description": "Description",
-      "description_heading": "Description heading",
+      "description_heading": "Heading",
       "subheading": "Subheading",
       "subheading_default": "<p>Add subheading</p>",
       "column_per_row": "Columns per row",
@@ -387,8 +387,8 @@
       "drop_down": "Dropdown",
       "name_box": "Namebox",
       "color_box": "Visualbox",
-      "size_swatch_style": "Size swatch style",
-      "other_swatches_style": "Alternative swatch style",
+      "size_swatch_style": "Swatch size",
+      "other_swatches_style": "Swatch style",
       "find_size": "Find your size",
       "select_page": "Select page",
       "select_page_info": "Please navigate to Shopify panel if you do not have a size chart ready. [Learn more about creating a size chart.](https://help.shopify.com/en/manual/online-store/themes/themes-by-shopify/vintage-themes/customizing-vintage-themes/add-size-chart)",
@@ -415,7 +415,7 @@
       "name": "Top banner",
       "gap_from_bottom": "Text distance from bottom",
       "gap_from_bottom_mobile": "Text distance from bottom on mobile",
-      "featured_image_position": "You can adjust the total number of products displayed using the column and row settings."
+      "featured_image_position": "Image position"
     },
     "hero_slider": {
       "hero_slider_name": "Slideshow",
@@ -512,7 +512,7 @@
     },
     "shopthelook": {
       "name": "Shop the look",
-      "info": "Select the background image to highlight your chosen products.",
+      "info": "Select a background image to highlight your chosen products",
       "label": "Background image",
       "add_product": "Product",
       "choose_product": "Choose product",
