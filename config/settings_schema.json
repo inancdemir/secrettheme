@@ -244,7 +244,7 @@
           "type": "text",
           "id": "free_shippping_done_text",
           "label": "t:settings_schema.cart_drawer.free_shippping_done_text_label",
-          "default": "Shiping will be free"
+          "default": "Free shipping is available"
         }
       ]
     },
