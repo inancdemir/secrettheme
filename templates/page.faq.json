@@ -152,6 +152,29 @@
         "section_padding_bottom": 0,
         "full_width": false
       }
+    },
+    "f537b706-1546-426b-8baf-67cb1d8c2489": {
+      "type": "rich-section",
+      "blocks": {
+        "6e94f1b0-e766-4cf2-92f0-3633030d2a11": {
+          "type": "rich_text",
+          "settings": {
+            "description": "<p><strong>Need Further Assistance?<\/strong><\/p><p><br\/>If you have any more questions or need additional assistance, our Aspena customer service team is always here to help you.<\/p><p><strong>Thank you for choosing Aspena for your luxury winter wear needs!<\/strong><\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "6e94f1b0-e766-4cf2-92f0-3633030d2a11"
+      ],
+      "settings": {
+        "background_color": "#FFF",
+        "content_color": "#000000",
+        "element_gaps": 20,
+        "section_padding_top": 10,
+        "section_padding_bottom": 10,
+        "align_content": "text-left",
+        "full_width": false
+      }
     }
   },
   "order": [
@@ -160,6 +183,7 @@
     "spacer-2",
     "7e8c4547-1074-41f9-aa36-a076d591807b",
     "f4ceac0d-1683-4d6d-954d-3c131e8ad664",
-    "59363be1-615e-4439-a852-cc535bd86e33"
+    "59363be1-615e-4439-a852-cc535bd86e33",
+    "f537b706-1546-426b-8baf-67cb1d8c2489"
   ]
 }
