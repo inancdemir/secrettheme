@@ -71,6 +71,27 @@
             "accorion_title": "Are Aspena jackets waterproof?",
             "accorion_contnet": "<p>Many of our jackets are crafted to offer excellent water resistance or full waterproof capabilities, ideal for snowy and wet conditions. Specific features of each jacket can be found in the product descriptions on our website.<\/p>"
           }
+        },
+        "945912bc-d414-4958-9c1c-ed2892bf15a5": {
+          "type": "accordion",
+          "settings": {
+            "accorion_title": "Does Aspena offer a discount for first-time buyers?",
+            "accorion_contnet": "<p>Yes, we welcome new customers with a special discount. Sign up for the Aspena newsletter to receive your exclusive code and get updates on our newest collections and offers.<\/p>"
+          }
+        },
+        "2f25d956-4d9d-4f53-a174-f0518100e58f": {
+          "type": "accordion",
+          "settings": {
+            "accorion_title": "What payment methods does Aspena accept?",
+            "accorion_contnet": "<ul><li>Aspena accepts a variety of payment methods including major credit\/debit cards, PayPal, and more. You can view all available options in our Payment Methods section.<\/li><\/ul>"
+          }
+        },
+        "d576a744-34e7-4381-8264-ec7f04e71b98": {
+          "type": "accordion",
+          "settings": {
+            "accorion_title": "How can I track my Aspena order?",
+            "accorion_contnet": "<p>After your order is dispatched, we will send you a tracking number via email. This number can be used to check the status of your delivery on our website or the courier's tracking system.<\/p>"
+          }
         }
       },
       "block_order": [
@@ -80,7 +101,10 @@
         "1e972158-11cc-486f-a113-92b74f71a64f",
         "9fcc417c-edf0-4d7f-87de-e7eeca7af3bd",
         "d316dde0-4a82-4fa4-80c4-bebeea3f3372",
-        "aa1b5f04-8928-4856-98a4-e81f7d18a778"
+        "aa1b5f04-8928-4856-98a4-e81f7d18a778",
+        "945912bc-d414-4958-9c1c-ed2892bf15a5",
+        "2f25d956-4d9d-4f53-a174-f0518100e58f",
+        "d576a744-34e7-4381-8264-ec7f04e71b98"
       ],
       "settings": {
         "heading": "F.A.Q.",
