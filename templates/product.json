@@ -42,7 +42,7 @@
             "button_label": "ADD TO CART",
             "button_label_nostock": "OUT OF STOCK",
             "quantity_position": "quantitiy-top",
-            "button_style": "model-2",
+            "button_style": "model-1",
             "show_quick_buy": false
           }
         },
