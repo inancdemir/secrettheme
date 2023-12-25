@@ -26,6 +26,89 @@
         "image_pos": "center"
       }
     },
+    "19d6466d-dcac-434c-9b34-5303480eb2a9": {
+      "type": "rich-section",
+      "blocks": {
+        "c730d09f-fe89-4d27-9f8d-7e0410ce513f": {
+          "type": "rich_header",
+          "settings": {
+            "rich_title": "Discover our collections.",
+            "rich_title_tag": "large"
+          }
+        },
+        "7be99d09-544b-4e07-8072-3a1f56dfb4ee": {
+          "type": "rich_text",
+          "settings": {
+            "description": "<p>Explore clothing that adapts, protects, and lasts.<\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "c730d09f-fe89-4d27-9f8d-7e0410ce513f",
+        "7be99d09-544b-4e07-8072-3a1f56dfb4ee"
+      ],
+      "settings": {
+        "background_color": "#FFFF",
+        "content_color": "#000000",
+        "element_gaps": 20,
+        "section_padding_top": 10,
+        "section_padding_bottom": 10,
+        "align_content": "text-left",
+        "full_width": false
+      }
+    },
+    "99971a40-b179-4563-be4a-39cf0cec133e": {
+      "type": "featured-collections",
+      "blocks": {
+        "template--14725771296867__99971a40-b179-4563-be4a-39cf0cec133e-collection-1": {
+          "type": "collection",
+          "settings": {
+            "collection": "tech-collection",
+            "enable_description": "enabled",
+            "collection_description_lenght": 40,
+            "enable_custom_description": "enabled",
+            "custom_description": "<p><strong>2024<\/strong><\/p>",
+            "text_position": "bottom-right",
+            "collection_button_text": "DISCOVER",
+            "button_style": "model-1",
+            "image_pos": "center"
+          }
+        },
+        "576e4080-5373-47e3-8e10-b8500581283a": {
+          "type": "collection",
+          "settings": {
+            "collection": "jackets",
+            "enable_description": "enabled",
+            "collection_description_lenght": 40,
+            "enable_custom_description": "enabled",
+            "custom_description": "<p><strong>2024<\/strong><\/p>",
+            "text_position": "bottom-left",
+            "collection_button_text": "DISCOVER",
+            "button_style": "model-1",
+            "image_pos": "center"
+          }
+        }
+      },
+      "block_order": [
+        "template--14725771296867__99971a40-b179-4563-be4a-39cf0cec133e-collection-1",
+        "576e4080-5373-47e3-8e10-b8500581283a"
+      ],
+      "settings": {
+        "collection_height": 950,
+        "full_height_desktop": false,
+        "collection_height_mobile": 400,
+        "full_height_mobil": false,
+        "collection_header_color": "#FFFFFF",
+        "heading_font_size": "medium",
+        "collection_description_color": "#FFFFFF",
+        "collection_per_line": 2,
+        "spacings": 15,
+        "full_width": false,
+        "tint_opacity": 50,
+        "tint_color": "#000000",
+        "section_bg": ""
+      }
+    },
     "breadcrumb": {
       "type": "breadcrumb",
       "settings": {
@@ -113,6 +196,8 @@
   },
   "order": [
     "collection-1",
+    "19d6466d-dcac-434c-9b34-5303480eb2a9",
+    "99971a40-b179-4563-be4a-39cf0cec133e",
     "breadcrumb",
     "main",
     "0d164366-0e58-403c-ab5f-908bb92d3b79"
