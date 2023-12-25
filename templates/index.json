@@ -187,7 +187,7 @@
         "day": "1",
         "hour": 1,
         "minute": 1,
-        "text_color": "#FFFFFF",
+        "text_color": "#ffffff",
         "background": "linear-gradient(180deg, rgba(0, 0, 0, 1), rgba(0, 0, 0, 1) 100%)"
       }
     },
@@ -208,9 +208,9 @@
             "enable_description": "enabled",
             "collection_description_lenght": 40,
             "enable_custom_description": "enabled",
-            "custom_description": "<p><strong>2024<\/strong><\/p>",
+            "custom_description": "<p><strong>2023<\/strong><\/p>",
             "text_position": "bottom-right",
-            "collection_button_text": "DISCOVER",
+            "collection_button_text": "BUTTON LABEL",
             "button_style": "model-1",
             "image_pos": "center"
           }
@@ -222,9 +222,9 @@
             "enable_description": "enabled",
             "collection_description_lenght": 40,
             "enable_custom_description": "enabled",
-            "custom_description": "<p><strong>2024<\/strong><\/p>",
+            "custom_description": "<p><strong>2023<\/strong><\/p>",
             "text_position": "bottom-left",
-            "collection_button_text": "DISCOVER",
+            "collection_button_text": "BUTTON LABEL",
             "button_style": "model-1",
             "image_pos": "center"
           }
@@ -548,7 +548,7 @@
         "button": {
           "type": "button",
           "settings": {
-            "button_text": "Explore Boutiques",
+            "button_text": "FIND A STORE",
             "button_url": "shopify:\/\/pages\/about-us",
             "button_style": "model-4"
           }
@@ -576,7 +576,7 @@
         "sub_heading_color": "#ffffff",
         "sub_heading_font_size": 20,
         "sub_heading_line_height": 30,
-        "gap_from_sides": 60,
+        "gap_from_sides": 30,
         "overlay_color": "#000000",
         "overlay_color_opacity": 40,
         "background_image": "shopify:\/\/shop_images\/row.png"
@@ -666,7 +666,7 @@
         "section_padding_bottom": 0,
         "ver_align": "flex-start",
         "full_width": true,
-        "background_color": "linear-gradient(180deg, #ffffff 100%, #ffffff 100%)",
+        "background_color": "linear-gradient(180deg, rgba(255, 255, 255, 1) 100%, rgba(255, 255, 255, 1) 100%)",
         "content_color": "#000000"
       }
     }
