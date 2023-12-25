@@ -83,7 +83,7 @@
         "heading_font_size": "medium",
         "collection_description_color": "#FFFFFF",
         "collection_per_line": 2,
-        "spacings": 23,
+        "spacings": 24,
         "full_width": false,
         "tint_opacity": 50,
         "tint_color": "#000000",
