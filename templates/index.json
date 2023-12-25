@@ -550,7 +550,7 @@
           "settings": {
             "button_text": "FIND A STORE",
             "button_url": "shopify:\/\/pages\/about-us",
-            "button_style": "model-4"
+            "button_style": "model-1"
           }
         }
       },
@@ -560,7 +560,7 @@
         "button"
       ],
       "settings": {
-        "collection_height": 640,
+        "collection_height": 1120,
         "full_height_desktop": false,
         "collection_height_mobile": 400,
         "full_height_mobil": false,
@@ -571,11 +571,11 @@
         "super_font_size": 300,
         "super_line_height": 350,
         "heading_color": "#ffffff",
-        "heading_font_size": 48,
-        "heading_line_height": 60,
+        "heading_font_size": 72,
+        "heading_line_height": 74,
         "sub_heading_color": "#ffffff",
         "sub_heading_font_size": 20,
-        "sub_heading_line_height": 30,
+        "sub_heading_line_height": 74,
         "gap_from_sides": 30,
         "overlay_color": "#000000",
         "overlay_color_opacity": 40,
