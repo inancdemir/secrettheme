@@ -210,7 +210,7 @@
             "enable_custom_description": "enabled",
             "custom_description": "<p><strong>2024<\/strong><\/p>",
             "text_position": "bottom-right",
-            "collection_button_text": "BUTTON LABEL",
+            "collection_button_text": "DISCOVER",
             "button_style": "model-1",
             "image_pos": "center"
           }
@@ -224,7 +224,7 @@
             "enable_custom_description": "enabled",
             "custom_description": "<p><strong>2024<\/strong><\/p>",
             "text_position": "bottom-left",
-            "collection_button_text": "BUTTON LABEL",
+            "collection_button_text": "DISCOVER",
             "button_style": "model-1",
             "image_pos": "center"
           }
