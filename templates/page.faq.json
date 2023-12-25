@@ -156,22 +156,30 @@
     "f537b706-1546-426b-8baf-67cb1d8c2489": {
       "type": "rich-section",
       "blocks": {
+        "68eafaa6-285a-49fa-800c-6fa4fb41dd36": {
+          "type": "rich_header",
+          "settings": {
+            "rich_title": "Need Further Assistance?",
+            "rich_title_tag": "small"
+          }
+        },
         "6e94f1b0-e766-4cf2-92f0-3633030d2a11": {
           "type": "rich_text",
           "settings": {
-            "description": "<p><strong>Need Further Assistance?<\/strong><\/p><p><br\/>If you have any more questions or need additional assistance, our Aspena customer service team is always here to help you.<\/p><p><strong>Thank you for choosing Aspena for your luxury winter wear needs!<\/strong><\/p>"
+            "description": "<p>If you have any more questions or need additional assistance, our Aspena customer service team is always here to help you.<\/p><p><\/p><p><strong>Thank you for choosing Aspena for your luxury winter wear needs!<\/strong><\/p>"
           }
         }
       },
       "block_order": [
+        "68eafaa6-285a-49fa-800c-6fa4fb41dd36",
         "6e94f1b0-e766-4cf2-92f0-3633030d2a11"
       ],
       "settings": {
         "background_color": "#FFF",
         "content_color": "#000000",
         "element_gaps": 20,
-        "section_padding_top": 10,
-        "section_padding_bottom": 10,
+        "section_padding_top": 20,
+        "section_padding_bottom": 30,
         "align_content": "text-left",
         "full_width": false
       }
