@@ -177,6 +177,20 @@
         "section_bg": ""
       }
     },
+    "d37fb86d-668f-4811-82ec-568faaf087e2": {
+      "type": "countdown-bar",
+      "settings": {
+        "title": "Christmas Sale",
+        "sub_title": "Spend 100$ and get 30% off your entire order!",
+        "year": 2024,
+        "month": "1",
+        "day": "1",
+        "hour": 1,
+        "minute": 1,
+        "text_color": "#FFFFFF",
+        "background": "linear-gradient(180deg, rgba(0, 0, 0, 1), rgba(0, 0, 0, 1) 100%)"
+      }
+    },
     "home-spacer-1": {
       "type": "spacer",
       "settings": {
@@ -662,6 +676,7 @@
     "home-collection-list",
     "home-collection-showcase",
     "home-featured-collections",
+    "d37fb86d-668f-4811-82ec-568faaf087e2",
     "home-spacer-1",
     "home-featured-collections-2",
     "home-spacer-2",
