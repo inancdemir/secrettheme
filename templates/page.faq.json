@@ -19,11 +19,83 @@
         "desktop_space": "80",
         "mobile_space": "40"
       }
+    },
+    "59363be1-615e-4439-a852-cc535bd86e33": {
+      "type": "collapsible-rows",
+      "blocks": {
+        "template--14854009127011__59363be1-615e-4439-a852-cc535bd86e33-accordion-1": {
+          "type": "accordion",
+          "settings": {
+            "accorion_title": "What types of winter wear does Aspena offer?",
+            "accorion_contnet": "<p>Aspena offers a luxurious range of winter wear including high-performance insulated jackets, thermal pants, elegant snow boots, and accessories such as gloves, hats, and scarves. Our products cater to a variety of cold-weather activities, ensuring both style and functionality.<\/p>"
+          }
+        },
+        "template--14854009127011__59363be1-615e-4439-a852-cc535bd86e33-accordion-2": {
+          "type": "accordion",
+          "settings": {
+            "accorion_title": "Are Aspena's products sustainably made?",
+            "accorion_contnet": "<p>Absolutely! Sustainability is a key part of Aspena's ethos. We utilize environmentally friendly materials like recycled fibers and responsibly sourced down. Our manufacturing processes are also designed to minimize environmental impact.<\/p>"
+          }
+        },
+        "7268499d-b40d-4b25-b517-e48c583391c6": {
+          "type": "accordion",
+          "settings": {
+            "accorion_title": "How do I choose the right size at Aspena?",
+            "accorion_contnet": "<p>You can refer to our detailed size guide on the Aspena website, which includes specific measurements and fitting advice for all our products. For additional help, our customer service team is on hand to offer tailored sizing recommendations.<\/p>"
+          }
+        },
+        "1e972158-11cc-486f-a113-92b74f71a64f": {
+          "type": "accordion",
+          "settings": {
+            "accorion_title": "Does Aspena offer international shipping?",
+            "accorion_contnet": "<ul><li>Yes, Aspena is proud to offer global shipping. Shipping costs and delivery times vary based on your location. Detailed information is available on our International Shipping Policy page.<\/li><\/ul>"
+          }
+        },
+        "9fcc417c-edf0-4d7f-87de-e7eeca7af3bd": {
+          "type": "accordion",
+          "settings": {
+            "accorion_title": "What is Aspena's return or exchange policy?",
+            "accorion_contnet": "<p>We want you to love your Aspena purchase. If you're not completely satisfied, you can return or exchange any item within 30 days of receipt, provided it's in its original condition. For complete details, please visit our Return & Exchange Policy section.<\/p>"
+          }
+        },
+        "d316dde0-4a82-4fa4-80c4-bebeea3f3372": {
+          "type": "accordion",
+          "settings": {
+            "accorion_title": "How should I care for my Aspena winter wear?",
+            "accorion_contnet": "<p>Care instructions are provided with each Aspena product. Generally, we recommend gentle washing and air drying to preserve the quality of your winter wear. For more detailed care instructions, please visit our Garment Care page.<\/p>"
+          }
+        },
+        "aa1b5f04-8928-4856-98a4-e81f7d18a778": {
+          "type": "accordion",
+          "settings": {
+            "accorion_title": "Are Aspena jackets waterproof?",
+            "accorion_contnet": "<p>Many of our jackets are crafted to offer excellent water resistance or full waterproof capabilities, ideal for snowy and wet conditions. Specific features of each jacket can be found in the product descriptions on our website.<\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "template--14854009127011__59363be1-615e-4439-a852-cc535bd86e33-accordion-1",
+        "template--14854009127011__59363be1-615e-4439-a852-cc535bd86e33-accordion-2",
+        "7268499d-b40d-4b25-b517-e48c583391c6",
+        "1e972158-11cc-486f-a113-92b74f71a64f",
+        "9fcc417c-edf0-4d7f-87de-e7eeca7af3bd",
+        "d316dde0-4a82-4fa4-80c4-bebeea3f3372",
+        "aa1b5f04-8928-4856-98a4-e81f7d18a778"
+      ],
+      "settings": {
+        "heading": "F.A.Q.",
+        "heading_color": "#000000",
+        "heading_font_size": "medium",
+        "section_padding_top": 0,
+        "section_padding_bottom": 0,
+        "full_width": true
+      }
     }
   },
   "order": [
     "spacer-1",
     "default_page",
-    "spacer-2"
+    "spacer-2",
+    "59363be1-615e-4439-a852-cc535bd86e33"
   ]
 }
