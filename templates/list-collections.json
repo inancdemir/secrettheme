@@ -48,9 +48,9 @@
             "enable_description": "enabled",
             "collection_description_lenght": 40,
             "enable_custom_description": "enabled",
-            "custom_description": "<p><strong>Collection description<\/strong><\/p>",
-            "text_position": "bottom-center",
-            "collection_button_text": "BUTTON LABEL",
+            "custom_description": "<p><strong>2024<\/strong><\/p>",
+            "text_position": "bottom-right",
+            "collection_button_text": "DISCOVER",
             "button_style": "model-1",
             "image_pos": "center"
           }
@@ -62,9 +62,9 @@
             "enable_description": "enabled",
             "collection_description_lenght": 40,
             "enable_custom_description": "enabled",
-            "custom_description": "<p><strong>Collection description<\/strong><\/p>",
-            "text_position": "bottom-center",
-            "collection_button_text": "BUTTON LABEL",
+            "custom_description": "<p><strong>2024<\/strong><\/p>",
+            "text_position": "bottom-left",
+            "collection_button_text": "DISCOVER",
             "button_style": "model-1",
             "image_pos": "center"
           }
