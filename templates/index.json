@@ -604,7 +604,7 @@
           "settings": {
             "select_icon": "deliverytruck",
             "select_icon_active": true,
-            "icon_size": 30,
+            "icon_size": 35,
             "block_title": "Easy Returns",
             "title_size": "small",
             "block_content": "<p>Your exchange ships out as soon as you email us<\/p>",
@@ -617,7 +617,7 @@
           "settings": {
             "select_icon": "earth",
             "select_icon_active": true,
-            "icon_size": 30,
+            "icon_size": 35,
             "block_title": "Worldwide Shipping",
             "title_size": "small",
             "block_content": "<p>Receive your order an estimated 3-5 days after shipment<\/p>",
@@ -630,7 +630,7 @@
           "settings": {
             "select_icon": "tree",
             "select_icon_active": true,
-            "icon_size": 30,
+            "icon_size": 35,
             "block_title": "Atelier-Grade Materials",
             "title_size": "small",
             "block_content": "<p>Made with love, using high-quality, premium materials<\/p>",
@@ -643,7 +643,7 @@
           "settings": {
             "select_icon": "percent",
             "select_icon_active": true,
-            "icon_size": 30,
+            "icon_size": 35,
             "block_title": "Buy Now Pay Later",
             "title_size": "small",
             "block_content": "<p>Pay in installments with 0% interest and no extra charges through Shop Pay<\/p>",
@@ -663,7 +663,7 @@
         "spacings": 16,
         "spacings_v": 16,
         "section_padding_top": 25,
-        "section_padding_bottom": 0,
+        "section_padding_bottom": 25,
         "ver_align": "flex-start",
         "full_width": true,
         "background_color": "linear-gradient(180deg, rgba(255, 255, 255, 1) 100%, rgba(255, 255, 255, 1) 100%)",
