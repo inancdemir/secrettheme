@@ -20,6 +20,44 @@
         "mobile_space": "40"
       }
     },
+    "7e8c4547-1074-41f9-aa36-a076d591807b": {
+      "type": "breadcrumb",
+      "settings": {
+        "section_padding": 24,
+        "full_width": false
+      }
+    },
+    "f4ceac0d-1683-4d6d-954d-3c131e8ad664": {
+      "type": "rich-section",
+      "blocks": {
+        "ce7e8bb9-79d5-4e38-bd53-39e046241e2b": {
+          "type": "rich_header",
+          "settings": {
+            "rich_title": "Welcome to Aspena's FAQ Page!",
+            "rich_title_tag": "large"
+          }
+        },
+        "4579b522-c726-4975-88e8-3b3fe80c3962": {
+          "type": "rich_text",
+          "settings": {
+            "description": "<p>Here, you'll find answers to some of the most common questions about our premium winter wear products, purchasing process, and more. If you don't find what you're looking for, our Aspena customer service team is always ready to assist you.<\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "ce7e8bb9-79d5-4e38-bd53-39e046241e2b",
+        "4579b522-c726-4975-88e8-3b3fe80c3962"
+      ],
+      "settings": {
+        "background_color": "#FFF",
+        "content_color": "#000000",
+        "element_gaps": 20,
+        "section_padding_top": 10,
+        "section_padding_bottom": 10,
+        "align_content": "text-left",
+        "full_width": false
+      }
+    },
     "59363be1-615e-4439-a852-cc535bd86e33": {
       "type": "collapsible-rows",
       "blocks": {
@@ -107,12 +145,12 @@
         "d576a744-34e7-4381-8264-ec7f04e71b98"
       ],
       "settings": {
-        "heading": "F.A.Q.",
+        "heading": "",
         "heading_color": "#000000",
         "heading_font_size": "medium",
         "section_padding_top": 0,
         "section_padding_bottom": 0,
-        "full_width": true
+        "full_width": false
       }
     }
   },
@@ -120,6 +158,8 @@
     "spacer-1",
     "default_page",
     "spacer-2",
+    "7e8c4547-1074-41f9-aa36-a076d591807b",
+    "f4ceac0d-1683-4d6d-954d-3c131e8ad664",
     "59363be1-615e-4439-a852-cc535bd86e33"
   ]
 }
