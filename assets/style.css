@@ -539,7 +539,7 @@ button,
     font-size: calc(var(--font-button-size) * 14px);
     line-height: calc((var(--font-button-size) * 14px) * 1.57);
     font-weight: 600;
-    padding: 17px 20px;
+    padding: 15px 32px;
     letter-spacing: 0em;
     display: inline-block;
     cursor: pointer;
