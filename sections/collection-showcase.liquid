@@ -140,7 +140,7 @@
                     {% endif %}
                   </h3>
                   {% unless section.settings.collection_model == "model-two" %}
-                  <a class="shop-now text-link" href="{{ block.settings.collection.url }}">Shop Now</a>
+                  <a class="shop-now text-link" href="{{ block.settings.collection.url }}">{{ section.settings.shop_now }}</a>
                   {% endunless %}
                 {% if section.settings.collection_model == "model-two" %}
                   </a>
@@ -285,6 +285,12 @@
           "label": "t:sections.all.image_pos_bot"
         }
       ]
+    },
+    {
+      "type": "text",
+      "id": "shop_now",
+      "label": "Shop now text",
+      "default": "Shop Now"
     },
     {
       "type": "select",

@@ -42,7 +42,7 @@
             "button_label": "ADD TO CART",
             "button_label_nostock": "OUT OF STOCK",
             "quantity_position": "quantitiy-top",
-            "button_style": "model-1",
+            "button_style": "model-2",
             "show_quick_buy": false
           }
         },
@@ -100,23 +100,9 @@
         "details_items_gap": 16,
         "image_column": "one"
       }
-    },
-    "541e7f3e-0afb-43f5-abf1-6aff06abc4ab": {
-      "type": "related-products",
-      "settings": {
-        "item_per_row": 5,
-        "product_gap": 0,
-        "image_size": "two-three",
-        "image_fit": "contain",
-        "image_pos": "center",
-        "title_color": "#000000",
-        "background_color": "linear-gradient(180deg, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0) 100%)",
-        "section_padding": 30
-      }
     }
   },
   "order": [
-    "product_first",
-    "541e7f3e-0afb-43f5-abf1-6aff06abc4ab"
+    "product_first"
   ]
 }

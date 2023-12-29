@@ -102,7 +102,7 @@
           <div class="before-submit text-link text-right">
             <a href="#recover" class="underline forgot-password" data-tab="recover">Forgot your password?</a>
           </div>
-          <input type="submit" value="Sign In" class="button model-3 full" />        
+          <input type="submit" value="{{ section.settings.button_text }}" class="button {{ section.settings.button_style }} full" />        
         {%- endform -%}
       </div>
       <div class="login-tab" id="recover-tab">
@@ -135,7 +135,7 @@
               autocomplete="email">
           </div>
           <div>
-            <input type="submit" value="Submit" class="button model-3 full">
+            <input type="submit" value="SUBMIT" class="button {{ section.settings.button_style }} full">
           </div>
         
         {%- endform -%}
@@ -193,6 +193,36 @@
       "id": "form_title_forget",
       "label": "t:sections.login.form_title_forget",
       "default": "Reset Password."
+    },
+    {
+      "type": "text",
+      "id": "button_text",
+      "label": "Button text",
+      "default": "SIGN IN"
+    },
+    {
+      "type": "select",
+      "id": "button_style",
+      "options": [
+        {
+          "value": "model-1",
+          "label": "t:settings_schema.typography.settings.colors.button_1_color_1"
+        },
+        {
+          "value": "model-2",
+          "label": "t:settings_schema.typography.settings.colors.button_2_color_1"
+        },
+        {
+          "value": "model-3",
+          "label": "t:settings_schema.typography.settings.colors.button_3_color_1"
+        },
+        {
+          "value": "model-4",
+          "label": "t:settings_schema.typography.settings.colors.button_4_color_1"
+        }
+      ],
+      "label": "t:sections.all.button_style",
+      "default": "model-2"
     }
   ],
   "presets": [

@@ -15,6 +15,9 @@
 .add-text-wrap .add-text-content * {
   color: {{ section.settings.add_color }};
 }
+.product-list {
+  margin-bottom: 30px;
+}
 @media only screen and (min-width: 640px) {
   .section-{{ section.id }} .product-list {
     column-gap: {{ section.settings.product_gap }}px;
@@ -131,7 +134,7 @@
         {% when 'infinite' or 'click-to-load' %}
           <div id="AjaxinatePagination">
             {% if paginate.next %}
-              <a class="button model-2 full" href="{{ paginate.next.url }}">VIEW MORE</a>
+              <a class="button {{ section.settings.button_style }} full" href="{{ paginate.next.url }}">VIEW MORE</a>
             {% endif %}
           </div>
         {% when 'paginated' %}
@@ -310,6 +313,30 @@
       ]
     },
     {
+      "type": "select",
+      "id": "button_style",
+      "options": [
+        {
+          "value": "model-1",
+          "label": "t:settings_schema.typography.settings.colors.button_1_color_1"
+        },
+        {
+          "value": "model-2",
+          "label": "t:settings_schema.typography.settings.colors.button_2_color_1"
+        },
+        {
+          "value": "model-3",
+          "label": "t:settings_schema.typography.settings.colors.button_3_color_1"
+        },
+        {
+          "value": "model-4",
+          "label": "t:settings_schema.typography.settings.colors.button_4_color_1"
+        }
+      ],
+      "label": "t:sections.all.button_style",
+      "default": "model-2"
+    },
+    {
       "type": "text",
       "label": "t:sections.all.heading",
       "default": "Featured Products.",
@@ -370,7 +397,7 @@
       "unit": "%",
       "label": "Tint Opacity",
       "info": "Adjust gradient overlay that will be used for all promotions",
-      "default": 50,
+      "default": 50
     },
     {
       "type": "color",

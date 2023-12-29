@@ -79,9 +79,12 @@
   <div class="login-right">
     <div class="form-area">
       <div class="login-tab active" id="register-tab">
-        <h1>
-          {{ 'customer.register.title' | t }}
-        </h1>
+        <h2 class="large">
+          {{ section.settings.form_title }}
+        </h2>
+        <div class="create-account">
+          {{ section.settings.already_account_text }} <span class="underline text-link"><a href="/account/login" id="customer_register_link">Sign in</a></span>
+        </div>
         {%- form 'create_customer', novalidate: 'novalidate' -%}
           {%- if form.errors -%}
             <p class="form__message" tabindex="-1" autofocus>
@@ -181,8 +184,8 @@
               {{ form.errors.messages.password }}.
             </span>
           {%- endif -%}
-          <button class="button model-2 full">
-            {{ 'customer.register.submit' | t }}
+          <button class="button {{ section.settings.button_style }} full">
+            {{ section.settings.button_text }}
           </button>
         {%- endform -%}
       </div>
@@ -202,13 +205,43 @@
       "type": "text",
       "id": "form_title",
       "label": "t:sections.register.form_title",
-      "default": "Sign in."
+      "default": "Sign up."
     },
     {
       "type": "text",
-      "id": "form_title_forget",
-      "label": "t:sections.register.form_title_forget",
-      "default": "Reset Password."
+      "id": "already_account_text",
+      "label": "Already have an account text",
+      "default": "Already have an account?"
+    },
+    {
+      "type": "text",
+      "id": "button_text",
+      "label": "Button text",
+      "default": "SIGN UP"
+    },
+    {
+      "type": "select",
+      "id": "button_style",
+      "options": [
+        {
+          "value": "model-1",
+          "label": "t:settings_schema.typography.settings.colors.button_1_color_1"
+        },
+        {
+          "value": "model-2",
+          "label": "t:settings_schema.typography.settings.colors.button_2_color_1"
+        },
+        {
+          "value": "model-3",
+          "label": "t:settings_schema.typography.settings.colors.button_3_color_1"
+        },
+        {
+          "value": "model-4",
+          "label": "t:settings_schema.typography.settings.colors.button_4_color_1"
+        }
+      ],
+      "label": "t:sections.all.button_style",
+      "default": "model-2"
     }
   ],
   "presets": [

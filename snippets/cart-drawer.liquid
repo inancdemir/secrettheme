@@ -73,7 +73,7 @@
 }
 
 .cart-drawer-items {
-  padding: 24px 0 ;
+  padding: 24px 32px ;
 }
 
 .cart-drawer-item {
@@ -81,7 +81,7 @@
   align-items: center;
   border-bottom: 1px solid #CBCBCB;
   overflow: hidden;
-  padding: 10px;
+  padding: 16px 0;
 }
 
 .cart-drawer-item + .cart-drawer-item {
@@ -89,24 +89,25 @@
 }
 
 .cart-drawer-item-image {
-  width: 100px;
+  width: 80px;
+  margin-right: 16px;
 }
 
 .cart-drawer-item-image img {
-  width: 70px;
-  height: 100px;
+  width: 80px;
+  height: 120px;
   object-fit: cover;
 }
 
 .cart-drawer-item-main {
   flex: 1;
-  padding: 0 24px;
+  padding: 0;
 }
 
 .cart-drawer-item-main-flex {
   display: flex;
-  align-items: center;
-  gap: 8px;
+  align-items: flex-end;
+  gap: 0;
 }
 
 .cart-drawer-item-main-flex-left {
@@ -114,12 +115,11 @@
 }
 
 .cart-drawer-item-main-flex-left h3 {
-  font-size: 18px;
-  font-weight: 700;
-  line-height: 22px;
-  letter-spacing: 0em;
+  margin-bottom: 8px;
 }
-
+.cart-drawer-item-main-flex-left p {
+  margin-bottom: 24px;
+}
 .cart-drawer-item-main-flex-left h3 a {
   color: #000000;
 }
@@ -133,20 +133,21 @@
   display: block;
 }
 
+
+
 .cart-drawer-item-main-flex-right span {
-  font-size: 16px;
-  font-weight: 500;
-  line-height: 20px;
-  letter-spacing: 0em;
-  
+  line-height: 48px;
   display: inline-flex;
+  margin-right: 16px;
+}
+.card-drawer-remove-item {
+  line-height: 42px;
 }
 
 .cart-drawer-quantity-selector {
   display: flex;
   border: 1px solid #CBCBCB;
-  margin-top: 10px;
-  width: 80px;
+  width: 138px;
   align-items: center;
   justify-content: space-around;
 }
@@ -166,7 +167,7 @@
   width: 28px;
   font-size: 13px;
   text-align: center;
-  line-height: 30px;
+  line-height: 50px;
   border: none;
   padding: 0;
 }
@@ -301,7 +302,7 @@
                     </div>
                     <div class="product-each-price">{{ item.price | money }}</div>
                     <div class="cart-drawer-item-main-flex-right">
-                      <span>{{ item.final_line_price | money }}</span>
+                      <span class="caption">{{ item.final_line_price | money }}</span>
                     </div>
                     <div class="card-drawer-remove-item">
                       <a href="{{ item.url_to_remove }}" aria-label="remove-item">{% render "icon-trash" %}</a>
@@ -327,17 +328,13 @@
                   <div class="shipping-away">
                     <p>You are away from free shipping by only</p><span class="away-from-free">{{ shop.currency }}{{ left_val }}</span>
                   </div>
-                  
+                  {% else %}
+                  <p>{{ settings.free_shippping_done_text }}</p>                  
                   {% endif %}
                 <div class="shipping-away-bar">
                   <div class="fill" style="width: {{ pers_val_bar }}%;"></div>
                 </div>
-              {% endif %}
-                
-
-              
-
-            
+              {% endif %}            
             <div class="footer-wrap">
               {% if cart.total_discounts > 0 %}
                 <div class="cart-drawer-footer-row">

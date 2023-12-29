@@ -1,43 +1,24 @@
 {
-  "sections": {
-    "spacer-1": {
-      "type": "spacer",
-      "settings": {
-        "desktop_space": "100",
-        "mobile_space": "80"
-      }
+    "sections": {
+        "spacer-1": {
+            "type": "spacer",
+            "settings": {
+                "desktop_space": "100",
+                "mobile_space": "80"
+            }
+        },
+        "breadcrumb": {
+            "type": "breadcrumb",
+            "settings": {
+                "full_width": false
+            }
+        },
+        "blog": {
+            "type": "main-blog",
+            "settings": {}
+        }
     },
-    "breadcrumb": {
-      "type": "breadcrumb",
-      "settings": {
-        "section_padding": 24,
-        "full_width": false
-      }
-    },
-    "blog": {
-      "type": "main-blog",
-      "settings": {
-        "heading": "{{ blog.title }}",
-        "title_color": "#000000",
-        "heading_font_size": "large",
-        "sub-heading": "",
-        "sub_title_color": "#000000",
-        "button_label": "Vist News",
-        "product_per_row": 3,
-        "image_size": "one-one",
-        "image_fit": "cover",
-        "image_pos": "center",
-        "pagination_settings": "click-to-load",
-        "show_authore": true,
-        "show_date": true,
-        "show_tags": true,
-        "show_comments": true
-      }
-    }
-  },
-  "order": [
-    "spacer-1",
-    "breadcrumb",
-    "blog"
-  ]
+    "order": [
+        "spacer-1", "breadcrumb", "blog"
+    ]
 }

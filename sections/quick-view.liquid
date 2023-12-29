@@ -37,8 +37,8 @@ button.quick-view-button {
 }
 
 .modal-content .item-details {
-    width: calc(100% - 32px);
-    padding: 16px;
+    width: calc(100% - 64px);
+    padding: 32px;
     gap: {{ section.settings.details_items_gap }}px;
     display: flex;
     flex-direction: column;
@@ -65,7 +65,7 @@ button.quick-view-button {
   <div class="modal-content">
       <div class="quick-look-header">
           <span class="h4 large">Quick View</span>
-          <button class="modal-close" id="quick-view-close" aria-label="model-close">{% render 'icon-filter-close' %}</button>
+          <button class="modal-close" id="quick-view-close" aria-label="model-close">{% render 'icon-popup-close' %}</button>
       </div>
       <div class="product-image-area" id="ql-product-image-area"></div>        
       <div class="item-details">

@@ -14,23 +14,21 @@
           assign pers_val_bar = pers_val | times: 100.0
           assign left_val = shiping_val | minus: total_val
         -%}
-          {% if left_val > 0 %}
+          
+        {% if pers_val_bar < 100 %}
           <div class="shipping-away">
             <p>You are away from free shipping by only</p><span class="away-from-free">{{ shop.currency }}{{ left_val }}</span>
           </div>
-          
-          {% endif %}
-        {% if pers_val_bar < 100 %}
-        <div class="shipping-away-bar">
-            <div class="fill" style="width: {{ pers_val_bar }}%;">
-                {% render 'icon-truck' %}
-            </div>
-        </div>
         {% else  %}
         <div class="shipping-away">
           <p>{{ settings.free_shippping_done_text }}</p>
         </div>
         {% endif %}
+        <div class="shipping-away-bar">
+          <div class="fill" style="width: {{ pers_val_bar }}%;">
+              {% render 'icon-truck' %}
+          </div>
+      </div>
     {% endif %}
     <div class="cart-page-main">
         {% if cart.empty? %}

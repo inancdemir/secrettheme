@@ -1,194 +1,185 @@
 {%- style -%}
-    .section-{{ section.id }} {
-      margin: {{ section.settings.section_margin }}px 0;
-      {% unless section.settings.full_width %}
-      max-width: 1440px;
-      margin-left: auto;
-      margin-right: auto;
-      {% endunless %}
-    }
-    .section-{{ section.id }} .product-details,
-    .section-{{ section.id }} .product-details form {
-        display: flex;
-        flex-direction: column;
-        gap: {{ section.settings.details_items_gap }}px;
-    }    
+.section-{{ section.id }} {
+  margin: {{ section.settings.section_margin }}px 0;
+  {% unless section.settings.full_width %}
+  max-width: 1440px;
+  margin-left: auto;
+  margin-right: auto;
+  {% endunless %}
+}
+.section-{{ section.id }} .product-details,
+.section-{{ section.id }} .product-details form {
+    display: flex;
+    flex-direction: column;
+    gap: {{ section.settings.details_items_gap }}px;
+}    
+.product-page {
+    display: flex;
+    margin-top: 90px;
+    flex-direction: column;
+}
+.product-page .option-name {
+  font-size: calc((var(--font-body-size) * 16px) * 1);
+  line-height: calc((var(--font-body-size) * 16px) * 1.54);
+  font-weight: 500;
+  letter-spacing: 0em;
+  color: #A7A7A7;
+}
+.product-page .option-name:not(:first-child) {
+  margin-top:{{ section.settings.details_items_gap }}px;
+}
+.product-page .option-name span {
+  color: #000;
+}
+.product-page .image-side {
+  display: block;
+}   
+
+.product-page .product-details {
+    width: 100%;
+    padding: 0 {{ section.settings.details_padding }}% {{ section.settings.details_padding }}% {{ section.settings.details_padding }}%;
+}
+@media only screen and (min-width: 768px) {
     .product-page {
-        display: flex;
-        margin-top: 90px;
-        flex-direction: column;
-    }
-    .product-page .option-name {
-      font-size: calc((var(--font-body-size) * 16px) * 1);
-      line-height: calc((var(--font-body-size) * 16px) * 1.54);
-      font-weight: 500;
-      letter-spacing: 0em;
-      color: #A7A7A7;
-    }
-    .product-page .option-name:not(:first-child) {
-      margin-top:{{ section.settings.details_items_gap }}px;
-    }
-    .product-page .option-name span {
-      color: #000;
+        flex-direction: row;
+        margin-top: 144px;
     }
     .product-page .image-side {
-      display: block;
-    }   
-  
+      display: flex;
+      flex: 0 0 {{ section.settings.image_area }}%;
+    }
     .product-page .product-details {
-        width: 100%;
-        padding: 0 {{ section.settings.details_padding }}% {{ section.settings.details_padding }}% {{ section.settings.details_padding }}%;
-    }
-    @media only screen and (min-width: 768px) {
-        .product-page {
-            flex-direction: row;
-            margin-top: 144px;
-        }
-        .product-page .image-side {
-          display: flex;
-          flex: 0 0 {{ section.settings.image_area }}%;
-        }
-        .product-page .product-details {
-          display: flex;
-          flex: 0 0 calc({{ section.settings.image_area }}%) - (({{ section.settings.details_padding }}%) * 2);
-          padding: 0 {{ section.settings.details_padding }}% {{ section.settings.details_padding }}% {{ section.settings.details_padding }}%;
-        }   
-    }
-    .breadcrumb {
-      font-size: 11px;
-      font-weight: 500;
-      line-height: 13px;
-      letter-spacing: 0em;
-    }
-    h1.product-title {
-      font-size: calc(var(--font-sub-title-size) * 22px);
-      line-height: calc((var(--font-sub-title-size) * 22px) * 1.2);
-    }
-    @media only screen and (min-width: 640px) {
-      h1.product-title {
-        font-size: calc(var(--font-sub-title-size) * 22px);
-        line-height: calc((var(--font-sub-title-size) * 22px) * 1.2);
-      }
-    }
-    @media only screen and (min-width: 1024px) {
-      h1.product-title {
-        font-size: calc(var(--font-sub-title-size) * 28px);
-        line-height: calc((var(--font-sub-title-size) * 28px) * 1.2);
-      }
-    }
-    button.product-add {
-      background-color: #000000;
-      color: #fff;
-      font-size: 12px;
-      font-weight: 700;
-      line-height: 18px;
-      letter-spacing: 0em;
-      padding: 17px;
-      width: 100%;
-      text-align: center;
-    }    
-    /*acordion start*/
-    .accordion {
-      margin-top: -{{ section.settings.details_items_gap }}px;
-    }
-    .accordion:first-child {
-      margin-top: 0;
-    }
-    /*acordion end*/
-
-
-    
-    .add-to-cart.quantitiy-top {
-      gap: {{ section.settings.details_items_gap }}px;
-    }
-    .image-navigation ul {
-        display: flex;
-        flex-direction: column;
-        gap: 32px;
-    }
-    
-    .image-navigation ul li.active-variant {
-      order: -1
-    }
-    {% if section.settings.image_column == "two" %}
-      .image-navigation {
-       /* display: flex;
-        column-gap: 16px;*/
-      }
-      .image-navigation ul {
-        display: flex;
-        column-gap: 16px;
-        flex-wrap: wrap;
-        flex-direction: row;
-        gap: 32px;
-      }
-      .image-navigation ul li {
-        flex: 0 0 calc(50% - 16px);
-        
-      }
-      .image-navigation ul li img {
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-      }
-    {% else %}
-    .image-navigation img {
-      width: 100%;
-      height: auto;
-    }
-    {% endif %}
-    
-
-
-
-   .product-wrap {
-    position: -webkit-sticky; /* Safari */
-    position: sticky;
-    top: 70px;
-   }
-   
-
-
-   /* Find Your Size */
-   .find-size {
       display: flex;
-      align-items: center;
-      column-gap: 8px;
-      text-decoration: underline;
-      cursor: pointer;
-    }
-    .if-have-savings {
-      margin-top: 8px;
-    }
-    .product-option input {
-      display: none;
-    }
-    .badges {
-      display: flex;
-      flex-direction: row;
-      column-gap: 16px;
-    }
-    .badges .badge {
-      font-size: 12px;
-      line-height: 18px;
-      font-weight: 700;
-      padding: 6px 16px;
-    } 
-    .badges .badge.model-1 {
-      color: {{ settings.sale_badge_color }};
-      border: 1px solid {{ settings.sale_badge_color }};
-      
-    }
-    .badges .badge.model-2 {
-      color: {{ settings.second_badge_color }};
-      border: 1px solid {{ settings.second_badge_color }};
-    }
-    .badges .badge.model-3 {
-      color: #fff;
-      background-color: {{ settings.third_badge_color }};
-    }
+      flex: 0 0 calc({{ section.settings.image_area }}%) - (({{ section.settings.details_padding }}%) * 2);
+      padding: 0 {{ section.settings.details_padding }}% {{ section.settings.details_padding }}% {{ section.settings.details_padding }}%;
+    }   
+}
+.breadcrumb {
+  font-size: 11px;
+  font-weight: 500;
+  line-height: 13px;
+  letter-spacing: 0em;
+}
+h1.product-title {
+  font-size: calc(var(--font-sub-title-size) * 22px);
+  line-height: calc((var(--font-sub-title-size) * 22px) * 1.2);
+}
+@media only screen and (min-width: 640px) {
+  h1.product-title {
+    font-size: calc(var(--font-sub-title-size) * 22px);
+    line-height: calc((var(--font-sub-title-size) * 22px) * 1.2);
+  }
+}
+@media only screen and (min-width: 1024px) {
+  h1.product-title {
+    font-size: calc(var(--font-sub-title-size) * 28px);
+    line-height: calc((var(--font-sub-title-size) * 28px) * 1.2);
+  }
+}
+button.product-add {
+  background-color: #000000;
+  color: #fff;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 18px;
+  letter-spacing: 0em;
+  padding: 17px;
+  width: 100%;
+  text-align: center;
+}    
+/*acordion start*/
+.accordion {
+  margin-top: -{{ section.settings.details_items_gap }}px;
+}
+.accordion:first-child {
+  margin-top: 0;
+}
+/*acordion end*/
+
+.add-to-cart.quantitiy-top {
+  gap: {{ section.settings.details_items_gap }}px;
+}
+.image-navigation ul {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+}
+
+.image-navigation ul li.active-variant {
+  order: -1
+}
+{% if section.settings.image_column == "two" %}
+  .image-navigation {
+    /* display: flex;
+    column-gap: 16px;*/
+  }
+  .image-navigation ul {
+    display: flex;
+    column-gap: 16px;
+    flex-wrap: wrap;
+    flex-direction: row;
+    gap: 32px;
+  }
+  .image-navigation ul li {
+    flex: 0 0 calc(50% - 16px);
+  }
+  .image-navigation ul li img {
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+{% else %}
+  .image-navigation img {
+    width: 100%;
+    height: auto;
+  }
+{% endif %}
+
+.product-wrap {
+position: -webkit-sticky; /* Safari */
+position: sticky;
+top: 70px;
+}
+
+/* Find Your Size */
+.find-size {
+  display: flex;
+  align-items: center;
+  column-gap: 8px;
+  text-decoration: underline;
+  cursor: pointer;
+}
+.if-have-savings {
+  margin-top: 8px;
+}
+.product-option input {
+  display: none;
+}
+.badges {
+  display: flex;
+  flex-direction: row;
+  column-gap: 16px;
+}
+.badges .badge {
+  font-size: 12px;
+  line-height: 18px;
+  font-weight: 700;
+  padding: 6px 16px;
+} 
+.badges .badge.model-1 {
+  color: {{ settings.sale_badge_color }};
+  border: 1px solid {{ settings.sale_badge_color }};
+}
+.badges .badge.model-2 {
+  color: {{ settings.second_badge_color }};
+  border: 1px solid {{ settings.second_badge_color }};
+}
+.badges .badge.model-3 {
+  color: #fff;
+  background-color: {{ settings.third_badge_color }};
+}
   
 .image-side .slider-item img {
   width: 100%;
@@ -261,11 +252,11 @@ button.hide {
   border: 1px solid var(--body-color);
 }
 
-.variant-inventory .stock-check {
+.availability .stock-check {
   display: none;
 }
-.variant-inventory .stock-check.active {
-  display: block;
+.availability .stock-check.active {
+  display: inline-block;
 }
 {%- endstyle -%}
 {{ 'socials.css' | asset_url | stylesheet_tag }}
@@ -281,9 +272,7 @@ button.hide {
 
 {% assign full_url = request.host | append: request.path %}
 <div class="product-page section-{{ section.id }}" data-money-format = {{ shop.money_format }}>
-  
   <div class="image-side">
-    
     <ul class="product-image-slider{{- section.id -}}">
       {% for media in product.media %}
         {% case media.media_type %}
@@ -346,10 +335,27 @@ button.hide {
   <div class="product-details">
     <div class="product-wrap">
       {% form 'product', product %}
+        <input hidden aria-label="product-variant" id="single-product-id" name="id" value="{{ product.selected_or_first_available_variant.id }}">
         {% if section.settings.breadcrumb_on %}
           {% render 'breadcrumb' %}
         {% endif %}
+
+        <div class="availability">Availability | 
+          {% for variant in product.variants %}
+            {% if variant.inventory_management == "shopify" %}
+            <span class="stock-check stock-check-{{ variant.id }} {% unless product.variants.first.id == variant.id %} hide{% endunless %}">
+              {% if variant.inventory_quantity > 0 %}
+              Available
+              {% else  %}
+              Out of Stock
+              {% endif %}
+            </span>
+            {% endif %}
+          {% endfor %}
+        </div>
         
+        
+        {% comment %}
         <div class="variant-inventory">
           {% for variant in product.variants %}
             {% if variant.inventory_management == "shopify" %}
@@ -365,11 +371,10 @@ button.hide {
                 <span>Available</span>
               </div>
             {% endif %}
-            
-            
-        {% endfor %}
-        
-          </div>
+          {% endfor %}
+        </div>
+        {% endcomment %}
+
         {%- for block in section.blocks -%}
           
           {% case block.type %}
@@ -423,11 +428,11 @@ button.hide {
                       <button class="q-down" aria-label="minus-quantity">{% render 'icon-minus' %}</button>
                       <input type="number" name="quantity" aria-label="product-quantity" min="1" value="1">
                       <button class="q-up" aria-label="plus-quantity">{% render 'icon-plus' %}</button> 
-                  </div>                  
-                  <button type="submit" class="button model-3 full in-stock" id="add-cart" {% unless product.selected_or_first_available_variant.available %}disabled{% endunless %}>
+                  </div>
+                  <button type="submit" class="button {{ block.settings.button_style }} full in-stock" id="add-cart" {% unless product.selected_or_first_available_variant.available %}disabled{% endunless %}>
                     {{ block.settings.button_label }}
                   </button>
-                  <button type="submit" class="button model-3 full hide outof-stock" id="add-cart" disabled>
+                  <button type="submit" class="button {{ block.settings.button_style }} full hide outof-stock" id="add-cart" disabled>
                     {{ block.settings.button_label_nostock }}
                   </button>
               </div>
@@ -868,9 +873,7 @@ button.hide {
         const activeVariantItems = document.querySelectorAll('.image-list-item.active-variant');
         activeVariantItems.forEach(item => item.classList.remove('active-variant'));
       }
-      
-
-
+     
       // variant id changer
       //document.querySelector('#single-product-id').value = matchedVariant.id
       // price changer
@@ -881,9 +884,6 @@ button.hide {
       var calculatedValue = (((matchedVariant.compare_at_price - matchedVariant.price) / matchedVariant.compare_at_price) * 100);
       var formattedValue = calculatedValue.toFixed(0);
       //document.querySelector('.if-have-savings span.change-as-persentage').textContent = formattedValue;
-
-
-
 
 
       matchedVariant.compare_at_price > matchedVariant.price ? 
@@ -900,14 +900,17 @@ button.hide {
       if (matchedVariant.available) {
         document.querySelector('.in-stock').classList.remove('hide')
         document.querySelector('.outof-stock').classList.add('hide')
-        document.querySelector('.shopify-payment-button__button--unbranded').setAttribute('aria-disabled', 'false');
+      //  document.querySelector('.shopify-payment-button__button--unbranded').setAttribute('aria-disabled', 'false');
         
       } else {
         document.querySelector('.outof-stock').classList.remove('hide')
         document.querySelector('.in-stock').classList.add('hide')
-        document.querySelector('.shopify-payment-button__button--unbranded').setAttribute('aria-disabled', 'true');
+      //  document.querySelector('.shopify-payment-button__button--unbranded').setAttribute('aria-disabled', 'true');
       }  
-      console.log(matchedVariant.id);
+      console.log(pattern);
+
+
+
     })
   
   })

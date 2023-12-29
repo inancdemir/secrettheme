@@ -1,3 +1,4 @@
+{{ 'main-account.css' | asset_url | stylesheet_tag }}
 <div class="customer account section-{{ section.id }}-padding">
     <div>
       <h1 class="customer__title">{{ 'customer.account.title' | t }}</h1>
@@ -8,7 +9,6 @@
         {{ 'customer.log_out' | t }}
       </a>
     </div>
-  
     <div>
       <div>
         <h2>{{ 'customer.orders.title' | t }}</h2>

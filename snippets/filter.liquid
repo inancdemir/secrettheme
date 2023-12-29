@@ -137,7 +137,7 @@ input[type="range"] {
                     {%- when 'boolean' or 'list' -%}
                         {% if filter.label == "Availability" %}
                             <div class="filter-avail-check">
-                                <h3>In Stock</h3>
+                                <h3 class="subheadline">In Stock</h3>
                                 <div>
                                     <label class="switch">
                                         {%- for filter_value in filter.values -%}

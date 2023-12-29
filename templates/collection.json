@@ -14,7 +14,7 @@
         "main"
       ],
       "settings": {
-        "section_height": 600,
+        "section_height": 400,
         "section_height_mobile": 200,
         "heading_color": "#ffffff",
         "heading_font_size": "large",
@@ -61,16 +61,14 @@
         "image_size": "two-three",
         "image_fit": "contain",
         "image_pos": "center",
-        "pagination_settings": "click-to-load",
+        "pagination_settings": "paginated",
         "heading": "",
         "title": "#000000",
         "background_color": "linear-gradient(180deg, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0) 100%)",
         "section_padding": 0,
         "add_color": "#ffffff",
         "no_product": "This collection is currently empty of products.",
-        "full_width": false,
-        "tint_opacity": 50,
-        "tint_color": "#000000"
+        "full_width": false
       }
     }
   },

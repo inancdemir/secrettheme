@@ -1,89 +1,46 @@
 {{ 'featured-collections.css' | asset_url | stylesheet_tag }}
 {%- style -%}
-    .section-{{ section.id }} {
-      background-color: {{ section.settings.section_bg }};
-      margin: {{ section.settings.section_margin }}px 0;
-    }
-    .section-{{ section.id }} .collection-details h2 {
-      color: {{ section.settings.collection_header_color }};
-    }
-    .section-{{ section.id }} .collection-details .h4 {
-      color: {{ section.settings.collection_description_color }};
-      margin-bottom: 32px;
-    }
+  .section-{{ section.id }} {
+    background-color: {{ section.settings.section_bg }};
+    margin: {{ section.settings.section_margin }}px 0;
+  }
+  .section-{{ section.id }} .collection-details h2 {
+    color: {{ section.settings.collection_header_color }};
+  }
+  .section-{{ section.id }} .collection-details .h4 {
+    color: {{ section.settings.collection_description_color }};
+    margin-bottom: 32px;
+  }
+  .section-{{ section.id }} .single-collection-large {
+    height: {% if section.settings.full_height_mobil %} 100vh {% else %} {{ section.settings.collection_height_mobile }}px {% endif %};
+  }
+  @media only screen and (min-width: 640px) {
     .section-{{ section.id }} .single-collection-large {
-      height: {% if section.settings.full_height_mobil %} 100vh {% else %} {{ section.settings.collection_height_mobile }}px {% endif %};
+      height: {% if section.settings.full_height_desktop %} 100vh {% else %} {{ section.settings.collection_height }}px {% endif %};
     }
-    
-    @media only screen and (min-width: 640px) {
-      .section-{{ section.id }} .single-collection-large {
-        height: {% if section.settings.full_height_desktop %} 100vh {% else %} {{ section.settings.collection_height }}px {% endif %};
-      }
-      .front-collection-wrap.columns-2,
-      .front-collection-wrap.columns-3 {
-        display: flex;
-        gap: {{ section.settings.spacings }}px;
-        flex-wrap: wrap;
-      }
-      .front-collection-wrap.columns-2 .single-collection-large {
-        width: calc((100% - {{ section.settings.spacings }}px) / 2);
-      }
-
-      .front-collection-wrap.columns-3 .single-collection-large {
-        width: calc((100% - ({{ section.settings.spacings }}px * 2)) / 3);
-      }
+    .section-{{ section.id }} .front-collection-wrap.columns-2,
+    .section-{{ section.id }} .front-collection-wrap.columns-3 {
+      display: flex;
+      gap: {{ section.settings.spacings }}px;
+      flex-wrap: wrap;
     }
-    /*
-    .front-collection-wrap.columns-2 .single-collection-large:nth-child(odd) .collection-details {
-        right: 0;
-        left: auto;
-        text-align: right;
+    .section-{{ section.id }} .front-collection-wrap.columns-2 .single-collection-large {
+      width: calc((100% - {{ section.settings.spacings }}px) / 2);
     }
-    
-    .front-collection-wrap.columns-3 .single-collection-large {
-        left: 0;
-        right: 0;
-        margin-left: auto;
-        margin-right: auto;
-        text-align: center;
+    .section-{{ section.id }} .front-collection-wrap.columns-3 .single-collection-large {
+      width: calc((100% - ({{ section.settings.spacings }}px * 2)) / 3);
     }
-    */
-    .single-collection-large {
-        
-    }
-    .single-collection-large img {
-      position: absolute;
-      object-fit: cover;
-      min-width: 100%;
-      width: 100%;
-      height: 100%;
-      left: 0;
-      right: 0;
-    }
-    .single-collection-large.image-pos-top img {
-      object-position: top;
-    }
-    .single-collection-large.image-pos-center img {
-      object-position: center;
-    }
-    .single-collection-large.image-pos-bottom img {
-      object-position: bottom;
-    }
-    
-    .section-{{ section.id }} .single-collection-large:before {
-      content: "";
-      background: linear-gradient(180deg, rgba(0, 0, 0, 0) 50%, {{ section.settings.tint_color }} 100%);
-      width: 100%;
-      height: 100%;
-      position: absolute;
-      opacity: {{ section.settings.tint_opacity }}%;
-      z-index: 1;
-    }
-    
+  }
+  .section-{{ section.id }} .single-collection-large:before {
+    content: "";
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0) 50%, {{ section.settings.tint_color }} 100%);
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    opacity: {{ section.settings.tint_opacity }}%;
+    z-index: 1;
+  }
 {%- endstyle -%}
-
-
-
 <div class="section-{{ section.id }}">
   {% unless section.settings.full_width %}
   <div class="wide-width">

@@ -150,24 +150,22 @@
         <div class="overlay"></div>       
         <div class="text-on-hero {{ section.settings.text_position }}">
             {%- for block in section.blocks -%}
-                {% case block.type %}
-                    {%- when 'super_heading' -%}
-                        <h1 class="super">{{ block.settings.super }}</h1>
-                    {%- when 'heading' -%}
-                        <h1>{{ block.settings.heading }}</h1>
-                    {%- when 'text' -%}
-                        <div class="text">{{ block.settings.sub_heading }}</div>
-                    {%- when 'button' -%}
-                        <div class="button-area">
-                            <a href="{{ block.settings.button_url }}" class="button {{ block.settings.button_style }}">{{ block.settings.button_text }}</a>
-                        </div>
-                {%- endcase -%}
+              {% case block.type %}
+                  {%- when 'super_heading' -%}
+                      <h1 class="super">{{ block.settings.super }}</h1>
+                  {%- when 'heading' -%}
+                      <h1>{{ block.settings.heading }}</h1>
+                  {%- when 'text' -%}
+                      <div class="text">{{ block.settings.sub_heading }}</div>
+                  {%- when 'button' -%}
+                      <div class="button-area">
+                          <a href="{{ block.settings.button_url }}" class="button {{ block.settings.button_style }}">{{ block.settings.button_text }}</a>
+                      </div>
+              {%- endcase -%}
             {%- endfor -%}
         </div>
     </div>
 </div>
-
-
 {% schema %}
 {
   "name": "t:sections.banner_section.name",

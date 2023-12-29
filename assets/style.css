@@ -50,10 +50,6 @@ button, input, select, mark {
 *, *::before, *::after {
     box-sizing: border-box;
 }
-/* Reapply the pointer cursor for anchor tags */
-a, button {
-    /*cursor: revert;*/
-}
 /* Remove list styles (bullets/numbers) */
 ul, menu {
     list-style: none;
@@ -647,22 +643,6 @@ body {
     z-index: 1;
     position: relative;
 }
-/*
-.site-header {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    z-index: 3;
-}*/
-/* .site-header .top-bar {
-    color: #fff;
-    background-color: #141414;
-    text-align: center;
-    line-height: 40px;
-}
-*/
-
 .main-content-area .hero-bg {
     width: 100%;
     text-align: center;
@@ -702,16 +682,10 @@ body {
 }
 
 
-.product-list-item .price {
-
-}
 .product-list-item .price .original-price {
     text-decoration: line-through;
     margin-right: 12px;
     opacity: 0.32;
-}
-.save-amount {
-    
 }
 /*list all items*/
 .collection-page {
