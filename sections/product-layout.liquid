@@ -667,8 +667,6 @@ button.hide {
 
 
 <script>
-  
-
   function copyURLToClipboard() {
     var urlToCopy = window.location.href;
     var tempInput = document.createElement("input");
@@ -678,12 +676,10 @@ button.hide {
     document.execCommand("copy");
     document.body.removeChild(tempInput);
   }
-
-
   const singleQuantityInput = document.querySelector('.product-details .add-to-cart .quantity input');
   const singleDecreaseButton = document.querySelector('.product-details .add-to-cart .q-down');
   const singleIncreaseButton = document.querySelector('.product-details .add-to-cart .q-up');
-  
+ 
   singleDecreaseButton.addEventListener('click', (event) => {
     event.preventDefault(); // Prevent default form submission
     const currentValue = parseInt(singleQuantityInput.value);
@@ -700,9 +696,7 @@ button.hide {
   
   /*VARIANTS START*/
   var product = {{ product | json }};
-
-  
-    
+   
   /*variant check class start*/
   function addCheckClasses() {
     const firstGroupInputs = document.querySelectorAll('#option-group-1 input[type="radio"]');
@@ -758,7 +752,6 @@ button.hide {
         }
       });
     }
-    
 
     let optionsProducts = {};
     product.variants.forEach((elem) => {
@@ -803,7 +796,6 @@ button.hide {
   });
   
 /*****/
-
   // Define the updateSelectedValues function
   function updateSelectedValues(selectedVar) {
     selectedVar.forEach(option => {

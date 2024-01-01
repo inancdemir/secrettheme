@@ -83,8 +83,12 @@
       {% assign color_value = line | split: ':' %}
       label[for="Color-{{ color_value[0] | strip }}"], 
       .product-list-colors.Color-{{ color_value[0] | strip }}, 
-      label.Color-{{ color_value[0] | strip }} {
+      label.Color-{{ color_value[0] | strip }}:before {
         background-color: {{ color_value[1] | strip }};
+        content: "";
+        width: 20px;
+        height: 20px;
+        margin: auto;
       }       
     {% endfor %}
 

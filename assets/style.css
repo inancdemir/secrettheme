@@ -1136,6 +1136,7 @@ ul.check-box-list li input:checked + label svg:first-child {
     width: 12px;
     height: 12px;
     border: 1px solid #d9d9d9;
+    margin: 0;
 }
 select#sort-by {
     font-size: 14px;
