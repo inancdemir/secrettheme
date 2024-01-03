@@ -6,15 +6,15 @@
         "slide-1": {
           "type": "hero_slide",
           "settings": {
-            "slide_bg": "shopify:\/\/shop_images\/hero.png",
+            "slide_bg": "shopify:\/\/shop_images\/carousel-hero.png",
             "description": "<p>UNVEILING INNOVATION IN WINTER SPORTSWEAR<\/p>",
             "heading": "Elevate to New Heights with Comfort",
-            "sub_heading": "",
+            "sub_heading": "Meet our 2023\/24 W\/F Collection",
             "button_text": "VIEW MORE",
             "button_url": "shopify:\/\/collections",
             "button_style": "model-4",
             "overlay_color": "#000000",
-            "overlay_color_opacity": 10
+            "overlay_color_opacity": 40
           }
         },
         "slide-2": {
@@ -28,7 +28,7 @@
             "button_url": "shopify:\/\/collections\/base-layers",
             "button_style": "model-4",
             "overlay_color": "#000000",
-            "overlay_color_opacity": 10
+            "overlay_color_opacity": 40
           }
         }
       },
@@ -38,12 +38,11 @@
       ],
       "settings": {
         "section_height": 100,
-        "section_width": 1400,
         "text_position": "bottom-center",
-        "super": "",
+        "super": "RISE",
         "super_color": "#ffffff",
         "super_opacity": 20,
-        "super_font_size": 12,
+        "super_font_size": 20,
         "super_gap": 430,
         "super_gap_mobile": 450,
         "gap_from_sides": 60,
@@ -78,7 +77,6 @@
         "heading_font_size": "large",
         "sub-heading": "<p><strong>Experience clothing that adapts, protects, and lasts.<\/strong><\/p>",
         "sub_title_color": "#000000",
-        "tabs_color": "#000000",
         "image_size": "three-four",
         "image_fit": "cover",
         "image_pos": "center",
@@ -86,7 +84,6 @@
         "products_item_gap": 0,
         "section_padding_top": 50,
         "section_padding_bottom": 0,
-        "use_default_colors": false,
         "full_width": false
       }
     },
@@ -127,17 +124,14 @@
         "image_size": "one-one",
         "image_fit": "cover",
         "image_pos": "top",
-        "shop_now": "Shop Now",
         "collection_model": "model-two",
         "spacings": 16,
-        "tint_opacity": 50,
-        "tint_color": "#000000",
+        "collection_item_title_bg_color": "linear-gradient(180deg, rgba(0, 0, 0, 0) 75%, rgba(0, 0, 0, 0.8) 100%)",
         "collection_item_title_color": "#ffffff",
         "shop_now_color": "#ffffff",
         "background_color": "linear-gradient(180deg, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0) 100%)",
         "section_padding_top": 50,
         "section_padding_bottom": 50,
-        "use_default_colors": false,
         "full_width": false
       }
     },
@@ -164,18 +158,14 @@
       ],
       "settings": {
         "collection_height": 800,
-        "full_height_desktop": false,
         "collection_height_mobile": 400,
-        "full_height_mobil": false,
         "collection_header_color": "#ffffff",
         "heading_font_size": "large",
         "collection_description_color": "#ffffff",
         "collection_per_line": 1,
         "spacings": 0,
         "full_width": true,
-        "tint_opacity": 50,
-        "tint_color": "#000000",
-        "section_bg": ""
+        "tint_opacity": 50
       }
     },
     "home-spacer-1": {
@@ -223,18 +213,14 @@
       ],
       "settings": {
         "collection_height": 800,
-        "full_height_desktop": false,
         "collection_height_mobile": 400,
-        "full_height_mobil": false,
         "collection_header_color": "#ffffff",
         "heading_font_size": "large",
         "collection_description_color": "#ffffff",
         "collection_per_line": 2,
         "spacings": 16,
         "full_width": false,
-        "tint_opacity": 50,
-        "tint_color": "#000000",
-        "section_bg": ""
+        "tint_opacity": 50
       }
     },
     "home-spacer-2": {
@@ -322,8 +308,7 @@
           "type": "button",
           "settings": {
             "button_label": "Read More",
-            "button_link": "shopify:\/\/blogs\/news\/what-gear-do-i-need",
-            "button_style": "media-text"
+            "button_link": "shopify:\/\/blogs\/news\/what-gear-do-i-need"
           }
         }
       },
@@ -335,16 +320,12 @@
       "settings": {
         "image": "shopify:\/\/shop_images\/comfort.jpg",
         "image_size": 50,
-        "row_gap": 16,
         "max_width": 100,
         "text_width": 32,
         "heading_font_size": "large",
         "image_position": "image-on-left",
         "text_align": "text-left",
         "section_bg": "#ffffff",
-        "section_heading": "#000000",
-        "section_text": "#000000",
-        "use_default_colors": false,
         "full_width": false
       }
     },
@@ -367,8 +348,7 @@
           "type": "button",
           "settings": {
             "button_label": "Read More",
-            "button_link": "shopify:\/\/blogs\/news",
-            "button_style": "media-text"
+            "button_link": "shopify:\/\/blogs\/news"
           }
         }
       },
@@ -380,16 +360,12 @@
       "settings": {
         "image": "shopify:\/\/shop_images\/durability.jpg",
         "image_size": 50,
-        "row_gap": 16,
         "max_width": 100,
         "text_width": 32,
         "heading_font_size": "small",
         "image_position": "image-on-right",
         "text_align": "text-left",
         "section_bg": "#ffffff",
-        "section_heading": "#000000",
-        "section_text": "#000000",
-        "use_default_colors": false,
         "full_width": false
       }
     },
@@ -507,14 +483,10 @@
       ],
       "settings": {
         "column_per_line": "3",
-        "spacings": 16,
-        "spacings_v": 16,
         "section_padding_top": 0,
         "section_padding_bottom": 50,
         "ver_align": "center",
-        "full_width": false,
-        "background_color": "linear-gradient(180deg, #ffffff 100%, #ffffff 100%)",
-        "content_color": "#000000"
+        "full_width": false
       }
     },
     "home-banner": {
@@ -547,11 +519,8 @@
         "button"
       ],
       "settings": {
-        "collection_height": 640,
         "full_height_desktop": true,
         "collection_height_mobile": 560,
-        "full_height_mobil": false,
-        "section_width": 1400,
         "text_position": "bottom-left",
         "super_color": "#ffffff",
         "super_opacity": 40,
@@ -647,14 +616,9 @@
       ],
       "settings": {
         "column_per_line": "4",
-        "spacings": 16,
-        "spacings_v": 16,
         "section_padding_top": 25,
         "section_padding_bottom": 0,
-        "ver_align": "flex-start",
-        "full_width": true,
-        "background_color": "linear-gradient(180deg, #ffffff 100%, #ffffff 100%)",
-        "content_color": "#000000"
+        "full_width": true
       }
     }
   },

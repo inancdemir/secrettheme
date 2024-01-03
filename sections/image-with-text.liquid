@@ -16,10 +16,12 @@
   }
 {% endunless %}
 .section-{{ section.id }} .image-with-text {
-  display: block;
+  display: flex;
   align-items: center;
   margin: 0 auto;
-  max-width:  {{ section.settings.max_width }}%;
+  max-width: 100%;
+  flex-direction: column;
+  row-gap: 24px;
 }
 .section-{{ section.id }} .image-with-text .image-side {
   line-height: 0;
@@ -45,6 +47,7 @@
   .section-{{ section.id }} .image-with-text {
       display: flex;
       column-gap: {{ section.settings.row_gap }}px;
+      flex-direction: row;
   }
   .section-{{ section.id }} .image-with-text .image-side {
       min-width: {{ section.settings.image_size }}%;

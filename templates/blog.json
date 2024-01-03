@@ -1,27 +1,24 @@
 {
-  "sections": {
-    "spacer-1": {
-      "type": "spacer",
-      "settings": {
-        "desktop_space": "100",
-        "mobile_space": "80"
-      }
+    "sections": {
+        "spacer-1": {
+            "type": "spacer",
+            "settings": {
+                "desktop_space": "100",
+                "mobile_space": "80"
+            }
+        },
+        "breadcrumb": {
+            "type": "breadcrumb",
+            "settings": {
+                "full_width": false
+            }
+        },
+        "blog": {
+            "type": "main-blog",
+            "settings": {}
+        }
     },
-    "breadcrumb": {
-      "type": "breadcrumb",
-      "settings": {
-        "full_width": false
-      }
-    },
-    "blog": {
-      "type": "main-blog",
-      "settings": {
-      }
-    }
-  },
-  "order": [
-    "spacer-1",
-    "breadcrumb",
-    "blog"
-  ]
+    "order": [
+        "spacer-1", "breadcrumb", "blog"
+    ]
 }

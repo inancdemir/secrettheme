@@ -333,7 +333,7 @@ button.hide {
   </div>
  
   <div class="product-details">
-
+    {% comment %}
     {% assign product_metafield = product.metafields.custom %}
 
     {% if product_metafield.warmth %}
@@ -341,7 +341,7 @@ button.hide {
     {% else %}
     Bu ürün için sıcaklık metafield değeri bulunamadı.
     {% endif %}
-
+    {% endcomment %}
     <div class="product-wrap">
       {% form 'product', product %}
         <input hidden aria-label="product-variant" id="single-product-id" name="id" value="{{ product.selected_or_first_available_variant.id }}">
