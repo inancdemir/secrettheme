@@ -1,6 +1,6 @@
 {{ 'article.css' | asset_url | stylesheet_tag }}
 {{ 'socials.css' | asset_url | stylesheet_tag }}
-<article class="single-article">
+<article class="single-article"  {% render 'animation-model-1' %}>
   {%- if section.settings.show_breadcrumb -%}
     {%- render 'breadcrumb' -%}
   {%- endif -%}

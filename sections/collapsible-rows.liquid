@@ -21,7 +21,7 @@
 {%- endstyle -%}
 {{ 'accordion.css' | asset_url | stylesheet_tag }}
 <script id="accordions" src="{{ 'accordion.js' | asset_url }}" defer></script>
-<div class="collapsible-rows section-{{ section.id }}">
+<div class="collapsible-rows section-{{ section.id }}"  {% render 'animation-model-1' %}>
     {% unless section.settings.full_width %}
     <div class="wide-width">
     {% endunless %}

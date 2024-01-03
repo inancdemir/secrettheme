@@ -52,19 +52,19 @@
   }
 }
 {%- endstyle -%}
-<div class="section-{{ section.id }}">
+<div class="section-{{ section.id }}" {% render 'animation-model-1' %}>
 {% unless section.settings.full_width %}
 <div class="wide-width">
 {% endunless %}
 <div class="image-with-text {{ section.settings.image_position }}">
-    <div class="image-side">
+    <div class="image-side full-on-mobile" data-animation="slideInDown" data-animation-delay=".75s">
       {% if section.settings.image %}
         {{ section.settings.image | image_url: width: 1500 | image_tag: loading: 'lazy' }}
       {% else if %}
         {{ 'collection-4' | placeholder_svg_tag: 'demo-image ' }}
       {% endif %} 
     </div>
-    <div class="text-side {{ section.settings.text_align }}">
+    <div class="text-side {{ section.settings.text_align }}" data-animation="slideInUp" data-animation-delay="1.5s">
         {% if section.blocks != empty %}
           {%- for block in section.blocks -%}
             {% case block.type %}

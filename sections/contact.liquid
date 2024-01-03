@@ -1,5 +1,5 @@
 {{ 'contact.css' | asset_url | stylesheet_tag }}
-<div class="contact-form-container">
+<div class="contact-form-container"  {% render 'animation-model-1' %}>
     
     {% form 'contact' %}
       <div class="contact-form two-column">

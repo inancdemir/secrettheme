@@ -41,11 +41,11 @@
     z-index: 1;
   }
 {%- endstyle -%}
-<div class="section-{{ section.id }}">
+<div class="section-{{ section.id }}"  {% render 'animation-model-1' %}>
   {% unless section.settings.full_width %}
   <div class="wide-width">
   {% endunless %}
-    <div class="front-collection-wrap columns-{{ section.settings.collection_per_line }}">
+    <div class="front-collection-wrap full-on-mobile columns-{{ section.settings.collection_per_line }}">
     {%- for block in section.blocks -%}
       {% case block.type %}
         {%- when 'collection' -%}

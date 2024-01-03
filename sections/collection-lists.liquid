@@ -97,7 +97,7 @@
 {% unless section.settings.full_width %}
 <div class="wide-width">
 {% endunless %}
-<div class="front-collection-wrap section-{{ section.id }}">
+<div class="front-collection-wrap section-{{ section.id }}"  {% render 'animation-model-1' %}>
   
   {% if section.settings.heading %}
     <h2 class="{{ section.settings.heading_font_size }}">{{ section.settings.heading }}</h2>
@@ -105,7 +105,7 @@
   {% if section.settings.sub_heading %}
     <div class="subtitle subheadline">{{ section.settings.sub_heading }}</div>
   {% endif %}
-    <div class="collection-hor">
+    <div class="collection-hor full-on-mobile">
       {% if section.settings.collection_list != empty %}
         {%- for collection in section.settings.collection_list -%}
 

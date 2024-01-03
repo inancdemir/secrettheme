@@ -12,13 +12,19 @@
   background: linear-gradient(180deg, rgba(0, 0, 0, 0) 50%, {{ section.settings.tint_color }} 100%);
   opacity: {{ section.settings.tint_opacity }}%;
 }
-.add-text-wrap .add-text-content * {
+.add-text-wrap .add-text-content p {
   color: {{ section.settings.add_color }};
+  font-size: calc( {{ section.settings.add_font_size_mobile }}px );
+  line-height: calc({{ section.settings.add_font_size_mobile }}px * 1.2);
 }
 .product-list {
   margin-bottom: 30px;
 }
 @media only screen and (min-width: 640px) {
+  .add-text-wrap .add-text-content p {
+    font-size: calc( {{ section.settings.add_font_size }}px );
+    line-height: calc({{ section.settings.add_font_size }}px * 1.2);
+  }
   .section-{{ section.id }} .product-list {
     column-gap: {{ section.settings.product_gap }}px;
   }
@@ -48,7 +54,7 @@
 <script id="ajaxinate" src="{{ 'ajaxinate.js' | asset_url }}" defer></script>
 <script id="filter" src="{{ 'filter.js' | asset_url }}" defer></script>
 
-<div class="product-list section-{{ section.id }}">
+<div class="product-list section-{{ section.id }}"  {% render 'animation-model-1' %}>
   {% unless section.settings.full_width %}
   <div class="wide-width">
   {% endunless %}
@@ -96,7 +102,7 @@
     assign productPerRow = section.settings.item_per_row
     assign rowPerpage = section.settings.item_show_row
     assign productperpage = productPerRow | times: rowPerpage
-  %}
+  %}{% assign delayIncrement = 0.2 %}
     {% paginate collection.products by productperpage %}
       <div class="product-list full-on-mobile column-{{ section.settings.item_per_row }} column-mobile-{{ section.settings.item_per_row_mobile }} image-size-{{- section.settings.image_size }} image-fit-{{- section.settings.image_fit }} image-pos-{{- section.settings.image_pos -}}" id="AjaxinateContainer">
         {% for product in collection.products %}
@@ -115,7 +121,7 @@
                     <div class="add-text-wrap">
                       <div class="add-text-content">
                         {% if block.settings.button_text %}
-                          <h3 class="large thin">{{ block.settings.text }}</h3>
+                          <p>{{ block.settings.text }}</p>
                         {% endif %}
                         {% if block.settings.button_text %}
                           <a class="text-link underline" href="{{ block.settings.button_url }}">{{ block.settings.button_text }}</a>
@@ -127,7 +133,10 @@
 
             {%- endcase -%}
           {%- endfor -%}
-          {% render 'product-item', product: product %}
+          {% assign delay = forloop.index | times: delayIncrement %}
+          <div class="product-list-item" data-animation="slideInRight" data-animation-delay="{{ delay }}s">
+            {% render 'product-list-item', product: product %}
+          </div>
         {% endfor %}  
       </div>
       {% case section.settings.pagination_settings %}
@@ -404,6 +413,26 @@
       "id": "tint_color",
       "label": "Tint",
       "default": "#000000"
+    },
+    {
+      "type": "range",
+      "id": "add_font_size",
+      "min": 12,
+      "max": 60,
+      "step": 1,
+      "unit": "px",
+      "label": "Add font size",
+      "default": 48
+    },
+    {
+      "type": "range",
+      "id": "add_font_size_mobile",
+      "min": 12,
+      "max": 60,
+      "step": 1,
+      "unit": "px",
+      "label": "Add font size",
+      "default": 24
     }
   ],
   "blocks": [

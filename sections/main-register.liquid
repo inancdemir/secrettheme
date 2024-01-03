@@ -68,7 +68,7 @@
 }
 {%- endstyle -%}
 
-<div class="login-page">
+<div class="login-page"  {% render 'animation-model-1' %}>
   <div class="login-left">
     {% if section.settings.image %}
       {{ section.settings.image | image_url: width: 1500 | image_tag: loading: 'lazy', class: 'demo-image' }}

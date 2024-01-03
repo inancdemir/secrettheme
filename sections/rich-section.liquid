@@ -25,7 +25,7 @@
   gap: {{ section.settings.element_gaps }}px;
 }
 {%- endstyle -%}
-<div class="rich-section section-{{ section.id }}">
+<div class="rich-section section-{{ section.id }}"  {% render 'animation-model-1' %}>
     {% unless section.settings.full_width %}
     <div class="wide-width">
     {% endunless %}

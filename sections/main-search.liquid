@@ -355,7 +355,7 @@ input:checked + .slider:before {
 {%- endstyle -%}
 
 
-<div class="product-list section-{{ section.id }}">
+<div class="product-list section-{{ section.id }}"  {% render 'animation-model-1' %}>
   {% unless section.settings.full_width %}
   <div class="wide-width">
   {% endunless %}

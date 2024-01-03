@@ -14,7 +14,7 @@
 {%- endstyle -%}
 {{ 'shop-the-look.css' | asset_url | stylesheet_tag }}
 <script src="{{ 'shop-the-look.js' | asset_url }}" defer></script>
-<div class="section-{{ section.id }}">
+<div class="section-{{ section.id }}"  {% render 'animation-model-1' %}>
   {% unless section.settings.full_width %}
     <div class="wide-width">
   {% endunless %}
@@ -26,7 +26,7 @@
       {{ section.settings.sub-heading }}    
     </div>
   {% endif %} 
-  <div class="shop-to-look not-animate">  
+  <div class="shop-to-look not-animate full-on-mobile">  
     {% unless section.settings.shop_to_look_image %}
       {{ 'lifestyle-1' | placeholder_svg_tag: 'demo-image stl-image' }}
     {% else %}

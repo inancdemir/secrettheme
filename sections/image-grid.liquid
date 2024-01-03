@@ -42,7 +42,7 @@ column-gap: 32px;
   }
 }
 {%- endstyle -%}
-<div class="image-grid section-{{ section.id }}">
+<div class="image-grid section-{{ section.id }}"  {% render 'animation-model-1' %}>
     {% unless section.settings.full_width %}
     <div class="wide-width">
     {% endunless %}

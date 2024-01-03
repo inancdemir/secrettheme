@@ -41,7 +41,7 @@
 {%- endstyle -%}
 {{ 'single-post.css' | asset_url | stylesheet_tag }}
 {{ 'blog-post-featured.css' | asset_url | stylesheet_tag }}
-<div class="featured-posts section-{{ section.id }}">
+<div class="featured-posts section-{{ section.id }}"  {% render 'animation-model-1' %}>
   {% unless section.settings.full_width %}
   <div class="wide-width">
   {% endunless %}
@@ -55,7 +55,7 @@
         {% endif %}
         <a class="text-link underline hidden-mobile" href="{{ section.settings.blog.url }}">{{ section.settings.button_label }}</a>
     </div>
-    <div class="blog-post-list column-{{ section.settings.product_per_row }} image-size-{{ section.settings.image_size }} image-fit-{{- section.settings.image_fit }} image-pos-{{- section.settings.image_pos }} authore-{{- section.settings.show_authore }} date-{{- section.settings.show_date }} tags-{{- section.settings.show_tags }} comments-{{- section.settings.show_comments -}}">
+    <div class="blog-post-list full-on-mobile column-{{ section.settings.product_per_row }} image-size-{{ section.settings.image_size }} image-fit-{{- section.settings.image_fit }} image-pos-{{- section.settings.image_pos }} authore-{{- section.settings.show_authore }} date-{{- section.settings.show_date }} tags-{{- section.settings.show_tags }} comments-{{- section.settings.show_comments -}}">
         {% if section.settings.blog != empty %}
             {% for article in section.settings.blog.articles %}
               {% render 'single-post' article: article %}

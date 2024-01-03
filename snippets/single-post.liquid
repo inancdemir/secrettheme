@@ -15,10 +15,11 @@
         </a>
       </h3>
       <p>
+        {% assign text_long = settings.text_long %}
         {%- if article.excerpt.size > 0 -%}
-          {{ article.excerpt | strip_html | truncate: 125 }}
+          {{ article.excerpt | strip_html | truncate: text_long }}
         {%- else -%}
-          {{ article.content | strip_html | truncate: 125 }}
+          {{ article.content | strip_html | truncate: text_long }}
         {%- endif -%}                      
       </p>
       <a class="text-link underline" href="{{ article.url }}">Read More</a>

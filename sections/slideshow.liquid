@@ -172,7 +172,7 @@
 {%- endstyle -%}
 {{ 'flickity.css' | asset_url | stylesheet_tag }}
 <script src="{{ 'flickity.js' | asset_url }}" defer></script>
-<div class=" section-{{ section.id }} hero-slideshow">
+<div class=" section-{{ section.id }} hero-slideshow" {% render 'animation-model-1' %}>
     <div class="hero-carousel-{{- section.id -}}">
         <h1 class="super">{{ section.settings.super }}</h1>
         {%- for block in section.blocks -%}
@@ -201,7 +201,7 @@
                       {% else %}
                           opacity: 0.{{ block.settings.overlay_color_opacity }};
                       {% endif %}"></div>
-                    <div class="text-on-hero {{ section.settings.text_position }}">
+                    <div class="text-on-hero {{ section.settings.text_position }}" data-animation="slideInRight">
                         <span class="subheadline">{{ block.settings.description }}</span>
                         <h2 class="small">{{ block.settings.heading }}</h2>
                         <span class="h4 small ">{{ block.settings.sub_heading }}</span>
@@ -214,7 +214,6 @@
         {%- endfor -%}
     </div>
 </div>
-    
 <script>
     document.addEventListener("DOMContentLoaded", function () {
         var flkty = new Flickity('.hero-carousel-{{- section.id -}}', {
@@ -225,12 +224,8 @@
             groupCells: 1,  
             cellSelector: '.slider-item',
             setGallerySize: false
-           
         });
-
     });
-    
-
     {%- if request.design_mode -%}
         document.addEventListener("shopify:section:load", function() {
             var flkty = new Flickity('.hero-carousel-{{- section.id -}}', {
@@ -240,8 +235,7 @@
                 prevNextButtons: true,   // Show previous and next buttons
                 pageDots: false,         // Hide the page dots
                 groupCells: 1,           // Show only 1 slide at a time
-                cellSelector: '.slider-item',
-                
+                cellSelector: '.slider-item',         
             });
         });
     {%- endif -%}

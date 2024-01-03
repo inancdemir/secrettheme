@@ -79,10 +79,11 @@
     object-fit: contain;
 }
 .modal-close {
+    margin: 16px 16px 0 0;
     position: absolute;
     right: 0;
     top: 0;
-    margin: 32px 32px 0 0;
+    
     z-index: 9;
     padding: 0;
 }
@@ -163,6 +164,9 @@
     margin-top: 32px;
 }
 @media only screen and (min-width: 768px) {
+    .modal-close {
+        margin: 32px 32px 0 0;
+    }
     .modal-content .product-image-area {
         padding: 0;
     }

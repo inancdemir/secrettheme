@@ -62,7 +62,7 @@
 <script src="{{ 'flickity.js' | asset_url }}" defer></script>      
 
 
-<div class="section-{{ section.id }} testimonial-slider">
+<div class="section-{{ section.id }} testimonial-slider"  {% render 'animation-model-1' %}>
     <h2 class="medium">{{ section.settings.heading }}</h2>
     
     <div class="quote-carousel-{{- section.id -}}">

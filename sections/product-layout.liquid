@@ -271,7 +271,7 @@ button.hide {
 <script id="format-money" src="{{ 'format-money.js' | asset_url }}" defer></script>
 
 {% assign full_url = request.host | append: request.path %}
-<div class="product-page section-{{ section.id }}" data-money-format = {{ shop.money_format }}>
+<div class="product-page section-{{ section.id }}" data-money-format = {{ shop.money_format }}  {% render 'animation-model-1' %}>
   <div class="image-side">
     <ul class="product-image-slider{{- section.id -}}">
       {% for media in product.media %}
@@ -333,6 +333,15 @@ button.hide {
   </div>
  
   <div class="product-details">
+
+    {% assign product_metafield = product.metafields.custom %}
+
+    {% if product_metafield.warmth %}
+    Ürün Sıcaklık Metafield Değeri: {{ product_metafield.warmth }}
+    {% else %}
+    Bu ürün için sıcaklık metafield değeri bulunamadı.
+    {% endif %}
+
     <div class="product-wrap">
       {% form 'product', product %}
         <input hidden aria-label="product-variant" id="single-product-id" name="id" value="{{ product.selected_or_first_available_variant.id }}">
@@ -608,8 +617,6 @@ button.hide {
     {% endform %}
   </div>
   </div>
-  
-
 
   {%- liquid
     if product.selected_or_first_available_variant.featured_media
@@ -900,11 +907,7 @@ button.hide {
       //  document.querySelector('.shopify-payment-button__button--unbranded').setAttribute('aria-disabled', 'true');
       }  
       console.log(pattern);
-
-
-
     })
-  
   })
   
 
