@@ -160,21 +160,19 @@
 
 
 <script>
-    
-      {% case section.settings.pagination_settings %}
-        {% when 'infinite' %}
-        document.addEventListener("DOMContentLoaded", function() {
-          var endlessScroll = new Ajaxinate({
-          });
-        });
-        {% when 'click-to-load' %}
-        document.addEventListener("DOMContentLoaded", function() {
-          var endlessScroll = new Ajaxinate({
-            method: 'click'          
-          });
-        });
-      {% endcase %}
-
+  {% case section.settings.pagination_settings %}
+    {% when 'infinite' %}
+    document.addEventListener("DOMContentLoaded", function() {
+      var endlessScroll = new Ajaxinate({
+      });
+    });
+    {% when 'click-to-load' %}
+    document.addEventListener("DOMContentLoaded", function() {
+      var endlessScroll = new Ajaxinate({
+        method: 'click'          
+      });
+    });
+  {% endcase %}
 </script>
 
 {% schema %}

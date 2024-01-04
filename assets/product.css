@@ -1,0 +1,16 @@
+.icon-propos ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+}
+.icon-propos ul li {
+    font-size: 11px;
+    font-weight: 700;
+    line-height: 18px;
+    display: flex;
+    align-items: center;
+    padding: 7px 16px;
+    border: 1px solid rgba(0, 0, 0, 0.16);
+    background: rgba(255, 255, 255, 0.12);
+    gap: 2px;
+}

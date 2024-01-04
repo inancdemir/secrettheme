@@ -259,6 +259,7 @@ button.hide {
   display: inline-block;
 }
 {%- endstyle -%}
+{{ 'product.css' | asset_url | stylesheet_tag }}
 {{ 'socials.css' | asset_url | stylesheet_tag }}
 {{ 'accordion.css' | asset_url | stylesheet_tag }}
 {{ 'add-to-cart.css' | asset_url | stylesheet_tag }}
@@ -271,8 +272,8 @@ button.hide {
 <script id="format-money" src="{{ 'format-money.js' | asset_url }}" defer></script>
 
 {% assign full_url = request.host | append: request.path %}
-<div class="product-page section-{{ section.id }}" data-money-format = {{ shop.money_format }}  {% render 'animation-model-1' %}>
-  <div class="image-side">
+<div class="product-page section-{{ section.id }}" data-money-format = {{ shop.money_format }}>
+  <div class="image-side" {% render 'animation-model-1' %}>
     <ul class="product-image-slider{{- section.id -}}">
       {% for media in product.media %}
         {% case media.media_type %}
@@ -536,31 +537,31 @@ button.hide {
             
             {%- when 'socials' -%}
                 <div class="socilas" {{ block.shopify_attributes }}>
-                    <span class="subheadline">Share</span>
-                    
-                    <ul>
-                        <li>
-                          <a aria-label="facebook-share" href="https://www.facebook.com/sharer/sharer.php?u={{- full_url -}}" target="_blank">
-                            {% render 'icon-facebook' %}
-                          </a>
-                        </li>
-                        <li>
-                          <a aria-label="twitter-share" href="https://twitter.com/intent/tweet?text=CURVE%20W%20JACKET&url={{- full_url -}}" target="_blank">
-                            {% render 'icon-twitter' %}
-                          </a>
-                        </li>
-                        <li>
-                          <a aria-label="pinterest-share" target="_blank" href="//pinterest.com/pin/create/button/?url={{ full_url }}&amp;media={{ product.featured_image | image_url: width: 1000 }}&amp;description={{ product.title | escape }}">
-                            {% render 'icon-pinterest' %}
-                          </a>
-                        </li>
-                        <li>
-                          <span id="copyClip" onclick="copyURLToClipboard()" aria-label="copy-link">
-                            {% render 'icon-link' %}
-                          </span>
-                        </li>
-                    </ul>    
-                </div>                        
+                  <span class="subheadline">Share</span>
+                  <ul>
+                    <li>
+                      <a aria-label="facebook-share" href="https://www.facebook.com/sharer/sharer.php?u={{- full_url -}}" target="_blank">
+                        {% render 'icon-facebook' %}
+                      </a>
+                    </li>
+                    <li>
+                      <a aria-label="twitter-share" href="https://twitter.com/intent/tweet?text=CURVE%20W%20JACKET&url={{- full_url -}}" target="_blank">
+                        {% render 'icon-twitter' %}
+                      </a>
+                    </li>
+                    <li>
+                      <a aria-label="pinterest-share" target="_blank" href="//pinterest.com/pin/create/button/?url={{ full_url }}&amp;media={{ product.featured_image | image_url: width: 1000 }}&amp;description={{ product.title | escape }}">
+                        {% render 'icon-pinterest' %}
+                      </a>
+                    </li>
+                    <li>|</li>
+                    <li>
+                      <span id="copyClip" onclick="copyURLToClipboard()" aria-label="copy-link">
+                        {% render 'icon-link' %}
+                      </span>
+                    </li>
+                  </ul>    
+                </div>
             {%- when 'description' -%}
                 <div class="description" {{ block.shopify_attributes }}>
                     <div class="accordion active">
@@ -610,6 +611,52 @@ button.hide {
                         <p>{{ block.settings.accorion_contnet }}</p>
                     </div>
                 </div>
+
+            {%- when 'icon_propos' -%}
+              <div class="icon-propos" {{ block.shopify_attributes }}>
+                <ul>
+                  {% if block.settings.icon-prop-1 != empty %}
+                    <li>
+                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="none">
+                        {% render 'icon-family' icon: block.settings.select_icon_prop-1 %}                      
+                      </svg>
+                      {{ block.settings.icon-prop-1 }}
+                    </li>
+                  {% endif %}
+                  {% if block.settings.icon-prop-2 != empty %}
+                    <li>
+                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="none">
+                        {% render 'icon-family' icon: block.settings.select_icon_prop-2 %}                      
+                      </svg>
+                      {{ block.settings.icon-prop-2 }}
+                    </li>
+                  {% endif %}
+                  {% if block.settings.icon-prop-3 != empty %}
+                    <li>
+                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="none">
+                        {% render 'icon-family' icon: block.settings.select_icon_prop-3 %}                      
+                      </svg>
+                      {{ block.settings.icon-prop-3 }}
+                    </li>
+                  {% endif %}
+                  {% if block.settings.icon-prop-4 != empty %}
+                    <li>
+                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="none">
+                        {% render 'icon-family' icon: block.settings.select_icon_prop-4 %}                      
+                      </svg>
+                      {{ block.settings.icon-prop-4 }}
+                    </li>
+                  {% endif %}
+                  {% if block.settings.icon-prop-5 != empty %}
+                    <li>
+                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="none">
+                        {% render 'icon-family' icon: block.settings.select_icon_prop-5 %}                      
+                      </svg>
+                      {{ block.settings.icon-prop-5 }}
+                    </li>
+                  {% endif %}
+                </ul>
+              </div>
             
               
           {%- endcase -%}
@@ -1173,8 +1220,1572 @@ button.hide {
           "type": "page",
           "id": "page",
           "label": "t:sections.product_layout.select_page",
-          "info": "t:sections.product_layout.select_page.select_page_info"
+          "info": "Select page to show in popup"
         }
+      ]
+    },
+    {
+      "type": "icon_propos",
+      "name": "Iconlu ozellikler",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "text",
+          "id": "icon-prop-1",
+          "default": "Fast Shipping",
+          "label": "icon-prop-1"
+        },
+        {
+          "type": "select",
+          "id": "select_icon_prop-1",
+          "options": [
+            {
+              "value": "award",
+              "label": "award"
+            },
+            {
+              "value": "bag",
+              "label": "bag"
+            },
+            {
+              "value": "bell",
+              "label": "bell"
+            },
+            {
+              "value": "bluetooth",
+              "label": "bluetooth"
+            },
+            {
+              "value": "burger",
+              "label": "burger"
+            },
+            {
+              "value": "calendar",
+              "label": "calendar"
+            },
+            {
+              "value": "camera",
+              "label": "camera"
+            },
+            {
+              "value": "cart",
+              "label": "cart"
+            },
+            {
+              "value": "chatbubble",
+              "label": "chatbubble"
+            },
+            {
+              "value": "chatbox",
+              "label": "chatbox"
+            },
+            {
+              "value": "checkmark",
+              "label": "checkmark"
+            },
+            {
+              "value": "coffee",
+              "label": "coffee"
+            },
+            {
+              "value": "coupon",
+              "label": "coupon"
+            },
+            {
+              "value": "creditcard",
+              "label": "creditcard"
+            },
+            {
+              "value": "danger",
+              "label": "danger"
+            },
+            {
+              "value": "deliverytruck",
+              "label": "deliverytruck"
+            },
+            {
+              "value": "document",
+              "label": "document"
+            },
+            {
+              "value": "earth",
+              "label": "earth"
+            },
+            {
+              "value": "facebook",
+              "label": "facebook"
+            },
+            {
+              "value": "flash",
+              "label": "flash"
+            },
+            {
+              "value": "gift",
+              "label": "gift"
+            },
+            {
+              "value": "globe",
+              "label": "globe"
+            },
+            {
+              "value": "happyface",
+              "label": "happyface"
+            },
+            {
+              "value": "info",
+              "label": "info"
+            },
+            {
+              "value": "instagram",
+              "label": "instagram"
+            },
+            {
+              "value": "journey",
+              "label": "journey"
+            },
+            {
+              "value": "leaf",
+              "label": "leaf"
+            },
+            {
+              "value": "like",
+              "label": "like"
+            },
+            {
+              "value": "linkedin",
+              "label": "linkedin"
+            },
+            {
+              "value": "lock",
+              "label": "lock"
+            },
+            {
+              "value": "love",
+              "label": "love"
+            },
+            {
+              "value": "mailclosed",
+              "label": "mailclosed"
+            },
+            {
+              "value": "mailopen",
+              "label": "mailopen"
+            },
+            {
+              "value": "map",
+              "label": "map"
+            },
+            {
+              "value": "mask",
+              "label": "mask"
+            },
+            {
+              "value": "microphone",
+              "label": "microphone"
+            },
+            {
+              "value": "movingbox",
+              "label": "movingbox"
+            },
+            {
+              "value": "movingtruck",
+              "label": "movingtruck"
+            },
+            {
+              "value": "music",
+              "label": "music"
+            },
+            {
+              "value": "package",
+              "label": "package"
+            },
+            {
+              "value": "paperplane",
+              "label": "paperplane"
+            },
+            {
+              "value": "paw",
+              "label": "paw"
+            },
+            {
+              "value": "percent",
+              "label": "percent"
+            },
+            {
+              "value": "pin",
+              "label": "pin"
+            },
+            {
+              "value": "pinterest",
+              "label": "pinterest"
+            },
+            {
+              "value": "pizza",
+              "label": "pizza"
+            },
+            {
+              "value": "plane",
+              "label": "plane"
+            },
+            {
+              "value": "play",
+              "label": "play"
+            },
+            {
+              "value": "plug",
+              "label": "plug"
+            },
+            {
+              "value": "printer",
+              "label": "printer"
+            },
+            {
+              "value": "profile",
+              "label": "profile"
+            },
+            {
+              "value": "questionmark",
+              "label": "questionmark"
+            },
+            {
+              "value": "recycle",
+              "label": "recycle"
+            },
+            {
+              "value": "ruler",
+              "label": "ruler"
+            },
+            {
+              "value": "secureprofile",
+              "label": "secureprofile"
+            },
+            {
+              "value": "securitybadge",
+              "label": "securitybadge"
+            },
+            {
+              "value": "share",
+              "label": "share"
+            },
+            {
+              "value": "smartphone",
+              "label": "smartphone"
+            },
+            {
+              "value": "star",
+              "label": "star"
+            },
+            {
+              "value": "store",
+              "label": "store"
+            },
+            {
+              "value": "sun",
+              "label": "sun"
+            },
+            {
+              "value": "target",
+              "label": "target"
+            },
+            {
+              "value": "tiktok",
+              "label": "tiktok"
+            },
+            {
+              "value": "tree",
+              "label": "tree"
+            },
+            {
+              "value": "user",
+              "label": "user"
+            },
+            {
+              "value": "vimeo",
+              "label": "vimeo"
+            },
+            {
+              "value": "wallet",
+              "label": "wallet"
+            },
+            {
+              "value": "wechat",
+              "label": "wechat"
+            },
+            {
+              "value": "whatsapp",
+              "label": "whatsapp"
+            },
+            {
+              "value": "wifi",
+              "label": "wifi"
+            },
+            {
+              "value": "x",
+              "label": "x"
+            },
+            {
+              "value": "youtube",
+              "label": "youtube"
+            },
+            {
+              "value": "truck",
+              "label": "truck"
+            },
+            {
+              "value": "secure-payment",
+              "label": "secure-payment"
+            },
+            {
+              "value": "proper-shipping",
+              "label": "proper-shipping"
+            }
+          ],
+          "label": "t:sections.all.select_icon",
+          "default": "truck"
+        },
+        {
+          "type": "text",
+          "id": "icon-prop-2",
+          "default": "Secure Payment",
+          "label": "icon-prop-2"
+        },
+        {
+          "type": "select",
+          "id": "select_icon_prop-2",
+          "options": [
+            {
+              "value": "award",
+              "label": "award"
+            },
+            {
+              "value": "bag",
+              "label": "bag"
+            },
+            {
+              "value": "bell",
+              "label": "bell"
+            },
+            {
+              "value": "bluetooth",
+              "label": "bluetooth"
+            },
+            {
+              "value": "burger",
+              "label": "burger"
+            },
+            {
+              "value": "calendar",
+              "label": "calendar"
+            },
+            {
+              "value": "camera",
+              "label": "camera"
+            },
+            {
+              "value": "cart",
+              "label": "cart"
+            },
+            {
+              "value": "chatbubble",
+              "label": "chatbubble"
+            },
+            {
+              "value": "chatbox",
+              "label": "chatbox"
+            },
+            {
+              "value": "checkmark",
+              "label": "checkmark"
+            },
+            {
+              "value": "coffee",
+              "label": "coffee"
+            },
+            {
+              "value": "coupon",
+              "label": "coupon"
+            },
+            {
+              "value": "creditcard",
+              "label": "creditcard"
+            },
+            {
+              "value": "danger",
+              "label": "danger"
+            },
+            {
+              "value": "deliverytruck",
+              "label": "deliverytruck"
+            },
+            {
+              "value": "document",
+              "label": "document"
+            },
+            {
+              "value": "earth",
+              "label": "earth"
+            },
+            {
+              "value": "facebook",
+              "label": "facebook"
+            },
+            {
+              "value": "flash",
+              "label": "flash"
+            },
+            {
+              "value": "gift",
+              "label": "gift"
+            },
+            {
+              "value": "globe",
+              "label": "globe"
+            },
+            {
+              "value": "happyface",
+              "label": "happyface"
+            },
+            {
+              "value": "info",
+              "label": "info"
+            },
+            {
+              "value": "instagram",
+              "label": "instagram"
+            },
+            {
+              "value": "journey",
+              "label": "journey"
+            },
+            {
+              "value": "leaf",
+              "label": "leaf"
+            },
+            {
+              "value": "like",
+              "label": "like"
+            },
+            {
+              "value": "linkedin",
+              "label": "linkedin"
+            },
+            {
+              "value": "lock",
+              "label": "lock"
+            },
+            {
+              "value": "love",
+              "label": "love"
+            },
+            {
+              "value": "mailclosed",
+              "label": "mailclosed"
+            },
+            {
+              "value": "mailopen",
+              "label": "mailopen"
+            },
+            {
+              "value": "map",
+              "label": "map"
+            },
+            {
+              "value": "mask",
+              "label": "mask"
+            },
+            {
+              "value": "microphone",
+              "label": "microphone"
+            },
+            {
+              "value": "movingbox",
+              "label": "movingbox"
+            },
+            {
+              "value": "movingtruck",
+              "label": "movingtruck"
+            },
+            {
+              "value": "music",
+              "label": "music"
+            },
+            {
+              "value": "package",
+              "label": "package"
+            },
+            {
+              "value": "paperplane",
+              "label": "paperplane"
+            },
+            {
+              "value": "paw",
+              "label": "paw"
+            },
+            {
+              "value": "percent",
+              "label": "percent"
+            },
+            {
+              "value": "pin",
+              "label": "pin"
+            },
+            {
+              "value": "pinterest",
+              "label": "pinterest"
+            },
+            {
+              "value": "pizza",
+              "label": "pizza"
+            },
+            {
+              "value": "plane",
+              "label": "plane"
+            },
+            {
+              "value": "play",
+              "label": "play"
+            },
+            {
+              "value": "plug",
+              "label": "plug"
+            },
+            {
+              "value": "printer",
+              "label": "printer"
+            },
+            {
+              "value": "profile",
+              "label": "profile"
+            },
+            {
+              "value": "questionmark",
+              "label": "questionmark"
+            },
+            {
+              "value": "recycle",
+              "label": "recycle"
+            },
+            {
+              "value": "ruler",
+              "label": "ruler"
+            },
+            {
+              "value": "secureprofile",
+              "label": "secureprofile"
+            },
+            {
+              "value": "securitybadge",
+              "label": "securitybadge"
+            },
+            {
+              "value": "share",
+              "label": "share"
+            },
+            {
+              "value": "smartphone",
+              "label": "smartphone"
+            },
+            {
+              "value": "star",
+              "label": "star"
+            },
+            {
+              "value": "store",
+              "label": "store"
+            },
+            {
+              "value": "sun",
+              "label": "sun"
+            },
+            {
+              "value": "target",
+              "label": "target"
+            },
+            {
+              "value": "tiktok",
+              "label": "tiktok"
+            },
+            {
+              "value": "tree",
+              "label": "tree"
+            },
+            {
+              "value": "user",
+              "label": "user"
+            },
+            {
+              "value": "vimeo",
+              "label": "vimeo"
+            },
+            {
+              "value": "wallet",
+              "label": "wallet"
+            },
+            {
+              "value": "wechat",
+              "label": "wechat"
+            },
+            {
+              "value": "whatsapp",
+              "label": "whatsapp"
+            },
+            {
+              "value": "wifi",
+              "label": "wifi"
+            },
+            {
+              "value": "x",
+              "label": "x"
+            },
+            {
+              "value": "youtube",
+              "label": "youtube"
+            },
+            {
+              "value": "truck",
+              "label": "truck"
+            },
+            {
+              "value": "secure-payment",
+              "label": "secure-payment"
+            },
+            {
+              "value": "proper-shipping",
+              "label": "proper-shipping"
+            }
+          ],
+          "label": "t:sections.all.select_icon",
+          "default": "secure-payment"
+        },
+        {
+          "type": "text",
+          "id": "icon-prop-3",
+          "default": "Proper Shipping",
+          "label": "icon-prop-3"
+        },
+        {
+          "type": "select",
+          "id": "select_icon_prop-3",
+          "options": [
+            {
+              "value": "award",
+              "label": "award"
+            },
+            {
+              "value": "bag",
+              "label": "bag"
+            },
+            {
+              "value": "bell",
+              "label": "bell"
+            },
+            {
+              "value": "bluetooth",
+              "label": "bluetooth"
+            },
+            {
+              "value": "burger",
+              "label": "burger"
+            },
+            {
+              "value": "calendar",
+              "label": "calendar"
+            },
+            {
+              "value": "camera",
+              "label": "camera"
+            },
+            {
+              "value": "cart",
+              "label": "cart"
+            },
+            {
+              "value": "chatbubble",
+              "label": "chatbubble"
+            },
+            {
+              "value": "chatbox",
+              "label": "chatbox"
+            },
+            {
+              "value": "checkmark",
+              "label": "checkmark"
+            },
+            {
+              "value": "coffee",
+              "label": "coffee"
+            },
+            {
+              "value": "coupon",
+              "label": "coupon"
+            },
+            {
+              "value": "creditcard",
+              "label": "creditcard"
+            },
+            {
+              "value": "danger",
+              "label": "danger"
+            },
+            {
+              "value": "deliverytruck",
+              "label": "deliverytruck"
+            },
+            {
+              "value": "document",
+              "label": "document"
+            },
+            {
+              "value": "earth",
+              "label": "earth"
+            },
+            {
+              "value": "facebook",
+              "label": "facebook"
+            },
+            {
+              "value": "flash",
+              "label": "flash"
+            },
+            {
+              "value": "gift",
+              "label": "gift"
+            },
+            {
+              "value": "globe",
+              "label": "globe"
+            },
+            {
+              "value": "happyface",
+              "label": "happyface"
+            },
+            {
+              "value": "info",
+              "label": "info"
+            },
+            {
+              "value": "instagram",
+              "label": "instagram"
+            },
+            {
+              "value": "journey",
+              "label": "journey"
+            },
+            {
+              "value": "leaf",
+              "label": "leaf"
+            },
+            {
+              "value": "like",
+              "label": "like"
+            },
+            {
+              "value": "linkedin",
+              "label": "linkedin"
+            },
+            {
+              "value": "lock",
+              "label": "lock"
+            },
+            {
+              "value": "love",
+              "label": "love"
+            },
+            {
+              "value": "mailclosed",
+              "label": "mailclosed"
+            },
+            {
+              "value": "mailopen",
+              "label": "mailopen"
+            },
+            {
+              "value": "map",
+              "label": "map"
+            },
+            {
+              "value": "mask",
+              "label": "mask"
+            },
+            {
+              "value": "microphone",
+              "label": "microphone"
+            },
+            {
+              "value": "movingbox",
+              "label": "movingbox"
+            },
+            {
+              "value": "movingtruck",
+              "label": "movingtruck"
+            },
+            {
+              "value": "music",
+              "label": "music"
+            },
+            {
+              "value": "package",
+              "label": "package"
+            },
+            {
+              "value": "paperplane",
+              "label": "paperplane"
+            },
+            {
+              "value": "paw",
+              "label": "paw"
+            },
+            {
+              "value": "percent",
+              "label": "percent"
+            },
+            {
+              "value": "pin",
+              "label": "pin"
+            },
+            {
+              "value": "pinterest",
+              "label": "pinterest"
+            },
+            {
+              "value": "pizza",
+              "label": "pizza"
+            },
+            {
+              "value": "plane",
+              "label": "plane"
+            },
+            {
+              "value": "play",
+              "label": "play"
+            },
+            {
+              "value": "plug",
+              "label": "plug"
+            },
+            {
+              "value": "printer",
+              "label": "printer"
+            },
+            {
+              "value": "profile",
+              "label": "profile"
+            },
+            {
+              "value": "questionmark",
+              "label": "questionmark"
+            },
+            {
+              "value": "recycle",
+              "label": "recycle"
+            },
+            {
+              "value": "ruler",
+              "label": "ruler"
+            },
+            {
+              "value": "secureprofile",
+              "label": "secureprofile"
+            },
+            {
+              "value": "securitybadge",
+              "label": "securitybadge"
+            },
+            {
+              "value": "share",
+              "label": "share"
+            },
+            {
+              "value": "smartphone",
+              "label": "smartphone"
+            },
+            {
+              "value": "star",
+              "label": "star"
+            },
+            {
+              "value": "store",
+              "label": "store"
+            },
+            {
+              "value": "sun",
+              "label": "sun"
+            },
+            {
+              "value": "target",
+              "label": "target"
+            },
+            {
+              "value": "tiktok",
+              "label": "tiktok"
+            },
+            {
+              "value": "tree",
+              "label": "tree"
+            },
+            {
+              "value": "user",
+              "label": "user"
+            },
+            {
+              "value": "vimeo",
+              "label": "vimeo"
+            },
+            {
+              "value": "wallet",
+              "label": "wallet"
+            },
+            {
+              "value": "wechat",
+              "label": "wechat"
+            },
+            {
+              "value": "whatsapp",
+              "label": "whatsapp"
+            },
+            {
+              "value": "wifi",
+              "label": "wifi"
+            },
+            {
+              "value": "x",
+              "label": "x"
+            },
+            {
+              "value": "youtube",
+              "label": "youtube"
+            },
+            {
+              "value": "truck",
+              "label": "truck"
+            },
+            {
+              "value": "secure-payment",
+              "label": "secure-payment"
+            },
+            {
+              "value": "proper-shipping",
+              "label": "proper-shipping"
+            }
+          ],
+          "label": "t:sections.all.select_icon",
+          "default": "proper-shipping"
+        },
+        {
+          "type": "text",
+          "id": "icon-prop-4",
+          "label": "icon-prop-4"
+        },
+        {
+          "type": "select",
+          "id": "select_icon_prop-4",
+          "options": [
+            {
+              "value": "award",
+              "label": "award"
+            },
+            {
+              "value": "bag",
+              "label": "bag"
+            },
+            {
+              "value": "bell",
+              "label": "bell"
+            },
+            {
+              "value": "bluetooth",
+              "label": "bluetooth"
+            },
+            {
+              "value": "burger",
+              "label": "burger"
+            },
+            {
+              "value": "calendar",
+              "label": "calendar"
+            },
+            {
+              "value": "camera",
+              "label": "camera"
+            },
+            {
+              "value": "cart",
+              "label": "cart"
+            },
+            {
+              "value": "chatbubble",
+              "label": "chatbubble"
+            },
+            {
+              "value": "chatbox",
+              "label": "chatbox"
+            },
+            {
+              "value": "checkmark",
+              "label": "checkmark"
+            },
+            {
+              "value": "coffee",
+              "label": "coffee"
+            },
+            {
+              "value": "coupon",
+              "label": "coupon"
+            },
+            {
+              "value": "creditcard",
+              "label": "creditcard"
+            },
+            {
+              "value": "danger",
+              "label": "danger"
+            },
+            {
+              "value": "deliverytruck",
+              "label": "deliverytruck"
+            },
+            {
+              "value": "document",
+              "label": "document"
+            },
+            {
+              "value": "earth",
+              "label": "earth"
+            },
+            {
+              "value": "facebook",
+              "label": "facebook"
+            },
+            {
+              "value": "flash",
+              "label": "flash"
+            },
+            {
+              "value": "gift",
+              "label": "gift"
+            },
+            {
+              "value": "globe",
+              "label": "globe"
+            },
+            {
+              "value": "happyface",
+              "label": "happyface"
+            },
+            {
+              "value": "info",
+              "label": "info"
+            },
+            {
+              "value": "instagram",
+              "label": "instagram"
+            },
+            {
+              "value": "journey",
+              "label": "journey"
+            },
+            {
+              "value": "leaf",
+              "label": "leaf"
+            },
+            {
+              "value": "like",
+              "label": "like"
+            },
+            {
+              "value": "linkedin",
+              "label": "linkedin"
+            },
+            {
+              "value": "lock",
+              "label": "lock"
+            },
+            {
+              "value": "love",
+              "label": "love"
+            },
+            {
+              "value": "mailclosed",
+              "label": "mailclosed"
+            },
+            {
+              "value": "mailopen",
+              "label": "mailopen"
+            },
+            {
+              "value": "map",
+              "label": "map"
+            },
+            {
+              "value": "mask",
+              "label": "mask"
+            },
+            {
+              "value": "microphone",
+              "label": "microphone"
+            },
+            {
+              "value": "movingbox",
+              "label": "movingbox"
+            },
+            {
+              "value": "movingtruck",
+              "label": "movingtruck"
+            },
+            {
+              "value": "music",
+              "label": "music"
+            },
+            {
+              "value": "package",
+              "label": "package"
+            },
+            {
+              "value": "paperplane",
+              "label": "paperplane"
+            },
+            {
+              "value": "paw",
+              "label": "paw"
+            },
+            {
+              "value": "percent",
+              "label": "percent"
+            },
+            {
+              "value": "pin",
+              "label": "pin"
+            },
+            {
+              "value": "pinterest",
+              "label": "pinterest"
+            },
+            {
+              "value": "pizza",
+              "label": "pizza"
+            },
+            {
+              "value": "plane",
+              "label": "plane"
+            },
+            {
+              "value": "play",
+              "label": "play"
+            },
+            {
+              "value": "plug",
+              "label": "plug"
+            },
+            {
+              "value": "printer",
+              "label": "printer"
+            },
+            {
+              "value": "profile",
+              "label": "profile"
+            },
+            {
+              "value": "questionmark",
+              "label": "questionmark"
+            },
+            {
+              "value": "recycle",
+              "label": "recycle"
+            },
+            {
+              "value": "ruler",
+              "label": "ruler"
+            },
+            {
+              "value": "secureprofile",
+              "label": "secureprofile"
+            },
+            {
+              "value": "securitybadge",
+              "label": "securitybadge"
+            },
+            {
+              "value": "share",
+              "label": "share"
+            },
+            {
+              "value": "smartphone",
+              "label": "smartphone"
+            },
+            {
+              "value": "star",
+              "label": "star"
+            },
+            {
+              "value": "store",
+              "label": "store"
+            },
+            {
+              "value": "sun",
+              "label": "sun"
+            },
+            {
+              "value": "target",
+              "label": "target"
+            },
+            {
+              "value": "tiktok",
+              "label": "tiktok"
+            },
+            {
+              "value": "tree",
+              "label": "tree"
+            },
+            {
+              "value": "user",
+              "label": "user"
+            },
+            {
+              "value": "vimeo",
+              "label": "vimeo"
+            },
+            {
+              "value": "wallet",
+              "label": "wallet"
+            },
+            {
+              "value": "wechat",
+              "label": "wechat"
+            },
+            {
+              "value": "whatsapp",
+              "label": "whatsapp"
+            },
+            {
+              "value": "wifi",
+              "label": "wifi"
+            },
+            {
+              "value": "x",
+              "label": "x"
+            },
+            {
+              "value": "youtube",
+              "label": "youtube"
+            },
+            {
+              "value": "truck",
+              "label": "truck"
+            },
+            {
+              "value": "secure-payment",
+              "label": "secure-payment"
+            },
+            {
+              "value": "proper-shipping",
+              "label": "proper-shipping"
+            }
+          ],
+          "label": "t:sections.all.select_icon",
+          "default": "award"
+        },
+        {
+          "type": "text",
+          "id": "icon-prop-5",
+          "label": "icon-prop-5"
+        },
+        {
+          "type": "select",
+          "id": "select_icon_prop-5",
+          "options": [
+            {
+              "value": "award",
+              "label": "award"
+            },
+            {
+              "value": "bag",
+              "label": "bag"
+            },
+            {
+              "value": "bell",
+              "label": "bell"
+            },
+            {
+              "value": "bluetooth",
+              "label": "bluetooth"
+            },
+            {
+              "value": "burger",
+              "label": "burger"
+            },
+            {
+              "value": "calendar",
+              "label": "calendar"
+            },
+            {
+              "value": "camera",
+              "label": "camera"
+            },
+            {
+              "value": "cart",
+              "label": "cart"
+            },
+            {
+              "value": "chatbubble",
+              "label": "chatbubble"
+            },
+            {
+              "value": "chatbox",
+              "label": "chatbox"
+            },
+            {
+              "value": "checkmark",
+              "label": "checkmark"
+            },
+            {
+              "value": "coffee",
+              "label": "coffee"
+            },
+            {
+              "value": "coupon",
+              "label": "coupon"
+            },
+            {
+              "value": "creditcard",
+              "label": "creditcard"
+            },
+            {
+              "value": "danger",
+              "label": "danger"
+            },
+            {
+              "value": "deliverytruck",
+              "label": "deliverytruck"
+            },
+            {
+              "value": "document",
+              "label": "document"
+            },
+            {
+              "value": "earth",
+              "label": "earth"
+            },
+            {
+              "value": "facebook",
+              "label": "facebook"
+            },
+            {
+              "value": "flash",
+              "label": "flash"
+            },
+            {
+              "value": "gift",
+              "label": "gift"
+            },
+            {
+              "value": "globe",
+              "label": "globe"
+            },
+            {
+              "value": "happyface",
+              "label": "happyface"
+            },
+            {
+              "value": "info",
+              "label": "info"
+            },
+            {
+              "value": "instagram",
+              "label": "instagram"
+            },
+            {
+              "value": "journey",
+              "label": "journey"
+            },
+            {
+              "value": "leaf",
+              "label": "leaf"
+            },
+            {
+              "value": "like",
+              "label": "like"
+            },
+            {
+              "value": "linkedin",
+              "label": "linkedin"
+            },
+            {
+              "value": "lock",
+              "label": "lock"
+            },
+            {
+              "value": "love",
+              "label": "love"
+            },
+            {
+              "value": "mailclosed",
+              "label": "mailclosed"
+            },
+            {
+              "value": "mailopen",
+              "label": "mailopen"
+            },
+            {
+              "value": "map",
+              "label": "map"
+            },
+            {
+              "value": "mask",
+              "label": "mask"
+            },
+            {
+              "value": "microphone",
+              "label": "microphone"
+            },
+            {
+              "value": "movingbox",
+              "label": "movingbox"
+            },
+            {
+              "value": "movingtruck",
+              "label": "movingtruck"
+            },
+            {
+              "value": "music",
+              "label": "music"
+            },
+            {
+              "value": "package",
+              "label": "package"
+            },
+            {
+              "value": "paperplane",
+              "label": "paperplane"
+            },
+            {
+              "value": "paw",
+              "label": "paw"
+            },
+            {
+              "value": "percent",
+              "label": "percent"
+            },
+            {
+              "value": "pin",
+              "label": "pin"
+            },
+            {
+              "value": "pinterest",
+              "label": "pinterest"
+            },
+            {
+              "value": "pizza",
+              "label": "pizza"
+            },
+            {
+              "value": "plane",
+              "label": "plane"
+            },
+            {
+              "value": "play",
+              "label": "play"
+            },
+            {
+              "value": "plug",
+              "label": "plug"
+            },
+            {
+              "value": "printer",
+              "label": "printer"
+            },
+            {
+              "value": "profile",
+              "label": "profile"
+            },
+            {
+              "value": "questionmark",
+              "label": "questionmark"
+            },
+            {
+              "value": "recycle",
+              "label": "recycle"
+            },
+            {
+              "value": "ruler",
+              "label": "ruler"
+            },
+            {
+              "value": "secureprofile",
+              "label": "secureprofile"
+            },
+            {
+              "value": "securitybadge",
+              "label": "securitybadge"
+            },
+            {
+              "value": "share",
+              "label": "share"
+            },
+            {
+              "value": "smartphone",
+              "label": "smartphone"
+            },
+            {
+              "value": "star",
+              "label": "star"
+            },
+            {
+              "value": "store",
+              "label": "store"
+            },
+            {
+              "value": "sun",
+              "label": "sun"
+            },
+            {
+              "value": "target",
+              "label": "target"
+            },
+            {
+              "value": "tiktok",
+              "label": "tiktok"
+            },
+            {
+              "value": "tree",
+              "label": "tree"
+            },
+            {
+              "value": "user",
+              "label": "user"
+            },
+            {
+              "value": "vimeo",
+              "label": "vimeo"
+            },
+            {
+              "value": "wallet",
+              "label": "wallet"
+            },
+            {
+              "value": "wechat",
+              "label": "wechat"
+            },
+            {
+              "value": "whatsapp",
+              "label": "whatsapp"
+            },
+            {
+              "value": "wifi",
+              "label": "wifi"
+            },
+            {
+              "value": "x",
+              "label": "x"
+            },
+            {
+              "value": "youtube",
+              "label": "youtube"
+            }
+          ],
+          "label": "t:sections.all.select_icon",
+          "default": "award"
+        }
+        
       ]
     },
     {
