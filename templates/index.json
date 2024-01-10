@@ -657,52 +657,19 @@
         "content_color": "#000000"
       }
     },
-    "a4f76dc3-13f5-46a8-a17f-cc506fcbb618": {
-      "type": "before-after-gallery-with-side",
-      "blocks": {
-        "template--14725771755619__a4f76dc3-13f5-46a8-a17f-cc506fcbb618-heading-1": {
-          "type": "heading",
-          "settings": {
-            "heading": "Image with text"
-          }
-        },
-        "template--14725771755619__a4f76dc3-13f5-46a8-a17f-cc506fcbb618-text-1": {
-          "type": "text",
-          "settings": {
-            "text": "<p>Use this space to tell your customers about your brand. Describe a product, share news, or greet visitors to your store.<\/p>"
-          }
-        },
-        "template--14725771755619__a4f76dc3-13f5-46a8-a17f-cc506fcbb618-button-1": {
-          "type": "button",
-          "settings": {
-            "button_label": "Button",
-            "button_link": "",
-            "button_style": "media-text"
-          }
-        }
-      },
-      "block_order": [
-        "template--14725771755619__a4f76dc3-13f5-46a8-a17f-cc506fcbb618-heading-1",
-        "template--14725771755619__a4f76dc3-13f5-46a8-a17f-cc506fcbb618-text-1",
-        "template--14725771755619__a4f76dc3-13f5-46a8-a17f-cc506fcbb618-button-1"
-      ],
+    "a6b34893-8d56-47db-9ce0-ebc4a2b9185d": {
+      "type": "before-after-gallery",
       "settings": {
-        "image_size": 50,
-        "row_gap": 16,
-        "max_width": 100,
-        "text_width": 32,
+        "heading": "Before After Gallery",
+        "heading_color": "#000000",
         "heading_font_size": "large",
-        "image_position": "image-on-right",
-        "text_align": "text-left",
-        "section_bg": "",
-        "section_heading": "#000000",
-        "section_text": "#000000",
-        "use_default_colors": false,
-        "full_width": false,
+        "sub_heading": "<p><strong>Use this section to showcase your collections<\/strong><\/p>",
+        "sub_heading_color": "#000000",
+        "full_width": true,
         "sectio-height": "600",
         "sectio-height_mobile": "400",
-        "image_1": "shopify:\/\/shop_images\/cngrs_full-length_photo_of_a_redhead_woman_wearing_an_orange_wa_c7b1d588-c125-49a0-8017-d71646441961.png",
-        "image_2": "shopify:\/\/shop_images\/cngrs_full-length_photo_of_a_redhead_woman_wearing_a_blue_waist_9fc17581-8970-46e4-965d-aee91b8bd9cc.png",
+        "image_1": "shopify:\/\/shop_images\/cngrs_lifestyle_photo_of_a_woman_wearing_futuristic_puffer_jack_b0aa389b-7ca8-4106-adb0-7c7e400a29b2.png",
+        "image_2": "shopify:\/\/shop_images\/cngrs_lifestyle_photo_of_a_woman_wearing_futuristic_puffer_jack_be605e82-79e2-4997-b0da-4b48aeca261f.png",
         "image_fit": "contain",
         "image_pos": "center",
         "section_padding_top": 50,
@@ -729,6 +696,6 @@
     "home-banner",
     "home-newsletter",
     "home-multiple-columns-2",
-    "a4f76dc3-13f5-46a8-a17f-cc506fcbb618"
+    "a6b34893-8d56-47db-9ce0-ebc4a2b9185d"
   ]
 }
