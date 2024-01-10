@@ -172,7 +172,7 @@
 {%- endstyle -%}
 {{ 'flickity.css' | asset_url | stylesheet_tag }}
 <script src="{{ 'flickity.js' | asset_url }}" defer></script>
-<div class=" section-{{ section.id }} hero-slideshow" {% render 'animation-model-1' %}>
+<div class=" section-{{ section.id }} hero-slideshow animation-test">
     <div class="hero-carousel-{{- section.id -}}">
         <h1 class="super">{{ section.settings.super }}</h1>
         {%- for block in section.blocks -%}
@@ -201,7 +201,7 @@
                       {% else %}
                           opacity: 0.{{ block.settings.overlay_color_opacity }};
                       {% endif %}"></div>
-                    <div class="text-on-hero {{ section.settings.text_position }}" data-animation="slideInRight">
+                    <div class="text-on-hero {{ section.settings.text_position }}">
                         <span class="subheadline">{{ block.settings.description }}</span>
                         <h2 class="small">{{ block.settings.heading }}</h2>
                         <span class="h4 small ">{{ block.settings.sub_heading }}</span>

@@ -57,7 +57,7 @@
 
 
 {%- endstyle -%}
-<div class="main-content-area section-{{ section.id }}"  {% render 'animation-model-1' %}>
+<div class="main-content-area section-{{ section.id }} animation-test">
     <div class="hero-bg">
           {% if section.settings.background_image %}
             {{ section.settings.background_image | image_url: width: 2000 | image_tag: loading: 'lazy', class: 'hero-bg' }}

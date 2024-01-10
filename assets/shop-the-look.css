@@ -98,6 +98,9 @@ a.view-product {
   justify-content: center;
   margin: 15px;
 }
+.non-active {
+  z-index: 0; 
+}
 @media only screen and (min-width: 640px) {
   .product-point-area .close {
     display: none;

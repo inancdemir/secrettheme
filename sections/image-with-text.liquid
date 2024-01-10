@@ -23,7 +23,6 @@
 }
 .section-{{ section.id }} .image-with-text .image-side {
   line-height: 0;
-  margin-bottom: 16px;
 }
 .section-{{ section.id }} .image-with-text .image-side img {
     width: 100%;
@@ -34,7 +33,7 @@
     min-height: 430px;
 }
 .section-{{ section.id }} .image-with-text .text-side {
-  padding: 0 {{ section.settings.text_width }}px;
+  padding: 16px 0;
   row-gap: 16px;
   flex-direction: column;
   display: flex;
@@ -42,7 +41,13 @@
 .section-{{ section.id }} .image-with-text.image-on-right .image-side {
     order: 2
 }
-@media only screen and (min-width: 640px) {
+@media only screen and (min-width: 767px) {
+  .section-{{ section.id }} .image-with-text .text-side {
+    padding: 0 {{ section.settings.text_width }}px;
+    row-gap: 16px;
+    flex-direction: column;
+    display: flex;
+  }
   .section-{{ section.id }} .image-with-text {
       display: flex;
       column-gap: {{ section.settings.row_gap }}px;
@@ -56,19 +61,19 @@
   }
 }
 {%- endstyle -%}
-<div class="section-{{ section.id }}" {% render 'animation-model-1' %}>
+<div class="section-{{ section.id }} animation-test">
 {% unless section.settings.full_width %}
 <div class="wide-width">
 {% endunless %}
 <div class="image-with-text {{ section.settings.image_position }}">
-    <div class="image-side full-on-mobile" data-animation="slideInDown" data-animation-delay=".75s">
+    <div class="image-side full-on-mobile">
       {% if section.settings.image %}
         {{ section.settings.image | image_url: width: 1500 | image_tag: loading: 'lazy' }}
       {% else if %}
         {{ 'collection-4' | placeholder_svg_tag: 'demo-image ' }}
       {% endif %} 
     </div>
-    <div class="text-side {{ section.settings.text_align }}" data-animation="slideInUp" data-animation-delay="1.5s">
+    <div class="text-side {{ section.settings.text_align }}">
         {% if section.blocks != empty %}
           {%- for block in section.blocks -%}
             {% case block.type %}

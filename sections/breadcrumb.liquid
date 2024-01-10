@@ -2,19 +2,20 @@
 .section-{{ section.id }} {
   padding-top: {{ section.settings.section_padding }}px;
   padding-bottom: {{ section.settings.section_padding }}px;
-  {% if section.settings.full_width %}
-    padding-left: 20px;
-    padding-right: 20px;
-  {% else %}
-  
-  max-width: 1440px;
   margin-left: auto;
   margin-right: auto;
-  {% endif %}      
+  
 }
 {%- endstyle -%}
-<div class="section-{{ section.id }}"  {% render 'animation-model-1' %}>
-{%- render 'breadcrumb' -%}
+<div class="section-{{ section.id }} animation-test">
+  {% unless section.settings.full_width %}
+    <div class="wide-width">
+  {% endunless %}
+    {%- render 'breadcrumb' -%}
+  {% unless section.settings.full_width %}
+    </div>
+  {% endunless %}
+
 </div>
 {% schema %}
 {

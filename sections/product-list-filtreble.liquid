@@ -54,7 +54,7 @@
 <script id="ajaxinate" src="{{ 'ajaxinate.js' | asset_url }}" defer></script>
 <script id="filter" src="{{ 'filter.js' | asset_url }}" defer></script>
 
-<div class="product-list section-{{ section.id }}"  {% render 'animation-model-1' %}>
+<div class="product-list section-{{ section.id }}">
   {% unless section.settings.full_width %}
   <div class="wide-width">
   {% endunless %}
@@ -134,7 +134,7 @@
             {%- endcase -%}
           {%- endfor -%}
           {% assign delay = forloop.index | times: delayIncrement %}
-          <div class="product-list-item" data-animation="slideInRight" data-animation-delay="{{ delay }}s">
+          <div class="product-list-item">
             {% render 'product-list-item', product: product %}
           </div>
         {% endfor %}  

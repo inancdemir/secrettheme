@@ -76,7 +76,7 @@
 {{ 'blog-post-featured.css' | asset_url | stylesheet_tag }}
 <script id="ajaxinate" src="{{ 'ajaxinate.js' | asset_url }}" defer></script>
 
-<div class="all-posts section-{{ section.id }}"  {% render 'animation-model-1' %}>
+<div class="all-posts section-{{ section.id }} animation-test">
   {% unless section.settings.full_width %}
   <div class="wide-width">
   {% endunless %}

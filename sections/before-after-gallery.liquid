@@ -15,22 +15,9 @@
     display: block;
     max-inline-size: initial;
     max-block-size: initial;
-    {% case section.settings.image_pos %}
-        {% when 'top' %}
-        top: 0;
-        bottom: auto;
-        {% when 'bottom' %}
-        top: auto;
-        bottom: 0;
-        {% when 'center' %} 
-        top: auto;
-        bottom: auto;
-        margin: auto;
-    {% endcase %}
-    
-    
     position: absolute;
-    object-fit: {{- section.settings.image_fit }};
+    object-fit: cover;
+    min-height: 100%;
 }
 .section-{{ section.id }} #before-after-slider {
     height: {{- section.settings.sectio-sectio-height_mobile -}}px
@@ -43,7 +30,7 @@
 }
 {%- endstyle -%}
 {{ 'before-after.css' | asset_url | stylesheet_tag }}
-<div class="section-{{ section.id }}"  {% render 'animation-model-1' %}>
+<div class="section-{{ section.id }}">
   {% unless section.settings.full_width %}
   <div class="wide-width">
   {% endunless %}

@@ -79,7 +79,25 @@ input[type="range"] {
   z-index: 1;
 }
 
+.min-value-tex,
+.max-value-tex {
+    position: relative;
+}
+input#fromInput,
+input#toInput {
+    padding-left: 30px;
+}
+.min-value-tex:before,
+.max-value-tex:before {
+    content: "{{ cart.currency.symbol }}";
+    position: absolute;
+    left: 0;
+    top: 0;
+    margin: 15px 0 15px 10px;
+}
+/*
 
+*/
 
 {%- endstyle -%}
 <div class="filter-area-bg">
@@ -101,7 +119,7 @@ input[type="range"] {
                                 <input id="toSlider" type="range" value="{{ filter.range_max | money_without_currency | replace: ',', '' }}" min="0" max="{{ filter.range_max | money_without_currency | replace: ',', '' }}"/>
                             </div>
                             <div class="form_control">
-                                <div class="form_control_container">
+                                <div class="form_control_container min-value-tex">
                                     
                                     <input name="{{ filter.min_value.param_name }}"
                                         id="fromInput"
@@ -115,7 +133,7 @@ input[type="range"] {
                                         class="form_control_container__time__input"
                                         >
                                 </div>
-                                <div class="form_control_container">
+                                <div class="form_control_container max-value-tex">
                                     
                                     <input name="{{ filter.max_value.param_name }}"
                                         id="toInput"

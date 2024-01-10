@@ -14,7 +14,7 @@
 {%- endstyle -%}
 {{ 'shop-the-look.css' | asset_url | stylesheet_tag }}
 <script src="{{ 'shop-the-look.js' | asset_url }}" defer></script>
-<div class="section-{{ section.id }}"  {% render 'animation-model-1' %}>
+<div class="section-{{ section.id }} animation-test">
   {% unless section.settings.full_width %}
     <div class="wide-width">
   {% endunless %}

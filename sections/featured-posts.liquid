@@ -41,7 +41,7 @@
 {%- endstyle -%}
 {{ 'single-post.css' | asset_url | stylesheet_tag }}
 {{ 'blog-post-featured.css' | asset_url | stylesheet_tag }}
-<div class="featured-posts section-{{ section.id }}"  {% render 'animation-model-1' %}>
+<div class="featured-posts section-{{ section.id }} animation-test">
   {% unless section.settings.full_width %}
   <div class="wide-width">
   {% endunless %}

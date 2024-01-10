@@ -1,11 +1,14 @@
 {%- style -%}
-.footer-logo .div {
-  {% unless section.settings.full_width %}
-  max-width: 1440px;
-  margin-left: auto;
-  margin-right: auto;
-  {% endunless %}
-}
+{% unless section.settings.use_default_colors %}
+  .shopify-section-group-footer-group {
+    background-color: {{ section.settings.section_bg }};
+  }
+  .shopify-section-group-footer-group * {
+    color: {{ section.settings.section_text }};
+    stroke: {{ section.settings.section_text }};
+  }
+  
+{% endunless %}
 .footer-subscribe form {
     display: flex;
     flex-direction: column;
@@ -22,7 +25,10 @@
   }
 }
 {%- endstyle -%}
-<footer class="footer"  {% render 'animation-model-1' %}>
+<footer class="footer animation-test">
+  {% unless section.settings.full_width %}
+  <div class="wide-width">
+  {% endunless %}
   <div class="footer-wrap">
     {% if section.settings.footer-logo_on != blank %}
       <div class="footer-logo">
@@ -33,7 +39,7 @@
         {% endif %} 
       </div>
     {% endif %} 
-    <div class="footer-top">
+    <div class="footer-top footer-{{ section.id }}">
       {% for block in section.blocks %}
         {% case block.type %}
           {%- when 'navigation' -%}
@@ -89,6 +95,9 @@
         {% endcase %}
       {% endfor %}
     </div>
+  {% unless section.settings.full_width %}
+  </div>
+  {% endunless %}
   </div>
     <div class="footer-bottom">
       <div class="footer-wrap">
@@ -116,12 +125,30 @@
         
       </div>
   </div>
+  
 </footer>
 
 {% schema %}
 {
   "name": "t:sections.footer.name",
   "settings": [
+    {
+      "type": "color",
+      "id": "section_bg",
+      "label": "t:sections.all.background_color"
+    },
+    {
+      "type": "color",
+      "id": "section_text",
+      "label": "Text",
+      "default": "#000000"
+    },
+    {
+      "type": "checkbox",
+      "id": "use_default_colors",
+      "label": "Use default colors",
+      "default": false
+    },
     {
       "type": "checkbox",
       "id": "full_width",

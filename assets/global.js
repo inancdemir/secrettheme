@@ -106,15 +106,31 @@ document.querySelectorAll('a[href="/cart"]').forEach((a) => {
 
 
 
+function adjustSecondDivHeight() {
+  var firstDivHeight = document.querySelector('.main-navigation').offsetHeight;
+  var secondDiv = document.querySelector('#header-background-color');
+
+  secondDiv.style.height = firstDivHeight + 'px';
+}
+
+window.addEventListener('load', adjustSecondDivHeight);
+window.addEventListener('resize', adjustSecondDivHeight);
+
 
 /* main header settings*/
 function addHasTopBarClass() {
   const topBarElement = document.querySelector('#site-header .top-bar');
   const headerLink = document.querySelector('#site-header');
-  
+  const headerBackground = document.querySelector('#header-background-color');
+    
   if (topBarElement && headerLink) {
     headerLink.classList.add('has-top-bar');
   }
+
+  if (topBarElement && headerBackground) {
+    headerBackground.classList.add('has-top-bar');
+  }
+
 }
 function addStickyOnScroll(scrollAmount, elementId) {
   const element = document.getElementById(elementId);
@@ -143,6 +159,10 @@ function addHasMenuSubClass() {
     }
   });
 }
+
+
+
+
 
 
 /*mobile drawer menu start*/

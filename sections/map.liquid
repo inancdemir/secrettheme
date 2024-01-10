@@ -2,9 +2,19 @@
 .section-{{ section.id }} .google-map {
   height: {% if section.settings.full_height_mobil %} 100vh {% else %} {{ section.settings.collection_height_mobile }}px {% endif %};
 }
+.demo-map {
+  height: {% if section.settings.full_height_mobil %} 100vh {% else %} {{ section.settings.collection_height_mobile }}px {% endif %};
+  background: lightgray;
+  width: 100%
+}
 @media only screen and (min-width: 640px) {
   .section-{{ section.id }} .google-map {
     height: {% if section.settings.full_height_desktop %} 100vh {% else %} {{ section.settings.collection_height }}px {% endif %};
+  }
+  .demo-map {
+    height: {% if section.settings.full_height_desktop %} 100vh {% else %} {{ section.settings.collection_height }}px {% endif %};
+    background: lightgray;
+    width: 100%
   }
 }
 {%- endstyle -%}
@@ -12,7 +22,11 @@
     {% unless section.settings.full_width %}
     <div class="wide-width">
     {% endunless %}
-      <div id="googleMap" class="google-map" style="width:100%;"></div>
+      {% if section.settings.latitude != blank %}
+        <div id="googleMap" class="google-map" style="width:100%;"></div>
+      {% else %}
+        {{ 'lifestyle-1' | placeholder_svg_tag: 'demo-map' }}
+      {% endif %}
     {% unless section.settings.full_width %}
     </div>
     {% endunless %}

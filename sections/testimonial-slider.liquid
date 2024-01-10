@@ -4,7 +4,7 @@
     background: {{ section.settings.background_color }};
     color: {{ section.settings.text_color }};
     text-align: center; 
-    padding: {{ section.settings.section_padding }}px 0;
+    padding: {{ section.settings.section_padding }}px 16px;
 }
 
 .testimonial-item {
@@ -62,7 +62,7 @@
 <script src="{{ 'flickity.js' | asset_url }}" defer></script>      
 
 
-<div class="section-{{ section.id }} testimonial-slider"  {% render 'animation-model-1' %}>
+<div class="section-{{ section.id }} testimonial-slider animation-test">
     <h2 class="medium">{{ section.settings.heading }}</h2>
     
     <div class="quote-carousel-{{- section.id -}}">

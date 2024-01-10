@@ -31,6 +31,9 @@
   row-gap: 16px;
   background-color: #fff;
 }
+.form-area h2 {
+  margin-bottom: 24px;
+}
 .form-area .rise-input {
   border: 1px solid #CBCBCB;
   font-size: 16px;
@@ -39,7 +42,7 @@
   letter-spacing: 0px;
   padding: 13px 16px;
   width: 100%;
-  margin-bottom: 32px;
+  margin-bottom: 24px;
 }
 .form-area .before-submit,
 .create-account {
@@ -67,7 +70,7 @@
 }
 {%- endstyle -%}
 
-<div class="login-page"  {% render 'animation-model-1' %}>
+<div class="login-page animation-test">
   <div class="login-left">
     {% if section.settings.image %}
       {{ section.settings.image | image_url: width: 1500 | image_tag: loading: 'lazy', class: 'demo-image' }}

@@ -326,7 +326,7 @@
                 -%}
                   {% if left_val > 0 %}
                   <div class="shipping-away">
-                    <p>You are away from free shipping by only</p><span class="away-from-free">{{ shop.currency }}{{ left_val }}</span>
+                    <p>You are away from free shipping by only</p><span class="away-from-free">{{ shop.currency }} {{ left_val }}</span>
                   </div>
                   {% else %}
                   <p>{{ settings.free_shippping_done_text }}</p>                  
