@@ -499,24 +499,25 @@
       {
         "type": "header",
         "content": "Product feature",
-        "info": "Configure visuals for showcased product features in this section"
+        "info": "Configure visuals for showcased product features in this section. Please refer to theme documentation to learn more on how to setup metafields."
       },
       {
         "type": "text",
         "id": "custom_prop_data_title",
-        "label": "ikonların öncesindeki title"
+        "label": "Feature heading",
+        "info": "Determine heading for your Product feature. (eg. Warmth, Endurance, Strength)"
       },
       {
         "type": "textarea",
         "id": "light_icon",
-        "label": "Light Icon",
-        "info": "boşsa tasarımdaki basar"
+        "label": "Active icon",
+        "info": "If not filled in, default icon will be used automatically. Paste the svg code of the new icon in order to replace current one."
       },
       {
         "type": "textarea",
         "id": "dark_icon",
-        "label": "Dark Icon",
-        "info": "boşsa tasarımdaki basar"
+        "label": "Passive icon",
+        "info": "If not filled in, default icon will be used automatically.Paste the svg code of the new icon in order to replace current one."
       }
     ]
   }
