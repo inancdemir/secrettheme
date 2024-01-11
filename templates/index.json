@@ -40,7 +40,7 @@
         "section_height": 100,
         "section_width": 1400,
         "text_position": "bottom-center",
-        "super": "RISE",
+        "super": "",
         "super_color": "#ffffff",
         "super_opacity": 20,
         "super_font_size": 20,
