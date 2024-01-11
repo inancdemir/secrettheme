@@ -523,13 +523,13 @@
         "header": {
           "type": "heading",
           "settings": {
-            "heading": "New York Boutique"
+            "heading": "Aspen Boutique"
           }
         },
         "text": {
           "type": "text",
           "settings": {
-            "sub_heading": "<p>Experience the cutting-edge of eco-chic in the heart of the Big Apple<\/p>"
+            "sub_heading": "<p>Experience the cutting-edge of eco-chic in the heart of Colarado<\/p>"
           }
         },
         "button": {
@@ -566,7 +566,7 @@
         "gap_from_sides": 60,
         "overlay_color": "#000000",
         "overlay_color_opacity": 40,
-        "background_image": "shopify:\/\/shop_images\/row.png"
+        "background_image": "shopify:\/\/shop_images\/collection-fullsize_339a71fa-e527-4277-bb55-c620778a944c.png"
       }
     },
     "home-newsletter": {
