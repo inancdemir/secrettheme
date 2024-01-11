@@ -498,7 +498,8 @@
       },
       {
         "type": "header",
-        "content": "Custom data show"
+        "content": "Product feature",
+        "info": "Configure visuals for showcased product features in this section"
       },
       {
         "type": "text",
