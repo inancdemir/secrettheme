@@ -55,22 +55,22 @@
     "home-collection-list": {
       "type": "collection-list",
       "blocks": {
-        "fs-1": {
+        "slide_M3Fept": {
           "type": "slide",
           "settings": {
-            "collection": "frontpage"
+            "collection": ""
           }
         },
-        "fs-2": {
+        "slide_pPpKYC": {
           "type": "slide",
           "settings": {
-            "collection": "accessories"
+            "collection": ""
           }
         }
       },
       "block_order": [
-        "fs-1",
-        "fs-2"
+        "slide_M3Fept",
+        "slide_pPpKYC"
       ],
       "settings": {
         "heading": "Discover our collections",
