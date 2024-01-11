@@ -62,13 +62,18 @@
         "image_fit": "contain",
         "image_pos": "center",
         "pagination_settings": "paginated",
+        "button_style": "model-3",
         "heading": "",
         "title": "#000000",
         "background_color": "linear-gradient(180deg, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0) 100%)",
         "section_padding": 0,
         "add_color": "#ffffff",
         "no_product": "This collection is currently empty of products.",
-        "full_width": false
+        "full_width": false,
+        "tint_opacity": 50,
+        "tint_color": "#000000",
+        "add_font_size": 48,
+        "add_font_size_mobile": 24
       }
     }
   },
