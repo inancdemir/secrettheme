@@ -378,7 +378,7 @@
         "link"
       ],
       "settings": {
-        "image": "shopify:\/\/shop_images\/durability.jpg",
+        "image": "shopify:\/\/shop_images\/comfort.png",
         "image_size": 50,
         "row_gap": 16,
         "max_width": 100,
@@ -481,7 +481,7 @@
             "title_size": "small",
             "block_content": "",
             "items_align": "center",
-            "cover_image": "shopify:\/\/shop_images\/boutiques.jpg",
+            "cover_image": "shopify:\/\/shop_images\/single-image.png",
             "cover_image_force": true
           }
         },
@@ -495,7 +495,7 @@
             "title_size": "small",
             "block_content": "",
             "items_align": "center",
-            "cover_image": "shopify:\/\/shop_images\/boutiquesinside.jpg",
+            "cover_image": "shopify:\/\/shop_images\/single-image2.png",
             "cover_image_force": true
           }
         }
@@ -513,7 +513,7 @@
         "section_padding_bottom": 50,
         "ver_align": "center",
         "full_width": false,
-        "background_color": "linear-gradient(180deg, #ffffff 100%, #ffffff 100%)",
+        "background_color": "linear-gradient(180deg, rgba(255, 255, 255, 1) 100%, rgba(255, 255, 255, 1) 100%)",
         "content_color": "#000000"
       }
     },
