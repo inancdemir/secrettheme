@@ -2,7 +2,30 @@
   <div class="product-image">
     <a class="image-wrap" href="{{- product.url -}}">
       {% if product.featured_image %}
-      {{ product.featured_image | image_url: width: 600 | image_tag: loading: 'lazy', class: 'product-image' }}
+        {% assign product_images = product.images %}
+        {% if product_images.size > 0 %}
+          {% assign first_image = product_images[0] %}
+          <img src="{{ first_image | img_url: '600x' }}" 
+              srcset="{{ first_image | img_url: '300x' }} 300w,
+                      {{ first_image | img_url: '600x' }} 600w,
+                      {{ first_image | img_url: '900x' }} 900w"
+              sizes="(max-width: 300px) 280px,
+                      (max-width: 600px) 560px,
+                      900px"
+              loading="lazy" class="product-image {% if product_images.size > 2 %}first-image{% endif %}" alt="{{ product.title | escape }}" />
+          {% if product_images.size > 1 %}
+            {% assign second_image = product_images[1] %}
+            <img src="{{ second_image | img_url: '600x' }}" 
+                srcset="{{ second_image | img_url: '300x' }} 300w,
+                        {{ second_image | img_url: '600x' }} 600w,
+                        {{ second_image | img_url: '900x' }} 900w"
+                sizes="(max-width: 300px) 280px,
+                        (max-width: 600px) 560px,
+                        900px"
+                loading="lazy" class="product-image second-image" alt="{{ product.title | escape }}" />
+          {% endif %}
+        {% endif %}
+
       {% else %}
       {{ 'product-1' | placeholder_svg_tag: 'demo-image product-image' }}
       {% endif %}
@@ -34,20 +57,14 @@
               {%- if option.name == "Color" -%}
                 <div class="product-option">
                   <span class="caption-2">{{ option.name }} | </span>
-
                   {% assign maxToShow = 3 %}
                   {% assign remainingCount = option.values | size | minus: maxToShow %}
-
                   {% for value in option.values limit: maxToShow %}
                     <div class="product-list-colors {{ option.name }}-{{ value }}"></div>                                  
                   {% endfor %}
-
                   {% if remainingCount > 0 %}
                     <span class="callout">+{{ remainingCount }}</span>
-                  {% endif %}
-
-
-                  
+                  {% endif %}                  
                 </div>
               {%- endif -%}
             {% endfor %}

@@ -1848,6 +1848,7 @@ div#predictive-search ul.search-products li .quick-view-button {
 .image-pos-bottom .image-wrap img {
     object-position: bottom;
 }
+/*
 .product-image-animation .image-wrap img {
     -webkit-transition: all 0.4s ease-in-out;
     -moz-transition: all 0.4s ease-in-out;
@@ -1868,6 +1869,15 @@ div#predictive-search ul.search-products li .quick-view-button {
     -moz-transform: translateX(0%) translateY(0%) scale(1);
     -o-transform: translateX(0%) translateY(0%) scale(1);
     transform: translateX(0%) translateY(0%) scale(1);
+}
+*/
+.product-list-item .product-image .image-wrap img.product-image.first-image,
+.product-list-item:hover .product-image .image-wrap img.product-image.second-image {
+    opacity: 1;
+}
+.product-list-item:hover .product-image .image-wrap img.product-image.first-image,
+.product-list-item .product-image .image-wrap img.product-image.second-image {
+    opacity: 0;
 }
 .image-size-one-one .image-wrap {
     padding-top: 100%;
