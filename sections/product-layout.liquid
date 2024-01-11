@@ -255,6 +255,21 @@ button.hide {
 .availability .stock-check.active {
   display: inline-block;
 }
+
+.bar-static {
+  display: flex;
+  flex-direction: row;
+  gap: 3px;
+}
+.bar-static li {
+  height: 12px;
+  background: #E3E7F0;
+  display: flex;
+  width: 100%;
+}
+.bar-static li.filled {
+  background: #000000;
+}
 {%- endstyle -%}
 {{ 'product.css' | asset_url | stylesheet_tag }}
 {{ 'socials.css' | asset_url | stylesheet_tag }}
@@ -386,6 +401,12 @@ button.hide {
         </div>
         {% endcomment %}
 
+        
+        
+
+
+
+
         {%- for block in section.blocks -%}
           
           {% case block.type %}
@@ -393,6 +414,93 @@ button.hide {
               {% render block %}
             {%- when 'custom_liquid' -%}
               {{ block.settings.custom_liquid }}
+            {%- when 'custom_title' -%}
+              <h4 class="{{ block.settings.title_size }}">{{ block.settings.text }}</h4>
+            {%- when 'custom_text' -%}
+              <p>{{ block.settings.text }}</p>
+            {%- when 'custom_bars' -%}
+              {% assign product_metafield = product.metafields.custom %}
+              {% assign bar_static_1 = product_metafield.bar_static_1 %}
+              {% assign bar_static_1_pasive = 10 | minus: bar_static_1 %}
+              {% assign bar_static_2 = product_metafield.bar_static_2 %}
+              {% assign bar_static_2_pasive = 10 | minus: bar_static_2 %}
+              {% assign bar_static_3 = product_metafield.bar_static_3 %}
+              {% assign bar_static_3_pasive = 10 | minus: bar_static_3 %}
+              {% assign bar_static_4 = product_metafield.bar_static_4 %}
+              {% assign bar_static_4_pasive = 10 | minus: bar_static_4 %}
+              {% assign bar_static_5 = product_metafield.bar_static_5 %}
+              {% assign bar_static_5_pasive = 10 | minus: bar_static_5 %}
+              {% if block.settings.subtitle_1_active %}
+                <div>
+                  <ul class="bar-static">
+                  {% for i in (1..bar_static_1) %}
+                    <li class="filled"></li>
+                  {% endfor %}
+                  {% for i in (1..bar_static_1_pasive) %}
+                    <li></li>
+                  {% endfor %}
+                  </ul>
+                  <span class="callout">{{ block.settings.subtitle_1 }}</span>
+                </div>
+              {% endif %}
+
+              {% if block.settings.subtitle_2_active %}
+                <div>
+                  <ul class="bar-static">
+                  {% for i in (1..bar_static_2) %}
+                    <li class="filled"></li>
+                  {% endfor %}
+                  {% for i in (1..bar_static_2_pasive) %}
+                    <li></li>
+                  {% endfor %}
+                  </ul>
+                  <span class="callout">{{ block.settings.subtitle_2 }}</span>
+                </div>
+              {% endif %}
+
+              {% if block.settings.subtitle_3_active %}
+                <div>
+                  <ul class="bar-static">
+                  {% for i in (1..bar_static_3) %}
+                    <li class="filled"></li>
+                  {% endfor %}
+                  {% for i in (1..bar_static_3_pasive) %}
+                    <li></li>
+                  {% endfor %}
+                  </ul>
+                  <span class="callout">{{ block.settings.subtitle_3 }}</span>
+                </div>
+              {% endif %}
+
+              {% if block.settings.subtitle_4_active %}
+                <div>
+                  <ul class="bar-static">
+                  {% for i in (1..bar_static_4) %}
+                    <li class="filled"></li>
+                  {% endfor %}
+                  {% for i in (1..bar_static_4_pasive) %}
+                    <li></li>
+                  {% endfor %}
+                  </ul>
+                  <span class="callout">{{ block.settings.subtitle_4 }}</span>
+                </div>
+              {% endif %}
+
+              {% if block.settings.subtitle_5_active %}
+                <div>
+                  <ul class="bar-static">
+                  {% for i in (1..bar_static_5) %}
+                    <li class="filled"></li>
+                  {% endfor %}
+                  {% for i in (1..bar_static_5_pasive) %}
+                    <li></li>
+                  {% endfor %}
+                  </ul>
+                  <span class="callout">{{ block.settings.subtitle_5 }}</span>
+                </div>
+              {% endif %}
+              
+
             {%- when 'badges' -%}
               <div class="badges">
                 {% if settings.second_badge_on %}
@@ -1072,6 +1180,73 @@ button.hide {
       ]
     },
     {
+      "type": "custom_bars",
+      "name": "Custom istatistik barları",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "text",
+          "id": "subtitle_1",
+          "default": "Park",
+          "label": "Subtitle First"
+        },
+        {
+          "type": "checkbox",
+          "id": "subtitle_1_active",
+          "label": "Activate Bar 1",
+          "default": true
+        },
+        {
+          "type": "text",
+          "id": "subtitle_2",
+          "default": "Park",
+          "label": "Subtitle Second"
+        },
+        {
+          "type": "checkbox",
+          "id": "subtitle_2_active",
+          "label": "Activate Bar 2",
+          "default": false
+        },
+        {
+          "type": "text",
+          "id": "subtitle_3",
+          "default": "Park",
+          "label": "Subtitle Third"
+        },
+        {
+          "type": "checkbox",
+          "id": "subtitle_3_active",
+          "label": "Activate Bar 3",
+          "default": false
+        },
+        {
+          "type": "text",
+          "id": "subtitle_4",
+          "default": "Park",
+          "label": "Subtitle Fourth"
+        },
+        {
+          "type": "checkbox",
+          "id": "subtitle_4_active",
+          "label": "Activate Bar 4",
+          "default": false
+        },
+        {
+          "type": "text",
+          "id": "subtitle_5",
+          "default": "Park",
+          "label": "Subtitle Fifth"
+        },
+        {
+          "type": "checkbox",
+          "id": "subtitle_5_active",
+          "label": "Activate Bar 5",
+          "default": false
+        }        
+      ]
+    },
+    {
       "type": "title_text",
       "name": "t:sections.product_layout.product_title",
       "limit": 1,
@@ -1081,6 +1256,48 @@ button.hide {
           "id": "text",
           "default": "{{ product.title }}",
           "label": "t:sections.product_layout.product_title"
+        }
+      ]
+    },
+    {
+      "type": "custom_title",
+      "name": "Custom title",
+      "settings": [
+        {
+          "type": "text",
+          "id": "text",
+          "label": "Custom heading text"
+        },
+        {
+          "type": "select",
+          "id": "title_size",
+          "options": [
+            {
+              "value": "small",
+              "label": "t:sections.all.small"
+            },
+            {
+              "value": "medium",
+              "label": "t:sections.all.medium"
+            },
+            {
+              "value": "large",
+              "label": "t:sections.all.large"
+            }
+          ],
+          "label": "t:sections.all.heading_font_size",
+          "default": "medium"
+        }
+      ]
+    },
+    {
+      "type": "custom_text",
+      "name": "Custom text",
+      "settings": [
+        {
+          "type": "text",
+          "id": "text",
+          "label": "Custom text"
         }
       ]
     },

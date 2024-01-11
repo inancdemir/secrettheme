@@ -34,18 +34,26 @@
               {%- if option.name == "Color" -%}
                 <div class="product-option">
                   <span class="caption-2">{{ option.name }} | </span>
-                  {% for value in option.values %}
-                      <div class="product-list-colors {{ option.name }}-{{ value }}"></div>                                  
-                    {% endfor %}
+
+                  {% assign maxToShow = 3 %}
+                  {% assign remainingCount = option.values | size | minus: maxToShow %}
+
+                  {% for value in option.values limit: maxToShow %}
+                    <div class="product-list-colors {{ option.name }}-{{ value }}"></div>                                  
+                  {% endfor %}
+
+                  {% if remainingCount > 0 %}
+                    <span class="callout">+{{ remainingCount }}</span>
+                  {% endif %}
+
+
+                  
                 </div>
               {%- endif -%}
             {% endfor %}
         </div>
       {% endif %}
-
-    </div>
-    
-    
+    </div>    
     {% if product.compare_at_price_max > product.price %}
       <div class="save-amount callout">
         Save {{ product.compare_at_price_max | minus: product.price | money }}

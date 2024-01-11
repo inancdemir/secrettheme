@@ -506,6 +506,18 @@
           "type": "text",
           "id": "custom_prop_data_title",
           "label": "ikonların öncesindeki title"
+        },
+        {
+          "type": "textarea",
+          "id": "light_icon",
+          "label": "Light Icon",
+          "info": "boşsa tasarımdaki basar"
+        },
+        {
+          "type": "textarea",
+          "id": "dark_icon",
+          "label": "Dark Icon",
+          "info": "boşsa tasarımdaki basar"
         }
       ]
     }
