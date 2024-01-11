@@ -58,13 +58,13 @@
         "slide_M3Fept": {
           "type": "slide",
           "settings": {
-            "collection": ""
+            "collection": "frontpage"
           }
         },
         "slide_pPpKYC": {
           "type": "slide",
           "settings": {
-            "collection": ""
+            "collection": "accessories"
           }
         }
       },
