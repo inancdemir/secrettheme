@@ -656,25 +656,6 @@
         "background_color": "linear-gradient(180deg, #ffffff 100%, #ffffff 100%)",
         "content_color": "#000000"
       }
-    },
-    "a6b34893-8d56-47db-9ce0-ebc4a2b9185d": {
-      "type": "before-after-gallery",
-      "settings": {
-        "heading": "Before After Gallery",
-        "heading_color": "#000000",
-        "heading_font_size": "large",
-        "sub_heading": "<p><strong>Use this section to showcase your collections<\/strong><\/p>",
-        "sub_heading_color": "#000000",
-        "full_width": true,
-        "sectio-height": "600",
-        "sectio-height_mobile": "400",
-        "image_1": "shopify:\/\/shop_images\/cngrs_lifestyle_photo_of_a_woman_wearing_futuristic_puffer_jack_b0aa389b-7ca8-4106-adb0-7c7e400a29b2.png",
-        "image_2": "shopify:\/\/shop_images\/cngrs_lifestyle_photo_of_a_woman_wearing_futuristic_puffer_jack_be605e82-79e2-4997-b0da-4b48aeca261f.png",
-        "image_fit": "contain",
-        "image_pos": "center",
-        "section_padding_top": 50,
-        "section_padding_bottom": 50
-      }
     }
   },
   "order": [
@@ -695,7 +676,6 @@
     "home-multiple-columns",
     "home-banner",
     "home-newsletter",
-    "home-multiple-columns-2",
-    "a6b34893-8d56-47db-9ce0-ebc4a2b9185d"
+    "home-multiple-columns-2"
   ]
 }
