@@ -205,7 +205,7 @@
         "collection-2": {
           "type": "collection",
           "settings": {
-            "collection": "frontpage",
+            "collection": "base-layers",
             "enable_description": "enabled",
             "collection_description_lenght": 40,
             "enable_custom_description": "enabled",
