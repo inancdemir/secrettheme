@@ -66,6 +66,28 @@
           "settings": {
           }
         },
+        "custom_title_cVHrUV": {
+          "type": "custom_title",
+          "settings": {
+            "text": "Benefits",
+            "title_size": "small"
+          }
+        },
+        "custom_bars_rzMmzW": {
+          "type": "custom_bars",
+          "settings": {
+            "subtitle_1": "Add title",
+            "subtitle_1_active": true,
+            "subtitle_2": "Add title",
+            "subtitle_2_active": false,
+            "subtitle_3": "Add title",
+            "subtitle_3_active": false,
+            "subtitle_4": "Add title",
+            "subtitle_4_active": false,
+            "subtitle_5": "Add title",
+            "subtitle_5_active": false
+          }
+        },
         "product-inner-6": {
           "type": "description",
           "settings": {
@@ -103,6 +125,8 @@
         "product-inner-4",
         "3569f85e-d966-4d3c-947b-d970f5eab3aa",
         "product-inner-5",
+        "custom_title_cVHrUV",
+        "custom_bars_rzMmzW",
         "product-inner-6",
         "product-inner-7",
         "84ceafbc-7b4f-4c50-bd7d-26a907d51b77",
