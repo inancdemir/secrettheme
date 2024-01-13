@@ -1,32 +1,57 @@
-
     <div class="product-image">
       <a class="image-wrap" href="{{- product.url -}}">
-        
-        
         {% if product.featured_image %}
-          {% assign product_images = product.images %}
-          {% if product_images.size > 0 %}
-            {% assign first_image = product_images[0] %}
-            <img src="{{ first_image | img_url: '600x' }}" 
-                srcset="{{ first_image | img_url: '300x' }} 300w,
-                        {{ first_image | img_url: '600x' }} 600w,
-                        {{ first_image | img_url: '900x' }} 900w"
-                sizes="(max-width: 300px) 280px,
-                        (max-width: 600px) 560px,
-                        900px"
-                loading="lazy" class="product-image {% if product_images.size > 1 %}first-image{% endif %}" alt="{{ product.title | escape }}" />
-            {% if product_images.size > 1 %}
-              
+          {% if settings.image_hover_options == "only-image" %}
+            {% assign product_images = product.images %}
+            {% if product_images.size > 0 %}
+              {% assign first_image = product_images[0] %}
+              <img src="{{ first_image | img_url: '600x' }}" 
+                  srcset="{{ first_image | img_url: '300x' }} 300w,
+                          {{ first_image | img_url: '600x' }} 600w,
+                          {{ first_image | img_url: '900x' }} 900w"
+                  sizes="(max-width: 300px) 280px,
+                          (max-width: 600px) 560px,
+                          900px"
+                  loading="lazy" class="product-image" alt="{{ product.title | escape }}" />
+            {% endif %}
+          {% endif %}
+          {% if settings.image_hover_options == "only-video" %}
+            {% assign product_images = product.images %}
+            {% if product_images.size > 0 %}
               {% assign has_video = false %}
               {% for media in product.media %}
                 {% case media.media_type %}
                   {% when 'video' %}
                     {% assign has_video = true %}
-                    {{ media | video_tag: controls: false, loop: true, autoplay: true, width: "100%", loading: "lazy", class: "product-image video-show-front second-image" }}
+                    {{ media | video_tag: controls: false, loop: true, autoplay: true, width: "100%", loading: "lazy", class: "product-image video-show-front" }}
                 {% endcase %}
               {% endfor %}
-
               {% unless has_video %}
+                {% assign second_image = product_images[0] %}
+                <img src="{{ second_image | img_url: '600x' }}" 
+                    srcset="{{ second_image | img_url: '300x' }} 300w,
+                            {{ second_image | img_url: '600x' }} 600w,
+                            {{ second_image | img_url: '900x' }} 900w"
+                    sizes="(max-width: 300px) 280px,
+                            (max-width: 600px) 560px,
+                            900px"
+                    loading="lazy" class="product-image" alt="{{ product.title | escape }}" />
+              {% endunless %}
+            {% endif %}
+          {% endif %}
+          {% if settings.image_hover_options == "image-image" %}
+            {% assign product_images = product.images %}
+            {% if product_images.size > 0 %}
+              {% assign first_image = product_images[0] %}
+              <img src="{{ first_image | img_url: '600x' }}" 
+                  srcset="{{ first_image | img_url: '300x' }} 300w,
+                          {{ first_image | img_url: '600x' }} 600w,
+                          {{ first_image | img_url: '900x' }} 900w"
+                  sizes="(max-width: 300px) 280px,
+                          (max-width: 600px) 560px,
+                          900px"
+                  loading="lazy" class="product-image {% if product_images.size > 1 %}first-image{% endif %}" alt="{{ product.title | escape }}" />
+              {% if product_images.size > 1 %}
                 {% assign second_image = product_images[1] %}
                 <img src="{{ second_image | img_url: '600x' }}" 
                     srcset="{{ second_image | img_url: '300x' }} 300w,
@@ -36,15 +61,49 @@
                             (max-width: 600px) 560px,
                             900px"
                     loading="lazy" class="product-image second-image" alt="{{ product.title | escape }}" />
-              {% endunless %}
-
+              {% endif %}
             {% endif %}
           {% endif %}
-  
+          {% if settings.image_hover_options == "image-video" %}
+            {% assign product_images = product.images %}
+            {% if product_images.size > 0 %}
+              {% assign first_image = product_images[0] %}
+              <img src="{{ first_image | img_url: '600x' }}" 
+                  srcset="{{ first_image | img_url: '300x' }} 300w,
+                          {{ first_image | img_url: '600x' }} 600w,
+                          {{ first_image | img_url: '900x' }} 900w"
+                  sizes="(max-width: 300px) 280px,
+                          (max-width: 600px) 560px,
+                          900px"
+                  loading="lazy" class="product-image {% if product_images.size > 1 %}first-image{% endif %}" alt="{{ product.title | escape }}" />
+              {% if product_images.size > 1 %}
+                
+                {% assign has_video = false %}
+                {% for media in product.media %}
+                  {% case media.media_type %}
+                    {% when 'video' %}
+                      {% assign has_video = true %}
+                      {{ media | video_tag: controls: false, loop: true, autoplay: true, width: "100%", loading: "lazy", class: "product-image video-show-front second-image" }}
+                  {% endcase %}
+                {% endfor %}
+
+                {% unless has_video %}
+                  {% assign second_image = product_images[1] %}
+                  <img src="{{ second_image | img_url: '600x' }}" 
+                      srcset="{{ second_image | img_url: '300x' }} 300w,
+                              {{ second_image | img_url: '600x' }} 600w,
+                              {{ second_image | img_url: '900x' }} 900w"
+                      sizes="(max-width: 300px) 280px,
+                              (max-width: 600px) 560px,
+                              900px"
+                      loading="lazy" class="product-image second-image" alt="{{ product.title | escape }}" />
+                {% endunless %}
+              {% endif %}
+            {% endif %}
+          {% endif %}
         {% else %}
         {{ 'product-1' | placeholder_svg_tag: 'demo-image product-image' }}
         {% endif %}
-
       </a>
       <button class="quick-view-button" data-product-id="{{- product.url -}}.js">
         {% render 'icon-eye' %} Quick View
@@ -66,42 +125,37 @@
           </span>
         {% endif %}
       </div>
-      <div class="color-variant-in-list">
-        {% if product.variants.size > 1 %}
-          <div class="product-variant">
-              {% for option in product.options_with_values %}
-                {%- if option.name == "Color" -%}
-                  <div class="product-option">
-                    <span class="caption-2">{{ option.name }} | </span>
-                    {% assign maxToShow = 3 %}
-                    {% assign remainingCount = option.values | size | minus: maxToShow %}
-                    {% for value in option.values limit: maxToShow %}
-                      <div class="product-list-colors {{ option.name }}-{{ value }}"></div>                                  
-                    {% endfor %}
-                    {% if remainingCount > 0 %}
-                      <span class="callout">+{{ remainingCount }}</span>
-                    {% endif %}                  
-                  </div>
-                {%- endif -%}
-              {% endfor %}
-          </div>
-        {% endif %}
-      </div>   
-
-      
-      
-      
+      {% if product.variants.size > 1 %}
+        {% for option in product.options_with_values %}
+          {%- if option.name == "Color" -%}
+            <div class="color-variant-in-list">
+              <div class="product-variant">
+                <div class="product-option">
+                  <span class="caption-2">{{ option.name }} | </span>
+                  {% assign maxToShow = 3 %}
+                  {% assign remainingCount = option.values | size | minus: maxToShow %}
+                  {% for value in option.values limit: maxToShow %}
+                    <div class="product-list-colors {{ option.name }}-{{ value }}"></div>                                  
+                  {% endfor %}
+                  {% if remainingCount > 0 %}
+                    <span class="callout">+{{ remainingCount }}</span>
+                  {% endif %}
+                </div>
+              </div>
+            </div>
+          {%- endif -%}
+        {% endfor %}
+      {% endif %}  
       {% if product.compare_at_price_max > product.price %}
         <div class="save-amount callout">
           Save {{ product.compare_at_price_max | minus: product.price | money }}
         </div>
       {% endif %}
-
-        
-        {% assign product_metafield = product.metafields.custom %}
-        {% assign repeat_val = product_metafield.front_custom_icons %}
-        {% assign pasive_val = 5 | minus: repeat_val %}
-        {% if product_metafield.front_custom_icons %}
+      {% assign product_metafield = product.metafields.custom %}
+      {% assign repeat_val = product_metafield.front_custom_icons %}
+      {% assign pasive_val = 5 | minus: repeat_val %}
+      {% if product_metafield.front_custom_icons %}
+        <div class="custom-icons-area">
           <div class="callout custom-field-data">{{ settings.custom_prop_data_title }}</div>
           {% for i in (1..repeat_val) %}
             {% if settings.light_icon != blank %}
@@ -155,9 +209,11 @@
                 <path fill-rule="evenodd" clip-rule="evenodd" d="M9.00001 5.61572C7.13592 5.61572 5.6196 7.13348 5.6196 8.99974C5.6196 10.866 7.13592 12.3837 9.00001 12.3837C10.8648 12.3837 12.3811 10.866 12.3811 8.99974C12.3811 7.13348 10.8648 5.61572 9.00001 5.61572Z" fill="black" fill-opacity="0.2"/>
                 </g>
               </svg>
-            {% endif %}                    
+            {% endif %}
           {% endfor %}
-        {% endif %}
+        </div>
+      {% endif %}
+
       <div class="left-badges">
         {% if settings.second_badge_on %}
           {% assign second_badge = settings.second_badge_tag %}
@@ -175,15 +231,14 @@
           {% endif %}
         {% endif %}
       </div>
+      {% if settings.third_badge_on %}
       <div class="right-banner">
-        {% if settings.third_badge_on %}
-          {% assign third_badge = settings.third_badge_tag %}
-          {% if product.tags contains third_badge %}
-            <div class="badge model-3">
-            {{ settings.third_badge_text }}
-            </div>
-          {% endif %}
+        {% assign third_badge = settings.third_badge_tag %}
+        {% if product.tags contains third_badge %}
+          <div class="badge model-3">
+          {{ settings.third_badge_text }}
+          </div>
         {% endif %}
       </div>
-    </div>  
-  
+    {% endif %}
+    </div>

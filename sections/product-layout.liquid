@@ -120,7 +120,8 @@ button.product-add {
   .image-navigation ul li {
     flex: 0 0 calc(50% - 16px);
   }
-  .image-navigation ul li img {
+  .image-navigation ul li img,
+  .image-navigation ul li video {
     top: 0;
     left: 0;
     width: 100%;
@@ -128,7 +129,8 @@ button.product-add {
     object-fit: cover;
   }
 {% else %}
-  .image-navigation img {
+  .image-navigation img,
+  .image-navigation video {
     width: 100%;
     height: auto;
   }

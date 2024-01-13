@@ -11,14 +11,16 @@
     </div>
     {% endcomment %}
 
-    <span class="caption-2 search-section-title">Did you mean</span>
-    <ul>
-      {%- for query in predictive_search.resources.queries -%}
-        <li><a href="{{ query.url }}" class="predictive-search__item link link--text" tabindex="-1">
-          {{ query.styled_text }}
-        </a></li>
-      {%- endfor -%}
-    </ul>
+    {% if predictive_search.resources.queries != blank %}
+      <span class="caption-2 search-section-title">DID YOU MEAN...</span>
+      <ul>
+        {%- for query in predictive_search.resources.queries -%}
+          <li><a href="{{ query.url }}" class="predictive-search__item link link--text" tabindex="-1">
+            {{ query.styled_text }}
+          </a></li>
+        {%- endfor -%}
+      </ul>
+    {% endif %}
     {% if predictive_search.resources.collections != blank %}
       <span class="caption-2 search-section-title">COLLECTIONS</span>
       <ul>
@@ -63,7 +65,7 @@
         </div>
         
       {%- endif -%}
-      <button class="button full">
+      <button class="button full model-4">
         Search for “{{ predictive_search.terms }}”
       </button>
     </div>

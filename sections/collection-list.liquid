@@ -37,8 +37,8 @@
 
 {% unless section.settings.full_width %}
   .collection-tabs .flickity-viewport {
-    min-width: calc(100% + calc((100vw - 1460px) / 2));
-  }
+    min-width: calc(100% + calc((100vw - (100% + 16px)) / 2));
+}
 {% endunless %}
 .section-{{ section.id }} .carousel-slider-item {
   width: calc(75% - {{ section.settings.products_item_gap }}px);
@@ -57,12 +57,9 @@
     left: auto;
     right: 70px;
 }
-
 @media only screen and (min-width: 640px) {
   .section-{{ section.id }} .carousel-slider-item {
     width: 432px;
-    /*max-width: calc( 25% - ({{ section.settings.products_item_gap }}px * 3 ) / 4);
-    min-width: calc( 25% - ({{ section.settings.products_item_gap }}px * 3 ) / 4);*/
     margin-left: {{ section.settings.products_item_gap }}px;
   }
   .section-{{ section.id }} .flickity-prev-next-button,
@@ -70,14 +67,11 @@
     display: block;
   }
 }
-
 {%- endstyle -%}
-
 {{ 'flickity.css' | asset_url | stylesheet_tag }}
 {{ 'collection-list.css' | asset_url | stylesheet_tag }}
 <script src="{{ 'flickity.js' | asset_url }}" defer="defer"></script>
 <script src="{{ 'collection-list.js' | asset_url }}" defer="defer"></script>
-
 <div class="front-featured-product section-{{ section.id }} animation-test">
   {% unless section.settings.full_width %}
     <div class="wide-width">

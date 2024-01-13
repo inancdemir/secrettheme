@@ -495,7 +495,12 @@
         "id": "third_badge_color",
         "label": "t:settings_schema.badges.third_badge_text_color",
         "default": "#000000"
-      },
+      }
+    ]
+  },
+  {
+    "name": "Product listing",
+    "settings": [
       {
         "type": "header",
         "content": "Product feature",
@@ -518,6 +523,42 @@
         "id": "dark_icon",
         "label": "Passive icon",
         "info": "If not filled in, default icon will be used automatically.Paste the svg code of the new icon in order to replace current one."
+      },
+      {
+        "type": "range",
+        "info": "Product detaillarda itempar arası boşluklar",
+        "id": "product_details_spaces",
+        "min": 0,
+        "max": 100,
+        "step": 1,
+        "unit": "px",
+        "label": "Pixel",
+        "default": 12
+      },
+      {
+        "type": "select",
+        "id": "image_hover_options",
+        "label": "Product hover option",
+        "default": "image-video",
+        "info": "Hoverdaki özellikler",
+        "options": [
+          {
+            "value": "only-image",
+            "label": "Only image"
+          },
+          {
+            "value": "only-video",
+            "label": "Only video"
+          },
+          {
+            "value": "image-image",
+            "label": "Second image on hover"
+          },
+          {
+            "value": "image-video",
+            "label": "First video on hover"
+          }
+        ]
       }
     ]
   }
