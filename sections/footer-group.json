@@ -45,9 +45,12 @@
         "f7764cb4-c0bc-4d19-aabf-ac4a8a9a16f0"
       ],
       "settings": {
+        "section_bg": "",
+        "section_text": "#000000",
+        "use_default_colors": false,
         "full_width": true,
         "footer-logo_on": true,
-        "footer-logo": "shopify:\/\/shop_images\/footer_logo.png",
+        "footer-logo": "shopify:\/\/shop_images\/footerlogo.svg",
         "copyright": "© 2023 Rise, All rights reserved. Powered by Shopify",
         "payment_icons": true
       }

@@ -1222,7 +1222,7 @@
             "block_title": "Accessibility",
             "title_size": "small",
             "block_content": "<p>We prioritize accessibility, ensuring everyone can navigate with ease. Whether it's through keyboard shortcuts, ARIA roles, or alternative content, we've designed with inclusivity in mind.<\/p>",
-            "items_align": "center",
+            "items_align": "left",
             "cover_image_force": false
           }
         },
@@ -1248,7 +1248,7 @@
             "block_title": "Developed by Industry Veterans",
             "title_size": "small",
             "block_content": "<p>Designed by a diverse team of theme developers, UI\/UX specialists, merchants, designers, and SaaS pioneers. Rely on the expertise and insights of industry leaders.<\/p>",
-            "items_align": "center",
+            "items_align": "left",
             "cover_image_force": false
           }
         }
@@ -1263,12 +1263,12 @@
       ],
       "settings": {
         "column_per_line": "3",
-        "spacings": 16,
+        "spacings": 35,
         "spacings_v": 16,
         "section_padding_top": 0,
         "section_padding_bottom": 50,
         "ver_align": "flex-start",
-        "full_width": true,
+        "full_width": false,
         "background_color": "linear-gradient(180deg, rgba(0, 0, 0, 1), rgba(0, 0, 0, 1) 100%)",
         "content_color": "#FFFFFF"
       }
