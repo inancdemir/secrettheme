@@ -1269,8 +1269,8 @@
         "section_padding_bottom": 50,
         "ver_align": "flex-start",
         "full_width": true,
-        "background_color": "linear-gradient(180deg, #ffffff 100%, #ffffff 100%)",
-        "content_color": "#000000"
+        "background_color": "linear-gradient(180deg, rgba(0, 0, 0, 1), rgba(0, 0, 0, 1) 100%)",
+        "content_color": "#FFFFFF"
       }
     }
   },
