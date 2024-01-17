@@ -648,12 +648,12 @@
       "settings": {
         "column_per_line": "4",
         "spacings": 16,
-        "spacings_v": 16,
+        "spacings_v": 25,
         "section_padding_top": 25,
         "section_padding_bottom": 0,
         "ver_align": "flex-start",
         "full_width": true,
-        "background_color": "linear-gradient(180deg, #ffffff 100%, #ffffff 100%)",
+        "background_color": "linear-gradient(180deg, rgba(255, 255, 255, 1) 100%, rgba(255, 255, 255, 1) 100%)",
         "content_color": "#000000"
       }
     }
