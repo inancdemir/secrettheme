@@ -1,9 +1,39 @@
-Copyright (c) 2021-present Shopify Inc.
+License for Rise Theme for Shopify
 
-Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, sell and/or create derivative works of the Software or any part thereof, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+License Agreement
+This document outlines the terms and conditions for the use of the Rise Theme for Shopify, developed by Oak Themes.
 
-The rights granted above may only be exercised to develop themes that integrate or interoperate with Shopify software or services, and, if applicable, to distribute, offer for sale or otherwise make available any such themes via the Shopify Theme Store.   All other uses of the Software are strictly prohibited.
+Version
+1.0.0
 
-The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+Last Updated
+01/17/2024
 
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+Grant of License
+
+Scope: This is a non-exclusive, non-transferable license granted to the purchaser (Licensee) for use on a single Shopify store.
+
+Use: The Licensee is authorized to use the Rise Theme on their Shopify store, subject to the terms of this Agreement.
+
+Restrictions
+
+Resale and Redistribution: The Licensee shall not resell, redistribute, sublicense, or transfer the Rise Theme to any third party.
+
+Modification: Licensee may modify the theme for personal use but cannot redistribute the modified version.
+Ownership: All intellectual property rights in the Rise Theme remain with Oak Themes. This license does not transfer any ownership rights.
+
+Disclaimer of Warranties
+
+The Rise Theme is provided "as is," without warranty of any kind. Oak Themes is not liable for any claims related to the use or performance of the theme.
+
+Limitation of Liability
+
+In no event shall Oak Themes be liable for any direct, indirect, incidental, or consequential damages arising out of the use or inability to use the Rise Theme.
+
+Termination
+
+This license is effective until terminated. It will automatically terminate if the Licensee fails to comply with any term or condition.
+
+General
+
+This Agreement constitutes the entire understanding between the parties and supersedes all prior agreements and understandings.
