@@ -3,7 +3,7 @@ Welcome to the Rise Theme for Shopify!
 Thank you for choosing Rise, our newest theme designed specifically for Shopify stores. Rise is tailored for e-commerce success, combining elegant design with functionality to enhance the shopping experience. This README file will help you navigate through the setup, customization, and features of the Rise Theme.
 
 Version
-1.0.0
+1.0.1
 
 Last Updated
 01/17/2024

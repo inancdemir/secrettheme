@@ -1,4 +1,4 @@
-Release Notes for Rise Theme - Version 1.0.0
+Release Notes for Rise Theme - Version 1.0.1
 
 Introduction
 

@@ -4,7 +4,7 @@ License Agreement
 This document outlines the terms and conditions for the use of the Rise Theme for Shopify, developed by Oak Themes.
 
 Version
-1.0.0
+1.0.1
 
 Last Updated
 01/17/2024
