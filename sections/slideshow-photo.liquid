@@ -383,47 +383,47 @@
 <script src="{{ 'flickity.js' | asset_url }}" defer></script>
 <div class=" section-{{ section.id }} hero-slideshow animation-test">
     <div class="hero-carousel-{{- section.id -}}">
-        
-        {%- for block in section.blocks -%}
-            {% case block.type %}
-              {%- when 'hero_slide' -%}
-                <div class="slider-item slide-{{ block.id }}" {{ block.shopify_attributes }}>
-                  {% if block.settings.slide_bg %}
-                    <div class="slide-inner">
-                      <div class="image image-1"></div>
-                      <div class="image image-2"></div>
-                      <div class="image image-3"></div>
-                    </div>
-                    <style>
-                      .slide-{{ block.id }} .image {
-                        background-image: url('{{ block.settings.slide_bg | image_url }}');
-                      }
-                    </style>
-                  {% else %}
-                    {{ 'lifestyle-1' | placeholder_svg_tag: 'demo-image slide-image' }}
-                  {% endif %}
-                  <div class="overlay" style="background-color: {{ block.settings.overlay_color }};
-                    {% if block.settings.overlay_color_opacity == 100 %}
-                          opacity: 1;
-                    {% else %}
-                        opacity: 0.{{ block.settings.overlay_color_opacity }};
-                    {% endif %}"></div>
-                  <div class="text-on-hero {{ section.settings.text_position }}">
-                      <div class="mask">
-                        <span class="subheadline">{{ block.settings.description }}</span>
-                        <h2 class="small">{{ block.settings.heading }}</h2>
-                      </div>
-                      <div class="divider"></div>
-                      <div class="mask">
-                        <span class="h4 small ">{{ block.settings.sub_heading }}</span>
-                        <div class="button-area">
-                            <a href="{{ block.settings.button_url }}" class="button {{ block.settings.button_style }}">{{ block.settings.button_text }}</a>
-                        </div>
-                      </div>
-                  </div> 
+      <h1 class="super">{{ section.settings.super }}</h1>
+      {%- for block in section.blocks -%}
+        {% case block.type %}
+          {%- when 'hero_slide' -%}
+            <div class="slider-item slide-{{ block.id }}" {{ block.shopify_attributes }}>
+              {% if block.settings.slide_bg %}
+                <div class="slide-inner">
+                  <div class="image image-1"></div>
+                  <div class="image image-2"></div>
+                  <div class="image image-3"></div>
                 </div>
-            {%- endcase -%}
-        {%- endfor -%}
+                <style>
+                  .slide-{{ block.id }} .image {
+                    background-image: url('{{ block.settings.slide_bg | image_url }}');
+                  }
+                </style>
+              {% else %}
+                {{ 'lifestyle-1' | placeholder_svg_tag: 'demo-image slide-image' }}
+              {% endif %}
+              <div class="overlay" style="background-color: {{ block.settings.overlay_color }};
+                {% if block.settings.overlay_color_opacity == 100 %}
+                      opacity: 1;
+                {% else %}
+                    opacity: 0.{{ block.settings.overlay_color_opacity }};
+                {% endif %}"></div>
+              <div class="text-on-hero {{ section.settings.text_position }}">
+                  <div class="mask">
+                    <span class="subheadline">{{ block.settings.description }}</span>
+                    <h2 class="small">{{ block.settings.heading }}</h2>
+                  </div>
+                  <div class="divider"></div>
+                  <div class="mask">
+                    <span class="h4 small ">{{ block.settings.sub_heading }}</span>
+                    <div class="button-area">
+                        <a href="{{ block.settings.button_url }}" class="button {{ block.settings.button_style }}">{{ block.settings.button_text }}</a>
+                    </div>
+                  </div>
+              </div> 
+            </div>
+        {%- endcase -%}
+      {%- endfor -%}
     </div>
 </div>
 <script>
