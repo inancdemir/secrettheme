@@ -6,7 +6,7 @@
         "176a3c0e-2cf8-412c-9943-50d9a36862d2": {
           "type": "text",
           "settings": {
-            "sub_heading": "<p>INTRODUCING RISE FOR SHOPIFY<\/p>"
+            "sub_heading": "<p>INTRODUCING STELLAR FOR SHOPIFY<\/p>"
           }
         },
         "template--14728833269859__503202e4-90be-42ee-bd9d-7b3d492e6522-heading-1": {
@@ -24,7 +24,7 @@
         "10105421-0735-434f-893c-5fa11da649a8": {
           "type": "button",
           "settings": {
-            "button_text": "TRY RISE COMPLETELY FREE",
+            "button_text": "TRY STELLAR COMPLETELY FREE",
             "button_url": "",
             "button_style": "model-4"
           }
@@ -330,7 +330,7 @@
             "select_icon": "award",
             "select_icon_active": false,
             "icon_size": 30,
-            "block_title": "Unique to Rise Theme - Glass Effect",
+            "block_title": "Unique to Stellar Theme - Glass Effect",
             "title_size": "medium",
             "block_content": "",
             "items_align": "center",

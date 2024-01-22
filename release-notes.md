@@ -1,8 +1,8 @@
-Release Notes for Rise Theme - Version 1.0.1
+Release Notes for Stellar Theme - Version 1.0.1
 
 Introduction
 
-We are excited to announce the release of the Rise Theme, a modern and innovative theme designed exclusively for Shopify stores. This inaugural version, 1.0.0, marks the beginning of a new era for e-commerce websites, offering a blend of style, functionality, and user-friendly experiences.
+We are excited to announce the release of the Stellar Theme, a modern and innovative theme designed exclusively for Shopify stores. This inaugural version, 1.0.0, marks the beginning of a new era for e-commerce websites, offering a blend of style, functionality, and user-friendly experiences.
 
 Features
 
@@ -43,9 +43,9 @@ Installation: Refer to our detailed guide on the theme installation process, ava
 Support: For any questions or issues, please visit our support portal at [Support Link].
 
 Acknowledgements
-Special thanks to our dedicated team of developers, designers, and early beta testers who have contributed to the development and refinement of the Rise Theme.
+Special thanks to our dedicated team of developers, designers, and early beta testers who have contributed to the development and refinement of the Stellar Theme.
 
-We are committed to continuous improvement and eagerly await your feedback to make Rise Theme even better in future updates.
+We are committed to continuous improvement and eagerly await your feedback to make Stellar Theme even better in future updates.
 
 Oak Themes
 https://oakthemes.net

@@ -1,6 +1,6 @@
-Welcome to the Rise Theme for Shopify!
+Welcome to the Stellar Theme for Shopify!
 
-Thank you for choosing Rise, our newest theme designed specifically for Shopify stores. Rise is tailored for e-commerce success, combining elegant design with functionality to enhance the shopping experience. This README file will help you navigate through the setup, customization, and features of the Rise Theme.
+Thank you for choosing Dtellar, our newest theme designed specifically for Shopify stores. Stellar is tailored for e-commerce success, combining elegant design with functionality to enhance the shopping experience. This README file will help you navigate through the setup, customization, and features of the Stellar Theme.
 
 Version
 1.0.1
@@ -22,18 +22,18 @@ High-Quality Imagery: Supports high-resolution images to highlight your products
 Quick and Easy Checkout Process: Streamlined checkout to reduce cart abandonment.
 
 Installation
-Download the Theme: Access and download the Rise Theme package from the Shopify Theme Store.
-Install to Your Shopify Store: In your Shopify dashboard, go to the Online Store section, then Themes, and upload the Rise Theme.
+Download the Theme: Access and download the Stellar Theme package from the Shopify Theme Store.
+Install to Your Shopify Store: In your Shopify dashboard, go to the Online Store section, then Themes, and upload the Stellar Theme.
 Activate the Theme: After uploading, set Rise as your active theme.
 Customization
-Theme Customizer: Use Shopify theme customizer to adjust the Rise Theme settings including colors, fonts, and layout.
+Theme Customizer: Use Shopify theme customizer to adjust the Stellar Theme settings including colors, fonts, and layout.
 Product Page Customization: Tailor your product pages with customizable fields and layout options.
 Homepage Sections: Configure homepage sections to highlight featured products, collections, or promotions.
 Support
-For assistance or inquiries about the Rise Theme, please refer to our documentation https://oakthemes.net/documentation . Don't hesitate to contact our support team. We are here to help with any issues or questions you may have.
+For assistance or inquiries about the Stellar Theme, please refer to our documentation https://oakthemes.net/documentation . Don't hesitate to contact our support team. We are here to help with any issues or questions you may have.
 
 Acknowledgements
-We would like to extend our gratitude to our dedicated development team and the Shopify community for their invaluable feedback during the creation of the Rise Theme.
+We would like to extend our gratitude to our dedicated development team and the Shopify community for their invaluable feedback during the creation of the Stellar Theme.
 
 Enjoy creating a beautiful and effective online store with Rise! We are excited to see what you will build.
 
