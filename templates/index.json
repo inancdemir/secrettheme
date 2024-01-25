@@ -656,58 +656,6 @@
         "background_color": "linear-gradient(180deg, rgba(255, 255, 255, 1) 100%, rgba(255, 255, 255, 1) 100%)",
         "content_color": "#000000"
       }
-    },
-    "slideshow_photo_MXFPnz": {
-      "type": "slideshow-photo",
-      "blocks": {
-        "hero_slide_nQjNbX": {
-          "type": "hero_slide",
-          "settings": {
-            "slide_bg": "shopify:\/\/shop_images\/carousel-hero_1e9d614d-210a-4114-aa2d-872fcfd0981b.png",
-            "description": "<p>Write text to emphasize your story<\/p>",
-            "heading": "Promote your story here!",
-            "sub_heading": "Add subheading",
-            "button_text": "BUTTON LABEL",
-            "button_url": "",
-            "button_style": "model-4",
-            "overlay_color": "#000000",
-            "overlay_color_opacity": 0
-          }
-        },
-        "hero_slide_6QD3ah": {
-          "type": "hero_slide",
-          "settings": {
-            "slide_bg": "shopify:\/\/shop_images\/carousel-hero.png",
-            "description": "<p>Write text to emphasize your story<\/p>",
-            "heading": "Promote your story here!",
-            "sub_heading": "Add subheading",
-            "button_text": "BUTTON LABEL",
-            "button_url": "",
-            "button_style": "model-4",
-            "overlay_color": "#000000",
-            "overlay_color_opacity": 0
-          }
-        }
-      },
-      "block_order": [
-        "hero_slide_nQjNbX",
-        "hero_slide_6QD3ah"
-      ],
-      "settings": {
-        "section_height": 100,
-        "section_width": 1400,
-        "text_position": "bottom-center",
-        "super": "SUPER",
-        "super_color": "#FFFFFF",
-        "super_opacity": 40,
-        "super_font_size": 20,
-        "super_gap": 300,
-        "super_gap_mobile": 450,
-        "gap_from_sides": 60,
-        "body_color": "#FFFFFF",
-        "heading_color": "#FFFFFF",
-        "sub_heading_color": "#FFFFFF"
-      }
     }
   },
   "order": [
@@ -728,7 +676,6 @@
     "home-multiple-columns",
     "home-banner",
     "home-newsletter",
-    "home-multiple-columns-2",
-    "slideshow_photo_MXFPnz"
+    "home-multiple-columns-2"
   ]
 }
