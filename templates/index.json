@@ -333,6 +333,7 @@
         "link"
       ],
       "settings": {
+        "image": "shopify:\/\/shop_images\/eco-conscious.png",
         "image_size": 50,
         "row_gap": 16,
         "max_width": 100,
@@ -377,6 +378,7 @@
         "link"
       ],
       "settings": {
+        "image": "shopify:\/\/shop_images\/comfort.png",
         "image_size": 50,
         "row_gap": 16,
         "max_width": 100,
@@ -479,6 +481,7 @@
             "title_size": "small",
             "block_content": "",
             "items_align": "center",
+            "cover_image": "shopify:\/\/shop_images\/single-image.png",
             "cover_image_force": true
           }
         },
@@ -492,6 +495,7 @@
             "title_size": "small",
             "block_content": "",
             "items_align": "center",
+            "cover_image": "shopify:\/\/shop_images\/single-image2.png",
             "cover_image_force": true
           }
         }
@@ -561,7 +565,8 @@
         "sub_heading_line_height": 30,
         "gap_from_sides": 60,
         "overlay_color": "#000000",
-        "overlay_color_opacity": 40
+        "overlay_color_opacity": 40,
+        "background_image": "shopify:\/\/shop_images\/collection-fullsize_339a71fa-e527-4277-bb55-c620778a944c.png"
       }
     },
     "home-newsletter": {
