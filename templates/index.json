@@ -1,38 +1,39 @@
 {
   "sections": {
-    "slideshow_photo_dTYTc3": {
-      "type": "slideshow-photo",
+    "slideshow_hDBweA": {
+      "type": "slideshow",
       "blocks": {
-        "hero_slide_cwJM4e": {
+        "hero_slide_rNdQzm": {
           "type": "hero_slide",
           "settings": {
-            "description": "",
-            "heading": "Embrace the Season with Style",
-            "sub_heading": "Elevate your fall\/winter look effortlessly",
-            "button_text": "BUTTON LABEL",
-            "button_url": "",
+            "slide_bg": "shopify:\/\/shop_images\/carousel-hero_1e9d614d-210a-4114-aa2d-872fcfd0981b.png",
+            "description": "<p>UNVEILING INNOVATION IN WINTER SPORTSWEAR<\/p>",
+            "heading": "Elevate to New Heights with Comfort",
+            "sub_heading": "",
+            "button_text": "VIEW MORE",
+            "button_url": "shopify:\/\/collections",
             "button_style": "model-4",
             "overlay_color": "#000000",
-            "overlay_color_opacity": 0
+            "overlay_color_opacity": 40
           }
         },
-        "hero_slide_QxFkCK": {
+        "hero_slide_R8FT3n": {
           "type": "hero_slide",
           "settings": {
-            "description": "",
-            "heading": "Perfect Pairings for Diverse Styles",
-            "sub_heading": "Explore endless fashion possibilities effortlessly",
-            "button_text": "BUTTON LABEL",
+            "description": "<p>UNVEILING INNOVATION ON WINTER SPORTSWEAR<\/p>",
+            "heading": "Base Layers for the Toughest Climates",
+            "sub_heading": "Introducing our 2023\/24 Base Layers",
+            "button_text": "VIEW COLLECTION",
             "button_url": "",
             "button_style": "model-4",
             "overlay_color": "#000000",
-            "overlay_color_opacity": 0
+            "overlay_color_opacity": 40
           }
         }
       },
       "block_order": [
-        "hero_slide_cwJM4e",
-        "hero_slide_QxFkCK"
+        "hero_slide_rNdQzm",
+        "hero_slide_R8FT3n"
       ],
       "settings": {
         "section_height": 100,
@@ -48,110 +49,6 @@
         "body_color": "#FFFFFF",
         "heading_color": "#FFFFFF",
         "sub_heading_color": "#FFFFFF"
-      }
-    },
-    "home-featured-collections-2": {
-      "type": "featured-collections",
-      "blocks": {
-        "collection-1": {
-          "type": "collection",
-          "settings": {
-            "collection": "knitwear",
-            "enable_description": "enabled",
-            "collection_description_lenght": 40,
-            "enable_custom_description": "enabled",
-            "custom_description": "<p><strong>2024<\/strong><\/p>",
-            "text_position": "bottom-right",
-            "collection_button_text": "DISCOVER",
-            "button_style": "model-1",
-            "image_pos": "center"
-          }
-        },
-        "collection-2": {
-          "type": "collection",
-          "settings": {
-            "collection": "base-layers",
-            "enable_description": "enabled",
-            "collection_description_lenght": 40,
-            "enable_custom_description": "enabled",
-            "custom_description": "<p><strong>2024<\/strong><\/p>",
-            "text_position": "bottom-left",
-            "collection_button_text": "DISCOVER",
-            "button_style": "model-1",
-            "image_pos": "center"
-          }
-        }
-      },
-      "block_order": [
-        "collection-1",
-        "collection-2"
-      ],
-      "settings": {
-        "collection_height": 950,
-        "full_height_desktop": false,
-        "collection_height_mobile": 400,
-        "full_height_mobil": false,
-        "collection_header_color": "#ffffff",
-        "heading_font_size": "large",
-        "collection_description_color": "#ffffff",
-        "collection_per_line": 2,
-        "spacings": 0,
-        "full_width": true,
-        "tint_opacity": 50,
-        "tint_color": "#000000",
-        "section_bg": ""
-      }
-    },
-    "featured_collections_BB8TxF": {
-      "type": "featured-collections",
-      "blocks": {
-        "collection_jizNyY": {
-          "type": "collection",
-          "settings": {
-            "collection": "knitwear",
-            "enable_description": "enabled",
-            "collection_description_lenght": 40,
-            "enable_custom_description": "enabled",
-            "custom_description": "<p><strong>2024<\/strong><\/p>",
-            "text_position": "bottom-right",
-            "collection_button_text": "DISCOVER",
-            "button_style": "model-1",
-            "image_pos": "center"
-          }
-        },
-        "collection_KeYmaV": {
-          "type": "collection",
-          "settings": {
-            "collection": "base-layers",
-            "enable_description": "enabled",
-            "collection_description_lenght": 40,
-            "enable_custom_description": "enabled",
-            "custom_description": "<p><strong>2024<\/strong><\/p>",
-            "text_position": "bottom-left",
-            "collection_button_text": "DISCOVER",
-            "button_style": "model-1",
-            "image_pos": "center"
-          }
-        }
-      },
-      "block_order": [
-        "collection_jizNyY",
-        "collection_KeYmaV"
-      ],
-      "settings": {
-        "collection_height": 950,
-        "full_height_desktop": false,
-        "collection_height_mobile": 400,
-        "full_height_mobil": false,
-        "collection_header_color": "#ffffff",
-        "heading_font_size": "large",
-        "collection_description_color": "#ffffff",
-        "collection_per_line": 2,
-        "spacings": 0,
-        "full_width": true,
-        "tint_opacity": 50,
-        "tint_color": "#000000",
-        "section_bg": ""
       }
     },
     "home-collection-list": {
@@ -273,6 +170,58 @@
         "heading_font_size": "large",
         "collection_description_color": "#ffffff",
         "collection_per_line": 1,
+        "spacings": 0,
+        "full_width": true,
+        "tint_opacity": 50,
+        "tint_color": "#000000",
+        "section_bg": ""
+      }
+    },
+    "featured_collections_BB8TxF": {
+      "type": "featured-collections",
+      "blocks": {
+        "collection_jizNyY": {
+          "type": "collection",
+          "settings": {
+            "collection": "knitwear",
+            "enable_description": "enabled",
+            "collection_description_lenght": 40,
+            "enable_custom_description": "enabled",
+            "custom_description": "<p><strong>2024<\/strong><\/p>",
+            "text_position": "bottom-right",
+            "collection_button_text": "DISCOVER",
+            "button_style": "model-1",
+            "image_pos": "center"
+          }
+        },
+        "collection_KeYmaV": {
+          "type": "collection",
+          "settings": {
+            "collection": "base-layers",
+            "enable_description": "enabled",
+            "collection_description_lenght": 40,
+            "enable_custom_description": "enabled",
+            "custom_description": "<p><strong>2024<\/strong><\/p>",
+            "text_position": "bottom-left",
+            "collection_button_text": "DISCOVER",
+            "button_style": "model-1",
+            "image_pos": "center"
+          }
+        }
+      },
+      "block_order": [
+        "collection_jizNyY",
+        "collection_KeYmaV"
+      ],
+      "settings": {
+        "collection_height": 950,
+        "full_height_desktop": false,
+        "collection_height_mobile": 400,
+        "full_height_mobil": false,
+        "collection_header_color": "#ffffff",
+        "heading_font_size": "large",
+        "collection_description_color": "#ffffff",
+        "collection_per_line": 2,
         "spacings": 0,
         "full_width": true,
         "tint_opacity": 50,
@@ -703,12 +652,11 @@
     }
   },
   "order": [
-    "slideshow_photo_dTYTc3",
-    "home-featured-collections-2",
-    "featured_collections_BB8TxF",
+    "slideshow_hDBweA",
     "home-collection-list",
     "home-collection-showcase",
     "home-featured-collections",
+    "featured_collections_BB8TxF",
     "home-spacer-1",
     "home-spacer-2",
     "home-shop-the-look",
