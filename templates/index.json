@@ -708,6 +708,20 @@
         "background_color": "linear-gradient(180deg, rgba(255, 255, 255, 1) 100%, rgba(255, 255, 255, 1) 100%)",
         "content_color": "#000000"
       }
+    },
+    "countdown_bar_cGeVw7": {
+      "type": "countdown-bar",
+      "settings": {
+        "title": "Winter Sale",
+        "sub_title": "Spend 100$ and get 30% of your entire order!",
+        "year": 2024,
+        "month": "4",
+        "day": "1",
+        "hour": 1,
+        "minute": 1,
+        "text_color": "#FFFFFF",
+        "background": "linear-gradient(180deg, rgba(0, 0, 0, 1), rgba(0, 0, 0, 1) 100%)"
+      }
     }
   },
   "order": [
@@ -729,6 +743,7 @@
     "home-spacer-4",
     "home-multiple-columns",
     "home-banner",
-    "home-multiple-columns-2"
+    "home-multiple-columns-2",
+    "countdown_bar_cGeVw7"
   ]
 }

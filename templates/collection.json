@@ -14,7 +14,7 @@
         "main"
       ],
       "settings": {
-        "section_height": 400,
+        "section_height": 600,
         "section_height_mobile": 200,
         "heading_color": "#ffffff",
         "heading_font_size": "large",
