@@ -462,9 +462,9 @@
       ],
       "settings": {
         "image_size": 50,
-        "row_gap": 16,
-        "max_width": 100,
-        "text_width": 100,
+        "row_gap": 48,
+        "max_width": 82,
+        "text_width": 43,
         "heading_font_size": "large",
         "image_position": "image-on-right",
         "text_align": "text-left",
