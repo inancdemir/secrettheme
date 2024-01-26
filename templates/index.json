@@ -1,55 +1,53 @@
 {
   "sections": {
-    "home-slider": {
-      "type": "slideshow",
+    "slideshow_photo_dTYTc3": {
+      "type": "slideshow-photo",
       "blocks": {
-        "slide-1": {
+        "hero_slide_cwJM4e": {
           "type": "hero_slide",
           "settings": {
-            "slide_bg": "shopify:\/\/shop_images\/carousel-hero_1e9d614d-210a-4114-aa2d-872fcfd0981b.png",
-            "description": "<p>UNVEILING INNOVATION IN WINTER SPORTSWEAR<\/p>",
-            "heading": "Elevate to New Heights with Comfort",
-            "sub_heading": "",
-            "button_text": "VIEW MORE",
-            "button_url": "shopify:\/\/collections",
+            "description": "",
+            "heading": "Embrace the Season with Style",
+            "sub_heading": "Elevate your fall\/winter look effortlessly",
+            "button_text": "BUTTON LABEL",
+            "button_url": "",
             "button_style": "model-4",
             "overlay_color": "#000000",
-            "overlay_color_opacity": 40
+            "overlay_color_opacity": 0
           }
         },
-        "slide-2": {
+        "hero_slide_QxFkCK": {
           "type": "hero_slide",
           "settings": {
-            "slide_bg": "shopify:\/\/shop_images\/iamsose7en_create_a_photo_of_a_woman_wearing_the_rain_wear_and__c86186aa-3a1c-4227-81d9-f511af6af34e.png",
-            "description": "<p>UNVEILING INNOVATION ON WINTER SPORTSWEAR<\/p>",
-            "heading": "Base Layers for the Toughest Climates",
-            "sub_heading": "Introducing our 2023\/24 Base Layers",
-            "button_text": "VIEW COLLECTION",
-            "button_url": "shopify:\/\/collections\/base-layers",
+            "description": "<p>Write text to emphasize your story<\/p>",
+            "heading": "Promote your story here!",
+            "sub_heading": "Add subheading",
+            "button_text": "BUTTON LABEL",
+            "button_url": "",
             "button_style": "model-4",
             "overlay_color": "#000000",
-            "overlay_color_opacity": 40
+            "overlay_color_opacity": 0
           }
         }
       },
       "block_order": [
-        "slide-1",
-        "slide-2"
+        "hero_slide_cwJM4e",
+        "hero_slide_QxFkCK"
       ],
       "settings": {
         "section_height": 100,
-        "section_width": 1190,
-        "text_position": "bottom-left",
-        "super": "",
-        "super_color": "#ffffff",
-        "super_opacity": 20,
+        "section_width": 1400,
+        "text_position": "bottom-center",
+        "super": "SUPER",
+        "super_color": "#FFFFFF",
+        "super_opacity": 40,
         "super_font_size": 20,
-        "super_gap": 430,
+        "super_gap": 300,
         "super_gap_mobile": 450,
         "gap_from_sides": 60,
-        "body_color": "#ffffff",
-        "heading_color": "#ffffff",
-        "sub_heading_color": "#ffffff"
+        "body_color": "#FFFFFF",
+        "heading_color": "#FFFFFF",
+        "sub_heading_color": "#FFFFFF"
       }
     },
     "home-collection-list": {
@@ -292,7 +290,6 @@
         "heading_font_size": "large",
         "sub-heading": "<p>Conquering the snow capped peaks in durability and style<\/p>",
         "sub_title_color": "#000000",
-        "shop_to_look_image": "shopify:\/\/shop_images\/cngrs_full-length_photo_of_two_brunette_woman_wearing_ski_jacke_781c9782-4f3c-49e5-9687-d7408e0845f1.png",
         "full_width": false
       }
     },
@@ -333,7 +330,6 @@
         "link"
       ],
       "settings": {
-        "image": "shopify:\/\/shop_images\/eco-conscious.png",
         "image_size": 50,
         "row_gap": 16,
         "max_width": 100,
@@ -378,7 +374,6 @@
         "link"
       ],
       "settings": {
-        "image": "shopify:\/\/shop_images\/comfort.png",
         "image_size": 50,
         "row_gap": 16,
         "max_width": 100,
@@ -415,70 +410,6 @@
         "show_date": true,
         "show_tags": true,
         "show_comments": true
-      }
-    },
-    "home-newsletter": {
-      "type": "newsletter",
-      "settings": {
-        "heading": "Stay Updated",
-        "subheading": "<p>Subscribe for the Latest in Fabric Innovation<\/p>",
-        "button": "Subscribe",
-        "footnote": "<p>Enter your email to receive our newsletter. You can unsubscribe anytime.<\/p>",
-        "select_spacing_between": 16,
-        "section_padding": 64,
-        "color": "#ffffff",
-        "button_style": "model-1",
-        "bg_color": "#000000"
-      }
-    },
-    "before_after_gallery_with_side_pm4Qew": {
-      "type": "before-after-gallery-with-side",
-      "blocks": {
-        "heading_tymqw8": {
-          "type": "heading",
-          "settings": {
-            "heading": "Seamless climate control"
-          }
-        },
-        "text_79r8dY": {
-          "type": "text",
-          "settings": {
-            "text": "<p>Our fabric technology redefines breathability, featuring micro-ventilation and moisture-wicking fibers that ensure a constant, comfortable airflow. This innovative textile adapts to your body's needs, providing a cool, airy sensation on hot days, and a warm, insulating effect when the temperature drops, maintaining a perfect balance for ultimate comfort<\/p>"
-          }
-        },
-        "button_RgYhnM": {
-          "type": "button",
-          "settings": {
-            "button_label": "SHOP NOW",
-            "button_link": "",
-            "button_style": "model-2"
-          }
-        }
-      },
-      "block_order": [
-        "heading_tymqw8",
-        "text_79r8dY",
-        "button_RgYhnM"
-      ],
-      "settings": {
-        "image_size": 50,
-        "row_gap": 16,
-        "max_width": 100,
-        "text_width": 32,
-        "heading_font_size": "large",
-        "image_position": "image-on-right",
-        "text_align": "text-left",
-        "section_bg": "",
-        "section_heading": "#000000",
-        "section_text": "#000000",
-        "use_default_colors": false,
-        "full_width": true,
-        "sectio-height": "600",
-        "sectio-height_mobile": "400",
-        "image_fit": "contain",
-        "image_pos": "center",
-        "section_padding_top": 50,
-        "section_padding_bottom": 50
       }
     },
     "home-testimonial-slider": {
@@ -545,7 +476,6 @@
             "title_size": "small",
             "block_content": "",
             "items_align": "center",
-            "cover_image": "shopify:\/\/shop_images\/single-image.png",
             "cover_image_force": true
           }
         },
@@ -559,7 +489,6 @@
             "title_size": "small",
             "block_content": "",
             "items_align": "center",
-            "cover_image": "shopify:\/\/shop_images\/single-image2.png",
             "cover_image_force": true
           }
         }
@@ -629,8 +558,21 @@
         "sub_heading_line_height": 30,
         "gap_from_sides": 60,
         "overlay_color": "#000000",
-        "overlay_color_opacity": 40,
-        "background_image": "shopify:\/\/shop_images\/collection-fullsize_339a71fa-e527-4277-bb55-c620778a944c.png"
+        "overlay_color_opacity": 40
+      }
+    },
+    "home-newsletter": {
+      "type": "newsletter",
+      "settings": {
+        "heading": "Stay Updated",
+        "subheading": "<p>Subscribe for the Latest in Fabric Innovation<\/p>",
+        "button": "Subscribe",
+        "footnote": "<p>Enter your email to receive our newsletter. You can unsubscribe anytime.<\/p>",
+        "select_spacing_between": 16,
+        "section_padding": 64,
+        "color": "#ffffff",
+        "button_style": "model-1",
+        "bg_color": "#000000"
       }
     },
     "home-multiple-columns-2": {
@@ -709,7 +651,7 @@
     }
   },
   "order": [
-    "home-slider",
+    "slideshow_photo_dTYTc3",
     "home-collection-list",
     "home-collection-showcase",
     "home-featured-collections",
@@ -721,12 +663,11 @@
     "home-image-with-text",
     "home-image-with-text-2",
     "home-featured-posts",
-    "home-newsletter",
-    "before_after_gallery_with_side_pm4Qew",
     "home-testimonial-slider",
     "home-spacer-4",
     "home-multiple-columns",
     "home-banner",
+    "home-newsletter",
     "home-multiple-columns-2"
   ]
 }
