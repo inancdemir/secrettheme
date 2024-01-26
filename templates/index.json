@@ -20,6 +20,7 @@
         "hero_slide_R8FT3n": {
           "type": "hero_slide",
           "settings": {
+            "slide_bg": "shopify:\/\/shop_images\/iamsose7en_create_a_photo_of_a_woman_wearing_the_rain_wear_and__c86186aa-3a1c-4227-81d9-f511af6af34e.png",
             "description": "<p>UNVEILING INNOVATION ON WINTER SPORTSWEAR<\/p>",
             "heading": "Base Layers for the Toughest Climates",
             "sub_heading": "Introducing our 2023\/24 Base Layers",
@@ -37,9 +38,9 @@
       ],
       "settings": {
         "section_height": 100,
-        "section_width": 1400,
-        "text_position": "bottom-center",
-        "super": "SUPER",
+        "section_width": 1190,
+        "text_position": "bottom-left",
+        "super": "",
         "super_color": "#FFFFFF",
         "super_opacity": 40,
         "super_font_size": 20,
@@ -177,6 +178,13 @@
         "section_bg": ""
       }
     },
+    "home-spacer-1": {
+      "type": "spacer",
+      "settings": {
+        "desktop_space": "128",
+        "mobile_space": "64"
+      }
+    },
     "featured_collections_BB8TxF": {
       "type": "featured-collections",
       "blocks": {
@@ -222,18 +230,11 @@
         "heading_font_size": "large",
         "collection_description_color": "#ffffff",
         "collection_per_line": 2,
-        "spacings": 0,
-        "full_width": true,
+        "spacings": 16,
+        "full_width": false,
         "tint_opacity": 50,
         "tint_color": "#000000",
         "section_bg": ""
-      }
-    },
-    "home-spacer-1": {
-      "type": "spacer",
-      "settings": {
-        "desktop_space": "128",
-        "mobile_space": "64"
       }
     },
     "home-spacer-2": {
@@ -656,8 +657,8 @@
     "home-collection-list",
     "home-collection-showcase",
     "home-featured-collections",
-    "featured_collections_BB8TxF",
     "home-spacer-1",
+    "featured_collections_BB8TxF",
     "home-spacer-2",
     "home-shop-the-look",
     "home-spacer-3",
