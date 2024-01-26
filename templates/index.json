@@ -41,15 +41,15 @@
         "section_width": 1190,
         "text_position": "bottom-left",
         "super": "",
-        "super_color": "#FFFFFF",
+        "super_color": "#ffffff",
         "super_opacity": 40,
         "super_font_size": 20,
         "super_gap": 300,
         "super_gap_mobile": 450,
         "gap_from_sides": 60,
-        "body_color": "#FFFFFF",
-        "heading_color": "#FFFFFF",
-        "sub_heading_color": "#FFFFFF"
+        "body_color": "#ffffff",
+        "heading_color": "#ffffff",
+        "sub_heading_color": "#ffffff"
       }
     },
     "home-collection-list": {
@@ -656,6 +656,56 @@
         "background_color": "linear-gradient(180deg, rgba(255, 255, 255, 1) 100%, rgba(255, 255, 255, 1) 100%)",
         "content_color": "#000000"
       }
+    },
+    "before_after_gallery_with_side_aLMF3g": {
+      "type": "before-after-gallery-with-side",
+      "blocks": {
+        "heading_WqKAzq": {
+          "type": "heading",
+          "settings": {
+            "heading": "Seamless climate control"
+          }
+        },
+        "text_FeiVhF": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Our fabric technology redefines breathability, featuring micro-ventilation and moisture-wicking fibers that ensure a constant, comfortable airflow. This innovative textile adapts to your body's needs, providing a cool, airy sensation on hot days, and a warm, insulating effect when the temperature drops, maintaining a perfect balance for ultimate comfort<\/p>"
+          }
+        },
+        "button_Vijca9": {
+          "type": "button",
+          "settings": {
+            "button_label": "SHOP NOW",
+            "button_link": "shopify:\/\/collections\/new-commers",
+            "button_style": "model-2"
+          }
+        }
+      },
+      "block_order": [
+        "heading_WqKAzq",
+        "text_FeiVhF",
+        "button_Vijca9"
+      ],
+      "settings": {
+        "image_size": 50,
+        "row_gap": 16,
+        "max_width": 100,
+        "text_width": 32,
+        "heading_font_size": "large",
+        "image_position": "image-on-right",
+        "text_align": "text-left",
+        "section_bg": "",
+        "section_heading": "#000000",
+        "section_text": "#000000",
+        "use_default_colors": false,
+        "full_width": true,
+        "sectio-height": "600",
+        "sectio-height_mobile": "400",
+        "image_fit": "contain",
+        "image_pos": "center",
+        "section_padding_top": 50,
+        "section_padding_bottom": 50
+      }
     }
   },
   "order": [
@@ -676,6 +726,7 @@
     "home-multiple-columns",
     "home-banner",
     "home-newsletter",
-    "home-multiple-columns-2"
+    "home-multiple-columns-2",
+    "before_after_gallery_with_side_aLMF3g"
   ]
 }
