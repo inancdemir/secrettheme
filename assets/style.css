@@ -1802,7 +1802,6 @@ div#predictive-search .search-result-right {
    }
 }
 div#predictive-search .search-result-right li a {
-    display: flex;
     align-items: center;
     column-gap: 10px;
 }
