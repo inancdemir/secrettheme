@@ -217,6 +217,10 @@
     }
   }
 
+  .product-list-sell-with {
+    display: flex;
+    flex-direction: row;
+  }
   button.hide {
     display: none !important;
   }
@@ -337,7 +341,7 @@
               </li>
             {% when 'video' %}
               <li class="image-list-item">
-                {{ media | video_tag: controls: true }}
+                {{ media | video_tag: controls: true, image_size: '700x' }}
               </li>
             {% when 'model' %}
               <li class="image-list-item">
@@ -435,102 +439,136 @@
               {% assign bar_static_5 = product_metafield.bar_static_5 %}
               {% assign bar_static_5_pasive = 10 | minus: bar_static_5 %}
               {% if block.settings.subtitle_1_active %}
-                <div>
-                  <ul class="bar-static">
-                    {% for i in (1..bar_static_1) %}
-                      <li class="filled"></li>
-                    {% endfor %}
-                    {% for i in (1..bar_static_1_pasive) %}
-                      <li></li>
-                    {% endfor %}
-                  </ul>
-                  <span class="callout">{{ block.settings.subtitle_1 }}</span>
-                </div>
+                {% if bar_static_1 %}
+                  <div>
+                    <ul class="bar-static">
+                      {% for i in (1..bar_static_1) %}
+                        <li class="filled"></li>
+                      {% endfor %}
+                      {% for i in (1..bar_static_1_pasive) %}
+                        <li></li>
+                      {% endfor %}
+                    </ul>
+                    <span class="callout">{{ block.settings.subtitle_1 }}</span>
+                  </div>
+                {% endif %}
+                
               {% endif %}
-
               {% if block.settings.subtitle_2_active %}
-                <div>
-                  <ul class="bar-static">
-                    {% for i in (1..bar_static_2) %}
-                      <li class="filled"></li>
-                    {% endfor %}
-                    {% for i in (1..bar_static_2_pasive) %}
-                      <li></li>
-                    {% endfor %}
-                  </ul>
-                  <span class="callout">{{ block.settings.subtitle_2 }}</span>
-                </div>
+                {% if bar_static_2 %}
+                  <div>
+                    <ul class="bar-static">
+                      {% for i in (1..bar_static_2) %}
+                        <li class="filled"></li>
+                      {% endfor %}
+                      {% for i in (1..bar_static_2_pasive) %}
+                        <li></li>
+                      {% endfor %}
+                    </ul>
+                    <span class="callout">{{ block.settings.subtitle_2 }}</span>
+                  </div>
+                {% endif %}
               {% endif %}
 
               {% if block.settings.subtitle_3_active %}
-                <div>
-                  <ul class="bar-static">
-                    {% for i in (1..bar_static_3) %}
-                      <li class="filled"></li>
-                    {% endfor %}
-                    {% for i in (1..bar_static_3_pasive) %}
-                      <li></li>
-                    {% endfor %}
-                  </ul>
-                  <span class="callout">{{ block.settings.subtitle_3 }}</span>
-                </div>
+                {% if bar_static_3 %}
+                  <div>
+                    <ul class="bar-static">
+                      {% for i in (1..bar_static_3) %}
+                        <li class="filled"></li>
+                      {% endfor %}
+                      {% for i in (1..bar_static_3_pasive) %}
+                        <li></li>
+                      {% endfor %}
+                    </ul>
+                    <span class="callout">{{ block.settings.subtitle_3 }}</span>
+                  </div>
+                {% endif %}
               {% endif %}
 
               {% if block.settings.subtitle_4_active %}
-                <div>
-                  <ul class="bar-static">
-                    {% for i in (1..bar_static_4) %}
-                      <li class="filled"></li>
-                    {% endfor %}
-                    {% for i in (1..bar_static_4_pasive) %}
-                      <li></li>
-                    {% endfor %}
-                  </ul>
-                  <span class="callout">{{ block.settings.subtitle_4 }}</span>
-                </div>
+                {% if bar_static_4 %}
+                  <div>
+                    <ul class="bar-static">
+                      {% for i in (1..bar_static_4) %}
+                        <li class="filled"></li>
+                      {% endfor %}
+                      {% for i in (1..bar_static_4_pasive) %}
+                        <li></li>
+                      {% endfor %}
+                    </ul>
+                    <span class="callout">{{ block.settings.subtitle_4 }}</span>
+                  </div>
+                {% endif %}                
               {% endif %}
 
               {% if block.settings.subtitle_5_active %}
-                <div>
-                  <ul class="bar-static">
-                    {% for i in (1..bar_static_5) %}
-                      <li class="filled"></li>
-                    {% endfor %}
-                    {% for i in (1..bar_static_5_pasive) %}
-                      <li></li>
-                    {% endfor %}
-                  </ul>
-                  <span class="callout">{{ block.settings.subtitle_5 }}</span>
+                {% if bar_static_5 %}
+                  <div>
+                    <ul class="bar-static">
+                      {% for i in (1..bar_static_5) %}
+                        <li class="filled"></li>
+                      {% endfor %}
+                      {% for i in (1..bar_static_5_pasive) %}
+                        <li></li>
+                      {% endfor %}
+                    </ul>
+                    <span class="callout">{{ block.settings.subtitle_5 }}</span>
+                  </div>
+                {% endif %}
+              {% endif %}
+            {%- when 'sell_with' -%}
+              <div class="product-list-sell-with full-on-mobile column-{{ block.settings.item_per_row }} column-mobile-{{ block.settings.item_per_row_mobile }} image-size-{{- block.settings.image_size }} image-fit-{{- block.settings.image_fit }} image-pos-{{- block.settings.image_pos -}}">
+                  {% if block.settings.product_list != empty %}
+                      {% for product in block.settings.product_list %}
+                          {% render 'product-item', product: product %}
+                      {% endfor %} 
+                  {% else %}            
+                      {% for product_number in (1..block.settings.item_per_row) %}
+                          <div class="product-list-item">
+                              <div class="product-image">
+                                {{ 'product-' | append: product_number | placeholder_svg_tag: 'demo-image slide-image' }}
+                              </div>
+                              <div class="details">
+                                <span class="h4 small">Select Product To Show</span>
+                                <div class="price">
+                                    <span class="original-price">$100</span>
+                                    <span class="discounted-price">$90</span>
+                                </div>    
+                              </div>                    
+                          </div>
+                      {% endfor %}
+                  {% endif %}
+              </div>
+            </div>
+            {%- when 'badges' -%}
+              {% if product.tags contains second_badge or product.compare_at_price_max > product.price or product.tags contains third_badge %}
+                <div class="badges">
+                  {% if settings.second_badge_on %}
+                    {% assign second_badge = settings.second_badge_tag %}
+                    {% if product.tags contains second_badge %}
+                      <div class="badge model-2">
+                        {{ settings.second_badge_text }}
+                      </div>
+                    {% endif %}
+                  {% endif %}
+                  {% if settings.sale_badge_on %}
+                    {% if product.compare_at_price_max > product.price %}
+                      <div class="badge model-1">
+                        {{ settings.sale_badge_text }}
+                      </div>
+                    {% endif %}
+                  {% endif %}
+                  {% if settings.third_badge_on %}
+                    {% assign third_badge = settings.third_badge_tag %}
+                    {% if product.tags contains third_badge %}
+                      <div class="badge model-3">
+                        {{ settings.third_badge_text }}
+                      </div>
+                    {% endif %}
+                  {% endif %}
                 </div>
               {% endif %}
-
-            {%- when 'badges' -%}
-              <div class="badges">
-                {% if settings.second_badge_on %}
-                  {% assign second_badge = settings.second_badge_tag %}
-                  {% if product.tags contains second_badge %}
-                    <div class="badge model-2">
-                      {{ settings.second_badge_text }}
-                    </div>
-                  {% endif %}
-                {% endif %}
-                {% if settings.sale_badge_on %}
-                  {% if product.compare_at_price_max > product.price %}
-                    <div class="badge model-1">
-                      {{ settings.sale_badge_text }}
-                    </div>
-                  {% endif %}
-                {% endif %}
-                {% if settings.third_badge_on %}
-                  {% assign third_badge = settings.third_badge_tag %}
-                  {% if product.tags contains third_badge %}
-                    <div class="badge model-3">
-                      {{ settings.third_badge_text }}
-                    </div>
-                  {% endif %}
-                {% endif %}
-              </div>
-
             {%- when 'sku' -%}
               {%- assign current_variant = product.selected_or_first_available_variant -%}
               <span>{{ current_variant.sku }}</span>
@@ -3067,6 +3105,123 @@
           ],
           "label": "t:sections.all.select_icon",
           "default": "award"
+        }
+      ]
+    },
+    {
+      "type": "sell_with",
+      "name": "Sell with",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "select",
+          "id": "item_per_row",
+          "label": "t:sections.all.column_per_row",
+          "default": "2",
+          "options": [
+            {
+              "value": "1",
+              "label": "1"
+            },
+            {
+              "value": "2",
+              "label": "2"
+            }
+          ]
+        },
+        {
+          "type": "select",
+          "id": "item_per_row_mobile",
+          "label": "t:sections.product_grid.columns_mobile",
+          "default": "2",
+          "options": [
+            {
+              "value": "1",
+              "label": "1"
+            },
+            {
+              "value": "2",
+              "label": "2"
+            }
+          ]
+        },
+        {
+          "type": "select",
+          "id": "image_size",
+          "label": "t:sections.all.img_size",
+          "default": "two-three",
+          "options": [
+            {
+              "value": "one-one",
+              "label": "Square (1:1)"
+            },
+            {
+              "value": "three-two",
+              "label": "Landscape (3:2)"
+            },
+            {
+              "value": "fout-three",
+              "label": "Landscape (4:3)"
+            },
+            {
+              "value": "sixteen-nine",
+              "label": "Landscape (16:9)"
+            },
+            {
+              "value": "two-three",
+              "label": "Portrait (2:3)"
+            },
+            {
+              "value": "three-four",
+              "label": "Portrait (3:4)"
+            },
+            {
+              "value": "nine-sixteen",
+              "label": "Portrait (9:16)"
+            }
+          ]
+        },
+        {
+          "type": "select",
+          "id": "image_fit",
+          "label": "t:sections.all.image_fit",
+          "default": "contain",
+          "options": [
+            {
+              "value": "contain",
+              "label": "t:sections.all.image_contain"
+            },
+            {
+              "value": "cover",
+              "label": "t:sections.all.image_cover"
+            }
+          ]
+        },
+        {
+          "type": "select",
+          "id": "image_pos",
+          "label": "t:sections.all.image_position",
+          "default": "center",
+          "info": "t:sections.all.image_position_info",
+          "options": [
+            {
+              "value": "top",
+              "label": "t:sections.all.image_pos_top"
+            },
+            {
+              "value": "center",
+              "label": "t:sections.all.image_pos_center"
+            },
+            {
+              "value": "bottom",
+              "label": "t:sections.all.image_pos_bot"
+            }
+          ]
+        },
+        {
+          "type": "product_list",
+          "id": "product_list",
+          "label": "t:sections.featured_products.select_products"
         }
       ]
     },

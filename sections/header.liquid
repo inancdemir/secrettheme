@@ -153,14 +153,14 @@
                               <div class="menu-promo">
                                 <a href="{{ block.settings.promo_link_first }}">
                                   {{ block.settings.image_promo_first | image_url: width: 500 | image_tag: loading: 'lazy' }}
-                                  <h3 class="small">{{ block.settings.promo_text_first }}</h3>
+                                  <h4 class="medium">{{ block.settings.promo_text_first }}</h3>
                                 </a>
                               </div>
                               {% if block.settings.image_promo_second %}
                                 <div class="menu-promo">
                                   <a href="{{ block.settings.promo_link_second }}">
                                     {{ block.settings.image_promo_second | image_url: width: 500 | image_tag: loading: 'lazy' }}
-                                    <h3 class="small">{{ block.settings.promo_text_second }}</h3>
+                                    <h4 class="medium">{{ block.settings.promo_text_second }}</h3>
                                   </a>
                                 </div>
                               {% endif %}

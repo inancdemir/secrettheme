@@ -1303,7 +1303,7 @@ select#sort-by {
    }
     .site-header .main-navigation .main-menu ul a {
         font-size: 14px;
-        font-weight: 700;
+        font-weight: 500;
         line-height: 17px;
         letter-spacing: 0em;
         padding: 16px 0;
@@ -1405,9 +1405,8 @@ select#sort-by {
    }
     .site-header .main-navigation.normal-nav .main-menu ul li > a {
         text-decoration: none;
-        font-weight: 700;
+        font-weight: 500;
         letter-spacing: 0em;
-        text-align: center;
         position: relative;
         font-size: calc(var(--font-menu-size) * 14px);
         line-height: calc(var(--font-menu-size) * 17px);
@@ -1603,16 +1602,15 @@ li .mega-menu-wrap .sub-menu-side ul.child-level-one ul.child-level-two {
     display: block !important;
     position: relative;
     background: transparent;
-    margin: 32px 0 0 0;
+    margin: 10px 0 0 0;
     padding: 0;
 }
 li .mega-menu-wrap .sub-menu-side ul.child-level-one ul.child-level-two li a {
     margin: 0;
-    padding: 0;
+    padding: 5px 0;
 }
 li .mega-menu-wrap .image-link-side {
-    min-width: 25%;
-    max-width: 40%;
+    flex: 0 0 640px;
     display: flex;
     flex-direction: row;
     column-gap: 16px;
@@ -1629,7 +1627,7 @@ li .mega-menu-wrap .image-link-side .menu-promo img {
     height: 100%;
     object-fit: cover;
 }
-li .mega-menu-wrap .image-link-side .menu-promo h3 {
+li .mega-menu-wrap .image-link-side .menu-promo h4 {
     font-size: calc(var(--font-menu-size) * 32px);
     line-height: calc(var(--font-menu-size) * 39px);
     font-weight: 700;
