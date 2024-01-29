@@ -420,7 +420,7 @@
         "section_padding_top": 25,
         "section_padding_bottom": 25,
         "ver_align": "center",
-        "full_width": true,
+        "full_width": false,
         "background_color": "linear-gradient(180deg, rgba(184, 201, 214, 1), rgba(184, 201, 214, 1) 100%)",
         "content_color": "#FFFFFF",
         "animation_onof": false
