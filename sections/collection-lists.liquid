@@ -97,7 +97,7 @@
 {% unless section.settings.full_width %}
 <div class="wide-width">
 {% endunless %}
-<div class="front-collection-wrap section-{{ section.id }} animation-test">
+<div class="front-collection-wrap section-{{ section.id }}  {% unless section.settings.animation_onof %}animation-fadeIn{% endunless %}">
   
   {% if section.settings.heading %}
     <h2 class="{{ section.settings.heading_font_size }}">{{ section.settings.heading }}</h2>
@@ -448,6 +448,12 @@
       "unit": "px",
       "label": "t:sections.all.section_padding",
       "default": 30
+    },
+    {
+      "type": "checkbox",
+      "id": "animation_onof",
+      "label": "No animation",
+      "default": false
     },
     {
       "type": "checkbox",

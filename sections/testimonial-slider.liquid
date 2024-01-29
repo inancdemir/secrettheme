@@ -62,7 +62,7 @@
 <script src="{{ 'flickity.js' | asset_url }}" defer></script>      
 
 
-<div class="section-{{ section.id }} testimonial-slider animation-test">
+<div class="section-{{ section.id }} testimonial-slider  {% unless section.settings.animation_onof %}animation-fadeIn{% endunless %}">
     <h2 class="medium">{{ section.settings.heading }}</h2>
     
     <div class="quote-carousel-{{- section.id -}}">
@@ -160,6 +160,12 @@
       "id": "text_color",
       "label": "t:sections.all.color",
       "default": "#FFFFFF"
+    },
+    {
+      "type": "checkbox",
+      "id": "animation_onof",
+      "label": "No animation",
+      "default": false
     }
   ],
   "blocks": [

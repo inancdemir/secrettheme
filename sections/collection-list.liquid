@@ -72,7 +72,7 @@
 {{ 'collection-list.css' | asset_url | stylesheet_tag }}
 <script src="{{ 'flickity.js' | asset_url }}" defer="defer"></script>
 <script src="{{ 'collection-list.js' | asset_url }}" defer="defer"></script>
-<div class="front-featured-product section-{{ section.id }} animation-test">
+<div class="front-featured-product section-{{ section.id }}  {% unless section.settings.animation_onof %}animation-fadeIn{% endunless %}">
   {% unless section.settings.full_width %}
     <div class="wide-width">
   {% endunless %}
@@ -386,6 +386,12 @@
       "type": "checkbox",
       "id": "use_default_colors",
       "label": "Use default colors",
+      "default": false
+    },
+    {
+      "type": "checkbox",
+      "id": "animation_onof",
+      "label": "No animation",
       "default": false
     },
     {

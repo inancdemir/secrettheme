@@ -355,7 +355,7 @@ input:checked + .slider:before {
 {%- endstyle -%}
 
 
-<div class="product-list section-{{ section.id }} animation-test">
+<div class="product-list section-{{ section.id }}  {% unless section.settings.animation_onof %}animation-fadeIn{% endunless %}">
   {% unless section.settings.full_width %}
   <div class="wide-width">
   {% endunless %}
@@ -585,6 +585,12 @@ input:checked + .slider:before {
       "unit": "px",
       "label": "Section Top and Bottom Margin",
       "default": 0
+    },
+    {
+      "type": "checkbox",
+      "id": "animation_onof",
+      "label": "No animation",
+      "default": false
     }
   ]
 }

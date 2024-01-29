@@ -12,7 +12,6 @@
 .section-{{ section.id }}.front-featured-product h2 {
   letter-spacing: 0em;
   margin: 0;
-  margin-left: 32px;
   color: {{ section.settings.title_color }};
 }
 
@@ -64,36 +63,29 @@
     object-fit: contain;
   }
 
-  .add-size-2 {
-    flex: 0 0 calc((calc((100% - calc({{ section.settings.product_gap }}px * calc({{ section.settings.item_per_row }} - 2))) / {{ section.settings.item_per_row }})) * 2) !important;
-  }
-  .add-size-3 {
-    flex: 0 0 calc((calc((100% - calc({{ section.settings.product_gap }}px * calc({{ section.settings.item_per_row }} - 3))) / {{ section.settings.item_per_row }})) * 3) !important;
-  }
-  .add-size-4 {
-    flex: 0 0 calc((calc((100% - calc({{ section.settings.product_gap }}px * calc({{ section.settings.item_per_row }} - 4))) / {{ section.settings.item_per_row }})) * 4) !important;
-  }
-  .add-size-5 {
-    flex: 0 0 calc((calc((100% - calc({{ section.settings.product_gap }}px * calc({{ section.settings.item_per_row }} - 5))) / {{ section.settings.item_per_row }})) * 5) !important;
-  }
 }
 
 {%- endstyle -%}
-<div class="front-featured-product product-recommendations section-{{ section.id }}  animation-test" data-url="{{ routes.product_recommendations_url }}?section_id={{ section.id }}&product_id={{ product.id }}&limit={{- section.settings.item_per_row -}}&intent=related">
+{% unless section.settings.full_width %}
+<div class="wide-width">
+{% endunless %}
+<div class="front-featured-product product-recommendations section-{{ section.id }}   {% unless section.settings.animation_onof %}animation-fadeIn{% endunless %}" data-url="{{ routes.product_recommendations_url }}?section_id={{ section.id }}&product_id={{ product.id }}&limit={{- section.settings.item_per_row -}}&intent=related">
     {%- if recommendations.performed? and recommendations.products_count > 0 -%}
         {% if recommendations.intent == 'related' %}
-          <h2>You may also like</h2>
+          <h2 class="{{ section.settings.heading_font_size }} space-from-edges">You may also like</h2>
         {% elsif recommendations.intent == 'complementary' %}
-          <h2>Pair it with</h2>
+          <h2 class="{{ section.settings.heading_font_size }} space-from-edges">Pair it with</h2>
     {% endif %}
     <div class="product-list full-on-mobile column-{{ section.settings.item_per_row }} column-mobile-{{ section.settings.item_per_row_mobile }} image-size-{{- section.settings.image_size }} image-fit-{{- section.settings.image_fit }} image-pos-{{- section.settings.image_pos -}}">
-        {%- for product in recommendations.products -%}
+        {%- for product in recommendations.products limit:section.settings.item_per_row -%}
             {% render 'product-item', product: product %}
         {% endfor %}        
     </div>
     {%- endif -%}
 </div>
-
+{% unless section.settings.full_width %}
+</div>
+{% endunless %}
 
   {% javascript %}
     const handleIntersection = (entries, observer) => {
@@ -132,6 +124,26 @@
       "unit": "itm",
       "label": "t:sections.product_grid.columns_desktop",
       "default": 3
+    },
+    {
+      "type": "select",
+      "id": "heading_font_size",
+      "options": [
+        {
+          "value": "small",
+          "label": "t:sections.all.small"
+        },
+        {
+          "value": "medium",
+          "label": "t:sections.all.medium"
+        },
+        {
+          "value": "large",
+          "label": "t:sections.all.large"
+        }
+      ],
+      "label": "t:sections.all.heading_font_size",
+      "default": "medium"
     },
     {
       "type": "range",
@@ -243,6 +255,18 @@
       "unit": "px",
       "label": "t:sections.all.section_padding",
       "default": 30
+    },
+    {
+      "type": "checkbox",
+      "id": "animation_onof",
+      "label": "No animation",
+      "default": false
+    },
+    {
+      "type": "checkbox",
+      "id": "full_width",
+      "label": "t:sections.all.make_section_full",
+      "default": true
     }
   ],
   "presets": [

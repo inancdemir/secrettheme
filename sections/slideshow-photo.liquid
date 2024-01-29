@@ -381,7 +381,7 @@
 {%- endstyle -%}
 {{ 'flickity.css' | asset_url | stylesheet_tag }}
 <script src="{{ 'flickity.js' | asset_url }}" defer></script>
-<div class=" section-{{ section.id }} hero-slideshow animation-test">
+<div class=" section-{{ section.id }} hero-slideshow  {% unless section.settings.animation_onof %}animation-fadeIn{% endunless %}">
     <div class="hero-carousel-{{- section.id -}}">
       <h1 class="super">{{ section.settings.super }}</h1>
       {%- for block in section.blocks -%}
@@ -598,6 +598,12 @@
       "id": "sub_heading_color",
       "label": "t:sections.all.sub_heading",
       "default": "#FFFFFF"
+    },
+    {
+      "type": "checkbox",
+      "id": "animation_onof",
+      "label": "No animation",
+      "default": false
     }
   ],
   "blocks": [

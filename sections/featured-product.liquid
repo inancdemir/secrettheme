@@ -12,14 +12,11 @@
 .section-{{ section.id }}.front-featured-product h2 {
   letter-spacing: 0em;
   margin: 0;
-  margin-left: 32px;
   color: {{ section.settings.title_color }};
 }
 .section-{{ section.id }}.front-featured-product .description-view-all {
   display: flex;
   justify-content: space-between;
-  margin-left: 32px;
-  margin-right: 32px;
 }
 .section-{{ section.id }}.front-featured-product .description-view-all a {
   font-size: 16px;
@@ -29,15 +26,7 @@
   text-align: right;
   color: #000;
 }
-.section-{{ section.id }}.front-featured-product .description-view-all h3 {
-  font-size: 24px;
-  font-weight: 700;
-  line-height: 29px;
-  letter-spacing: 0em;
-  text-align: left;
-  margin: 0;
-  display: flex;
-}
+
 .section-{{ section.id }}.front-featured-product .product-list {
   display: flex; 
   flex-direction: row;
@@ -66,11 +55,11 @@
 {% unless section.settings.full_width %}
 <div class="wide-width">
 {% endunless %}
-  <div class="front-featured-product section-{{ section.id }} animation-test">
+  <div class="front-featured-product section-{{ section.id }}  {% unless section.settings.animation_onof %}animation-fadeIn{% endunless %}">
     {% if section.settings.heading != blank %}
-        <h2>{{ section.settings.heading }}</h2>
+      <h2 class="{{ section.settings.heading_font_size }} space-from-edges">{{ section.settings.heading }}</h2>
     {% endif %}
-    <div class="description-view-all">
+    <div class="description-view-all space-from-edges">
         {% if section.settings.sub-heading != blank %}
             <p class="subtitle">{{ section.settings.sub-heading }}</p>
         {% endif %}
@@ -117,6 +106,26 @@
       "id": "title_color",
       "label": "t:sections.all.heading",
       "default": "#000000"
+    },
+    {
+      "type": "select",
+      "id": "heading_font_size",
+      "options": [
+        {
+          "value": "small",
+          "label": "t:sections.all.small"
+        },
+        {
+          "value": "medium",
+          "label": "t:sections.all.medium"
+        },
+        {
+          "value": "large",
+          "label": "t:sections.all.large"
+        }
+      ],
+      "label": "t:sections.all.heading_font_size",
+      "default": "large"
     },
     {
       "type": "text",
@@ -264,6 +273,12 @@
       "unit": "px",
       "label": "t:sections.all.section_padding",
       "default": 30
+    },
+    {
+      "type": "checkbox",
+      "id": "animation_onof",
+      "label": "No animation",
+      "default": false
     },
     {
       "type": "checkbox",

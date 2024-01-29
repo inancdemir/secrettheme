@@ -1,6 +1,6 @@
 {{ 'article.css' | asset_url | stylesheet_tag }}
 {{ 'socials.css' | asset_url | stylesheet_tag }}
-<article class="single-article animation-test">
+<article class="single-article  {% unless section.settings.animation_onof %}animation-fadeIn{% endunless %}">
   {%- if section.settings.show_breadcrumb -%}
     {%- render 'breadcrumb' -%}
   {%- endif -%}
@@ -178,6 +178,12 @@
       "id": "show_comments",
       "label": "Show comments",
       "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "animation_onof",
+      "label": "No animation",
+      "default": false
     }
   ]
 }

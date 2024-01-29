@@ -25,7 +25,7 @@
   }
 }
 {%- endstyle -%}
-<footer class="footer animation-test">
+<footer class="footer  {% unless section.settings.animation_onof %}animation-fadeIn{% endunless %}">
   {% unless section.settings.full_width %}
   <div class="wide-width">
   {% endunless %}
@@ -179,6 +179,12 @@
       "label": "t:sections.footer.payment_icons",
       "info": "info text",
       "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "animation_onof",
+      "label": "No animation",
+      "default": false
     }
   ],
   "max_blocks": 5,

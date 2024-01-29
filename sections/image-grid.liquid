@@ -42,7 +42,7 @@ column-gap: 32px;
   }
 }
 {%- endstyle -%}
-<div class="image-grid section-{{ section.id }} animation-test">
+<div class="image-grid section-{{ section.id }}  {% unless section.settings.animation_onof %}animation-fadeIn{% endunless %}">
     {% unless section.settings.full_width %}
     <div class="wide-width">
     {% endunless %}
@@ -116,6 +116,12 @@ column-gap: 32px;
       "unit": "px",
       "label": "t:sections.all.section_padding",
       "default": 30
+    },
+    {
+      "type": "checkbox",
+      "id": "animation_onof",
+      "label": "No animation",
+      "default": false
     }
   ],
   "blocks": [

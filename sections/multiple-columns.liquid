@@ -96,7 +96,7 @@
 }
 {%- endstyle -%}
 {{ 'multiple-columns.css' | asset_url | stylesheet_tag }}
-<div class="section-{{ section.id }} animation-test">
+<div class="section-{{ section.id }}  {% unless section.settings.animation_onof %}animation-fadeIn{% endunless %}">
   {% unless section.settings.full_width %}
   <div class="wide-width">
   {% endunless %}
@@ -263,6 +263,12 @@
       "id": "content_color",
       "label": "t:sections.all.color",
       "default": "#000000"
+    },
+    {
+      "type": "checkbox",
+      "id": "animation_onof",
+      "label": "No animation",
+      "default": false
     }
   ],
   "blocks": [

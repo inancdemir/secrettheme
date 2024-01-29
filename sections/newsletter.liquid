@@ -52,7 +52,7 @@
   }
 }
 {%- endstyle -%}
-<div class="newsletter section-{{ section.id }} animation-test">
+<div class="newsletter section-{{ section.id }}  {% unless section.settings.animation_onof %}animation-fadeIn{% endunless %}">
   <div class="newsletter-wrap">
     <h3 class="large">{{ section.settings.heading }}</h3>
     <div class="subheadline">{{ section.settings.subheading }}</div>
@@ -157,6 +157,12 @@
       "id": "bg_color",
       "label": "t:sections.all.background_color",
       "default": "#000000"
+    },
+    {
+      "type": "checkbox",
+      "id": "animation_onof",
+      "label": "No animation",
+      "default": false
     }
   ],
   "presets": [

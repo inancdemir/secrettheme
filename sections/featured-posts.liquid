@@ -41,7 +41,7 @@
 {%- endstyle -%}
 {{ 'single-post.css' | asset_url | stylesheet_tag }}
 {{ 'blog-post-featured.css' | asset_url | stylesheet_tag }}
-<div class="featured-posts section-{{ section.id }} animation-test">
+<div class="featured-posts section-{{ section.id }}  {% unless section.settings.animation_onof %}animation-fadeIn{% endunless %}">
   {% unless section.settings.full_width %}
   <div class="wide-width">
   {% endunless %}
@@ -294,6 +294,12 @@
       "id": "show_comments",
       "label": "Show comments",
       "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "animation_onof",
+      "label": "No animation",
+      "default": false
     }
   ],
   "presets": [

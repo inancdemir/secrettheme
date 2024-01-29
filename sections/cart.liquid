@@ -2,7 +2,7 @@
 <script id="format-money" src="{{ 'format-money.js' | asset_url }}" defer></script>
 <script src="{{ 'cart.js' | asset_url }}" defer></script>
 
-<div class="cart-page animation-test" data-money-format = {{ shop.money_format }}>
+<div class="cart-page  {% unless section.settings.animation_onof %}animation-fadeIn{% endunless %}" data-money-format = {{ shop.money_format }}>
     <div class="cart-page-header text-center">
         <h2 class="large">{{ section.settings.cart_header }}</h1>
     </div>
@@ -143,6 +143,12 @@
       ],
       "label": "t:sections.all.button_style",
       "default": "model-2"
+    },
+    {
+      "type": "checkbox",
+      "id": "animation_onof",
+      "label": "No animation",
+      "default": false
     }
   ]
 }

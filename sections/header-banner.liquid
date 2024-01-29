@@ -57,7 +57,7 @@
 
 
 {%- endstyle -%}
-<div class="main-content-area section-{{ section.id }} animation-test">
+<div class="main-content-area section-{{ section.id }}  {% unless section.settings.animation_onof %}animation-fadeIn{% endunless %}">
     <div class="hero-bg">
           {% if section.settings.background_image %}
             {{ section.settings.background_image | image_url: width: 2000 | image_tag: loading: 'lazy', class: 'hero-bg' }}
@@ -199,6 +199,12 @@
           "label": "t:sections.all.image_pos_top"
         }
       ]
+    },
+    {
+      "type": "checkbox",
+      "id": "animation_onof",
+      "label": "No animation",
+      "default": false
     }
   ],
   "blocks": [

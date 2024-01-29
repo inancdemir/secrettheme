@@ -19,7 +19,7 @@
 }
 
 {%- endstyle -%}
-<div class="section-{{ section.id }} default-page {{ section.settings.page_width }} animation-test">
+<div class="section-{{ section.id }} default-page {{ section.settings.page_width }}  {% unless section.settings.animation_onof %}animation-fadeIn{% endunless %}">
     {{ page.content }}    
 </div>
 {% schema %}
@@ -45,6 +45,12 @@
       ],
       "label": "Page width",
       "default": "medium"
+    },
+    {
+      "type": "checkbox",
+      "id": "animation_onof",
+      "label": "No animation",
+      "default": false
     }
   ]
 }

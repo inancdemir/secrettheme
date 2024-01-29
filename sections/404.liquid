@@ -17,7 +17,7 @@
     margin-top: 70px;
 }
 {%- endstyle -%}
-<div class="section-{{ section.id }} text-center  animation-test">
+<div class="section-{{ section.id }} text-center  {% unless section.settings.animation_onof %}animation-fadeIn{% endunless %}">
     <h4 class="medium">{{ section.settings.small_heading }}</h4>
     <h2 class="large">{{ section.settings.big_heading }}</h2>
     {{ section.settings.section_footer_text }}
@@ -44,6 +44,12 @@
       "label": "t:sections.all.text",
       "default": "<p>The page you are looking for does not exists.</p>",
       "id": "section_footer_text"
+    },
+    {
+      "type": "checkbox",
+      "id": "animation_onof",
+      "label": "No animation",
+      "default": false
     }
   ]
 }

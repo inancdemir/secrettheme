@@ -117,7 +117,7 @@
 
 {%- endstyle -%}
 
-<div class="counter section-{{ section.id }} animation-test">
+<div class="counter section-{{ section.id }}  {% unless section.settings.animation_onof %}animation-fadeIn{% endunless %}">
   <div class="wide-width">
     <div class="counter-left">
         <h3 class="large">{{ section.settings.title }}</h3>
@@ -470,6 +470,12 @@
       "label": "t:sections.all.background_color",
       "info": "t:sections.counter_section.counter_background_info",
       "default": "linear-gradient(#000000, #000000)"
+    },
+    {
+      "type": "checkbox",
+      "id": "animation_onof",
+      "label": "No animation",
+      "default": false
     }
   ],
   "presets": [

@@ -70,7 +70,7 @@
 }
 {%- endstyle -%}
 
-<div class="login-page animation-test">
+<div class="login-page  {% unless section.settings.animation_onof %}animation-fadeIn{% endunless %}">
   <div class="login-left">
     {% if section.settings.image %}
       {{ section.settings.image | image_url: width: 1500 | image_tag: loading: 'lazy', class: 'demo-image' }}
@@ -226,6 +226,12 @@
       ],
       "label": "t:sections.all.button_style",
       "default": "model-2"
+    },
+    {
+      "type": "checkbox",
+      "id": "animation_onof",
+      "label": "No animation",
+      "default": false
     }
   ],
   "presets": [

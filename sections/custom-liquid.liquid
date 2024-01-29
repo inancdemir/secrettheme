@@ -11,7 +11,7 @@
     }
   }
 {%- endstyle -%}
-<div class="color-{{ section.settings.color_scheme }} gradient animation-test">
+<div class="color-{{ section.settings.color_scheme }} gradient  {% unless section.settings.animation_onof %}animation-fadeIn{% endunless %}">
   <div class="section-{{ section.id }}-padding">
     {{ section.settings.custom_liquid }}
   </div>
@@ -52,6 +52,12 @@
       "unit": "px",
       "label": "t:sections.all.padding.padding_bottom",
       "default": 52
+    },
+    {
+      "type": "checkbox",
+      "id": "animation_onof",
+      "label": "No animation",
+      "default": false
     }
   ],
   "presets": [

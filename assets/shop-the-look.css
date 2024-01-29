@@ -47,6 +47,9 @@
   display: none;
 }
 
+.product-point-area .pasive {
+  animation: in-out 3s cubic-bezier( 0.3, 0, 0, 1 ) infinite alternate;
+}
 .image-shop .product-image {
   aspect-ratio: 1 / 1;
   overflow: hidden;

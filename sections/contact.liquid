@@ -1,5 +1,5 @@
 {{ 'contact.css' | asset_url | stylesheet_tag }}
-<div class="contact-form-container animation-test">
+<div class="contact-form-container  {% unless section.settings.animation_onof %}animation-fadeIn{% endunless %}">
     
     {% form 'contact' %}
       <div class="contact-form two-column">

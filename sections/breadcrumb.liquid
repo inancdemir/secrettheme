@@ -7,7 +7,7 @@
   
 }
 {%- endstyle -%}
-<div class="section-{{ section.id }} animation-test">
+<div class="section-{{ section.id }}  {% unless section.settings.animation_onof %}animation-fadeIn{% endunless %}">
   {% unless section.settings.full_width %}
     <div class="wide-width">
   {% endunless %}
@@ -30,6 +30,12 @@
       "unit": "px",
       "label": "t:sections.all.section_padding",
       "default": 24
+    },
+    {
+      "type": "checkbox",
+      "id": "animation_onof",
+      "label": "No animation",
+      "default": false
     },
     {
       "type": "checkbox",

@@ -129,7 +129,7 @@
 }
 
 {%- endstyle -%}
-<div class="main-content-area section-{{ section.id }} animation-test">
+<div class="main-content-area section-{{ section.id }}  {% unless section.settings.animation_onof %}animation-fadeIn{% endunless %}">
     <div class="hero-bg">
       {%- if section.settings.video -%}
         {{ section.settings.video
@@ -382,6 +382,12 @@
       "id": "video",
       "label": "Video",
       "info": "Video will override background image"
+    },
+    {
+      "type": "checkbox",
+      "id": "animation_onof",
+      "label": "No animation",
+      "default": false
     }
   ],
   "blocks": [
