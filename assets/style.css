@@ -1261,7 +1261,7 @@ select#sort-by {
    }
 }
 .site-header .main-navigation .logo {
-    padding: calc((var(--font-menu-size) * 17px) * 1.05) 0;
+    /*padding: calc((var(--font-menu-size) * 17px) * 1.05) 0;*/
 }
 .site-header .main-navigation .logo, .site-header .main-navigation .logo a {
     text-decoration: none;
