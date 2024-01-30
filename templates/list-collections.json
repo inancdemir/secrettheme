@@ -1,18 +1,43 @@
 {
-    "sections": {
-        "spacer": {
-            "type": "spacer",
-            "settings": {
-                "desktop_space": "70",
-                "mobile_space": "50"
-            }
-        },
-        "collection_lists": {
-            "type": "collection-lists"
-        }
+  "sections": {
+    "spacer": {
+      "type": "spacer",
+      "settings": {
+        "desktop_space": "70",
+        "mobile_space": "50"
+      }
     },
-    "order": [
-        "spacer",
-        "collection_lists"
-    ]
+    "collection_lists": {
+      "type": "collection-lists",
+      "settings": {
+        "heading": "Collections.",
+        "heading_color": "#000000",
+        "heading_font_size": "large",
+        "sub_heading": "",
+        "sub_heading_color": "#000000",
+        "sort": "alphabetical",
+        "collection_per_line": "3",
+        "collection_list": [
+
+        ],
+        "image_size": "two-three",
+        "image_fit": "cover",
+        "image_pos": "top",
+        "collection_model": "model-two",
+        "spacings": 16,
+        "tint_opacity": 50,
+        "tint_color": "#000000",
+        "collection_item_title_color": "#FFFFFF",
+        "shop_now_color": "#FFFFFF",
+        "background_color": "linear-gradient(180deg, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0) 100%)",
+        "section_padding": 30,
+        "animation_onof": false,
+        "full_width": false
+      }
+    }
+  },
+  "order": [
+    "spacer",
+    "collection_lists"
+  ]
 }
