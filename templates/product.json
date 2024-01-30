@@ -140,9 +140,17 @@
         "details_items_gap": 16,
         "image_column": "one"
       }
+    },
+    "spacer_mbtkQN": {
+      "type": "spacer",
+      "settings": {
+        "desktop_space": "80",
+        "mobile_space": "40"
+      }
     }
   },
   "order": [
-    "product_first"
+    "product_first",
+    "spacer_mbtkQN"
   ]
 }
