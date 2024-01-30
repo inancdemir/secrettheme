@@ -23,13 +23,15 @@
         "overlay_color": "#000000",
         "overlay_color_opacity": 40,
         "background_image": "{{ collection.image }}",
-        "image_pos": "center"
+        "image_pos": "center",
+        "animation_onof": false
       }
     },
     "breadcrumb": {
       "type": "breadcrumb",
       "settings": {
         "section_padding": 24,
+        "animation_onof": false,
         "full_width": false
       }
     },
