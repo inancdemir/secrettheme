@@ -7,6 +7,7 @@
           "type": "hero_slide",
           "settings": {
             "slide_bg": "shopify:\/\/shop_images\/carousel-hero_1e9d614d-210a-4114-aa2d-872fcfd0981b.png",
+            "video": "shopify:\/\/files\/videos\/view.mp4",
             "description": "<p>UNVEILING INNOVATION IN WINTER SPORTSWEAR<\/p>",
             "heading": "Elevate to New Heights with Comfort",
             "sub_heading": "",
@@ -49,7 +50,8 @@
         "gap_from_sides": 60,
         "body_color": "#ffffff",
         "heading_color": "#ffffff",
-        "sub_heading_color": "#ffffff"
+        "sub_heading_color": "#ffffff",
+        "animation_onof": true
       }
     },
     "home-collection-list": {
@@ -87,6 +89,7 @@
         "section_padding_top": 50,
         "section_padding_bottom": 0,
         "use_default_colors": false,
+        "animation_onof": false,
         "full_width": false
       }
     },
@@ -138,6 +141,7 @@
         "section_padding_top": 50,
         "section_padding_bottom": 50,
         "use_default_colors": false,
+        "animation_onof": false,
         "full_width": false
       }
     },
@@ -175,7 +179,8 @@
         "full_width": true,
         "tint_opacity": 50,
         "tint_color": "#000000",
-        "section_bg": ""
+        "section_bg": "",
+        "animation_onof": false
       }
     },
     "countdown_bar_cGeVw7": {
@@ -188,8 +193,9 @@
         "day": "1",
         "hour": 1,
         "minute": 1,
-        "text_color": "#FFFFFF",
-        "background": "linear-gradient(180deg, rgba(0, 0, 0, 1), rgba(0, 0, 0, 1) 100%)"
+        "text_color": "#ffffff",
+        "background": "linear-gradient(180deg, rgba(0, 0, 0, 1), rgba(0, 0, 0, 1) 100%)",
+        "animation_onof": false
       }
     },
     "home-spacer-1": {
@@ -248,7 +254,8 @@
         "full_width": false,
         "tint_opacity": 50,
         "tint_color": "#000000",
-        "section_bg": ""
+        "section_bg": "",
+        "animation_onof": false
       }
     },
     "home-spacer-2": {
@@ -307,6 +314,7 @@
         "sub-heading": "<p>Conquering the snow capped peaks in durability and style<\/p>",
         "sub_title_color": "#000000",
         "shop_to_look_image": "shopify:\/\/shop_images\/cngrs_full-length_photo_of_two_brunette_woman_wearing_ski_jacke_781c9782-4f3c-49e5-9687-d7408e0845f1.png",
+        "animation_onof": false,
         "full_width": false
       }
     },
@@ -359,6 +367,7 @@
         "section_heading": "#000000",
         "section_text": "#000000",
         "use_default_colors": false,
+        "animation_onof": false,
         "full_width": false
       }
     },
@@ -404,6 +413,7 @@
         "section_heading": "#000000",
         "section_text": "#000000",
         "use_default_colors": false,
+        "animation_onof": false,
         "full_width": false
       }
     },
@@ -428,7 +438,8 @@
         "show_authore": true,
         "show_date": true,
         "show_tags": true,
-        "show_comments": true
+        "show_comments": true,
+        "animation_onof": false
       }
     },
     "home-newsletter": {
@@ -442,7 +453,8 @@
         "section_padding": 64,
         "color": "#ffffff",
         "button_style": "model-1",
-        "bg_color": "#000000"
+        "bg_color": "#000000",
+        "animation_onof": false
       }
     },
     "before_after_gallery_with_side_aLMF3g": {
@@ -525,7 +537,8 @@
         "heading": "Voices of our Community",
         "section_padding": 64,
         "background_color": "linear-gradient(180deg, rgba(0, 0, 0, 1), rgba(0, 0, 0, 1) 100%)",
-        "text_color": "#ffffff"
+        "text_color": "#ffffff",
+        "animation_onof": false
       }
     },
     "home-spacer-4": {
@@ -594,7 +607,8 @@
         "ver_align": "center",
         "full_width": false,
         "background_color": "linear-gradient(180deg, rgba(255, 255, 255, 1) 100%, rgba(255, 255, 255, 1) 100%)",
-        "content_color": "#000000"
+        "content_color": "#000000",
+        "animation_onof": false
       }
     },
     "home-banner": {
@@ -646,7 +660,8 @@
         "gap_from_sides": 60,
         "overlay_color": "#000000",
         "overlay_color_opacity": 40,
-        "background_image": "shopify:\/\/shop_images\/collection-fullsize_339a71fa-e527-4277-bb55-c620778a944c.png"
+        "background_image": "shopify:\/\/shop_images\/collection-fullsize_339a71fa-e527-4277-bb55-c620778a944c.png",
+        "animation_onof": false
       }
     },
     "home-multiple-columns-2": {
@@ -720,7 +735,8 @@
         "ver_align": "flex-start",
         "full_width": true,
         "background_color": "linear-gradient(180deg, rgba(255, 255, 255, 1) 100%, rgba(255, 255, 255, 1) 100%)",
-        "content_color": "#000000"
+        "content_color": "#000000",
+        "animation_onof": false
       }
     }
   },
