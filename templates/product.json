@@ -114,6 +114,27 @@
             "accorion_title": "Style Measurements",
             "accorion_contnet": "<p>Accordion content will be there<\/p>"
           }
+        },
+        "custom_title_jYpwNE": {
+          "type": "custom_title",
+          "settings": {
+            "text": "Pair with",
+            "title_size": "medium"
+          }
+        },
+        "sell_with_QYze8D": {
+          "type": "sell_with",
+          "settings": {
+            "item_per_row": "2",
+            "item_per_row_mobile": "2",
+            "image_size": "one-one",
+            "image_fit": "cover",
+            "image_pos": "center",
+            "product_list": [
+              "ajax-goggles",
+              "lilac-goggles"
+            ]
+          }
         }
       },
       "block_order": [
@@ -130,14 +151,16 @@
         "product-inner-6",
         "product-inner-7",
         "84ceafbc-7b4f-4c50-bd7d-26a907d51b77",
-        "a2801155-d3c1-43be-8207-63cc54650448"
+        "a2801155-d3c1-43be-8207-63cc54650448",
+        "custom_title_jYpwNE",
+        "sell_with_QYze8D"
       ],
       "settings": {
         "full_width": false,
         "breadcrumb_on": true,
         "image_area": 50,
         "details_padding": 5,
-        "details_items_gap": 16,
+        "details_items_gap": 32,
         "image_column": "one"
       }
     },
@@ -147,10 +170,124 @@
         "desktop_space": "80",
         "mobile_space": "40"
       }
+    },
+    "banner_pdxyzK": {
+      "type": "banner",
+      "blocks": {
+        "super_heading_FtEUhN": {
+          "type": "super_heading",
+          "settings": {
+            "super": "HERO"
+          }
+        },
+        "heading_a6Gm9Y": {
+          "type": "heading",
+          "settings": {
+            "heading": "Heading"
+          }
+        },
+        "text_CVhmMt": {
+          "type": "text",
+          "settings": {
+            "sub_heading": "<p>Subheading<\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "super_heading_FtEUhN",
+        "heading_a6Gm9Y",
+        "text_CVhmMt"
+      ],
+      "settings": {
+        "collection_height": 640,
+        "full_height_desktop": false,
+        "collection_height_mobile": 400,
+        "full_height_mobil": false,
+        "section_width": 1400,
+        "text_position": "bottom-center",
+        "super_color": "#FFFFFF",
+        "super_opacity": 40,
+        "super_font_size": 300,
+        "super_line_height": 350,
+        "heading_color": "#FFFFFF",
+        "heading_font_size": 48,
+        "heading_line_height": 60,
+        "sub_heading_color": "#FFFFFF",
+        "sub_heading_font_size": 20,
+        "sub_heading_line_height": 30,
+        "gap_from_sides": 60,
+        "overlay_color": "#000000",
+        "overlay_color_opacity": 40,
+        "animation_onof": false
+      }
+    },
+    "multiple_columns_9iyyPV": {
+      "type": "multiple-columns",
+      "blocks": {
+        "column_gbCaxB": {
+          "type": "column",
+          "settings": {
+            "select_icon": "award",
+            "select_icon_active": false,
+            "icon_size": 30,
+            "block_title": "Easy Returns",
+            "title_size": "small",
+            "block_content": "<p>Your exchange ships out as soon as you email us<\/p>",
+            "items_align": "center",
+            "cover_image": "shopify:\/\/shop_images\/cngrs_breathable_white_textile_garment_white_close_up_19c6675d-96c4-4fe4-82fa-43bf5032790d.png",
+            "cover_image_force": false
+          }
+        },
+        "column_qfCKGa": {
+          "type": "column",
+          "settings": {
+            "select_icon": "award",
+            "select_icon_active": false,
+            "icon_size": 30,
+            "block_title": "Easy Returns",
+            "title_size": "small",
+            "block_content": "<p>Your exchange ships out as soon as you email us<\/p>",
+            "items_align": "center",
+            "cover_image_force": false
+          }
+        },
+        "column_ffEBiV": {
+          "type": "column",
+          "settings": {
+            "select_icon": "award",
+            "select_icon_active": false,
+            "icon_size": 30,
+            "block_title": "Easy Returns",
+            "title_size": "small",
+            "block_content": "<p>Your exchange ships out as soon as you email us<\/p>",
+            "items_align": "center",
+            "cover_image_force": false
+          }
+        }
+      },
+      "block_order": [
+        "column_gbCaxB",
+        "column_qfCKGa",
+        "column_ffEBiV"
+      ],
+      "settings": {
+        "column_per_line": "3",
+        "spacings": 16,
+        "spacings_v": 16,
+        "section_padding_top": 30,
+        "section_padding_bottom": 30,
+        "ver_align": "center",
+        "full_width": false,
+        "background_color": "linear-gradient(180deg, rgba(215, 215, 215, 1) 100%, rgba(255, 255, 255, 1) 100%)",
+        "content_color": "#000000",
+        "animation_onof": false
+      }
     }
   },
   "order": [
     "product_first",
-    "spacer_mbtkQN"
+    "spacer_mbtkQN",
+    "banner_pdxyzK",
+    "multiple_columns_9iyyPV"
   ]
 }
