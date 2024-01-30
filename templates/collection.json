@@ -27,6 +27,79 @@
         "animation_onof": false
       }
     },
+    "collection_showcase_fiCLca": {
+      "type": "collection-showcase",
+      "blocks": {
+        "collection_q7zpGx": {
+          "type": "collection",
+          "settings": {
+            "collection": "accessories"
+          }
+        },
+        "collection_6FMC9U": {
+          "type": "collection",
+          "settings": {
+            "collection": "all-collections"
+          }
+        },
+        "collection_NXxry7": {
+          "type": "collection",
+          "settings": {
+            "collection": "apres"
+          }
+        },
+        "collection_jAgx4r": {
+          "type": "collection",
+          "settings": {
+            "collection": "base-layers"
+          }
+        },
+        "collection_t4iyMC": {
+          "type": "collection",
+          "settings": {
+            "collection": "jackets"
+          }
+        },
+        "collection_7UGAxW": {
+          "type": "collection",
+          "settings": {
+            "collection": "new-commers"
+          }
+        }
+      },
+      "block_order": [
+        "collection_q7zpGx",
+        "collection_6FMC9U",
+        "collection_NXxry7",
+        "collection_jAgx4r",
+        "collection_t4iyMC",
+        "collection_7UGAxW"
+      ],
+      "settings": {
+        "heading": "Collection showcase.",
+        "heading_color": "#000000",
+        "heading_font_size": "large",
+        "sub_heading": "<p><strong>Use this section to showcase your collections<\/strong><\/p>",
+        "sub_heading_color": "#000000",
+        "collection_per_line": 6,
+        "image_size": "one-one",
+        "image_fit": "cover",
+        "image_pos": "top",
+        "shop_now": "Shop Now",
+        "collection_model": "model-two",
+        "spacings": 16,
+        "tint_opacity": 50,
+        "tint_color": "#000000",
+        "collection_item_title_color": "#FFFFFF",
+        "shop_now_color": "#FFFFFF",
+        "background_color": "linear-gradient(180deg, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0) 100%)",
+        "section_padding_top": 0,
+        "section_padding_bottom": 0,
+        "use_default_colors": false,
+        "animation_onof": false,
+        "full_width": false
+      }
+    },
     "breadcrumb": {
       "type": "breadcrumb",
       "settings": {
@@ -77,11 +150,20 @@
         "add_font_size": 48,
         "add_font_size_mobile": 24
       }
+    },
+    "spacer_mWCrKQ": {
+      "type": "spacer",
+      "settings": {
+        "desktop_space": "50",
+        "mobile_space": "50"
+      }
     }
   },
   "order": [
     "collection-1",
+    "collection_showcase_fiCLca",
     "breadcrumb",
-    "main"
+    "main",
+    "spacer_mWCrKQ"
   ]
 }
