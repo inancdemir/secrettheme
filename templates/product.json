@@ -174,29 +174,15 @@
     "banner_pdxyzK": {
       "type": "banner",
       "blocks": {
-        "super_heading_FtEUhN": {
-          "type": "super_heading",
-          "settings": {
-            "super": "HERO"
-          }
-        },
         "heading_a6Gm9Y": {
           "type": "heading",
           "settings": {
-            "heading": "Heading"
-          }
-        },
-        "text_CVhmMt": {
-          "type": "text",
-          "settings": {
-            "sub_heading": "<p>Subheading<\/p>"
+            "heading": "{{ product.title }} \/ {{ product.vendor }}"
           }
         }
       },
       "block_order": [
-        "super_heading_FtEUhN",
-        "heading_a6Gm9Y",
-        "text_CVhmMt"
+        "heading_a6Gm9Y"
       ],
       "settings": {
         "collection_height": 640,
@@ -217,7 +203,8 @@
         "sub_heading_line_height": 30,
         "gap_from_sides": 60,
         "overlay_color": "#000000",
-        "overlay_color_opacity": 40,
+        "overlay_color_opacity": 10,
+        "video": "shopify:\/\/files\/videos\/snowboarding.mp4",
         "animation_onof": false
       }
     },
@@ -230,12 +217,12 @@
             "select_icon": "award",
             "select_icon_active": false,
             "icon_size": 30,
-            "block_title": "Easy Returns",
+            "block_title": "Quality Materials",
             "title_size": "small",
             "block_content": "<p>Your exchange ships out as soon as you email us<\/p>",
             "items_align": "center",
             "cover_image": "shopify:\/\/shop_images\/cngrs_breathable_white_textile_garment_white_close_up_19c6675d-96c4-4fe4-82fa-43bf5032790d.png",
-            "cover_image_force": false
+            "cover_image_force": true
           }
         },
         "column_qfCKGa": {
@@ -248,7 +235,8 @@
             "title_size": "small",
             "block_content": "<p>Your exchange ships out as soon as you email us<\/p>",
             "items_align": "center",
-            "cover_image_force": false
+            "cover_image": "shopify:\/\/shop_images\/cngrs_breathable_white_textile_garment_white_close_up_fortechni_ebcddb88-44f0-4751-8643-f55e4620db4e.png",
+            "cover_image_force": true
           }
         },
         "column_ffEBiV": {
@@ -282,12 +270,86 @@
         "content_color": "#000000",
         "animation_onof": false
       }
+    },
+    "collection_showcase_rPCtki": {
+      "type": "collection-showcase",
+      "blocks": {
+        "collection_QQ7bqk": {
+          "type": "collection",
+          "settings": {
+            "collection": "accessories"
+          }
+        },
+        "collection_m6HCxL": {
+          "type": "collection",
+          "settings": {
+            "collection": "base-layers"
+          }
+        },
+        "collection_7K6tw9": {
+          "type": "collection",
+          "settings": {
+            "collection": "all-collections"
+          }
+        },
+        "collection_GaKExE": {
+          "type": "collection",
+          "settings": {
+            "collection": "knitwear"
+          }
+        },
+        "collection_aNFbWj": {
+          "type": "collection",
+          "settings": {
+            "collection": "puffers"
+          }
+        },
+        "collection_NKHqRb": {
+          "type": "collection",
+          "settings": {
+            "collection": "frontpage"
+          }
+        }
+      },
+      "block_order": [
+        "collection_QQ7bqk",
+        "collection_m6HCxL",
+        "collection_7K6tw9",
+        "collection_GaKExE",
+        "collection_aNFbWj",
+        "collection_NKHqRb"
+      ],
+      "settings": {
+        "heading": "Other collections",
+        "heading_color": "#000000",
+        "heading_font_size": "small",
+        "sub_heading": "<p><strong>Use this section to showcase your collections<\/strong><\/p>",
+        "sub_heading_color": "#000000",
+        "collection_per_line": 6,
+        "image_size": "one-one",
+        "image_fit": "cover",
+        "image_pos": "center",
+        "shop_now": "Shop Now",
+        "collection_model": "model-one",
+        "spacings": 16,
+        "tint_opacity": 50,
+        "tint_color": "#000000",
+        "collection_item_title_color": "#000000",
+        "shop_now_color": "#000000",
+        "background_color": "linear-gradient(180deg, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0) 100%)",
+        "section_padding_top": 30,
+        "section_padding_bottom": 30,
+        "use_default_colors": true,
+        "animation_onof": false,
+        "full_width": false
+      }
     }
   },
   "order": [
     "product_first",
     "spacer_mbtkQN",
     "banner_pdxyzK",
-    "multiple_columns_9iyyPV"
+    "multiple_columns_9iyyPV",
+    "collection_showcase_rPCtki"
   ]
 }
