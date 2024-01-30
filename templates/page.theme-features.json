@@ -691,11 +691,11 @@
             "select_icon": "award",
             "select_icon_active": false,
             "icon_size": 30,
-            "block_title": "Product View Adjustments",
+            "block_title": "Product Features",
             "title_size": "small",
-            "block_content": "<p>Modify product layouts, ensuring an optimal viewing experience that aligns with your brand aesthetic and enhances customer engagement.<\/p>",
+            "block_content": "<p>Showcase your product's unique features and benefits to make it stand out. Selectively highlight the attributes that define your product's superiority and leveraging ratings.<\/p>",
             "items_align": "left",
-            "cover_image": "shopify:\/\/shop_images\/coming.jpg",
+            "cover_image": "shopify:\/\/shop_images\/productfeatures.png",
             "cover_image_force": true
           }
         },
@@ -727,7 +727,7 @@
         "section_padding_bottom": 50,
         "ver_align": "flex-start",
         "full_width": true,
-        "background_color": "linear-gradient(180deg, #ffffff 100%, #ffffff 100%)",
+        "background_color": "linear-gradient(180deg, rgba(255, 255, 255, 1) 100%, rgba(255, 255, 255, 1) 100%)",
         "content_color": "#000000",
         "animation_onof": false
       }
