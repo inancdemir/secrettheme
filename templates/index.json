@@ -167,8 +167,8 @@
         "collection-1"
       ],
       "settings": {
-        "collection_height": 1120,
-        "full_height_desktop": true,
+        "collection_height": 800,
+        "full_height_desktop": false,
         "collection_height_mobile": 400,
         "full_height_mobil": false,
         "collection_header_color": "#ffffff",
