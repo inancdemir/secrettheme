@@ -56,7 +56,8 @@
         "gap_from_sides": 125,
         "overlay_color": "#000000",
         "overlay_color_opacity": 40,
-        "background_image": "shopify:\/\/shop_images\/singleimage-hero.jpg"
+        "background_image": "shopify:\/\/shop_images\/singleimage-hero.jpg",
+        "animation_onof": false
       }
     },
     "514a8c17-efcb-4a12-a145-a807ee44a43d": {
@@ -133,8 +134,9 @@
         "section_padding_bottom": 38,
         "ver_align": "flex-start",
         "full_width": true,
-        "background_color": "linear-gradient(180deg, #ffffff 100%, #ffffff 100%)",
-        "content_color": "#000000"
+        "background_color": "linear-gradient(180deg, rgba(255, 255, 255, 1) 100%, rgba(255, 255, 255, 1) 100%)",
+        "content_color": "#000000",
+        "animation_onof": false
       }
     },
     "43a5e2c0-6f15-48a3-9977-44e413809363": {
@@ -162,9 +164,10 @@
         "background_color": "#FFFFFF",
         "content_color": "#000000",
         "element_gaps": 20,
-        "section_padding_top": 10,
+        "section_padding_top": 30,
         "section_padding_bottom": 10,
         "align_content": "text-center",
+        "animation_onof": false,
         "full_width": false
       }
     },
@@ -172,7 +175,8 @@
       "type": "main-page",
       "disabled": true,
       "settings": {
-        "page_width": "small"
+        "page_width": "small",
+        "animation_onof": false
       }
     },
     "spacer-2": {
@@ -215,6 +219,7 @@
         "section_heading": "#000000",
         "section_text": "#000000",
         "use_default_colors": false,
+        "animation_onof": false,
         "full_width": false
       }
     },
@@ -251,6 +256,7 @@
         "section_heading": "#000000",
         "section_text": "#000000",
         "use_default_colors": false,
+        "animation_onof": false,
         "full_width": false
       }
     },
@@ -287,6 +293,7 @@
         "section_heading": "#000000",
         "section_text": "#000000",
         "use_default_colors": false,
+        "animation_onof": false,
         "full_width": false
       }
     },
@@ -315,9 +322,10 @@
         "background_color": "#FFFFFF",
         "content_color": "#000000",
         "element_gaps": 20,
-        "section_padding_top": 10,
-        "section_padding_bottom": 10,
+        "section_padding_top": 60,
+        "section_padding_bottom": 40,
         "align_content": "text-center",
+        "animation_onof": false,
         "full_width": false
       }
     },
@@ -366,7 +374,8 @@
         "ver_align": "flex-start",
         "full_width": true,
         "background_color": "linear-gradient(180deg, #ffffff 100%, #ffffff 100%)",
-        "content_color": "#000000"
+        "content_color": "#000000",
+        "animation_onof": false
       }
     },
     "18fef974-2c85-44b5-848f-102040aa5464": {
@@ -399,7 +408,8 @@
         "ver_align": "flex-start",
         "full_width": true,
         "background_color": "linear-gradient(180deg, #ffffff 100%, #ffffff 100%)",
-        "content_color": "#000000"
+        "content_color": "#000000",
+        "animation_onof": false
       }
     },
     "34f4fbc4-58ed-48fe-b713-d7dd16a578fb": {
@@ -442,7 +452,8 @@
         "gap_from_sides": 60,
         "overlay_color": "#000000",
         "overlay_color_opacity": 40,
-        "background_image": "shopify:\/\/shop_images\/sections_3866cb04-d1f2-40bd-952c-8b12e56718ee.jpg"
+        "background_image": "shopify:\/\/shop_images\/sections_3866cb04-d1f2-40bd-952c-8b12e56718ee.jpg",
+        "animation_onof": false
       }
     },
     "19c35dca-c47e-4daf-a0e1-7f2d909929fc": {
@@ -470,9 +481,10 @@
         "background_color": "#FFFFFF",
         "content_color": "#000000",
         "element_gaps": 20,
-        "section_padding_top": 10,
-        "section_padding_bottom": 10,
+        "section_padding_top": 60,
+        "section_padding_bottom": 40,
         "align_content": "text-center",
+        "animation_onof": false,
         "full_width": false
       }
     },
@@ -509,6 +521,7 @@
         "section_heading": "#000000",
         "section_text": "#000000",
         "use_default_colors": false,
+        "animation_onof": false,
         "full_width": false
       }
     },
@@ -545,6 +558,7 @@
         "section_heading": "#000000",
         "section_text": "#000000",
         "use_default_colors": false,
+        "animation_onof": false,
         "full_width": false
       }
     },
@@ -581,6 +595,7 @@
         "section_heading": "#000000",
         "section_text": "#000000",
         "use_default_colors": false,
+        "animation_onof": false,
         "full_width": false
       }
     },
@@ -617,6 +632,7 @@
         "section_heading": "#000000",
         "section_text": "#000000",
         "use_default_colors": false,
+        "animation_onof": false,
         "full_width": false
       }
     },
@@ -648,6 +664,7 @@
         "section_padding_top": 10,
         "section_padding_bottom": 10,
         "align_content": "text-center",
+        "animation_onof": false,
         "full_width": false
       }
     },
@@ -711,7 +728,8 @@
         "ver_align": "flex-start",
         "full_width": true,
         "background_color": "linear-gradient(180deg, #ffffff 100%, #ffffff 100%)",
-        "content_color": "#000000"
+        "content_color": "#000000",
+        "animation_onof": false
       }
     },
     "05d2fd64-ef10-4008-8953-40de7f84ff4d": {
@@ -774,7 +792,8 @@
         "ver_align": "flex-start",
         "full_width": true,
         "background_color": "linear-gradient(180deg, #ffffff 100%, #ffffff 100%)",
-        "content_color": "#000000"
+        "content_color": "#000000",
+        "animation_onof": false
       }
     },
     "3b206074-cdd4-4c5f-9b95-71d7274985a7": {
@@ -805,6 +824,7 @@
         "section_padding_top": 10,
         "section_padding_bottom": 10,
         "align_content": "text-center",
+        "animation_onof": false,
         "full_width": false
       }
     },
@@ -1145,7 +1165,8 @@
         "ver_align": "flex-start",
         "full_width": true,
         "background_color": "linear-gradient(180deg, rgba(255, 255, 255, 1) 100%, rgba(255, 255, 255, 1) 100%)",
-        "content_color": "#000000"
+        "content_color": "#000000",
+        "animation_onof": false
       }
     },
     "9f60eba7-5b98-4fe5-abcb-90f708d82e7b": {
@@ -1176,6 +1197,7 @@
         "section_padding_top": 55,
         "section_padding_bottom": 55,
         "align_content": "text-center",
+        "animation_onof": false,
         "full_width": false
       }
     },
@@ -1207,6 +1229,7 @@
         "section_padding_top": 55,
         "section_padding_bottom": 35,
         "align_content": "text-center",
+        "animation_onof": false,
         "full_width": false
       }
     },
@@ -1270,7 +1293,8 @@
         "ver_align": "flex-start",
         "full_width": false,
         "background_color": "linear-gradient(180deg, rgba(0, 0, 0, 1), rgba(0, 0, 0, 1) 100%)",
-        "content_color": "#FFFFFF"
+        "content_color": "#ffffff",
+        "animation_onof": false
       }
     }
   },
