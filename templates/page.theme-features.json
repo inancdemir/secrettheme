@@ -661,8 +661,8 @@
         "background_color": "#FFFFFF",
         "content_color": "#000000",
         "element_gaps": 20,
-        "section_padding_top": 10,
-        "section_padding_bottom": 10,
+        "section_padding_top": 60,
+        "section_padding_bottom": 40,
         "align_content": "text-center",
         "animation_onof": false,
         "full_width": false
@@ -791,7 +791,7 @@
         "section_padding_bottom": 50,
         "ver_align": "flex-start",
         "full_width": true,
-        "background_color": "linear-gradient(180deg, #ffffff 100%, #ffffff 100%)",
+        "background_color": "linear-gradient(180deg, rgba(255, 255, 255, 1) 100%, rgba(255, 255, 255, 1) 100%)",
         "content_color": "#000000",
         "animation_onof": false
       }
@@ -822,7 +822,7 @@
         "content_color": "#000000",
         "element_gaps": 20,
         "section_padding_top": 10,
-        "section_padding_bottom": 10,
+        "section_padding_bottom": 40,
         "align_content": "text-center",
         "animation_onof": false,
         "full_width": false
