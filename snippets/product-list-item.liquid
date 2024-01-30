@@ -125,6 +125,11 @@
           </span>
         {% endif %}
       </div>
+      {% if product.compare_at_price_max > product.price %}
+        <div class="save-amount callout">
+          Save {{ product.compare_at_price_max | minus: product.price | money }}
+        </div>
+      {% endif %}
       {% if product.variants.size > 1 %}
         {% for option in product.options_with_values %}
           {%- if option.name == "Color" -%}
@@ -146,11 +151,7 @@
           {%- endif -%}
         {% endfor %}
       {% endif %}  
-      {% if product.compare_at_price_max > product.price %}
-        <div class="save-amount callout">
-          Save {{ product.compare_at_price_max | minus: product.price | money }}
-        </div>
-      {% endif %}
+      
       {% assign product_metafield = product.metafields.custom %}
       {% assign repeat_val = product_metafield.front_custom_icons %}
       {% assign pasive_val = 5 | minus: repeat_val %}
