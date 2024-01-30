@@ -695,7 +695,7 @@
             "title_size": "small",
             "block_content": "<p>Showcase your product's unique features and benefits to make it stand out. Selectively highlight the attributes that define your product's superiority and leveraging ratings.<\/p>",
             "items_align": "left",
-            "cover_image": "shopify:\/\/shop_images\/productfeatures.png",
+            "cover_image": "shopify:\/\/shop_images\/benefits.png",
             "cover_image_force": true
           }
         },
