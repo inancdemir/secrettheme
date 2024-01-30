@@ -27,6 +27,57 @@
         "animation_onof": false
       }
     },
+    "breadcrumb": {
+      "type": "breadcrumb",
+      "settings": {
+        "section_padding": 24,
+        "animation_onof": false,
+        "full_width": false
+      }
+    },
+    "main": {
+      "type": "product-list-filtreble",
+      "blocks": {
+        "4a0907a4-9663-40b9-9080-0f8d381583ad": {
+          "type": "add_add",
+          "settings": {
+            "add_position": 3,
+            "add_size": 1,
+            "min_height": "",
+            "image": "shopify:\/\/shop_images\/cngrs_full-length_photo_of_two_brunette_woman_wearing_ski_jacke_edcbdd0b-4234-4b5b-b127-9aacd1b645fe.webp",
+            "cover": true,
+            "text": "<p>Introducing our cutting-edge <strong>AJAX Goggles<\/strong><\/p>",
+            "button_text": "Shop Now",
+            "button_url": "shopify:\/\/collections\/accessories"
+          }
+        }
+      },
+      "block_order": [
+        "4a0907a4-9663-40b9-9080-0f8d381583ad"
+      ],
+      "settings": {
+        "item_per_row": 4,
+        "item_show_row": 3,
+        "item_per_row_mobile": "2",
+        "product_gap": 0,
+        "image_size": "two-three",
+        "image_fit": "contain",
+        "image_pos": "center",
+        "pagination_settings": "paginated",
+        "button_style": "model-3",
+        "heading": "",
+        "title": "#000000",
+        "background_color": "linear-gradient(180deg, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0) 100%)",
+        "section_padding": 0,
+        "add_color": "#ffffff",
+        "no_product": "This collection is currently empty of products.",
+        "full_width": false,
+        "tint_opacity": 50,
+        "tint_color": "#000000",
+        "add_font_size": 48,
+        "add_font_size_mobile": 24
+      }
+    },
     "collection_showcase_fiCLca": {
       "type": "collection-showcase",
       "blocks": {
@@ -90,80 +141,21 @@
         "spacings": 16,
         "tint_opacity": 50,
         "tint_color": "#000000",
-        "collection_item_title_color": "#FFFFFF",
-        "shop_now_color": "#FFFFFF",
+        "collection_item_title_color": "#ffffff",
+        "shop_now_color": "#ffffff",
         "background_color": "linear-gradient(180deg, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0) 100%)",
-        "section_padding_top": 0,
-        "section_padding_bottom": 0,
+        "section_padding_top": 30,
+        "section_padding_bottom": 30,
         "use_default_colors": false,
         "animation_onof": false,
         "full_width": false
-      }
-    },
-    "breadcrumb": {
-      "type": "breadcrumb",
-      "settings": {
-        "section_padding": 24,
-        "animation_onof": false,
-        "full_width": false
-      }
-    },
-    "main": {
-      "type": "product-list-filtreble",
-      "blocks": {
-        "4a0907a4-9663-40b9-9080-0f8d381583ad": {
-          "type": "add_add",
-          "settings": {
-            "add_position": 3,
-            "add_size": 1,
-            "min_height": "",
-            "image": "shopify:\/\/shop_images\/cngrs_full-length_photo_of_two_brunette_woman_wearing_ski_jacke_edcbdd0b-4234-4b5b-b127-9aacd1b645fe.webp",
-            "cover": true,
-            "text": "<p>Introducing our cutting-edge <strong>AJAX Goggles<\/strong><\/p>",
-            "button_text": "Shop Now",
-            "button_url": "shopify:\/\/collections\/accessories"
-          }
-        }
-      },
-      "block_order": [
-        "4a0907a4-9663-40b9-9080-0f8d381583ad"
-      ],
-      "settings": {
-        "item_per_row": 4,
-        "item_show_row": 3,
-        "item_per_row_mobile": "2",
-        "product_gap": 0,
-        "image_size": "two-three",
-        "image_fit": "contain",
-        "image_pos": "center",
-        "pagination_settings": "paginated",
-        "button_style": "model-3",
-        "heading": "",
-        "title": "#000000",
-        "background_color": "linear-gradient(180deg, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0) 100%)",
-        "section_padding": 0,
-        "add_color": "#ffffff",
-        "no_product": "This collection is currently empty of products.",
-        "full_width": false,
-        "tint_opacity": 50,
-        "tint_color": "#000000",
-        "add_font_size": 48,
-        "add_font_size_mobile": 24
-      }
-    },
-    "spacer_mWCrKQ": {
-      "type": "spacer",
-      "settings": {
-        "desktop_space": "50",
-        "mobile_space": "50"
       }
     }
   },
   "order": [
     "collection-1",
-    "collection_showcase_fiCLca",
     "breadcrumb",
     "main",
-    "spacer_mWCrKQ"
+    "collection_showcase_fiCLca"
   ]
 }
