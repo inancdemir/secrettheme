@@ -1,34 +1,35 @@
 {
   "sections": {
-    "contact-header": {
-      "type": "banner",
+    "spacer_b9y8Jz": {
+      "type": "spacer",
+      "settings": {
+        "desktop_space": "120",
+        "mobile_space": "80"
+      }
+    },
+    "rich_section_f7yXiH": {
+      "type": "rich-section",
       "blocks": {
-        "main": {
-          "type": "heading",
+        "rich_header_ctjaAg": {
+          "type": "rich_header",
           "settings": {
-            "heading": "Contact Us."
+            "rich_title": "Contact Us.",
+            "rich_title_tag": "large"
           }
         }
       },
       "block_order": [
-        "main"
+        "rich_header_ctjaAg"
       ],
       "settings": {
-        "section_height": 30,
-        "text_position": "bottom-center",
-        "super_color": "#FFFFFF",
-        "super_opacity": 40,
-        "super_font_size": 300,
-        "super_line_height": 350,
-        "heading_color": "#FFFFFF",
-        "heading_font_size": 48,
-        "heading_line_height": 60,
-        "sub_heading_color": "#FFFFFF",
-        "sub_heading_font_size": 20,
-        "sub_heading_line_height": 30,
-        "gap_from_sides": 0,
-        "overlay_color": "#000000",
-        "overlay_color_opacity": 40
+        "background_color": "",
+        "content_color": "#000000",
+        "element_gaps": 20,
+        "section_padding_top": 10,
+        "section_padding_bottom": 10,
+        "align_content": "text-center",
+        "animation_onof": false,
+        "full_width": false
       }
     },
     "main": {
@@ -46,8 +47,13 @@
     "map": {
       "type": "map",
       "settings": {
+        "collection_height": 640,
+        "full_height_desktop": false,
+        "collection_height_mobile": 400,
         "google_api": "Enter your api key",
-        "full_width": false
+        "latitude": "48.86663925254111",
+        "longtitude": "2.3214594880416795",
+        "full_width": true
       }
     },
     "spacer-2": {
@@ -59,7 +65,8 @@
     }
   },
   "order": [
-    "contact-header",
+    "spacer_b9y8Jz",
+    "rich_section_f7yXiH",
     "main",
     "spacer-1",
     "map",
