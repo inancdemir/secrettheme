@@ -226,7 +226,7 @@
             "icon_size": 30,
             "block_title": "Quality Materials",
             "title_size": "small",
-            "block_content": "<p>Your exchange ships out as soon as you email us<\/p>",
+            "block_content": "<p>Experience the Difference with Our Premium Quality Materials. Each product is crafted from the finest materials, ensuring not only exceptional durability but also unparalleled comfort and style. <\/p>",
             "items_align": "center",
             "cover_image_force": false
           }
@@ -239,7 +239,7 @@
             "icon_size": 30,
             "block_title": "Easy Returns",
             "title_size": "small",
-            "block_content": "<p>Your exchange ships out as soon as you email us<\/p>",
+            "block_content": "<p>Shop with Confidence - Easy Returns Guaranteed. We understand that sometimes a product may not be exactly what you expected. That's why we've made our return process hassle-free.<\/p>",
             "items_align": "center",
             "cover_image_force": false
           }
@@ -252,7 +252,7 @@
             "icon_size": 30,
             "block_title": "Fast Shipping",
             "title_size": "small",
-            "block_content": "<p>Your exchange ships out as soon as you email us<\/p>",
+            "block_content": "<p>Fast Shipping for Your Convenience. We know you're excited to receive your order, and we're committed to getting it to you as quickly as possible. <\/p>",
             "items_align": "center",
             "cover_image_force": false
           }
@@ -269,7 +269,7 @@
         "spacings_v": 16,
         "section_padding_top": 30,
         "section_padding_bottom": 30,
-        "ver_align": "center",
+        "ver_align": "flex-start",
         "full_width": false,
         "background_color": "linear-gradient(180deg, rgba(255, 255, 255, 1) 100%, rgba(255, 255, 255, 1) 100%)",
         "content_color": "#000000",
@@ -325,18 +325,18 @@
         "collection_NKHqRb"
       ],
       "settings": {
-        "heading": "Other collections",
+        "heading": "All collections",
         "heading_color": "#000000",
         "heading_font_size": "small",
-        "sub_heading": "<p><strong>Use this section to showcase your collections<\/strong><\/p>",
+        "sub_heading": "<p><strong>View Aspena's wide range of collections<\/strong><\/p>",
         "sub_heading_color": "#000000",
         "collection_per_line": 6,
-        "image_size": "one-one",
+        "image_size": "nine-sixteen",
         "image_fit": "cover",
         "image_pos": "top",
-        "shop_now": "Shop Now",
+        "shop_now": "Shop Now!",
         "collection_model": "model-one",
-        "spacings": 16,
+        "spacings": 11,
         "tint_opacity": 50,
         "tint_color": "#000000",
         "collection_item_title_color": "#000000",
