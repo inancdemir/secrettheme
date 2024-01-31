@@ -43,7 +43,7 @@
             "button_label_nostock": "OUT OF STOCK",
             "quantity_position": "quantitiy-top",
             "button_style": "model-2",
-            "show_quick_buy": false
+            "show_quick_buy": true
           }
         },
         "3569f85e-d966-4d3c-947b-d970f5eab3aa": {
@@ -131,8 +131,7 @@
             "image_fit": "cover",
             "image_pos": "center",
             "product_list": [
-              "ajax-goggles",
-              "lilac-goggles"
+
             ]
           }
         }
@@ -183,7 +182,7 @@
         "text_akJF3h": {
           "type": "text",
           "settings": {
-            "sub_heading": "<p>Built for extreme comfort in extreme conditions.<\/p>"
+            "sub_heading": "<p>{{ shop.brand.short_description }}<\/p>"
           }
         }
       },
@@ -211,7 +210,6 @@
         "gap_from_sides": 60,
         "overlay_color": "#000000",
         "overlay_color_opacity": 10,
-        "video": "shopify:\/\/files\/videos\/snowboarding.mp4",
         "animation_onof": false
       }
     },
@@ -279,50 +277,50 @@
     "collection_showcase_rPCtki": {
       "type": "collection-showcase",
       "blocks": {
-        "collection_QQ7bqk": {
-          "type": "collection",
-          "settings": {
-            "collection": "accessories"
-          }
-        },
-        "collection_m6HCxL": {
-          "type": "collection",
-          "settings": {
-            "collection": "base-layers"
-          }
-        },
-        "collection_7K6tw9": {
-          "type": "collection",
-          "settings": {
-            "collection": "all-collections"
-          }
-        },
-        "collection_GaKExE": {
-          "type": "collection",
-          "settings": {
-            "collection": "knitwear"
-          }
-        },
-        "collection_aNFbWj": {
-          "type": "collection",
-          "settings": {
-            "collection": "puffers"
-          }
-        },
         "collection_NKHqRb": {
           "type": "collection",
           "settings": {
-            "collection": "frontpage"
+            "collection": ""
+          }
+        },
+        "collection_yrwxEt": {
+          "type": "collection",
+          "settings": {
+            "collection": ""
+          }
+        },
+        "collection_tEEbAc": {
+          "type": "collection",
+          "settings": {
+            "collection": ""
+          }
+        },
+        "collection_GM4yi3": {
+          "type": "collection",
+          "settings": {
+            "collection": ""
+          }
+        },
+        "collection_Wn4BY9": {
+          "type": "collection",
+          "settings": {
+            "collection": ""
+          }
+        },
+        "collection_7UUJAP": {
+          "type": "collection",
+          "settings": {
+            "collection": ""
           }
         }
       },
       "block_order": [
-        "collection_QQ7bqk",
-        "collection_m6HCxL",
-        "collection_7K6tw9",
-        "collection_GaKExE",
-        "collection_aNFbWj",
-        "collection_NKHqRb"
+        "collection_NKHqRb",
+        "collection_yrwxEt",
+        "collection_tEEbAc",
+        "collection_GM4yi3",
+        "collection_Wn4BY9",
+        "collection_7UUJAP"
       ],
       "settings": {
         "heading": "All collections",
