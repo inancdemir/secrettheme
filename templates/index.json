@@ -3,29 +3,26 @@
     "slideshow_hDBweA": {
       "type": "slideshow",
       "blocks": {
-        "hero_slide_rNdQzm": {
+        "hero_slide_ENLAga": {
           "type": "hero_slide",
           "settings": {
-            "slide_bg": "shopify:\/\/shop_images\/carousel-hero_1e9d614d-210a-4114-aa2d-872fcfd0981b.png",
-            "video": "shopify:\/\/files\/videos\/sofiagoggia_ec2b8f09-2ec5-435d-9615-8256e0574c81.mp4",
-            "description": "<p>UNVEILING INNOVATION IN WINTER SPORTSWEAR<\/p>",
-            "heading": "Elevate to New Heights with Comfort",
-            "sub_heading": "",
-            "button_text": "VIEW MORE",
-            "button_url": "shopify:\/\/collections",
+            "description": "<p>Write text to emphasize your story<\/p>",
+            "heading": "Promote your story here!",
+            "sub_heading": "Add subheading",
+            "button_text": "BUTTON LABEL",
+            "button_url": "",
             "button_style": "model-4",
             "overlay_color": "#000000",
             "overlay_color_opacity": 40
           }
         },
-        "hero_slide_R8FT3n": {
+        "hero_slide_Fq7iHF": {
           "type": "hero_slide",
           "settings": {
-            "slide_bg": "shopify:\/\/shop_images\/iamsose7en_create_a_photo_of_a_woman_wearing_the_rain_wear_and__c86186aa-3a1c-4227-81d9-f511af6af34e.png",
-            "description": "<p>UNVEILING INNOVATION ON WINTER SPORTSWEAR<\/p>",
-            "heading": "Base Layers for the Toughest Climates",
-            "sub_heading": "Introducing our 2023\/24 Base Layers",
-            "button_text": "VIEW COLLECTION",
+            "description": "<p>Write text to emphasize your story<\/p>",
+            "heading": "Promote your story here!",
+            "sub_heading": "Add subheading",
+            "button_text": "BUTTON LABEL",
             "button_url": "",
             "button_style": "model-4",
             "overlay_color": "#000000",
@@ -34,8 +31,8 @@
         }
       },
       "block_order": [
-        "hero_slide_rNdQzm",
-        "hero_slide_R8FT3n"
+        "hero_slide_ENLAga",
+        "hero_slide_Fq7iHF"
       ],
       "settings": {
         "section_height": 100,
@@ -60,13 +57,13 @@
         "slide_M3Fept": {
           "type": "slide",
           "settings": {
-            "collection": "ski-suits"
+            "collection": ""
           }
         },
         "slide_pPpKYC": {
           "type": "slide",
           "settings": {
-            "collection": "accessories"
+            "collection": ""
           }
         }
       },
@@ -75,10 +72,10 @@
         "slide_pPpKYC"
       ],
       "settings": {
-        "heading": "Discover our collections",
+        "heading": "Collection tabs.",
         "title_color": "#000000",
         "heading_font_size": "large",
-        "sub-heading": "<p><strong>Experience clothing that adapts, protects, and lasts.<\/strong><\/p>",
+        "sub-heading": "<p><strong>Write a short description<\/strong><\/p>",
         "sub_title_color": "#000000",
         "tabs_color": "#000000",
         "image_size": "three-four",
@@ -99,19 +96,19 @@
         "collection-1": {
           "type": "collection",
           "settings": {
-            "collection": "frontpage"
+            "collection": ""
           }
         },
         "collection-2": {
           "type": "collection",
           "settings": {
-            "collection": "accessories"
+            "collection": ""
           }
         },
         "collection-3": {
           "type": "collection",
           "settings": {
-            "collection": "jackets"
+            "collection": ""
           }
         }
       },
@@ -121,10 +118,10 @@
         "collection-3"
       ],
       "settings": {
-        "heading": "2023 F\/W",
+        "heading": "Collection showcase",
         "heading_color": "#000000",
         "heading_font_size": "large",
-        "sub_heading": "<p><strong>Tailor your wardrobe to your world<\/strong><\/p>",
+        "sub_heading": "<p><strong>Write a subheading<\/strong><\/p>",
         "sub_heading_color": "#000000",
         "collection_per_line": 3,
         "image_size": "one-one",
@@ -151,7 +148,7 @@
         "collection-1": {
           "type": "collection",
           "settings": {
-            "collection": "new-commers",
+            "collection": "",
             "enable_description": "enabled",
             "collection_description_lenght": 40,
             "enable_custom_description": "enabled",
@@ -186,8 +183,8 @@
     "countdown_bar_cGeVw7": {
       "type": "countdown-bar",
       "settings": {
-        "title": "Winter Sale",
-        "sub_title": "Spend 100$ and get 30% of your entire order!",
+        "title": "Countdown bar",
+        "sub_title": "Promote your promotion here!",
         "year": 2024,
         "month": "4",
         "day": "1",
@@ -211,7 +208,7 @@
         "collection_jizNyY": {
           "type": "collection",
           "settings": {
-            "collection": "knitwear",
+            "collection": "",
             "enable_description": "enabled",
             "collection_description_lenght": 40,
             "enable_custom_description": "enabled",
@@ -225,7 +222,7 @@
         "collection_KeYmaV": {
           "type": "collection",
           "settings": {
-            "collection": "base-layers",
+            "collection": "",
             "enable_description": "enabled",
             "collection_description_lenght": 40,
             "enable_custom_description": "enabled",
@@ -272,7 +269,7 @@
           "type": "add_product",
           "settings": {
             "product_list": [
-              "ajax-goggles"
+
             ],
             "pp_horizontal": 65,
             "pp_verticle": 19,
@@ -283,7 +280,7 @@
           "type": "add_product",
           "settings": {
             "product_list": [
-              "orange-goggles"
+
             ],
             "pp_horizontal": 28,
             "pp_verticle": 37,
@@ -294,7 +291,7 @@
           "type": "add_product",
           "settings": {
             "product_list": [
-              "solar-ski-jacket"
+
             ],
             "pp_horizontal": 67,
             "pp_verticle": 71,
@@ -308,12 +305,11 @@
         "cdf0dd4d-6065-41e3-b71e-8de9d4bc1265"
       ],
       "settings": {
-        "heading": "Unveil adventure with every turn",
+        "heading": "Shop to look",
         "title_color": "#000000",
         "heading_font_size": "large",
-        "sub-heading": "<p>Conquering the snow capped peaks in durability and style<\/p>",
+        "sub-heading": "<p><strong>Write a short description<\/strong><\/p>",
         "sub_title_color": "#000000",
-        "shop_to_look_image": "shopify:\/\/shop_images\/cngrs_full-length_photo_of_two_brunette_woman_wearing_ski_jacke_781c9782-4f3c-49e5-9687-d7408e0845f1.png",
         "animation_onof": false,
         "full_width": false
       }
@@ -331,7 +327,7 @@
         "header": {
           "type": "heading",
           "settings": {
-            "heading": "Green weaves: Our commitment to eco-conscious fabrication"
+            "heading": "Image with text"
           }
         },
         "text": {
@@ -355,7 +351,6 @@
         "link"
       ],
       "settings": {
-        "image": "shopify:\/\/shop_images\/eco-conscious.png",
         "image_size": 50,
         "row_gap": 16,
         "max_width": 100,
@@ -377,7 +372,7 @@
         "header": {
           "type": "heading",
           "settings": {
-            "heading": "Unmatched comfort"
+            "heading": "Image with text"
           }
         },
         "text": {
@@ -401,7 +396,6 @@
         "link"
       ],
       "settings": {
-        "image": "shopify:\/\/shop_images\/comfort.png",
         "image_size": 50,
         "row_gap": 16,
         "max_width": 100,
@@ -420,14 +414,14 @@
     "home-featured-posts": {
       "type": "featured-posts",
       "settings": {
-        "heading": "Chronicles",
+        "heading": "Featured posts.",
         "title_color": "#000000",
         "heading_font_size": "medium",
-        "sub-heading": "<p>Inside the Weave: The Latest in Fabric Innovation<\/p>",
+        "sub-heading": "<p><strong>Write a subheading<\/strong><\/p>",
         "sub_title_color": "#000000",
-        "button_label": "Visit News",
+        "button_label": "Visit posts",
         "product_per_row": 3,
-        "blog": "news",
+        "blog": "",
         "image_size": "one-one",
         "image_fit": "cover",
         "image_pos": "center",
@@ -463,7 +457,7 @@
         "heading_WqKAzq": {
           "type": "heading",
           "settings": {
-            "heading": "Seamless climate control"
+            "heading": "Before and after split"
           }
         },
         "text_FeiVhF": {
@@ -501,8 +495,6 @@
         "full_width": true,
         "sectio-height": "720",
         "sectio-height_mobile": "400",
-        "image_1": "shopify:\/\/shop_images\/cngrs_breathable_white_textile_garment_white_close_up_fortechni_ebcddb88-44f0-4751-8643-f55e4620db4e.png",
-        "image_2": "shopify:\/\/shop_images\/cngrs_breathable_white_textile_garment_white_close_up_19c6675d-96c4-4fe4-82fa-43bf5032790d.png",
         "image_fit": "contain",
         "image_pos": "center",
         "section_padding_top": 50,
@@ -534,7 +526,7 @@
         "quote-2"
       ],
       "settings": {
-        "heading": "Voices of our Community",
+        "heading": "Testimonial slider",
         "section_padding": 64,
         "background_color": "linear-gradient(180deg, rgba(0, 0, 0, 1), rgba(0, 0, 0, 1) 100%)",
         "text_color": "#ffffff",
@@ -557,8 +549,8 @@
             "select_icon": "award",
             "select_icon_active": false,
             "icon_size": 30,
-            "block_title": "Discover Our Boutiques",
-            "title_size": "large",
+            "block_title": "Multiple columns",
+            "title_size": "medium",
             "block_content": "<p>Discover the fusion of innovation and sustainability in Aspena’s boutiques, where hands-on experiences with our advanced, eco-friendly jackets and expert guidance await to tailor your outdoor wear for the future.<\/p>",
             "items_align": "left",
             "cover_image_force": false
@@ -574,7 +566,6 @@
             "title_size": "small",
             "block_content": "",
             "items_align": "center",
-            "cover_image": "shopify:\/\/shop_images\/single-image.png",
             "cover_image_force": true
           }
         },
@@ -588,7 +579,6 @@
             "title_size": "small",
             "block_content": "",
             "items_align": "center",
-            "cover_image": "shopify:\/\/shop_images\/single-image2.png",
             "cover_image_force": true
           }
         }
@@ -617,20 +607,20 @@
         "header": {
           "type": "heading",
           "settings": {
-            "heading": "Aspen Boutique"
+            "heading": "Banner"
           }
         },
         "text": {
           "type": "text",
           "settings": {
-            "sub_heading": "<p>Experience the cutting-edge of eco-chic in the heart of Colarado<\/p>"
+            "sub_heading": "<p><strong>Write a subheading<\/strong><\/p>"
           }
         },
         "button": {
           "type": "button",
           "settings": {
-            "button_text": "Explore Boutiques",
-            "button_url": "shopify:\/\/pages\/about-us",
+            "button_text": "Button label",
+            "button_url": "",
             "button_style": "model-4"
           }
         }
@@ -660,7 +650,6 @@
         "gap_from_sides": 60,
         "overlay_color": "#000000",
         "overlay_color_opacity": 40,
-        "background_image": "shopify:\/\/shop_images\/collection-fullsize_339a71fa-e527-4277-bb55-c620778a944c.png",
         "animation_onof": false
       }
     },

@@ -14,13 +14,13 @@
         "menu-1": {
           "type": "navigation",
           "settings": {
-            "linklist": "shop"
+            "linklist": "footer"
           }
         },
         "menu-2": {
           "type": "navigation",
           "settings": {
-            "linklist": "main-menu"
+            "linklist": "information"
           }
         },
         "menu-3": {
@@ -50,9 +50,9 @@
         "use_default_colors": false,
         "full_width": true,
         "footer-logo_on": true,
-        "footer-logo": "shopify:\/\/shop_images\/footerlogo.svg",
-        "copyright": "© 2023 Rise, All rights reserved. Powered by Shopify",
-        "payment_icons": true
+        "copyright": "© 2023 Oak Themes, All rights reserved. Powered by Shopify",
+        "payment_icons": true,
+        "animation_onof": false
       }
     }
   },
