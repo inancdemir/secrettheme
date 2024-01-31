@@ -222,37 +222,35 @@
           "type": "column",
           "settings": {
             "select_icon": "award",
-            "select_icon_active": false,
+            "select_icon_active": true,
             "icon_size": 30,
             "block_title": "Quality Materials",
             "title_size": "small",
             "block_content": "<p>Your exchange ships out as soon as you email us<\/p>",
             "items_align": "center",
-            "cover_image": "shopify:\/\/shop_images\/cngrs_breathable_white_textile_garment_white_close_up_19c6675d-96c4-4fe4-82fa-43bf5032790d.png",
-            "cover_image_force": true
+            "cover_image_force": false
           }
         },
         "column_qfCKGa": {
           "type": "column",
           "settings": {
-            "select_icon": "award",
-            "select_icon_active": false,
+            "select_icon": "star",
+            "select_icon_active": true,
             "icon_size": 30,
             "block_title": "Easy Returns",
             "title_size": "small",
             "block_content": "<p>Your exchange ships out as soon as you email us<\/p>",
             "items_align": "center",
-            "cover_image": "shopify:\/\/shop_images\/cngrs_breathable_white_textile_garment_white_close_up_fortechni_ebcddb88-44f0-4751-8643-f55e4620db4e.png",
-            "cover_image_force": true
+            "cover_image_force": false
           }
         },
         "column_ffEBiV": {
           "type": "column",
           "settings": {
-            "select_icon": "award",
-            "select_icon_active": false,
+            "select_icon": "deliverytruck",
+            "select_icon_active": true,
             "icon_size": 30,
-            "block_title": "Easy Returns",
+            "block_title": "Fast Shipping",
             "title_size": "small",
             "block_content": "<p>Your exchange ships out as soon as you email us<\/p>",
             "items_align": "center",
@@ -273,7 +271,7 @@
         "section_padding_bottom": 30,
         "ver_align": "center",
         "full_width": false,
-        "background_color": "linear-gradient(180deg, rgba(215, 215, 215, 1) 100%, rgba(255, 255, 255, 1) 100%)",
+        "background_color": "linear-gradient(180deg, rgba(255, 255, 255, 1) 100%, rgba(255, 255, 255, 1) 100%)",
         "content_color": "#000000",
         "animation_onof": false
       }
