@@ -40,8 +40,8 @@
     "spacer-1": {
       "type": "spacer",
       "settings": {
-        "desktop_space": "50",
-        "mobile_space": "30"
+        "desktop_space": "128",
+        "mobile_space": "80"
       }
     },
     "map": {
@@ -55,13 +55,6 @@
         "longtitude": "2.3214594880416795",
         "full_width": true
       }
-    },
-    "spacer-2": {
-      "type": "spacer",
-      "settings": {
-        "desktop_space": "50",
-        "mobile_space": "30"
-      }
     }
   },
   "order": [
@@ -69,7 +62,6 @@
     "rich_section_f7yXiH",
     "main",
     "spacer-1",
-    "map",
-    "spacer-2"
+    "map"
   ]
 }
