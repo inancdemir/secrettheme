@@ -43,7 +43,6 @@
         "gap_from_bottom_mobile": 33,
         "overlay_color": "#000000",
         "overlay_color_opacity": 40,
-        "background_image": "shopify:\/\/shop_images\/a-lonely-mountain-covered-in-snow.jpg",
         "image_pos": "center",
         "animation_onof": false
       }
@@ -75,7 +74,6 @@
         "image-1": {
           "type": "image",
           "settings": {
-            "image": "shopify:\/\/shop_images\/cngrs_upper_body_photo_of_a_blonde_woman_wearing_a_dark_gray_sk_c872bc56-9718-4298-b022-c3d696a723f6.png",
             "custom_size": true,
             "image_size": "one-one",
             "image_fit": "cover",
@@ -85,7 +83,6 @@
         "image-2": {
           "type": "image",
           "settings": {
-            "image": "shopify:\/\/shop_images\/cngrs_upper_body_photo_of_a_blonde_woman_wearing_a_red_ski_suit_2fad2d94-229a-44bb-96ab-2a5a8e4d4a11.png",
             "custom_size": true,
             "image_size": "one-one",
             "image_fit": "cover",
@@ -140,7 +137,6 @@
         "text"
       ],
       "settings": {
-        "image": "shopify:\/\/shop_images\/cngrs_upper_body_photo_of_a_blonde_woman_wearing_a_red_ski_suit_a9dac283-213a-4ec8-9209-16de58bad4f4.png",
         "image_size": 50,
         "row_gap": 16,
         "max_width": 100,
@@ -191,7 +187,6 @@
         "text"
       ],
       "settings": {
-        "image": "shopify:\/\/shop_images\/ski-1024x707.jpg",
         "image_size": 50,
         "row_gap": 16,
         "max_width": 100,
@@ -252,7 +247,6 @@
         "image-1": {
           "type": "image",
           "settings": {
-            "image": "shopify:\/\/shop_images\/Lindsey-Vonn-2015.webp",
             "custom_size": true,
             "image_size": "one-one",
             "image_fit": "cover",
@@ -262,7 +256,6 @@
         "image-2": {
           "type": "image",
           "settings": {
-            "image": "shopify:\/\/shop_images\/mikaela_shiffrin_9cb8f104-174a-41c3-8792-c737c63dd615.jpg",
             "custom_size": true,
             "image_size": "one-one",
             "image_fit": "cover",
@@ -272,7 +265,6 @@
         "image-3": {
           "type": "image",
           "settings": {
-            "image": "shopify:\/\/shop_images\/federica_brignone.webp",
             "custom_size": true,
             "image_size": "one-one",
             "image_fit": "cover",
@@ -299,26 +291,26 @@
         "db454540-21a7-4f30-8a62-e4d5f4217b22": {
           "type": "super_heading",
           "settings": {
-            "super": "ASPENA"
+            "super": "SUPER"
           }
         },
         "header": {
           "type": "heading",
           "settings": {
-            "heading": "2023\/24 F\/W"
+            "heading": "Heading"
           }
         },
         "text": {
           "type": "text",
           "settings": {
-            "sub_heading": "<p>VISIT OUR 2023\/24 NEW ARRIVALS<\/p>"
+            "sub_heading": "<p>Subheading<\/p>"
           }
         },
         "button": {
           "type": "button",
           "settings": {
-            "button_text": "GO TO COLLECTION",
-            "button_url": "shopify:\/\/collections\/new-commers",
+            "button_text": "Button",
+            "button_url": "",
             "button_style": "model-4"
           }
         }
@@ -338,7 +330,7 @@
         "text_position": "mid-center",
         "super_color": "#ffffff",
         "super_opacity": 40,
-        "super_font_size": 300,
+        "super_font_size": 200,
         "super_line_height": 350,
         "heading_color": "#ffffff",
         "heading_font_size": 69,
@@ -349,7 +341,6 @@
         "gap_from_sides": 0,
         "overlay_color": "#000000",
         "overlay_color_opacity": 60,
-        "background_image": "shopify:\/\/shop_images\/cngrs_full-length_photo_of_two_woman_wearing_ski_suits_drone_sh_e4ff4cb8-4374-4afb-abe1-36f245f302e9.png",
         "animation_onof": false
       }
     }
