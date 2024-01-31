@@ -179,10 +179,17 @@
           "settings": {
             "heading": "{{ product.title }} \/ {{ product.vendor }}"
           }
+        },
+        "text_akJF3h": {
+          "type": "text",
+          "settings": {
+            "sub_heading": "<p>Built for extreme comfort in extreme conditions.<\/p>"
+          }
         }
       },
       "block_order": [
-        "heading_a6Gm9Y"
+        "heading_a6Gm9Y",
+        "text_akJF3h"
       ],
       "settings": {
         "collection_height": 800,
