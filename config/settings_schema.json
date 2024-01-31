@@ -13,7 +13,7 @@
       {
         "type": "image_picker",
         "id": "logo",
-        "label": "t:settings_schema.logo.settings.logo_image.desktop"
+        "label": "Choose logo"
       },
       {
         "type": "range",
@@ -23,13 +23,13 @@
         "step": 1,
         "default": 53,
         "unit": "px",
-        "label": "t:settings_schema.logo.settings.logo_width.desktop"
+        "label": "Logo width on desktop"
       },
       {
         "type": "image_picker",
         "id": "m_logo",
-        "label": "t:settings_schema.logo.settings.logo_image.mobile",
-        "info": "t:settings_schema.logo.settings.logo_image.mobile_info"
+        "label": "Choose image",
+        "info": "Choose logo for mobile"
       },
       {
         "type": "range",
@@ -39,7 +39,7 @@
         "step": 1,
         "default": 90,
         "unit": "px",
-        "label": "t:settings_schema.logo.settings.logo_width.mobile"
+        "label": "Mobile logo width"
       },
       {
         "type": "image_picker",
