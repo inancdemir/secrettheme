@@ -89,11 +89,11 @@
       </div>
     {% endif %}
     <div class="blog-post-list column-{{ section.settings.product_per_row }} image-size-{{ section.settings.image_size }} image-fit-{{- section.settings.image_fit }} image-pos-{{- section.settings.image_pos }} authore-{{- section.settings.show_authore }} date-{{- section.settings.show_date }} tags-{{- section.settings.show_tags }} comments-{{- section.settings.show_comments -}}">
-      {%- paginate blog.articles by 12 -%}
+      {%- paginate blog.articles by 2 -%}
       {% for article in blog.articles %}
         {% render 'single-post' article: article %}
       {% endfor %}
-    </div>
+    
     <div class="pagination">
       {% case section.settings.pagination_settings %}
         {% when 'infinite' or 'click-to-load' %}
@@ -105,8 +105,9 @@
         {% when 'paginated' %}
           <div class="pagination">{{- paginate | default_pagination -}}</div>
       {% endcase %}
-      {%- endpaginate -%}
     </div> 
+    {%- endpaginate -%}
+  </div>
   {% unless section.settings.full_width %}
   </div>
   {% endunless %}

@@ -590,11 +590,14 @@ button,
 }
 .button.model-3, 
 button.model-3,
-.shopify-challenge__button.btn {
+.shopify-challenge__button.btn,
+button.shopify-payment-button__button {
     display: inline-block;
     color: var(--button-third-color);
     border: 1px solid var(--button-third-color);
     transition: all 0.4s ease-in-out;
+    background-color: transparent;
+    border-radius: 0;
 }
 .shopify-challenge__button.btn {
     text-align: center;
@@ -602,10 +605,11 @@ button.model-3,
     display: block;
 }
 .button.model-3:hover, button.model-3:hover,
-.shopify-challenge__button.btn:hover {
+.shopify-challenge__button.btn:hover,
+button.shopify-payment-button__button:hover:not([disabled]) {
     color: var(--button-third-color_bg);
     border: 1px solid var(--button-third-color);
-    background: var(--button-third-color);
+    background-color: var(--button-third-color);
     transition: all 0.4s ease-in-out;
 }
 .button.model-4, button.model-4 {
@@ -625,6 +629,10 @@ button.model-3,
 .button.full, button.full {
     width: 100%;
     text-align: center;
+}
+.button.full[disabled], button.full[disabled] {
+    opacity: 0.6;
+    cursor: default;
 }
 .button.media-text, button.media-text {
     padding: 0;
@@ -1260,9 +1268,7 @@ select#sort-by {
         width: calc(100% - 48px);
    }
 }
-.site-header .main-navigation .logo {
-    /*padding: calc((var(--font-menu-size) * 17px) * 1.05) 0;*/
-}
+
 .site-header .main-navigation .logo, .site-header .main-navigation .logo a {
     text-decoration: none;
     text-decoration: none;

@@ -24,6 +24,13 @@
   height: auto;
   margin-top: 16px;
 }
+.accordion.active .accordion-content p {
+  margin: 0 0 20px 0;
+}
+.accordion.active .accordion-content ul {
+  list-style: disc;
+  margin: 0 20px 0;
+}
 .accordion.active .accordion-title span.h4 span.minus {
   display: flex;
 }

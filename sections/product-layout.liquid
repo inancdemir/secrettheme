@@ -276,6 +276,12 @@
   .bar-static li.filled {
     background: #000000;
   }
+  .shopify-payment-button__button+.shopify-payment-button__button--hidden {
+    display: none;
+  }
+  .shopify-payment-button {
+    margin-top: calc({{ section.settings.details_items_gap }}px /2);
+  }
 {%- endstyle -%}
 {{ 'product.css' | asset_url | stylesheet_tag }}
 {{ 'socials.css' | asset_url | stylesheet_tag }}
@@ -293,7 +299,7 @@
 {% unless section.settings.full_width %}
   <div class="wide-width">
 {% endunless %}
-<div class="product-page section-{{ section.id }}" data-money-format="{{ shop.money_format }}">
+<div class="product-page section-{{ section.id }} animation-fadeIn" data-money-format="{{ shop.money_format }}">
   <div class="image-side animation-test">
     <ul class="product-image-slider{{- section.id -}}">
       {% for media in product.media %}
@@ -358,15 +364,6 @@
   </div>
 
   <div class="product-details">
-    {% comment %}
-      {% assign product_metafield = product.metafields.custom %}
-
-      {% if product_metafield.warmth %}
-      Ürün Sıcaklık Metafield Değeri: {{ product_metafield.warmth }}
-      {% else %}
-      Bu ürün için sıcaklık metafield değeri bulunamadı.
-      {% endif %}
-    {% endcomment %}
     <div class="product-wrap">
       {% form 'product', product %}
         <input
@@ -519,33 +516,34 @@
               {% endif %}
             {%- when 'sell_with' -%}
               <div class="product-list-sell-with full-on-mobile column-{{ block.settings.item_per_row }} column-mobile-{{ block.settings.item_per_row_mobile }} image-size-{{- block.settings.image_size }} image-fit-{{- block.settings.image_fit }} image-pos-{{- block.settings.image_pos -}}">
-                  {% if block.settings.product_list != empty %}
-                      {% for product in block.settings.product_list %}
-                          {% render 'product-item', product: product %}
-                      {% endfor %} 
-                  {% else %}            
-                      {% for product_number in (1..block.settings.item_per_row) %}
-                          <div class="product-list-item">
-                              <div class="product-image">
-                                {{ 'product-' | append: product_number | placeholder_svg_tag: 'demo-image slide-image' }}
-                              </div>
-                              <div class="details">
-                                <span class="h4 small">Select Product To Show</span>
-                                <div class="price">
-                                    <span class="original-price">$100</span>
-                                    <span class="discounted-price">$90</span>
-                                </div>    
-                              </div>                    
-                          </div>
-                      {% endfor %}
-                  {% endif %}
+                {% if block.settings.product_list != empty %}
+                  {% for product in block.settings.product_list %}
+                    {% render 'product-item', product: product %}
+                  {% endfor %} 
+                {% else %}            
+                  {% for product_number in (1..block.settings.item_per_row) %}
+                    <div class="product-list-item">
+                      <div class="product-image">
+                        {{ 'product-' | append: product_number | placeholder_svg_tag: 'demo-image slide-image' }}
+                      </div>
+                      <div class="details">
+                        <span class="h4 small">Select Product To Show</span>
+                        <div class="price">
+                          <span class="original-price">$100</span>
+                          <span class="discounted-price">$90</span>
+                        </div>
+                      </div>
+                    </div>
+                  {% endfor %}
+                {% endif %}
               </div>
-            </div>
             {%- when 'badges' -%}
+              {% assign second_badge = settings.second_badge_tag %}
+              {% assign third_badge = settings.third_badge_tag %}
               {% if product.tags contains second_badge or product.compare_at_price_max > product.price or product.tags contains third_badge %}
                 <div class="badges">
                   {% if settings.second_badge_on %}
-                    {% assign second_badge = settings.second_badge_tag %}
+                    
                     {% if product.tags contains second_badge %}
                       <div class="badge model-2">
                         {{ settings.second_badge_text }}
@@ -560,7 +558,7 @@
                     {% endif %}
                   {% endif %}
                   {% if settings.third_badge_on %}
-                    {% assign third_badge = settings.third_badge_tag %}
+                    
                     {% if product.tags contains third_badge %}
                       <div class="badge model-3">
                         {{ settings.third_badge_text }}
@@ -571,7 +569,7 @@
               {% endif %}
             {%- when 'sku' -%}
               {%- assign current_variant = product.selected_or_first_available_variant -%}
-              <span>{{ current_variant.sku }}</span>
+              <span class="caption-2">SKU: {{ current_variant.sku }}</span>
             {%- when 'heading' -%}
               <h1 {{ block.shopify_attributes }}>{{ block.settings.heading }}</h1>
             {%- when 'vendor_text' -%}
@@ -583,34 +581,39 @@
                 {{ block.settings.text }}
               </h1>
             {%- when 'button' -%}
-              <div class="add-to-cart {{ block.settings.quantity_position }}" {{ block.shopify_attributes }}>
-                <div class="quantity">
-                  <button class="q-down" aria-label="minus-quantity">{% render 'icon-minus' %}</button>
-                  <input type="number" name="quantity" aria-label="product-quantity" min="1" value="1">
-                  <button class="q-up" aria-label="plus-quantity">{% render 'icon-plus' %}</button>
-                </div>
-                <button
-                  type="submit"
-                  class="button {{ block.settings.button_style }} full in-stock"
-                  id="add-cart"
-                  {% unless product.selected_or_first_available_variant.available %}
+              <div class="add-to-cart-buttons">
+                <div class="add-to-cart {{ block.settings.quantity_position }}" {{ block.shopify_attributes }}>
+                  <div class="quantity">
+                    <button class="q-down" aria-label="minus-quantity">{% render 'icon-minus' %}</button>
+                    <input type="number" name="quantity" aria-label="product-quantity" min="1" value="1">
+                    <button class="q-up" aria-label="plus-quantity">{% render 'icon-plus' %}</button>
+                  </div>
+                  <button
+                    type="submit"
+                    class="button {{ block.settings.button_style }} full in-stock"
+                    id="add-cart"
+                    aria-disabled="false"
+                    {% unless product.selected_or_first_available_variant.available %}
+                      disabled
+                    {% endunless %}
+                  >
+                    {{ block.settings.button_label }}
+                  </button>
+  
+                  <button
+                    type="submit"
+                    class="button {{ block.settings.button_style }} full hide outof-stock"
+                    id="add-cart"
+                    aria-disabled="true"
                     disabled
-                  {% endunless %}
-                >
-                  {{ block.settings.button_label }}
-                </button>
-                <button
-                  type="submit"
-                  class="button {{ block.settings.button_style }} full hide outof-stock"
-                  id="add-cart"
-                  disabled
-                >
-                  {{ block.settings.button_label_nostock }}
-                </button>
+                  >
+                    {{ block.settings.button_label_nostock }}
+                  </button>
+                </div>
+                {% if block.settings.show_quick_buy == true %}
+                  {{ form | payment_button }}
+                {% endif %}
               </div>
-              {% if block.settings.show_quick_buy == true %}
-                {{ form | payment_button }}
-              {% endif %}
             {%- when 'prices' -%}
               <div class="product-price" {{ block.shopify_attributes }}>
                 <span class="original-price {% unless product.compare_at_price > product.price %}hide{% endunless %}">
@@ -803,14 +806,6 @@
                 {%- render 'icon-ruller' -%}
                 {{ block.settings.find_your_size_title }}
               </div>
-              <div class="rise-pop pop-size">
-                <div class="rise-pop-wrap">
-                  <span class="pop-close">{%- render 'icon-close' -%}</span>
-                  <div class="size-chart-pop-cont">
-                    {{ block.settings.page.content }}
-                  </div>
-                </div>
-              </div>
             {%- when 'accordion' -%}
               <div class="accordion" {{ block.shopify_attributes }}>
                 <div class="accordion-title">
@@ -880,6 +875,8 @@
     </div>
   </div>
 
+
+  
   {%- liquid
     if product.selected_or_first_available_variant.featured_media
       assign seo_media = product.selected_or_first_available_variant.featured_media
@@ -887,7 +884,6 @@
       assign seo_media = product.featured_media
     endif
   -%}
-
   <script type="application/ld+json">
     {
       "@context": "http://schema.org/",
@@ -937,6 +933,26 @@
 {% unless section.settings.full_width %}
   </div>
 {% endunless %}
+
+{%- for block in section.blocks -%}
+  {% case block.type %}
+    {%- when 'find_your_size' -%}
+      <div class="find-size text-link" {{ block.shopify_attributes }}>
+        {%- render 'icon-ruller' -%}
+        {{ block.settings.find_your_size_title }}
+      </div>
+      <div class="rise-pop pop-size">
+        <div class="rise-pop-wrap">
+          <span class="pop-close">{%- render 'icon-close' -%}</span>
+          <div class="size-chart-pop-cont">
+            {{ block.settings.page.content }}
+          </div>
+        </div>
+      </div>
+    
+  {% endcase %}
+{% endfor %}
+
 <script>
   function copyURLToClipboard() {
     var urlToCopy = window.location.href;
@@ -1159,16 +1175,23 @@
       
       //button checker
       var add = document.querySelector('#add-cart')
-      
+      const paymentButton = document.querySelector('.shopify-payment-button__button');
+
       if (matchedVariant.available) {
         document.querySelector('.in-stock').classList.remove('hide')
         document.querySelector('.outof-stock').classList.add('hide')
-      //  document.querySelector('.shopify-payment-button__button--unbranded').setAttribute('aria-disabled', 'false');
+        if (paymentButton) {
+          document.querySelector('.shopify-payment-button__button').setAttribute('aria-disabled', 'false');
+          document.querySelector('.shopify-payment-button__button').removeAttribute('disabled');
+        }
         
       } else {
         document.querySelector('.outof-stock').classList.remove('hide')
         document.querySelector('.in-stock').classList.add('hide')
-      //  document.querySelector('.shopify-payment-button__button--unbranded').setAttribute('aria-disabled', 'true');
+        if (paymentButton) {
+          document.querySelector('.shopify-payment-button__button').setAttribute('aria-disabled', 'true');
+          document.querySelector('.shopify-payment-button__button').setAttribute('disabled', '');
+        }
       }  
       console.log(matchedVariant.id);
     })
@@ -3228,6 +3251,7 @@
     {
       "type": "button",
       "name": "Button",
+      "limit": 1,
       "settings": [
         {
           "type": "text",

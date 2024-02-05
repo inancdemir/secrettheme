@@ -108,14 +108,9 @@
 
     <div class="collection-tabs full-on-mobile">
       {%- for block in section.blocks -%}
-        
         {% case block.type %}
             {%- when 'slide' -%}
-              {% if forloop.index0 == 0 %}
-                <div class="wrapper active" data-name="{{ block.id }}" {{ block.shopify_attributes }}>
-              {% else %}
-                <div class="wrapper" data-name="{{ block.id }}" {{ block.shopify_attributes }}>
-              {% endif %}
+              <div class="wrapper {% if forloop.index0 == 0 %} active {% endif %}" data-name="{{ block.id }}" {{ block.shopify_attributes }}>
                 <div class="slide-wrapper">
                   {% if block.settings.collection != empty %}
                     {% if block.settings.collection.products %}
@@ -182,7 +177,6 @@
                           </div>
                         </div>
                     {% endfor %}  
-                    
                   {% endif %}                
                 </div>
             </div>

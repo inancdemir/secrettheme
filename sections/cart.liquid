@@ -4,7 +4,7 @@
 
 <div class="cart-page  {% unless section.settings.animation_onof %}animation-fadeIn{% endunless %}" data-money-format = {{ shop.money_format }}>
     <div class="cart-page-header text-center">
-        <h2 class="large">{{ section.settings.cart_header }}</h1>
+        <h2 class="large">{{ section.settings.cart_header }}</h2>
     </div>
     {% if settings.free_shiping %}
         {%- liquid 
@@ -44,42 +44,34 @@
             <a href="{{ section.settings.cart_button_link_empty }}" class="button {{ section.settings.button_style }}">{{ section.settings.cart_button_empty }}</a>
           </div>
         {% else %}
-            {% form 'cart', cart %}    
+          {% form 'cart', cart %}
             <div class="cart-items-titles">
                 <div class="product-deatails-title">Product</div>
                 <div class="product-deatails-quantity hidden-mobile">Quantity</div>
                 <div class="product-deatails-price text-center hidden-mobile">Price</div>
                 <div class="product-deatails-subtotal text-right hidden-mobile">Subtotal</div>
-            
             </div>
-            
-                <div class="cart-items">
-                    {% for item in cart.items %}
-                      {% render 'cart-item', item: item %}
-                        
-                    {% endfor %}
-                </div>
-                <div class="cart-summary">
-                  <span class="h4 small">Cart summary</span>
-                  <div class="cart-notes">
-                    <textarea name="note" placeholder="">{{ cart.note }}</textarea>
-                  </div>
-                  <div class="totals">
-                    <span>Discount:</span>
-                    <span id="total-discount">{{ cart.total_discount | money }}</span>
-                  </div>
-                  <div class="totals">
-                    <span>Total:</span>
-                    <span id="total-price">{{ cart.total_price | money }}</span>
-                  </div>
-                  <button type="submit" name="checkout" class="button model-2 full">Proceed to Checkout</a>
-                </div>
-
-
-                
+            <div class="cart-items">
+                {% for item in cart.items %}
+                  {% render 'cart-item', item: item %}
+                {% endfor %}
+            </div>
+            <div class="cart-summary">
+              <span class="h4 small">Cart summary</span>
+              <div class="cart-notes">
+                <textarea name="note" placeholder="">{{ cart.note }}</textarea>
               </div>
-            
-            {% endform %}
+              <div class="totals">
+                <span>Discount:</span>
+                <span id="total-discount">{{ cart.total_discount | money }}</span>
+              </div>
+              <div class="totals">
+                <span>Total:</span>
+                <span id="total-price">{{ cart.total_price | money }}</span>
+              </div>
+              <button type="submit" name="checkout" class="button model-2 full">Proceed to Checkout</button>
+            </div>
+          {% endform %}
         {% endif %}
     </div>
     <div class="cart-page-footer">

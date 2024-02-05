@@ -88,8 +88,8 @@
                   {{ filter.label }}: {{ filter_value.label }} {% render 'icon-close' %}
                 </a>
                 {%- endfor -%}
-            {%- endif- %}
-          {%- endfor -%}
+            {% endif %}
+          {% endfor %}
       </div>
       <select id="sort-by">
         {% assign sort_by = collection.sort_by | default: collection.default_sort_by %}
@@ -105,7 +105,7 @@
     assign productPerRow = section.settings.item_per_row
     assign rowPerpage = section.settings.item_show_row
     assign productperpage = productPerRow | times: rowPerpage
-  %}{% assign delayIncrement = 0.2 %}
+  %}
     {% paginate collection.products by productperpage %}
       <div class="product-list full-on-mobile column-{{ section.settings.item_per_row }} column-mobile-{{ section.settings.item_per_row_mobile }} image-size-{{- section.settings.image_size }} image-fit-{{- section.settings.image_fit }} image-pos-{{- section.settings.image_pos -}}" id="AjaxinateContainer">
         {% for product in collection.products %}
@@ -136,7 +136,6 @@
 
             {%- endcase -%}
           {%- endfor -%}
-          {% assign delay = forloop.index | times: delayIncrement %}
           <div class="product-list-item">
             {% render 'product-list-item', product: product %}
           </div>

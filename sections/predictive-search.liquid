@@ -1,16 +1,5 @@
 {%- if predictive_search.performed -%}
   <div class="search-result-left">
-    {% comment %}
-    <div class="suggestion-box">
-      <span class="caption-2 search-section-title">Did you mean</span>
-      {%- for query in predictive_search.resources.queries -%}
-        <a href="{{ query.url }}" class="predictive-search__item link link--text" tabindex="-1">
-          {{ query.styled_text }}
-        </a>
-      {%- endfor -%}
-    </div>
-    {% endcomment %}
-
     {% if predictive_search.resources.queries != blank %}
       <span class="caption-2 search-section-title">DID YOU MEAN...</span>
       <ul>
@@ -36,10 +25,7 @@
           <li><a href="{{ page.url }}">{{ page.title }}</a></li>
         {%- endfor -%}
       </ul>
-    {% endif %}
-      
-      
-    
+    {% endif %}    
   </div>
   <div class="search-result-right">
     <div id="predictive-search-results">

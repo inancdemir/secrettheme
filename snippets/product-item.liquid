@@ -23,7 +23,6 @@
                   {{ media | video_tag: controls: false, loop: true, autoplay: true, width: "100%", loading: "lazy", class: "product-image video-show-front second-image" }}
               {% endcase %}
             {% endfor %}
-
             {% unless has_video %}
               {% assign second_image = product_images[1] %}
               <img src="{{ second_image | img_url: '600x' }}" 

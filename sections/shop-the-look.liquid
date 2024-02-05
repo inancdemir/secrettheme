@@ -136,10 +136,9 @@
   {% endunless %}
 </div>
 <script> 
-
   {%- if request.design_mode -%}
     document.addEventListener("shopify:section:load", function() {
-      shopTheLook();
+      initializeProductClickHandling();
     });
   {%- endif -%}
 </script>

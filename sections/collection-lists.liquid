@@ -111,53 +111,56 @@
 
           <div class="single-collection image-size-{{ section.settings.image_size }} image-fit-{{- section.settings.image_fit }} image-pos-{{- section.settings.image_pos -}}">
             <div class="image-wrap">  
-              {% if section.settings.collection_model == "model-one" %}
-                <a href="{{ block.settings.collection.url }}">
-              {% endif %}
+                <a href="{{ collection.url }}">
                   {{ collection.featured_image | image_url: width: 600 | image_tag: loading: 'lazy', class: 'product-image' }}
-              {% if section.settings.collection_model == "model-two" %}
                 </a>
-              {% endif %}
             </div>
             <div class="{{ section.settings.collection_model }}">
               {% if section.settings.collection_model == "model-two" %}
                 <a href="{{ collection.url }}">
-              {% endif %}
-                <h3 class="subheadline">
-                  {% if collection != empty %}
-                    {{- collection.title | upcase -}}
-                  {% else %}
-                    Collection Name
-                  {% endif %}
-                </h3>
-                {% unless section.settings.collection_model == "model-two" %}
-                <a class="shop-now text-link" href="{{ collection.url }}">Shop Now</a>
-                {% endunless %}
-              {% if section.settings.collection_model == "model-two" %}
+                  <h3 class="subheadline">
+                    {% if collection != empty %}
+                      {{- collection.title | upcase -}}
+                    {% else %}
+                      Collection Name
+                    {% endif %}
+                  </h3>
                 </a>
-              {% endif %}
+              {% else %}
+              <h3 class="subheadline">
+                {% if collection != empty %}
+                  {{- collection.title | upcase -}}
+                {% else %}
+                  Collection Name
+                {% endif %}
+              </h3>
+            {% endif %}
+              {% unless section.settings.collection_model == "model-two" %}
+              <a class="shop-now text-link" href="{{ collection.url }}">Shop Now</a>
+              {% endunless %}              
             </div>
           </div>
-
-
         {%- endfor -%}
       {% else %}
         {%- for collection in collections -%}
-            
           <div class="single-collection image-size-{{ section.settings.image_size }} image-fit-{{- section.settings.image_fit }} image-pos-{{- section.settings.image_pos -}}">
             <div class="image-wrap">  
-              {% if section.settings.collection_model == "model-one" %}
-                <a href="{{ block.settings.collection.url }}">
-              {% endif %}
+                <a href="{{ collection.url }}">
                   {{ collection.featured_image | image_url: width: 600 | image_tag: loading: 'lazy', class: 'product-image' }}
-              {% if section.settings.collection_model == "model-two" %}
                 </a>
-              {% endif %}
             </div>
             <div class="{{ section.settings.collection_model }}">
               {% if section.settings.collection_model == "model-two" %}
                 <a href="{{ collection.url }}">
-              {% endif %}
+                  <h3 class="subheadline">
+                    {% if collection != empty %}
+                      {{- collection.title | upcase -}}
+                    {% else %}
+                      Collection Name
+                    {% endif %}
+                  </h3>
+                </a>
+              {% else %}
                 <h3 class="subheadline">
                   {% if collection != empty %}
                     {{- collection.title | upcase -}}
@@ -165,12 +168,10 @@
                     Collection Name
                   {% endif %}
                 </h3>
+              {% endif %}  
                 {% unless section.settings.collection_model == "model-two" %}
                 <a class="shop-now text-link" href="{{ collection.url }}">Shop Now</a>
                 {% endunless %}
-              {% if section.settings.collection_model == "model-two" %}
-                </a>
-              {% endif %}
             </div>
           </div>
 

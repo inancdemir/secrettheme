@@ -1,10 +1,4 @@
 {%- style -%}
-/*
-.site-header .main-navigation {
-  background-color: {{ section.settings.menu_bg | color_modify: 'alpha', 0.24 }};
-}
-*/
-  
   .site-header .main-navigation::before,
   li .mega-menu-wrap::before,
   .site-header .main-navigation .main-menu ul li > ul::before,
@@ -153,14 +147,14 @@
                               <div class="menu-promo">
                                 <a href="{{ block.settings.promo_link_first }}">
                                   {{ block.settings.image_promo_first | image_url: width: 500 | image_tag: loading: 'lazy' }}
-                                  <h4 class="medium">{{ block.settings.promo_text_first }}</h3>
+                                  <h4 class="medium">{{ block.settings.promo_text_first }}</h4>
                                 </a>
                               </div>
                               {% if block.settings.image_promo_second %}
                                 <div class="menu-promo">
                                   <a href="{{ block.settings.promo_link_second }}">
                                     {{ block.settings.image_promo_second | image_url: width: 500 | image_tag: loading: 'lazy' }}
-                                    <h4 class="medium">{{ block.settings.promo_text_second }}</h3>
+                                    <h4 class="medium">{{ block.settings.promo_text_second }}</h4>
                                   </a>
                                 </div>
                               {% endif %}

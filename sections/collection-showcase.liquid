@@ -117,13 +117,9 @@
             <div class="single-collection image-size-{{ section.settings.image_size }} image-fit-{{- section.settings.image_fit }} image-pos-{{- section.settings.image_pos -}}">
               <div class="image-wrap">  
                 {% if block.settings.collection != empty %}
-                  {% if section.settings.collection_model == "model-one" %}
-                    <a href="{{ block.settings.collection.url }}">
-                  {% endif %}
+                  <a href="{{ block.settings.collection.url }}">
                       {{ block.settings.collection.featured_image | image_url: width: 600 | image_tag: loading: 'lazy', class: 'product-image' }}
-                  {% if section.settings.collection_model == "model-two" %}
-                    </a>
-                  {% endif %}
+                  </a>
                 {% else %}
                   {{ 'collection-1' | placeholder_svg_tag: 'demo-image' }}
                 {% endif %}
@@ -131,7 +127,15 @@
               <div class="{{ section.settings.collection_model }}">
                 {% if section.settings.collection_model == "model-two" %}
                   <a href="{{ block.settings.collection.url }}">
-                {% endif %}
+                    <h3 class="subheadline">
+                      {% if block.settings.collection != empty %}
+                        {{- block.settings.collection.title | upcase -}}
+                      {% else %}
+                        Collection Name
+                      {% endif %}
+                    </h3>
+                  </a>
+                {% else %}
                   <h3 class="subheadline">
                     {% if block.settings.collection != empty %}
                       {{- block.settings.collection.title | upcase -}}
@@ -139,12 +143,12 @@
                       Collection Name
                     {% endif %}
                   </h3>
-                  {% unless section.settings.collection_model == "model-two" %}
-                  <a class="shop-now text-link" href="{{ block.settings.collection.url }}">{{ section.settings.shop_now }}</a>
-                  {% endunless %}
-                {% if section.settings.collection_model == "model-two" %}
-                  </a>
                 {% endif %}
+                
+                {% unless section.settings.collection_model == "model-two" %}
+                  <a class="shop-now text-link" href="{{ block.settings.collection.url }}">{{ section.settings.shop_now }}</a>
+                {% endunless %}
+                
               </div>
             </div>
         {% endcase %}

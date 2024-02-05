@@ -102,21 +102,6 @@ document.querySelectorAll('a[href="/cart"]').forEach((a) => {
     openCartDrawer();
   });
 });
-
-
-
-
-function adjustSecondDivHeight() {
-  var firstDivHeight = document.querySelector('.main-navigation').offsetHeight;
-  var secondDiv = document.querySelector('#header-background-color');
-
-  secondDiv.style.height = firstDivHeight + 'px';
-}
-
-window.addEventListener('load', adjustSecondDivHeight);
-window.addEventListener('resize', adjustSecondDivHeight);
-
-
 /* main header settings*/
 function addHasTopBarClass() {
   const topBarElement = document.querySelector('#site-header .top-bar');

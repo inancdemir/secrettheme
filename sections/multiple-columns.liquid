@@ -35,24 +35,7 @@
   flex-direction: column;
   row-gap: 16px;
 }
-/*
-.multi-columns.columns-1 .column {
-  flex: 0 0 100%;
-}
-.multi-columns.columns-2 .column {
-  flex: 0 0 calc(50% - 8px);
-}
-.multi-columns.columns-3 .column {
-  flex: 0 0 calc((100% / 3) - (32px / 3));
-}
-.multi-columns.columns-4 .column {
-  flex: 0 0 calc(25% - 12px);
-}
-.multi-columns.columns-5 .column {
-  flex: 0 0 calc(20% - (64px / 5));
-}
-*/
-.section-{{ section.id }} .column {
+.section-{{ section.id }} .column { 
   flex: 0 0 calc(calc((100% - calc({{ section.settings.spacings }}px * calc({{ section.settings.column_per_line }} - 1))) / {{ section.settings.column_per_line }}));
 }
 .multi-columns .column.left {

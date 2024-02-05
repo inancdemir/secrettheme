@@ -80,7 +80,7 @@
                 {%- when 'heading' -%}
                 <h3 class="{{ section.settings.heading_font_size }}" {{ block.shopify_attributes }}>
                     {{ block.settings.heading }}
-                </h2>
+                </h3>
                 {%- when 'text' -%}
                 <div class="text-area" {{ block.shopify_attributes }}>
                     {{ block.settings.text }}
@@ -104,11 +104,11 @@
               {%- endcase -%}
           {%- endfor -%}
         {% else %}
-          <h2 class="{{ section.settings.heading_font_size }}">Image with text</h2>
-          <div class="image-with-text__text rte {{ block.settings.text_style }}" {{ block.shopify_attributes }}>
+          <h3 class="{{ section.settings.heading_font_size }}">Image with text</h3>
+          <div class="image-with-text__text rte {{ section.settings.text_style }}">
             <p>Use this space to tell your customers about your brand. Describe a product, share news, or greet visitors to your store.</p>
           </div>
-          <a href="#">Read more</a>          
+          <a  href="#">Read more</a>      
         {% endif %}
         
     </div>

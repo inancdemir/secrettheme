@@ -57,18 +57,19 @@
     <h3 class="large">{{ section.settings.heading }}</h3>
     <div class="subheadline">{{ section.settings.subheading }}</div>
     
-      {% if form.posted_successfully? %}
-          <div class="footer-column-news-message">You've been subscribed!</div>
-        {% endif %}
-        {% if form.errors %}
-          <div class="footer-column-news-message">{{ form.errors.messages.email }}</div>
-        {% endif %}
+        
       {% form 'customer', id: 'footer-newsletter' %}  
       <div class="subscribe-form">
         <input type="hidden" name="contact[tags]" value="newsletter">
         <input name="contact[email]" type="email" placeholder="Email address">
         <button class="button {{ section.settings.button_style }}" type="submit">{{- section.settings.button -}}</button>
       </div>    
+        {% if form.posted_successfully? %}
+          <div class="footer-column-news-message">You've been subscribed!</div>
+        {% endif %}
+        {% if form.errors %}
+          <div class="footer-column-news-message">{{ form.errors.messages.email }}</div>
+        {% endif %}
       {% endform %}
     
     <div class="callout">{{ section.settings.footnote }}</div>
