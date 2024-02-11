@@ -46,11 +46,6 @@ button.quick-view-button {
     position: relative;
     box-sizing: content-box;    
 }
-.modal-content h2 {
-    font-size: {{ section.settings.title_size }}px;
-    font-weight: 700;
-}
-
 
 {%- endstyle -%}
 {% if section.settings.show_mobile == true or section.settings.show_mobile == true %}
@@ -85,9 +80,9 @@ button.quick-view-button {
                   <input type="hidden" name="id" id="product-id" value="" />
                   <div class="add-to-cart quantitiy-top">
                       <div class="quantity">
-                          <button class="q-down" aria-label="minus-quantity">{% render 'icon-minus' %}</button>
-                          <input min="1" id="quantity" aria-label="product-quantity" name="quantity" value="1"/>
-                          <button class="q-up" aria-label="plus-quantity">{% render 'icon-plus' %}</button> 
+                        <button class="q-down" aria-label="minus-quantity">{% render 'icon-minus' %}</button>
+                        <input min="1" id="quantity" aria-label="product-quantity" name="quantity" value="1"/>
+                        <button class="q-up" aria-label="plus-quantity">{% render 'icon-plus' %}</button> 
                       </div>
                       <input type="submit" value="ADD TO CART" class="button model-2" id="add-to-cart" />
                   </div>
@@ -124,16 +119,11 @@ button.quick-view-button {
       
         let title_area = document.getElementById('ql-product-title');
         title_area.innerHTML = data.title;
-        /*
-        let desc_area = document.getElementById('ql-description');
-        let desc_html = data.description;
-        desc_area.innerHTML = desc_html;
-        */
+
         // Get the container element where you want to insert the options
         let optionsContainer = document.getElementById('options-container');
       
-        // Define the options data from your 'data' object
-      
+        // Define the options data from your 'data' object    
       
         let optionsData = data.options;
       

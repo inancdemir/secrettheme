@@ -81,7 +81,7 @@
 <script src="{{ 'predictive-search.js' | asset_url }}" defer="defer"></script>
 
 
-<div class="main-navigation {% if section.settings.menu_type_desktop == "drawer" %}draver-active{% else %}normal-nav{% endif %}">
+<div class="main-navigation {% if section.settings.menu_type_desktop == "drawer" %}draver-active{% else %}normal-nav{% endif %} {% if section.settings.menu_spaces == "space_from_sides"  %}space_from_sides{% endif %}">
   <div class="logo">
     <a href="{{ shop.url }}">
       {%- if settings.logo != blank -%}
@@ -362,6 +362,22 @@ window.addEventListener("resize", updateMaxWidth);
       "id": "select_menu",
       "default": "main-menu",
       "label": "t:sections.header.settings.menu.label"
+    },
+    {
+      "type": "select",
+      "label": "Navigation araea spaces from sides",
+      "default": "space_from_sides",
+      "id": "menu_spaces",
+      "options": [
+        {
+          "value": "space_from_sides",
+          "label": "Space from sides"
+        },
+        {
+          "value": "no_space",
+          "label": "No space"
+        }
+      ]
     },
     {
       "type": "select",

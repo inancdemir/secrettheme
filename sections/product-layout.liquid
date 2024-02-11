@@ -282,6 +282,9 @@
   .shopify-payment-button {
     margin-top: calc({{ section.settings.details_items_gap }}px /2);
   }
+  .product-list-sell-with .quick-view-button {
+    display: none;
+  }
 {%- endstyle -%}
 {{ 'product.css' | asset_url | stylesheet_tag }}
 {{ 'socials.css' | asset_url | stylesheet_tag }}
@@ -296,11 +299,12 @@
 <script id="format-money" src="{{ 'format-money.js' | asset_url }}" defer></script>
 
 {% assign full_url = request.host | append: request.path %}
+{% assign product_metafield = product.metafields.custom %}
 {% unless section.settings.full_width %}
   <div class="wide-width">
 {% endunless %}
 <div class="product-page section-{{ section.id }} animation-fadeIn" data-money-format="{{ shop.money_format }}">
-  <div class="image-side animation-test">
+  <div class="image-side">
     <ul class="product-image-slider{{- section.id -}}">
       {% for media in product.media %}
         {% case media.media_type %}
@@ -515,13 +519,13 @@
                 {% endif %}
               {% endif %}
             {%- when 'sell_with' -%}
-              <div class="product-list-sell-with full-on-mobile column-{{ block.settings.item_per_row }} column-mobile-{{ block.settings.item_per_row_mobile }} image-size-{{- block.settings.image_size }} image-fit-{{- block.settings.image_fit }} image-pos-{{- block.settings.image_pos -}}">
+              <div class="product-list-sell-with full-on-mobile column-2 column-mobile-2 image-size-{{- block.settings.image_size }} image-fit-{{- block.settings.image_fit }} image-pos-{{- block.settings.image_pos -}}">
                 {% if block.settings.product_list != empty %}
                   {% for product in block.settings.product_list %}
                     {% render 'product-item', product: product %}
                   {% endfor %} 
                 {% else %}            
-                  {% for product_number in (1..block.settings.item_per_row) %}
+                  {% for product_number in (1..2) %}
                     <div class="product-list-item">
                       <div class="product-image">
                         {{ 'product-' | append: product_number | placeholder_svg_tag: 'demo-image slide-image' }}
@@ -732,7 +736,6 @@
                               varian-attrubutes="{{ value | downcase | strip }}"
                             >
                             <label for="{{ option.name }}-{{ value }}">
-                              {{ variant.image }}
                               {{ value }}
                             </label>
                           {% endfor %}
@@ -937,10 +940,6 @@
 {%- for block in section.blocks -%}
   {% case block.type %}
     {%- when 'find_your_size' -%}
-      <div class="find-size text-link" {{ block.shopify_attributes }}>
-        {%- render 'icon-ruller' -%}
-        {{ block.settings.find_your_size_title }}
-      </div>
       <div class="rise-pop pop-size">
         <div class="rise-pop-wrap">
           <span class="pop-close">{%- render 'icon-close' -%}</span>
@@ -1279,6 +1278,9 @@
     }
   ],
   "blocks": [
+    {
+      "type": "@app"
+    },
     {
       "type": "custom_liquid",
       "name": "t:sections.custom-liquid.name",
@@ -3136,38 +3138,6 @@
       "name": "Sell with",
       "limit": 1,
       "settings": [
-        {
-          "type": "select",
-          "id": "item_per_row",
-          "label": "t:sections.all.column_per_row",
-          "default": "2",
-          "options": [
-            {
-              "value": "1",
-              "label": "1"
-            },
-            {
-              "value": "2",
-              "label": "2"
-            }
-          ]
-        },
-        {
-          "type": "select",
-          "id": "item_per_row_mobile",
-          "label": "t:sections.product_grid.columns_mobile",
-          "default": "2",
-          "options": [
-            {
-              "value": "1",
-              "label": "1"
-            },
-            {
-              "value": "2",
-              "label": "2"
-            }
-          ]
-        },
         {
           "type": "select",
           "id": "image_size",

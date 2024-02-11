@@ -1237,20 +1237,20 @@ select#sort-by {
 }
 
 @media only screen and (min-width: 620px) {
-    .site-header .main-navigation {
+    .site-header .main-navigation.space_from_sides {
         margin: 32px 16px;
     }
-    .site-header.sticky .main-navigation {
+    .site-header.sticky .main-navigation.space_from_sides {
         margin: 0 16px;
     }
 }
 
 
 @media only screen and (min-width: 1504px) {
-    .site-header .main-navigation {
+    .site-header .main-navigation.space_from_sides {
         margin: 32px;
     }
-    .site-header.sticky .main-navigation {
+    .site-header.sticky .main-navigation.space_from_sides {
         margin: 0 32px;
     }
 }
