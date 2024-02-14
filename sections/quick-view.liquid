@@ -105,67 +105,46 @@ button.quick-view-button {
     function showquickView(data) {
         var productLink = document.getElementById("ql-product-link");
         var dataUrl = data.url; // data.url değeri
-
-    
         productLink.href = dataUrl;
-    
-        
         let img_area = document.getElementById('ql-product-image-area');
         let image_html = '<img src="' + data.featured_image + '" loading="lazy" width="500" height="500">';
         img_area.innerHTML = image_html;
-
-        
-        
-      
         let title_area = document.getElementById('ql-product-title');
         title_area.innerHTML = data.title;
-
         // Get the container element where you want to insert the options
         let optionsContainer = document.getElementById('options-container');
-      
         // Define the options data from your 'data' object    
-      
         let optionsData = data.options;
-      
         // Create a function to generate the options based on the data
         function createOptions() {
           // Check if optionsData is empty
           if (!optionsData || optionsData.length === 0) {
             return; // No options to create
           }
-        
           optionsData.forEach((option) => {
             let optionName = option.name;
-        
             // Skip creating the option group when name is "Title"
             if (optionName === "Title") {
               return;
             }
-        
             // Check if there are any values for this option
             if (option.values.length === 0) {
               return; // Skip creating the option group if there are no values
             }
-        
             // Create a div for the option header
             let optionHeader = document.createElement('div');
             optionHeader.classList.add('option-header');
-        
             // Create an h3 element to display the option name
             let optionHeading = document.createElement('p');
             optionHeading.textContent = optionName + ' |';
-        
             // Create a span element to display the selected option value
             let optionSelectedValue = document.createElement('span');
             optionSelectedValue.textContent = ''; // Initially empty
-        
             optionHeading.appendChild(optionSelectedValue);
             optionHeader.appendChild(optionHeading);
             optionsContainer.appendChild(optionHeader);
-        
             let optionDiv = document.createElement('div');
             optionDiv.classList.add('product-option');
-        
             if (optionName === 'Color' || optionName === 'Size') {
               option.values.forEach((value, index) => {
                 let input = document.createElement('input');
@@ -173,23 +152,19 @@ button.quick-view-button {
                 input.name = optionName;
                 input.value = value;
                 input.id = `${optionName}-${value}`;
-        
                 let label = document.createElement('label');
                 label.setAttribute('for', `${optionName}-${value}`);
                 label.setAttribute('class', `${optionName}`);
                 label.textContent = value;
-        
                 // Add event listener to update the selected option value
                 input.addEventListener('change', () => {
                   optionSelectedValue.textContent = value;
                 });
-        
                 // Set the first option as checked
                 if (index === 0) {
                   input.checked = true;
                   optionSelectedValue.textContent = value;
                 }
-        
                 optionDiv.appendChild(input);
                 optionDiv.appendChild(label);
               });
@@ -198,41 +173,32 @@ button.quick-view-button {
               let select = document.createElement('select');
               select.name = optionName;
               select.id = optionName;
-        
               option.values.forEach((value, index) => {
                 let optionElement = document.createElement('option');
                 optionElement.value = value;
                 optionElement.textContent = value;
-        
                 // Set the first option as selected
                 if (index === 0) {
                   optionElement.selected = true;
                   optionSelectedValue.textContent = value;
                 }
-        
                 select.appendChild(optionElement);
               });
-        
               // Add event listener to update the selected option value
               select.addEventListener('change', () => {
                 optionSelectedValue.textContent = select.value;
               });
-        
               optionDiv.appendChild(select);
             }
-        
             optionHeader.appendChild(optionDiv);
           });
         }
-        
         createOptions();
         // Call the function to generate the options
         const originalSinglePrice = data.compare_at_price;
         const discountedSinglePrice = data.price;
-      
         const originalPriceSpan = document.querySelector('.original-price');
         const discountedPriceSpan = document.querySelector('.discounted-price');
-      
         if (discountedSinglePrice < originalSinglePrice) {
           originalPriceSpan.textContent = formatMoney(originalSinglePrice, '{{ shop.money_format }}');
           discountedPriceSpan.textContent = formatMoney(discountedSinglePrice, '{{ shop.money_format }}');
@@ -243,11 +209,9 @@ button.quick-view-button {
           discountedPriceSpan.textContent = formatMoney(discountedSinglePrice, '{{ shop.money_format }}');
           discountedPriceSpan.style.display = 'inline';
         }
-      
         document.querySelectorAll('.product-option input[type="radio"], .product-option select').forEach((input) => {
           input.addEventListener('change', () => {
             var selectedOptions = [];
-      
             document.querySelectorAll('.product-option input[type="radio"]:checked, .product-option select').forEach((input) => {
               if (input.type === 'radio' && input.checked) {
                 selectedOptions.push(input.value);
@@ -265,16 +229,12 @@ button.quick-view-button {
               }
               return pass;
             });
-      
             // variant id changer
             document.querySelector('#product-id').value = matchedVariant.id;
-      
             // Assuming you have already fetched and formatted the prices
             const originalPrice = matchedVariant.compare_at_price;
             const discountedPrice = matchedVariant.price;
-      
             // Select the elements
-      
             if (matchedVariant.available) {
               if (discountedPrice < originalPrice) {
                 originalPriceSpan.textContent = formatMoney(originalPrice, '{{ shop.money_format }}');
@@ -290,7 +250,6 @@ button.quick-view-button {
               discountedPriceSpan.textContent = 'Out of stock';
               originalPriceSpan.style.display = 'none';
             }
-      
             //button checker
             const add = document.querySelector('#add-to-cart');
             const addcarttext = 'Add To Cart';
@@ -305,14 +264,19 @@ button.quick-view-button {
             }
           });
         });
+
+        if (data.available) {
+          document.getElementById('add-to-cart').disabled = false;
+          document.getElementById('add-to-cart').value = 'Add To Cart';
+        } else {
+          document.getElementById('add-to-cart').disabled = true;
+          document.getElementById('add-to-cart').value = 'Out of Stock';
+        }
         // variant id changer
         document.querySelector('#product-id').value = data.variants[0].id;
         document.getElementById('quick-view-modal').classList.toggle('active');
       }
-      
 </script>
-
-
 {% schema %}
 {
   "name": "t:sections.quick_view.name",

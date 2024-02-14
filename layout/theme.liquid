@@ -153,149 +153,10 @@
         --font-heading-weight: {{ settings.type_header_font.weight }};
         
         --font-heading-scale: {{ settings.heading_scale | times: 1.0 | divided_by: settings.body_scale }};
+
+        --animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+        --animation-duration: 1s;
       }
-
-
-      
-
-
-
-      :root {
-  --animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  --animation-duration: 1s;
-}
-
-@keyframes slideInUp {
-  0% {
-    opacity: 0;
-    transform: translateY(25%);
-  }
-  100% {
-    opacity: 1;
-    transform: none;
-  }
-}
-@keyframes slideInDown {
-  0% {
-    opacity: 0;
-    transform: translateY(-25%);
-  }
-  100% {
-    opacity: 1;
-    transform: none;
-  }
-}
-@keyframes slideInleft {
-  0% {
-    opacity: 0;
-    transform: translateX(25%);
-  }
-  100% {
-    opacity: 1;
-    transform: none;
-  }
-}
-@keyframes slideInRight {
-  0% {
-    opacity: 0;
-    transform: translateX(-25%);
-  }
-  100% {
-    opacity: 1;
-    transform: none;
-  }
-}
-
-@keyframes fadeIn {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
-}
-
-@keyframes zoomIn {
-  0% {
-    opacity: 0;
-    transform: scale(0.75);
-  }
-  100% {
-    opacity: 1;
-    transform: none;
-  }
-}
-@keyframes zoomReverseIn {
-  0% {
-    opacity: 0;
-    transform: scale(1.25);
-  }
-  100% {
-    opacity: 1;
-    transform: none;
-  }
-}
-
-@keyframes flipInY {
-  0% {
-    opacity: 0;
-    transform: perspective(90vw) rotateY(67.5deg);
-  }
-  100% {
-    opacity: 1;
-    transform: none;
-  }
-}
-
-[data-animation] {
-  opacity: 0;
-  animation-timing-function: var(--animation-timing-function);
-  animation-fill-mode: both;
-  animation-duration: var(--animation-duration);
-  will-change: transform, opacity;
-}
-
-.animations-disabled {
-  &,
-  [data-animation] {
-    animation: none !important;
-    opacity: 1 !important;
-  }
-}
-
-.slideInUp {
-  animation-name: slideInUp;
-}
-.slideInDown {
-  animation-name: slideInDown;
-}
-.slideInLeft {
-  animation-name: slideInleft;
-}
-.slideInRight {
-  animation-name: slideInRight;
-}
-
-.fadeIn {
-  animation-name: fadeIn;
-}
-
-.zoomIn {
-  animation-name: zoomIn;
-}
-.zoomReverseIn {
-  animation-name: zoomReverseIn;
-}
-
-.flipInY {
-  animation-name: flipInY;
-}
-.flipOutY {
-  animation-name: flipInY;
-  animation-direction: reverse;
-}
-
-
     {% endstyle %}
 
     {{ 'style.css' | asset_url | stylesheet_tag }}
@@ -311,8 +172,7 @@
     {%- unless settings.type_header_font.system? -%}
       <link rel="preload" as="font" href="{{ settings.type_header_font | font_url }}" type="font/woff2" crossorigin>
     {%- endunless -%}
-
-    
+ 
 
     <script>
       document.documentElement.className = document.documentElement.className.replace('no-js', 'js');
@@ -347,18 +207,13 @@
     {% sections 'footer-group' %}
     
     <script>
-
-      
-      
+     
       document.addEventListener('DOMContentLoaded', function() {
         var elements = document.querySelectorAll('.animation-fadeIn');
         elements.forEach(function(element) {
           element.setAttribute('data-animation', 'fadeIn');
         });
-      });
-
-
-      
+      });      
       const AnimateOnScroll = function ({ offset } = { offset: 10 }) {
         // Defines the top, bottom and sides of the screen
         const windowTop = (offset * window.innerHeight) / 100;
@@ -414,13 +269,11 @@
         // Get all elements to be animated
         this.getElements = () =>
           document.querySelectorAll("[data-animation]:not([data-animated])");
-      
         // Update the list of elements to be animated
         this.update = () => {
           elements = this.getElements();
           elements && this.verifyElementsInViewport(elements);
         };
-      
         // Start events
         window.addEventListener("load", this.update, false);
         window.addEventListener(
@@ -439,11 +292,7 @@
       const options = {
         offset: 10 // percentage of the window
       };
-      
       const animation = new AnimateOnScroll(options);
-      
-    </script>
-    
-  
+    </script>  
   </body>
 </html>

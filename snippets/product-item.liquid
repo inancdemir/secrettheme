@@ -11,7 +11,6 @@
             {{- first_image | image_url: width: 432 | image_tag: loading: 'lazy', class: 'product-image' -}}
           {% endif %}
           {% if product_images.size > 1 %}
-            
             {% assign has_video = false %}
             {% for media in product.media %}
               {% case media.media_type %}
@@ -24,15 +23,13 @@
               {% assign second_image = product_images[1] %}
               {{- second_image | image_url: width: 432 | image_tag: loading: 'lazy', class: 'product-image second-image' -}}
             {% endunless %}
-
           {% endif %}
         {% endif %}
-
       {% else %}
       {{ 'product-1' | placeholder_svg_tag: 'demo-image product-image' }}
       {% endif %}
     </a>
-    <button class="quick-view-button" data-product-id="{{- product.url -}}.js">
+    <button class="quick-view-button" data-product-id="{{- product.url | split: "?" | first -}}.js">
       {% render 'icon-eye' %} Quick View
     </button>
   </div>
