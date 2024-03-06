@@ -16,7 +16,7 @@
         "sub_heading": "",
         "sub_heading_color": "#000000",
         "sort": "alphabetical",
-        "collection_per_line": "3",
+        "collection_per_line": "4",
         "collection_list": [
 
         ],
@@ -24,11 +24,11 @@
         "image_fit": "cover",
         "image_pos": "top",
         "collection_model": "model-two",
-        "spacings": 16,
+        "spacings": 0,
         "tint_opacity": 50,
         "tint_color": "#000000",
-        "collection_item_title_color": "#FFFFFF",
-        "shop_now_color": "#FFFFFF",
+        "collection_item_title_color": "#ffffff",
+        "shop_now_color": "#ffffff",
         "background_color": "linear-gradient(180deg, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0) 100%)",
         "section_padding": 30,
         "animation_onof": false,
