@@ -444,7 +444,7 @@
     },
     "collection_showcase": {
       "section_name" : "Collection showcase",
-      "subheading_default": "<p><strong>Use this section to showcase your collections</p></strong>",
+      "subheading_default": "<p><strong>Use this section to showcase your collections</strong></p>",
       "collection_model": "Text position according to collection image",
       "collection_model_info": "Setup whether collection title and button label will be positioned inside or outside cover image. The dafault color of the text is white. If you set text position to outside, please use the color options to make your text appear.",
       "collection_model_1": "Outside",

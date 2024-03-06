@@ -78,6 +78,13 @@
     {% endfor %}
   {% endif %}
 
+  {% unless product.available %}
+    <span class="callout">Sold Out</span>
+  {% endunless %}
+  
+    
+  
+
   
 
   {% assign product_metafield = product.metafields.custom %}

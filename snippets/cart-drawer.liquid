@@ -329,7 +329,9 @@
                     <p>You are away from free shipping by only</p><span class="away-from-free">{{ shop.currency }} {{ left_val }}</span>
                   </div>
                   {% else %}
-                  <p>{{ settings.free_shippping_done_text }}</p>                  
+                  <div class="shipping-away">
+                    <p>{{ settings.free_shippping_done_text }}</p>
+                  </div>
                   {% endif %}
                 <div class="shipping-away-bar">
                   <div class="fill" style="width: {{ pers_val_bar }}%;"></div>

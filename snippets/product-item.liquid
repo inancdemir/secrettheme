@@ -76,6 +76,12 @@
       {% endfor %}
     {% endif %}
 
+    {% if product.available %}
+    <h4>VARR</h4>
+    {% else %}
+    <h4 class="sold-out-badge">Sold Out</h4>
+    {% endif %}
+
     
 
     {% assign product_metafield = product.metafields.custom %}

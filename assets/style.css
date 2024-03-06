@@ -1219,6 +1219,9 @@ ul.inline {
     column-gap: 5px;
     flex-wrap: wrap;
 }
+ul.inline li {
+    white-space: nowrap;
+}
 ul.check-box-list {
     display: flex;
     flex-wrap: wrap;

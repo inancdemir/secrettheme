@@ -101,7 +101,34 @@
       flex-direction: column;
       gap: 32px;
   }
-
+  .image-navigation ul li.external-video,
+  .image-navigation ul li.model-viewer {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    padding-top: 56.25%; /* 16:9 Aspect Ratio (divide 9 by 16 = 0.5625) */
+  }
+  .image-navigation ul li iframe,
+  .image-navigation ul li model-viewer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+  }
+  /*
+  .image-navigation ul li iframe {
+    display: block;
+    max-width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+  }
+  */
   .image-navigation ul li.active-variant {
     order: -1;
   }
@@ -255,11 +282,22 @@
     border: 1px solid var(--body-color);
   }
 
-  .availability .stock-check.hide {
+  .variant-inventory .stock-check {
     display: none;
   }
-  .availability .stock-check.active {
-    display: inline-block;
+  .variant-inventory .stock-check.active {
+    display: block;
+  }
+
+  .stock-bar {
+    position: relative;
+    width: 100%;
+    height: 6px;
+    background-color: #D9D9D9;
+  }
+  .stock-bar .left-stock-bar {
+    background-color: #000;
+    height: 6px;
   }
 
   .bar-static {
@@ -346,16 +384,16 @@
                 </a>
               </li>
             {% when 'external_video' %}
-              <li class="image-list-item">
+              <li class="image-list-item external-video">
                 {{ media | external_video_tag }}
               </li>
             {% when 'video' %}
               <li class="image-list-item">
-                {{ media | video_tag: controls: true, image_size: '700x' }}
+                {{ media | media_tag: image_size: "2048x", autoplay: false, controls: true, preload: "none" }}
               </li>
             {% when 'model' %}
-              <li class="image-list-item">
-                {{ media | model_viewer_tag }}
+              <li class="image-list-item model-viewer">
+                {{ media | media_tag: image_size: "2048x", toggleable: true }}
               </li>
             {% else %}
               <li class="image-list-item">
@@ -381,46 +419,51 @@
           {% render 'breadcrumb' %}
         {% endif %}
 
-        {% comment %}
-          <div class="availability">Availability |
-            {% for variant in product.variants %}
-              {% if variant.inventory_management == "shopify" %}
-              <span class="stock-check stock-check-{{ variant.id }} {% unless product.selected_or_first_available_variant.id == variant.id %} hide{% endunless %}">
-                {% if variant.inventory_quantity > 0 %}
-                <span class="available stock-check-{{ variant.id }}">Available</span>
-                {% else  %}
-                <span class="non-available stock-check-{{ variant.id }}">Out of Stock</span>
-                {% endif %}
-              </span>
-              {% endif %}
-            {% endfor %}
-          </div>
-        {% endcomment %}
 
-        {% comment %}
-          <div class="variant-inventory">
-            {% for variant in product.variants %}
-              {% if variant.inventory_management == "shopify" %}
-                <div class="stock-check stock-check-{{ variant.id }} {% if product.variants.first.id == variant.id %} active{% endif %}">
-                  {% if variant.inventory_quantity > 0 %}
-                  <span>{{ variant.inventory_quantity }}</span>
-                  {% else %}
-                    <span>Out of stock</span>
-                  {% endif %}
-                </div>
-              {% else %}
-                <div class="stock-check stock-check-{{ variant.id }}">
-                  <span>Available</span>
-                </div>
-              {% endif %}
-            {% endfor %}
-          </div>
-        {% endcomment %}
 
         {%- for block in section.blocks -%}
           {% case block.type %}
             {%- when '@app' -%}
               {% render block %}
+            {% when 'inventory' %}
+
+              <div class="variant-inventory caption-2">
+                {% for variant in product.variants %}
+                  {% if variant.inventory_management == "shopify" %}
+                    {% assign inventoryLimit = block.settings.inventory_limit %}
+                    {% assign inventory_quantity = variant.inventory_quantity %}
+                    {% assign result = inventory_quantity | times: 100 | divided_by: inventoryLimit %}
+                    <div class="stock-check {% if product.variants.first.id == variant.id %} active{% endif %}" id="stock-{{ variant.id }}">
+                      {% if variant.inventory_quantity > 0 %}
+                        {% if variant.inventory_quantity < inventoryLimit %}
+                          <span>{{ variant.inventory_quantity }} {{ block.settings.left_stock }}</span>
+                          <div class="stock-bar">
+                            <div class="left-stock-bar" style="width: {{- result -}}%;"></div>
+                          </div>
+                        {% else %}
+                          <span>{{ block.settings.avail_text }}</span>
+                          <div class="stock-bar">
+                            <div class="left-stock-bar" style="width: 100%;"></div>
+                          </div>
+                        {% endif %}
+                      {% else %}
+                        <span>{{ block.settings.no_stock }}</span>
+                        <div class="stock-bar">
+                        </div>
+                      {% endif %}
+                    </div>
+                  {% else %}
+                    <div class="stock-check" id="stock-{{ variant.id }}">
+                      <span>{{ block.settings.avail_text }}</span>
+                      <div class="stock-bar">
+                        <div class="left-stock-bar" style="width: 100%;"></div>
+                      </div>
+                    </div>
+                  {% endif %}
+                {% endfor %}
+              </div>
+
+              
             {%- when 'custom_liquid' -%}
               {{ block.settings.custom_liquid }}
             {%- when 'custom_title' -%}
@@ -762,7 +805,7 @@
                   <li>
                     <a
                       aria-label="twitter-share"
-                      href="https://twitter.com/intent/tweet?text=CURVE%20W%20JACKET&url={{- full_url -}}"
+                      href="https://twitter.com/intent/tweet?url={{- full_url -}}"
                       target="_blank"
                     >
                       {% render 'icon-twitter' %}
@@ -779,7 +822,7 @@
                   </li>
                   <li>|</li>
                   <li>
-                    <span id="copyClip" onclick="copyURLToClipboard()" aria-label="copy-link">
+                    <span class="copy-link" id="copyClip" onclick="copyURLToClipboard()" aria-label="copy-link">
                       {% render 'icon-link' %}
                     </span>
                   </li>
@@ -826,7 +869,114 @@
                   <p>{{ block.settings.accorion_contnet }}</p>
                 </div>
               </div>
-
+            {%- when 'pickup' -%}
+              {{ 'availabilities.css' | asset_url | stylesheet_tag }}
+              <script src="{{ 'availabilities.js' | asset_url }}" defer></script>
+              <div class="pickup-availability-container">
+                {%- assign pick_up_availabilities = product_variant.store_availabilities | where: 'pick_up_enabled', true -%}
+              
+                {%- if pick_up_availabilities.size > 0 -%}
+                  <!-- Availability summary -->
+                  <div class="pickup-availability-information">
+                    {%- assign closest_location = pick_up_availabilities.first -%}
+              
+                    {%- if closest_location.available -%}
+                      {% render 'icon-in-stock' %}
+                    {%- else -%}
+                      {% render 'icon-out-of-stock' %}
+                    {%- endif -%}
+              
+                    <div class="pickup-availability-information-container">
+                      {%- if closest_location.available -%}
+                        <p class="pickup-availability-information__title">
+                          {{ 'pickup_availability.general.pick_up_available_at_html' | t: location_name: closest_location.location.name }}
+                        </p>
+                        <p class="pickup-availability-information__stock pickup-availability-small-text">
+                          {{ closest_location.pick_up_time }}
+                        </p>
+                        <button
+                          class="pickup-availability-information__button js-modal-open-pickup-availability-modal pickup-availability-small-text"
+                          data-pickup-availability-modal-open aria-haspopup="dialog"
+                        >
+                          {%- if pick_up_availabilities.size == 1 -%}
+                            {{ 'pickup_availability.general.view_store_info' | t }}
+                          {%- else -%}
+                            {{ 'pickup_availability.general.check_other_stores' | t }}
+                          {%- endif -%}
+                        </button>
+                      {%- else -%}
+                        <p class="pickup-availability-information__title">
+                          {{ 'pickup_availability.general.pick_up_unavailable_at_html' | t: location_name: closest_location.location.name }}
+                        </p>
+              
+                        {%- if pick_up_availabilities.size > 1 -%}
+                          <button class="pickup-availability-information__button js-modal-open-pickup-availability-modal pickup-availability-small-text" data-pickup-availability-modal-open aria-haspopup="dialog">
+                            {{ 'pickup_availability.general.check_other_stores' | t }}
+                          </button>
+                        {%- endif -%}
+                      {%- endif -%} 
+                    </div>
+                  </div>
+              
+                  <!-- Availability modal -->
+                  <div
+                    class="pickup-availabilities-modal modal"
+                    id="PickupAvailabilityModal"
+                    role="dialog"
+                    aria-modal="true"
+                    aria-labelledby="PickupAvailabilitiesModalProductTitle"
+                  >
+                    <div class="pickup-availabilities-modal__header">
+                      <div class="pickup-availabilities-modal__product-information">
+                        <h2
+                          id="PickupAvailabilitiesModalProductTitle"
+                          class="pickup-availabilities-modal__product-title"
+                          data-pickup-availability-modal-product-title
+                        >
+                        </h2>
+                        <p
+                          class="pickup-availabilities-modal__variant-title pickup-availability-small-text"
+                          data-pickup-availability-modal-variant-title
+                        >
+                          {{ product_variant.title }}
+                        </p>
+                      </div>
+                      <button
+                        type="button"
+                        class="pickup-availabilities-modal__close js-modal-close-pickup-availability-modal text-link"
+                        aria-label="close"
+                      >
+                        {% render 'icon-close' %}
+                      </button>
+                    </div>
+                    <ul class="pickup-availabilities-list" role="list">
+                      {%- for availability in pick_up_availabilities -%}
+                        <li class="pickup-availability-list__item">
+                          <h3 class="pickup-availability-list__location">
+                            {{ availability.location.name }}
+                          </h3>
+                          <div class="pickup-availability-list__stock pickup-availability-small-text">
+                            {%- if availability.available -%}
+                              {% render 'icon-success' %} Pickup available, {{ availability.pick_up_time | downcase }}
+                            {%- else -%}
+                              {% render 'icon-close' %} Pickup currently unavailable
+                            {%- endif -%}
+                          </div>
+                          {%- assign address = availability.location.address -%}
+                          <address class="pickup-availability-list__address">
+                            {{ address | format_address }}
+                          </address>
+                          {%- if address.phone.size > 0 -%}
+                            <p class="pickup-availability-list__phone pickup-availability-small-text">
+                              {{ address.phone }}<br>
+                            </p>
+                          {%- endif -%}
+                        </li>
+                      {%- endfor -%}
+                    </ul>
+                  </div>
+                {%- endif -%}
+              </div>              
             {%- when 'icon_propos' -%}
               <div class="icon-propos" {{ block.shopify_attributes }}>
                 <ul>
@@ -961,6 +1111,7 @@
     tempInput.select();
     document.execCommand("copy");
     document.body.removeChild(tempInput);
+    alert("copied to your clipboard");
   }
   const singleQuantityInput = document.querySelector('.product-details .add-to-cart .quantity input');
   const singleDecreaseButton = document.querySelector('.product-details .add-to-cart .q-down');
@@ -1135,14 +1286,14 @@
         return pass
       })
      
-      if (matchedVariant.featured_media && matchedVariant.featured_media.id) {
+      if (matchedVariant.featured_media && matchedVariant.featured_media.id ) {
         const mediaId = matchedVariant.featured_media.id;
         const imageListItem = document.getElementById(`media-${mediaId}`);
-      
+        
         // Tüm image-list-item elemanlarından active-variant sınıfını kaldır
         const allImageListItems = document.querySelectorAll('.image-list-item');
         allImageListItems.forEach(item => item.classList.remove('active-variant'));
-      
+        
         if (imageListItem) {
           imageListItem.classList.add('active-variant');
         }
@@ -1151,6 +1302,28 @@
         const activeVariantItems = document.querySelectorAll('.image-list-item.active-variant');
         activeVariantItems.forEach(item => item.classList.remove('active-variant'));
       }
+
+
+
+
+      
+        
+        
+        //console.log(stockId)
+        const stockId = matchedVariant.id;
+        const stockListItems = document.querySelectorAll(`[id^="stock-"]`); // Tüm id'si 'stock-' ile başlayan elementleri seç
+
+        stockListItems.forEach(item => {
+            if (item.id === `stock-${stockId}`) {
+                item.classList.add('active'); // Eşleşen id'ye sahip olan elemente active-variant sınıfını ekle
+            } else {
+                item.classList.remove('active'); // Diğer tüm elementlerden active-variant sınıfını kaldır
+            }
+        });
+
+        
+
+    
      
       // variant id changer
       document.querySelector('#single-product-id').value = matchedVariant.id
@@ -3219,6 +3392,45 @@
       ]
     },
     {
+      "type": "inventory",
+      "name": "Inventory",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "range",
+          "id": "inventory_limit",
+          "label": "Kaçtan aşağıda adet göstermeye başlasın",
+          "min": 0,
+          "max": 100,
+          "step": 1,
+          "default": 10
+        },
+        {
+          "type": "text",
+          "id": "avail_text",
+          "label": "Available text",
+          "default": "Available"
+        },
+        {
+          "type": "text",
+          "id": "no_stock",
+          "label": "Out of stock text",
+          "default": "Out of stock"
+        },
+        {
+          "type": "text",
+          "id": "left_stock",
+          "label": "... left stock",
+          "default": "left in stock"
+        }
+      ]
+    },
+    {
+      "type": "pickup",
+      "name": "Pickup Availability",
+      "limit": 1
+    },
+    {
       "type": "button",
       "name": "Button",
       "limit": 1,
@@ -3282,7 +3494,7 @@
           "info": "t:sections.product_layout.dynamic_checkout_info"
         }
       ]
-    }
+    }    
   ]
 }
 {% endschema %}

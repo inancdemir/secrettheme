@@ -35,11 +35,11 @@
   }
 {% endunless %}
 
-{% unless section.settings.full_width %}
-  .collection-tabs .flickity-viewport {
-    min-width: calc(100% + calc((100vw - (100% + 16px)) / 2));
+
+.collection-tabs .flickity-viewport {
+  min-width: calc(100% + calc((100vw - (100% + 16px)) / 2));
 }
-{% endunless %}
+
 .section-{{ section.id }} .carousel-slider-item {
   width: calc(75% - {{ section.settings.products_item_gap }}px);
 }
@@ -122,7 +122,7 @@
                     {% endif %}
                   {% else %}
 
-                    {% for product_number in (1..4) %}
+                    {% for product_number in (1..6) %}
                       <div class="carousel-slider-item image-size-{{ section.settings.image_size }} image-fit-{{- section.settings.image_fit }} image-pos-{{- section.settings.image_pos -}}">
                         <div class="product-list-item">
                           <div class="product-image">

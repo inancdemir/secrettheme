@@ -1,17 +1,14 @@
 function openCartDrawer() {
   document.querySelector('.cart-drawer').classList.add('cart-drawer--active');
 }
-
 function closeCartDrawer() {
   document.querySelector('.cart-drawer').classList.remove('cart-drawer--active');
 }
-
 function updateCartItemCounts(count) {
   document.querySelectorAll('.cart-count').forEach((el) => {
     el.textContent = count;
   });
 }
-
 async function updateCartDrawer() {
   //console.log("burası");
   try {
@@ -26,8 +23,6 @@ async function updateCartDrawer() {
     console.error(error);
   }
 }
-
-
 function addCartDrawerListeners() {
   // Update quantities
   document.querySelectorAll('.cart-drawer-quantity-selector button').forEach((button) => {
@@ -35,12 +30,10 @@ function addCartDrawerListeners() {
       // Get line item key
       const rootItem = button.parentElement.parentElement.parentElement.parentElement.parentElement;
       const key = rootItem.getAttribute('data-line-item-key');
-
       // Get new quantity
       const currentQuantity = Number(button.parentElement.querySelector('input').value);
       const isUp = button.classList.contains('cart-drawer-quantity-selector-plus');
       const newQuantity = isUp ? currentQuantity + 1 : currentQuantity - 1;
-
       // Ajax update\
       const res = await fetch('/cart/update.js', {
         method: 'post',
@@ -51,18 +44,17 @@ function addCartDrawerListeners() {
         body: JSON.stringify({ updates: { [key]: newQuantity } }),
       });
       const cart = await res.json();
-
       updateCartItemCounts(cart.item_count);
-
       // Update cart
       updateCartDrawer();
     });
   });
-
-  document.querySelector('.cart-drawer-box').addEventListener('click', (e) => {
-    e.stopPropagation();
-  });
-
+  const cartDrawerBox = document.querySelector('.cart-drawer-box');
+  if (cartDrawerBox) {
+      cartDrawerBox.addEventListener('click', (e) => {
+          e.stopPropagation();
+      });
+  }
   document.querySelectorAll('.cart-drawer-header-right-close, .cart-drawer').forEach((el) => {
     el.addEventListener('click', () => {
       console.log('closing drawer');
@@ -227,19 +219,66 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
 /*mobile drawer menu end */
+
+
 /*localization*/
-/*
+
 document.addEventListener('DOMContentLoaded', function() {
-  // İlgili düğmeyi seçin
   var buttonWhere = document.querySelector('.disclosure__button');
-
-  // İlgili liste öğesini seçin
   var listWrapper = document.querySelector('.disclosure__list-wrapper');
-
-  // Düğmeye tıklandığında işlemi tanımlayın
-  buttonWhere.addEventListener('click', function() {
-    // 'hidden' özelliğini tersine çevirerek görünürlüğü değiştirin
-    listWrapper.hidden = !listWrapper.hidden;
-  });
+ 
 });
-*/
+
+
+
+
+
+class LocalizationForm extends HTMLElement {
+  constructor() {
+    super();
+    this.elements = {
+      input: this.querySelector('input[name="language_code"], input[name="country_code"]'),
+      button: this.querySelector('button'),
+      panel: this.querySelector('ul'),
+    };
+    this.elements.button.addEventListener('click', this.openSelector.bind(this));
+    this.elements.button.addEventListener('focusout', this.closeSelector.bind(this));
+    this.addEventListener('keyup', this.onContainerKeyUp.bind(this));
+
+    this.querySelectorAll('a').forEach(item => item.addEventListener('click', this.onItemClick.bind(this)));
+  }
+
+  hidePanel() {
+    this.elements.button.setAttribute('aria-expanded', 'false');
+    this.elements.panel.setAttribute('hidden', true);
+  }
+
+  onContainerKeyUp(event) {
+    if (event.code.toUpperCase() !== 'ESCAPE') return;
+
+    this.hidePanel();
+    this.elements.button.focus();
+  }
+
+  onItemClick(event) {
+    event.preventDefault();
+    const form = this.querySelector('form');
+    this.elements.input.value = event.currentTarget.dataset.value;
+    if (form) form.submit();
+  }
+
+  openSelector() {
+    this.elements.button.focus();
+    this.elements.panel.toggleAttribute('hidden');
+    this.elements.button.setAttribute('aria-expanded', (this.elements.button.getAttribute('aria-expanded') === 'false').toString());
+  }
+
+  closeSelector(event) {
+    const shouldClose = event.relatedTarget && event.relatedTarget.nodeName === 'BUTTON';
+    if (event.relatedTarget === null || shouldClose) {
+      this.hidePanel();
+    }
+  }
+}
+
+customElements.define('localization-form', LocalizationForm);

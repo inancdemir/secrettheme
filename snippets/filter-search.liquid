@@ -103,7 +103,7 @@ input#toInput {
             {% render 'icon-filter-close' %}        
         </span>
         <form class="filter-form">
-            {%- for filter in collection.filters -%}
+            {%- for filter in search.filters -%}
                 <div class="filter-group-display">
                     {%- case filter.type -%}
                     {%- when 'price_range' -%}

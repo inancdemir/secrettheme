@@ -1,318 +1,33 @@
 {%- style -%}
 .section-{{ section.id }} {
   background: {% if section.settings.background_image %}
-                  url("{{ section.settings.background_image | image_url }}"),
+              url("{{ section.settings.background_image | image_url }}"),
               {% endif %}
               {{ section.settings.background_color }};
   background-repeat: no-repeat;
   background-position: top center;
   padding: {{ section.settings.section_padding }}px 0;
 }
-
-.section-{{ section.id }}.product-list h2 {
-  letter-spacing: 0em;
-  margin: 0;
-  margin-left: 32px;
+.add-text-wrap:before {
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0) 50%, {{ section.settings.tint_color }} 100%);
+  opacity: {{ section.settings.tint_opacity }}%;
 }
-.section-{{ section.id }}.product-list .description-view-all {
-  display: flex;
-  justify-content: space-between;
-  margin-left: 32px;
-  margin-right: 32px;
+.add-text-wrap .add-text-content p {
+  color: {{ section.settings.add_color }};
+  font-size: calc( {{ section.settings.add_font_size_mobile }}px );
+  line-height: calc({{ section.settings.add_font_size_mobile }}px * 1.2);
 }
-.section-{{ section.id }}.product-list .description-view-all a {
-  font-size: 16px;
-  font-weight: 500;
-  line-height: 20px;
-  letter-spacing: 0em;
-  text-align: right;
-  color: #000;
-}
-.section-{{ section.id }}.product-list .description-view-all h3 {
-  text-align: left;
-  margin: 0;
-  display: flex;
-}
-.section-{{ section.id }}.product-list .product-list {
-  display: flex;
-  flex-direction: row;
-}
-  
-.collection-filters {
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
-}
-.filter-area-bg {
-  position: fixed;
-  top: 0;
-  left: -9999px;
-  opacity: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.7);
-  z-index: 99999;
-  display: flex;
-  flex-direction: column;
-  transition: right 0s 0.2s, opacity 0.2s;
-}
-.filter-area-bg.active{
-  left: 0;
-  opacity: 1;
-  transition: right 0s, opacity 0.2s;
-}
-.filter-area {
-  width: 100%;
-  max-width: 480px;
-  background: #ffffff;
-  flex: 1;
-  margin-right: auto;
-  display: flex;
-  flex-direction: column;
-  overflow: auto;
-  transition: 0.2s opacity, 0.2s transform;
-  opacity: 0;
-  transform: translateX(40px);
-  position: relative;
-}
-.filter-area-bg.active .filter-area{
-  opacity: 1;
-  transform: none;
-}
-
-.active-filters {
-  display: flex;
-  flex-direction: row;
-  column-gap: 10px;
-  align-items: center;
-  margin: 16px 0;
-}
-.active-filters .filters-toggle {
-  font-size: 16px;
-  font-weight: 500;
-  letter-spacing: 0em;
-  text-align: left;
-  display: inline-flex;
-  line-height: 24px;
-  cursor: pointer;
-}
-.active-filters .filters-toggle svg {
-  margin-right: 8px;
-}
-.active-filters a.active-filters__clear,
-a.active-filters__remove-filter {
-  display: none;
-  color: #000;
-  line-height: 24px;
-  border: 1px solid rgba(167, 167, 167, 1);
-  padding: 6px 8px;
-}
-@media only screen and (min-width: 640px) {
-  .active-filters a.active-filters__clear,
-  a.active-filters__remove-filter {
-    display: flex;
-  }
-}
-a.active-filters__remove-filter svg {
-  margin-left: 10px;
-}
-.filter-footer {
-  position: absolute;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  display: flex;
-  flex-direction: row;
-  column-gap: 20px;
-  padding: 20px;
-  background-color: #fff;
-}
-.filter-reset {
-  font-size: 12px;
-  font-weight: 700;
-  line-height: 18px;
-  letter-spacing: 0em;
-  text-align: left;
-  color: #000;
-  background-color: #fff;
-  border: 1px solid #000;
-  padding: 17px 0;
-  width: 100%;
-  text-align: center;
-}
-.filter-apply {
-  font-size: 12px;
-  font-weight: 700;
-  line-height: 18px;
-  letter-spacing: 0em;
-  text-align: left;
-  color: #fff;
-  background-color: #000;
-  border: 1px solid #000;
-  padding: 17px 0;
-  width: 100%;
-  text-align: center;
-}
-.filter-area h3 {
-  font-size: 18px;
-  font-weight: 700;
-  line-height: 22px;
-  letter-spacing: 0em;
-  text-align: left;
-  margin-top: 32px;
-  margin-bottom: 10px;
-}
-.filter-form {
-  margin-top: 20px;
-  padding-bottom: 120px;
-  overflow-y: scroll;
-}
-.filter-group-display {
-    padding: 0 20px;
-}
-ul.sizes-filter {
-  display: flex;
-  column-gap: 5px;
-  margin-top: 0;
-  flex-wrap: wrap;
-}
-ul.color-filter {
-  display: flex;
-  column-gap: 0;
-  margin-top: 0;
-  flex-wrap: wrap;
-  align-content: flex-start;
-}
-ul.sizes-filter label {
-  border: 1px solid #ccc;
-  font-size: 16px;
-  line-height: 16px;
-  padding: 5px;
-  min-width: 28px;
-  display: inline-flex;
-  align-items: center;
-  text-align: center;
-  justify-content: center;
-}
-ul.color-filter label {
-  border: 1px solid #ccc;
-  width: 22px;
-  height: 22px;
-  display: inline-flex;
-  font-size: 0;
-  margin: 15px;
-}
-.filter-group-display__list.color-filter {
-  column-gap: 0;
-}
-.filter-group-display__list.color-filter li {
-  width: 52px;
-  height: 52px;
-  display: flex;
-  border: 1px solid #ccc;
-  margin-right: -1px;
-  margin-top: -1px;
-}
-ul.sizes-filter input:checked+label,
-ul.color-filter input:checked+label {
-    border: 1px solid #000;
-}
-.switch {
-  position: relative;
-  display: block;
-  width: 60px;
-  height: 34px;
-}
-.switch input { 
-  opacity: 0;
-  width: 0;
-  height: 0;
-}
-.slider {
-  position: absolute;
-  cursor: pointer;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: #ccc;
-  -webkit-transition: .4s;
-  transition: .4s;
-}
-.slider:before {
-  position: absolute;
-  content: "";
-  height: 26px;
-  width: 26px;
-  left: 4px;
-  bottom: 4px;
-  background-color: white;
-  -webkit-transition: .4s;
-  transition: .4s;
-}
-input:checked + .slider {
-  background-color: #000000;
-}
-input:focus + .slider {
-  box-shadow: 0 0 1px #000000;
-}
-input:checked + .slider:before {
-  -webkit-transform: translateX(26px);
-  -ms-transform: translateX(26px);
-  transform: translateX(26px);
-}
-.filter-avail-check {
-    display: flex;
-    line-height: 34px;
-    justify-content: space-between;
-    align-items: center;
-}
-.filter-avail-check h3 {
-    margin: 0
-}
-.filter-close {
-    position: absolute;
-    margin: 32px;
-    top: 0;
-    right: 0;
-}
-.product-list .breadcrumbs {
-    display: flex;
-    padding-left: 20px;
-}
-.pagination {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  column-gap: 15px;
-  margin: 32px;
-}
-.add-image {
-  background-color: lightgrey;
-}
-.add-text-wrap {
-  position: absolute;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
-  width: 100%;
-  height: 100%;
-  display: flex;
-  justify-content: center;
-}
-.add-text-wrap .add-text-content {
-  padding: 22px;
-  display: flex;
-  align-self: center;
-  flex-direction: column;
-  row-gap: 32px;
-}
-.add-text-wrap .add-text-content * {
+.add-text-wrap .add-text-content a {
   color: {{ section.settings.add_color }};
 }
+.product-list {
+  margin-bottom: 30px;
+}
 @media only screen and (min-width: 640px) {
+  .add-text-wrap .add-text-content p {
+    font-size: calc( {{ section.settings.add_font_size }}px );
+    line-height: calc({{ section.settings.add_font_size }}px * 1.2);
+  }
   .section-{{ section.id }} .product-list {
     column-gap: {{ section.settings.product_gap }}px;
   }
@@ -323,21 +38,6 @@ input:checked + .slider:before {
   .section-{{ section.id }} .product-list .product-list-item.add {
     position: relative;
     flex: 0 0 calc(calc((100% - calc({{ section.settings.product_gap }}px * calc({{ section.settings.item_per_row }} - 1))) / {{ section.settings.item_per_row }}));
-  }
-  .section-{{ section.id }} .product-list .product-list-item.add img {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    object-fit: cover;
-    -webkit-transform: translateX(-50%) translateY(-50%); 
-    -moz-transform: translateX(-50%) translateY(-50%);
-    -o-transform: translateX(-50%) translateY(-50%);
-    transform: translateX(-50%) translateY(-50%);
-    width: 100%;
-    height: auto;
-  }
-  .section-{{ section.id }} .product-list .product-list-item.add.contain-image img {
-    object-fit: contain;
   }
   .add-size-2 {
     flex: 0 0 calc((calc((100% - calc({{ section.settings.product_gap }}px * calc({{ section.settings.item_per_row }} - 2))) / {{ section.settings.item_per_row }})) * 2) !important;
@@ -353,18 +53,40 @@ input:checked + .slider:before {
   }
 }
 {%- endstyle -%}
+{{ 'product-grid.css' | asset_url | stylesheet_tag }}
+<script id="ajaxinate" src="{{ 'ajaxinate.js' | asset_url }}" defer></script>
+<script id="filter" src="{{ 'filter.js' | asset_url }}" defer></script>
 
-
-<div class="product-list section-{{ section.id }}  {% unless section.settings.animation_onof %}animation-fadeIn{% endunless %}">
+<div class="product-list section-{{ section.id }}">
   {% unless section.settings.full_width %}
   <div class="wide-width">
   {% endunless %}
-  {% if search.all_products_count != 0 %}
+  {% if search.filters.all_products_count != 0 %}
 
-  {% if section.settings.heading != blank %}
-    <h2>{{ section.settings.heading }}</h2>
-  {% endif %}
-  <div class="collection-filters text-right">
+  <div class="collection-filters">
+      <div class="active-filters">
+          <span class="filters-toggle">
+              {%- render 'icon-filter' -%}
+              <span class="hidden-mobile">Show Filter</span>
+          </span>        
+          {%- for filter in search.filters -%}
+            {%- if filter.type == "price_range" -%}
+                {%- if filter.min_value.value != nil or filter.max_value.value != nil -%}
+                <a class="active-filters__remove-filter" href="{{ filter.url_to_remove }}">
+                  {%- assign min_value = filter.min_value.value | default: 0 -%}
+                  {%- assign max_value = filter.max_value.value | default: filter.range_max -%}
+                  {{ min_value | money }} - {{ max_value | money }} {% render 'icon-close' %}
+                </a>
+                {%- endif -%}
+            {%- else -%}
+                {%- for filter_value in filter.active_values -%}
+                <a class="active-filters__remove-filter" href="{{ filter_value.url_to_remove }}">
+                  {{ filter.label }}: {{ filter_value.label }} {% render 'icon-close' %}
+                </a>
+                {%- endfor -%}
+            {% endif %}
+          {% endfor %}
+      </div>
       <select id="sort-by">
         {% assign sort_by = search.sort_by | default: search.default_sort_by %}
         {% for option in search.sort_options %}
@@ -375,43 +97,58 @@ input:checked + .slider:before {
       </select>
       <script id="sort-by" src="{{ 'sort-by.js' | asset_url }}" defer></script>  
   </div>
-  <div class="product-list full-on-mobile column-{{ section.settings.item_per_row }} column-mobile-{{ section.settings.item_per_row_mobile }} image-size-{{- section.settings.image_size }} image-fit-{{- section.settings.image_fit }} image-pos-{{- section.settings.image_pos -}}" id="AjaxinateContainer">
-    {%- for item in search.results -%}
-      {%- case item.object_type -%}
-        {%- when 'product' -%}
-          {% render 'product-item', product: item %}
-        {%- endcase -%}
-    {% endfor %}
-  
-  </div>
+  {%liquid
+    assign productPerRow = section.settings.item_per_row
+    assign rowPerpage = section.settings.item_show_row
+    assign productperpage = productPerRow | times: rowPerpage
+  %}
+    {% paginate search.results by productperpage %}
+      <div class="product-list full-on-mobile column-{{ section.settings.item_per_row }} column-mobile-{{ section.settings.item_per_row_mobile }} image-size-{{- section.settings.image_size }} image-fit-{{- section.settings.image_fit }} image-pos-{{- section.settings.image_pos -}}" id="AjaxinateContainer">
+        {% for item in search.results %}
+          {%- case item.object_type -%}
+            {%- when 'product' -%}
+            <div class="product-list-item">
+              {% render 'product-list-item', product: item %}
+            </div>
+          {%- endcase -%}
+        {% endfor %}  
+      </div>
+      {% case section.settings.pagination_settings %}
+        {% when 'infinite' or 'click-to-load' %}
+          <div id="AjaxinatePagination">
+            {% if paginate.next %}
+              <a class="button {{ section.settings.button_style }} full" href="{{ paginate.next.url }}">VIEW MORE</a>
+            {% endif %}
+          </div>
+        {% when 'paginated' %}
+          <div class="pagination">{{- paginate | default_pagination -}}</div>
+      {% endcase %}
+    {% endpaginate %}
+  {% else %}
+      {{ section.settings.no_product }}
   {% endif %}
   {% unless section.settings.full_width %}
   </div>
   {% endunless %}
 </div>
 
+
 <script>
-    //filter open close 
-    function openFilters() {
-        document.querySelector('.filter-area-bg').classList.add('active');
-      }
-      
-      function closeFilters() {
-        document.querySelector('.filter-area-bg').classList.remove('active');
-      }
-
-      document.querySelector('.filters-toggle').addEventListener('click', (e) => {
-        openFilters();
+  {% case section.settings.pagination_settings %}
+    {% when 'infinite' %}
+    document.addEventListener("DOMContentLoaded", function() {
+      var endlessScroll = new Ajaxinate({
       });
-      document.querySelectorAll('.filter-close').forEach((el) => {
-        el.addEventListener('click', () => {
-          closeFilters();
-        });
-      })
-      
-
+    });
+    {% when 'click-to-load' %}
+    document.addEventListener("DOMContentLoaded", function() {
+      var endlessScroll = new Ajaxinate({
+        method: 'click'          
+      });
+    });
+  {% endcase %}
 </script>
-
+{% render "filter-search" %}
 {% schema %}
 {
   "name": "Search",
@@ -423,13 +160,24 @@ input:checked + .slider:before {
       "max": 5,
       "step": 1,
       "unit": "itm",
-      "label": "Product for each",
+      "label": "t:sections.product_grid.columns_desktop",
       "default": 3
+    },
+    {
+      "type": "range",
+      "id": "item_show_row",
+      "min": 1,
+      "max": 5,
+      "step": 1,
+      "unit": "itm",
+      "label": "t:sections.product_grid.rows_desktop",
+      "default": 3,
+      "info": "t:sections.product_grid.rows_desktop_info"
     },
     {
       "type": "select",
       "id": "item_per_row_mobile",
-      "label": "Product for each mobile",
+      "label": "t:sections.product_grid.columns_mobile",
       "default": "2",
       "options": [
         {
@@ -526,45 +274,71 @@ input:checked + .slider:before {
       ]
     },
     {
+      "type": "select",
+      "id": "pagination_settings",
+      "label": "t:sections.all.pagination",
+      "default": "paginated",
+      "options": [
+        {
+          "value": "infinite",
+          "label": "t:sections.all.infinite"
+        },
+        {
+          "value": "click-to-load",
+          "label": "t:sections.all.click_to_load"
+        },
+        {
+          "value": "paginated",
+          "label": "t:sections.all.paginated"
+        }
+      ]
+    },
+    {
+      "type": "select",
+      "id": "button_style",
+      "options": [
+        {
+          "value": "model-1",
+          "label": "t:settings_schema.typography.settings.colors.button_1_color_1"
+        },
+        {
+          "value": "model-2",
+          "label": "t:settings_schema.typography.settings.colors.button_2_color_1"
+        },
+        {
+          "value": "model-3",
+          "label": "t:settings_schema.typography.settings.colors.button_3_color_1"
+        },
+        {
+          "value": "model-4",
+          "label": "t:settings_schema.typography.settings.colors.button_4_color_1"
+        }
+      ],
+      "label": "t:sections.all.button_style",
+      "default": "model-3"
+    },
+    {
       "type": "text",
-      "label": "Custom Title",
+      "label": "t:sections.all.heading",
       "default": "Featured Products.",
       "id": "heading"
     },
     {
       "type": "color",
       "id": "title",
-      "label": "Title Color",
+      "label": "t:sections.all.heading",
       "default": "#000000"
-    },
-    {
-      "type": "text",
-      "label": "Custom Description",
-      "default": "Quality ingredients. Real results.",
-      "id": "sub-heading"
-    },
-    {
-      "type": "color",
-      "id": "sub-title",
-      "label": "Sub-Title Color",
-      "default": "#000000"
-    },
-    {
-      "type": "product_list",
-      "id": "product_list",
-      "label": "Custom Products",
-      "limit": 4
     },
     {
       "type": "color_background",
       "id": "background_color",
-      "label": "Section Bakcground Color",
+      "label": "t:sections.all.background_color",
       "default": "linear-gradient(180deg, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0) 100%)"
     },
     {
       "type": "image_picker",
       "id": "background_image",
-      "label": "Section Bakcground Image"
+      "label": "t:sections.all.background_image"
     },
     {
       "type": "range",
@@ -573,24 +347,133 @@ input:checked + .slider:before {
       "max": 100,
       "step": 1,
       "unit": "px",
-      "label": "Top and bottom spacing",
+      "label": "t:sections.all.section_padding",
       "default": 0
     },
     {
-      "type": "range",
-      "id": "section_margin",
-      "min": 0,
-      "max": 100,
-      "step": 1,
-      "unit": "px",
-      "label": "Section Top and Bottom Margin",
-      "default": 0
+      "type": "color",
+      "id": "add_color",
+      "label": "t:sections.all.text",
+      "default": "#FFFFFF"
+    },
+    {
+      "type": "text",
+      "id": "no_product",
+      "label": "No product in collection text",
+      "info": "This message will display when there are no products in the chosen collection",
+      "default": "This collection is currently empty of products."
     },
     {
       "type": "checkbox",
-      "id": "animation_onof",
-      "label": "Hide animation",
-      "default": false
+      "id": "full_width",
+      "label": "t:sections.all.make_section_full",
+      "default": true
+    },
+    {
+      "type": "range",
+      "id": "tint_opacity",
+      "min": 0,
+      "max": 100,
+      "step": 10,
+      "unit": "%",
+      "label": "Tint Opacity",
+      "info": "Adjust gradient overlay that will be used for all promotions",
+      "default": 50
+    },
+    {
+      "type": "color",
+      "id": "tint_color",
+      "label": "Tint",
+      "default": "#000000"
+    },
+    {
+      "type": "range",
+      "id": "add_font_size",
+      "min": 12,
+      "max": 60,
+      "step": 1,
+      "unit": "px",
+      "label": "Add font size",
+      "default": 48
+    },
+    {
+      "type": "range",
+      "id": "add_font_size_mobile",
+      "min": 12,
+      "max": 60,
+      "step": 1,
+      "unit": "px",
+      "label": "Add font size",
+      "default": 24
+    }
+  ],
+  "blocks": [
+    {
+      "type": "add_add",
+      "name": "t:sections.all.promotion",
+      "settings": [
+        {
+          "type": "range",
+          "id": "add_position",
+          "min": 1,
+          "max": 24,
+          "step": 1,
+          "unit": "pos",
+          "label": "t:sections.all.promotion_pos",
+          "info": "Choose the position where your promotion will be displayed in your collections.  Bear in mind the column count you have chosen for this product grid section to enhance your shop's appearance.  If the column count for both the product grid and promotion area is the same, specify a height (for example, 800) for the promotion to achieve the best impact. To optimize the mobile experience, the size of the promotion column will be restricted to a single column",
+          "default": 3
+        },
+        {
+          "type": "range",
+          "id": "add_size",
+          "min": 1,
+          "max": 5,
+          "step": 1,
+          "unit": "clm",
+          "label": "t:sections.product_grid.add_size",
+          "info": "t:sections.product_grid.add_size_info",
+          "default": 1
+        },
+        {
+          "type": "text",
+          "id": "min_height",
+          "label": "t:sections.all.section_height",
+          "info": "t:sections.product_grid.add_size_height"
+        },
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "t:sections.all.image"
+        },
+        {
+          "type": "checkbox",
+          "id": "cover",
+          "label": "t:sections.product_grid.image_cover",
+          "default": true
+        },
+        {
+          "type": "richtext",
+          "id": "text",
+          "label": "t:sections.all.text",
+          "default": "<p>Designed by People, for All People, by <strong>Stellar</strong></p>"
+        },
+        {
+          "type": "text",
+          "id": "button_text",
+          "label": "t:sections.product_grid.link_text",
+          "default": "Shop Now"
+        },
+        {
+          "type": "url",
+          "id": "button_url",
+          "label": "t:sections.all.add_link"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Search"
     }
   ]
 }

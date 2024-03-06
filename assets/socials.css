@@ -27,3 +27,6 @@
   width: 32px;
   height: 32px;
 }
+.socilas ul li .copy-link {
+  cursor: pointer;
+}
