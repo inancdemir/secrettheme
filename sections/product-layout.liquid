@@ -717,12 +717,6 @@
                     </div>
                   {% endif %}
                 {% endif %}
-
-                {% unless product.available -%}
-                  <br>
-                  <strong>sold out</strong>
-                {%- endunless %}
-
                 {% if block.settings.show_tax_include %}
                   <div class="product__tax caption-2">
                     {%- if cart.taxes_included -%}
@@ -873,7 +867,7 @@
               {{ 'availabilities.css' | asset_url | stylesheet_tag }}
               <script src="{{ 'availabilities.js' | asset_url }}" defer></script>
               <div class="pickup-availability-container">
-                {%- assign pick_up_availabilities = product_variant.store_availabilities | where: 'pick_up_enabled', true -%}
+                {%- assign pick_up_availabilities = product_variant.store_availabilities  -%}
               
                 {%- if pick_up_availabilities.size > 0 -%}
                   <!-- Availability summary -->
@@ -881,9 +875,9 @@
                     {%- assign closest_location = pick_up_availabilities.first -%}
               
                     {%- if closest_location.available -%}
-                      {% render 'icon-in-stock' %}
+                      {% render 'icon-eye' %}
                     {%- else -%}
-                      {% render 'icon-out-of-stock' %}
+                      {% render 'icon-eye' %}
                     {%- endif -%}
               
                     <div class="pickup-availability-information-container">
