@@ -171,9 +171,9 @@
       "settings": {
         "full_width": false,
         "breadcrumb_on": true,
-        "image_area": 50,
+        "image_area": 30,
         "details_padding": 5,
-        "details_items_gap": 32,
+        "details_items_gap": 3,
         "image_column": "one"
       }
     },
