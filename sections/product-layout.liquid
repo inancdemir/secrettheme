@@ -866,9 +866,9 @@
             {%- when 'pickup' -%}
               {{ 'availabilities.css' | asset_url | stylesheet_tag }}
               <script src="{{ 'availabilities.js' | asset_url }}" defer></script>
-              <div class="pickup-availability-container">
+              
                 <h4>Locak pickups</h4>
-                <div class="pickup-availability-container">
+            <div class="pickup-availability-container">
   {%- assign pick_up_availabilities = product_variant.store_availabilities | where: 'pick_up_enabled', true -%}
  
   {%- if pick_up_availabilities.size > 0 -%}
@@ -969,7 +969,8 @@
       </ul>
     </div>
   {%- endif -%}
-</div>           
+</div>
+                <h4>local pickup end</h4>             
             {%- when 'icon_propos' -%}
               <div class="icon-propos" {{ block.shopify_attributes }}>
                 <ul>
