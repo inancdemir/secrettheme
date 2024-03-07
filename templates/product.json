@@ -9,6 +9,20 @@
             "text": "{{ product.title }}"
           }
         },
+        "inventory_Xn7QLr": {
+          "type": "inventory",
+          "settings": {
+            "inventory_limit": 10,
+            "avail_text": "Available",
+            "no_stock": "Out of stock",
+            "left_stock": "left in stock"
+          }
+        },
+        "pickup_ALiQb8": {
+          "type": "pickup",
+          "settings": {
+          }
+        },
         "product-inner-2": {
           "type": "prices",
           "settings": {
@@ -125,8 +139,6 @@
         "sell_with_QYze8D": {
           "type": "sell_with",
           "settings": {
-            "item_per_row": "2",
-            "item_per_row_mobile": "2",
             "image_size": "one-one",
             "image_fit": "cover",
             "image_pos": "center",
@@ -138,6 +150,8 @@
       },
       "block_order": [
         "product-inner-1",
+        "inventory_Xn7QLr",
+        "pickup_ALiQb8",
         "product-inner-2",
         "7d6083bd-f986-4c0b-81cb-c82980572503",
         "product-inner-3",
