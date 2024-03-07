@@ -868,19 +868,20 @@
               <script src="{{ 'availabilities.js' | asset_url }}" defer></script>
               
                 <h4>Locak pickups</h4>
-            <div class="pickup-availability-container">
+
+<div class="pickup-availability-container">
   {%- assign pick_up_availabilities = product_variant.store_availabilities | where: 'pick_up_enabled', true -%}
- 
+
   {%- if pick_up_availabilities.size > 0 -%}
     <div class="pickup-availability-information">
       {%- assign closest_location = pick_up_availabilities.first -%}
- 
+
       {%- if closest_location.available -%}
         {% render 'icon-in-stock' %}
       {%- else -%}
         {% render 'icon-out-of-stock' %}
       {%- endif -%}
- 
+
       <div class="pickup-availability-information-container">
         {%- if closest_location.available -%}
           <p class="pickup-availability-information__title">
@@ -903,7 +904,7 @@
           <p class="pickup-availability-information__title">
             {{ 'pickup_availability.general.pick_up_unavailable_at_html' | t: location_name: closest_location.location.name }}
           </p>
- 
+
           {%- if pick_up_availabilities.size > 1 -%}
             <button class="pickup-availability-information__button js-modal-open-pickup-availability-modal pickup-availability-small-text" data-pickup-availability-modal-open aria-haspopup="dialog">
               {{ 'pickup_availability.general.check_other_stores' | t }}
@@ -969,7 +970,8 @@
       </ul>
     </div>
   {%- endif -%}
-</div>
+</div>            
+ 
                 <h4>local pickup end</h4>             
             {%- when 'icon_propos' -%}
               <div class="icon-propos" {{ block.shopify_attributes }}>
