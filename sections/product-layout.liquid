@@ -867,6 +867,7 @@
               {{ 'availabilities.css' | asset_url | stylesheet_tag }}
               <script src="{{ 'availabilities.js' | asset_url }}" defer></script>
               <div class="pickup-availability-container">
+                <h4>Locak pickups</h4>
                 {%- assign pick_up_availabilities = product_variant.store_availabilities  -%}
               
                 {%- if pick_up_availabilities.size > 0 -%}
