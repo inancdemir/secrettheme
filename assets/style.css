@@ -2195,3 +2195,6 @@ button.disclosure__button svg * {
     font-size: 12px;
     border: 1px solid #cbcbcb;
 }
+.hidden {
+    display: none !important;
+}

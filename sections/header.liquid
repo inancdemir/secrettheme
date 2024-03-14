@@ -75,12 +75,8 @@
           }
         }
   {% endcase %}
-
-  
+ 
 {%- endstyle -%}
-<script src="{{ 'predictive-search.js' | asset_url }}" defer="defer"></script>
-
-
 <div class="main-navigation {% if section.settings.menu_type_desktop == "drawer" %}draver-active{% else %}normal-nav{% endif %} {% if section.settings.menu_spaces == "space_from_sides"  %}space_from_sides{% endif %}">
   <div class="logo">
     <a href="{{ shop.url }}">
@@ -279,6 +275,7 @@
 
 
 <script>
+  
   document.addEventListener("DOMContentLoaded", function () {
     {% unless section.settings.sticky_header_type == "off" %}
       addHasTopBarClass();
